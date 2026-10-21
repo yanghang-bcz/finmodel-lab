@@ -1,86 +1,229 @@
-# 实验11第一轮：定价基础与连续股息
+# FinModel Lab
 
-当前版本已实际实现并通过本轮测试；唯一项目路径、启动方式、修改文件、截图、真实通过/失败记录和未实现范围见 [本轮交付记录](EXPERIMENT11-ROUND1.md)。当前构建：`1.9.1-audit.1eea1f2b6fd71b97`。历史说明中的验收数字不作为本轮结果。
+### Interactive Financial Modeling Lab for R Education
 
-# FinModel Lab · 失败修复专项审计版
+**FinModel Lab 是一款面向高校金融实验课程的交互式建模教学平台，旨在连接金融理论、模型可视化与可执行的 R 语言实践。**
 
-本次修复已在用户可见 Chrome 和真实服务验收。构建：`1.9.1-audit.829515775e3098be`。五模型与视觉设计保持现有内容，未修改金融计算。
+项目围绕高校《基于R语言的投资与实验》课程设计，将抽象的金融与统计模型转化为可直接操作的实验。学生可以调整参数、观察模型变化、查看数学解释，并将当前模型对应的完整R代码复制到R环境中运行。
 
-根因：用户原标签页与历史文档仍在运行早期版本，出现07→08→11→06→09→01→04目录和悬停常驻；磁盘新版与新测试会话的通过没有覆盖原会话迁移。详见 [完整审计报告](AUDIT-20261019.md) 和 [前后截图／运行结果](tests/audit-1912/gallery.html)。
+**[在线体验 FinModel Lab](https://finmodel-lab.app.workbuddy.host/?sharecode=PLWKCGJYNW)** · **[查看实验04](https://finmodel-lab.app.workbuddy.host/experiments.html?sharecode=PLWKCGJYNW&model=regression)**
 
-本轮新验收：2050项双缓存Chrome断言、355项既有交互检查、22项定向检查、9套数学／教学回归通过。Safari自动化未开启，本轮完整Safari矩阵未通过验收。历史报告数字不作为本轮结果。
+> 在线版本由WorkBuddy托管。首次访问请使用完整分享链接，无须安装桌面软件。R代码的独立运行需要本地R环境。
 
-## 当前唯一推荐启动
+![FinModel Lab - 实验04多元回归](deploy-evidence/screenshots/regression.png)
 
-当前8765服务已在运行。今后从任意目录启动，使用固定项目绝对路径：
+## 01. Project Overview
 
-```sh
-python3 "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py"
+传统金融建模实验通常要求学生在理解数学公式的同时，独立编写R代码、调整模型参数并分析统计输出。
+
+对于初学者而言，模型推导、编程操作和金融解释之间存在一定的学习门槛。
+
+FinModel Lab尝试通过统一的交互式工作台连接这三个环节：
+
+**Model → Visualization → R Code → Interpretation**
+
+项目的核心设计原则：
+
+- **Interactive Exploration：** 直接调整参数，观察模型结果实时变化。
+- **Executable R Code：** 默认展示完整代码，支持复制和独立运行。
+- **Mathematical Transparency：** 展示公式、参数含义、模型假设及计算逻辑。
+- **Finance-Oriented Learning：** 将统计结果与实际金融问题联系起来。
+- **Low-Friction UX：** 保持自由探索，不设置强制答题或分步解锁。
+- **Reproducibility：** 对核心计算进行数值验证，并明确数据与模型限制。
+
+## 02. Core Experiments
+
+目前已完成六个核心金融建模实验，对应课程中的不同教学主题。
+
+| 实验 | 主题 | 主要功能 |
+|---|---|---|
+| 04 | Multiple Regression | OLS、逐步回归、Ridge、Lasso与样本外比较 |
+| 06 | Volatility Modeling | ARCH-LM、GARCH、GJR-GARCH、GARCH-M、CCC-GARCH |
+| 07 | Financial Risk Measurement | VaR、ES、RiskMetrics、EVT与风险回测 |
+| 08 | Portfolio Optimization | 均值-方差模型、全局最小方差组合、有效前沿 |
+| 09 | CAPM | SML、CML、Alpha/Beta估计与实证分析 |
+| 11 | Black-Scholes | 欧式期权定价、Greeks、隐含波动率与Delta对冲 |
+
+其他课程实验尚未上线，不属于当前版本的完成范围。
+
+### Experiment 04 · Regression & Regularization
+
+使用统一金融数据比较传统统计回归与正则化方法。
+
+- 多元最小二乘回归（OLS）
+- 前向、后向与双向逐步回归
+- Ridge L2正则化
+- Lasso L1正则化
+- 多重共线性与VIF诊断
+- 时间顺序训练、验证和测试
+- 四模型预测误差比较
+
+**核心问题：训练数据上拟合更好的模型，是否一定能更准确地预测新数据？**
+
+### Experiment 06 · Volatility Modeling
+
+探索金融收益率中的波动率聚集及条件波动模型。
+
+支持ARCH效应检验、GARCH参数估计、标准化残差诊断、多期波动率预测、不对称波动分析以及双资产条件协方差建模。
+
+### Experiment 07 · Value at Risk & Expected Shortfall
+
+比较不同风险计量方法对潜在损失的估计。
+
+支持历史模拟法、正态参数法、EWMA、GARCH-VaR/ES、POT-GPD极值分析与样本外风险回测。
+
+### Experiment 08 · Portfolio Optimization
+
+通过双资产与多资产模型，探索收益、风险和资产相关性之间的关系。
+
+支持全局最小方差组合、有效前沿、权重调整及历史数据导入。
+
+### Experiment 09 · Capital Asset Pricing Model
+
+结合理论与样本回归理解CAPM。
+
+支持证券市场线、资本市场线、Beta敏感度、Alpha检验和回归诊断。
+
+### Experiment 11 · Black-Scholes & Hedging
+
+探索欧式期权价格如何受到基础资产价格、波动率、期限和利率影响。
+
+支持期权定价、Greeks、隐含波动率数值求解与动态Delta对冲模拟。
+
+## 03. Product Design
+
+### Three-Panel Workbench
+
+FinModel Lab采用统一的三栏工作台：
+
+| R Code | Model Visualization | Parameters |
+|---|---|---|
+| 完整可执行代码 | 交互式模型图表 | 实时参数调整 |
+| 代码段导航 | 金融结果与模型比较 | 高级模型设置 |
+| 数学解释联动 | 动态金融解释 | 数据导入与重置 |
+
+学生可以从图表出发理解模型，也可以直接阅读代码与公式。
+
+三栏各自承担明确任务，减少在R代码、参数输入和统计输出之间反复切换的操作。
+
+### Design Decisions
+
+**1. Full Code by Default**
+
+默认提供完整R脚本，而不是只展示几行关键代码，确保学生能够从数据输入追踪到最终输出。
+
+**2. Free Exploration**
+
+取消强制教学步骤，让用户自由切换模型、修改参数和比较结果。
+
+**3. Mathematical Explainability**
+
+通过代码与公式联动，解释模型为什么得到当前结果，同时明确统计假设及适用边界。
+
+**4. Shared Financial Data**
+
+在适用的实验中支持本地CSV导入，让学生能够使用自己的数据完成建模和比较。
+
+## 04. Technology
+
+| 层级 | 技术与实现 |
+|---|---|
+| Frontend | HTML、CSS、JavaScript |
+| Visualization | SVG、交互式金融图表 |
+| Mathematical Rendering | KaTeX |
+| Financial Computing | 浏览器端数值计算与优化 |
+| R Integration | 完整R脚本生成与跨语言数值核验 |
+| Data Input | 本地CSV解析与验证 |
+| Development Tools | Node.js、Python |
+| Deployment | 静态网站部署 |
+
+核心金融交互主要在浏览器中执行，不需要用户将模型参数提交到远程计算服务。
+
+R代码用于教学实践与结果复现，并不意味着浏览器直接运行R解释器。
+
+## 05. Run Locally
+
+克隆仓库：
+
+```bash
+git clone https://github.com/yanghang-bcz/finmodel-lab.git
+cd finmodel-lab
 ```
 
-打开 http://127.0.0.1:8765/experiments.html?model=garch 。身份核验：http://127.0.0.1:8765/__finmodel__/status 。启动会先构建；端口占用会明确报错，不会再开一个不同目录服务。JS/CSS采用内容哈希，页面与脚本禁用陈旧缓存；控制台及DOM有不可见版本标识。
+使用Python启动已经构建好的静态网站：
 
-修改源模块后可用 `node tools/build-workbench.cjs --check` 检测未构建产物。不要用旧ZIP替换当前dist；`FinModel-Lab.zip`及带1.2–1.9.1的包均为历史档案，本轮以当前dist和本审计报告为准。新的交付包为 `FinModel-Lab-audit-20261019.zip`。
-
-## 实验08原有操作
-
-- 右侧调参，代码、曲线、收益、方差和风险同步。“设为比较基准”后再编辑；“查看变化”展示完整快照；“结束比较”清空差异与图表比较基准。
-- 点击“有效/非有效组合”查看数学证据。非有效时展示可行支配配置，主动应用后可撤销；不自动修改输入。
-- 高收益等合法极端假设只提示，不改写；同一分析期口径。非法输入保留上次有效结果。
-- 下拉选择相关系数或有效前沿探索。先预测再确认，前者只开放ρ，后者只开放权重，再查看解释。退出可恢复或保留参数。
-- 点R行查看作用、公式、代入和金融含义。代码/解释局部滚动，分隔条可拖动/按键调整；复制的基础R可整体运行。
-- “课堂工具”包含A/B/C示例、4道理解题和教师同意后主动本地导出的匿名反馈。加载示例明确重置参数/比较/探索。无自动上传、无行为跟踪、无登录。
-- 刷新回默认且清空实验状态；不同标签页独立。
-
-## v1.8保留资料
-
-- CHANGES-v1.8.md：修改清单、完成/部分/未完成、数学报告与实际测试。
-- CLASSROOM-GUIDE.md：教师演示与学生练习。
-- EVALUATION-PLAN.md：平行前后测、答案、评分、真实反馈口径。
-- DEPLOYMENT.md：部署方式及待补测项目。
-- tests/v1.8/gallery.html：截图；checks.json：实际浏览器断言；unit-results.json：命令结果。
-- FONTS.md：字体与许可。dist/是完整可部署静态文件。
-- FinModel-Lab-v1.8.zip：原历史包保留；历史交付包为FinModel-Lab-v1.9.zip。
-
-## 复核测试
-
-新旧套件统一复核：`node tests/run-regression.cjs`。修改工作台/新实验源模块后需执行`node tools/build-workbench.cjs`，已交付静态文件无需构建。
-
-```sh
-node tests/math.test.cjs
-node tests/learning.test.cjs
-node tests/numerics.test.cjs
-node tests/scale.test.cjs
-node tests/r-code.test.cjs
-node tests/typography.test.cjs
-node tests/exploration.test.cjs
-node tests/teaching.test.cjs
+```bash
+python3 -m http.server 8765 --directory dist
 ```
 
-本轮9套回归全部实际通过。交互浏览器验收使用 `tests/interaction191.test.cjs`，既有教学/布局使用 `tests/ui-refinement.test.cjs`（需要Playwright和已安装Chrome）；`tests/presentation.test.cjs` 以Rscript执行基础/完整教学代码。测试结果按版本存档，历史报告中的数字不视为本轮新检查。
+打开：
 
-历史v1.9.1曾记录本地HTTP连接重置。本轮已完成直接HTTP资源哈希、响应头和真实Chrome测试，但没有重新验收并发负载、弱网、目标部署容量或跨设备课堂。尚无真实教师或学生试用及效果数据。本版是课堂试用候选，不宣称正式全班可用；未远程发布。
+`http://127.0.0.1:8765/`
 
-实验11第二轮已加入隐含波动率二分法与纯Newton可视化；启动、数学边界、实际测试及截图见 [EXPERIMENT11-ROUND2.md](EXPERIMENT11-ROUND2.md)。动态Delta对冲仍属第三轮。
+实验04：
 
-实验11第三轮已加入 Delta 风险对冲：初始中性、股价变化预测、动态调仓与同路径三策略比较。自融资口径、真实R执行、完整测试、截图和教学预评见 [EXPERIMENT11-ROUND3.md](EXPERIMENT11-ROUND3.md)。本轮结束等待实验11教学验收，不继续开发实验08。
+`http://127.0.0.1:8765/experiments.html?model=regression`
 
-FinModel Lab v2.1 已将实验11默认入口重构为零基础分步学习，保留四模块完整实验。四步Delta对冲、渐进参数、本步/完整R代码、截图和实际回归见 [EXPERIMENT11-TEACHING-UX.md](EXPERIMENT11-TEACHING-UX.md)。真实学生“60秒理解”等教学效果仍待课堂验证。
+如需修改JavaScript源模块并重新构建，可使用项目中的构建脚本：
 
-### 实验11 v2.2：打开即实验
+```bash
+node tools/build-workbench.cjs
+```
 
-四模块默认自由探索，取消强制步骤与预测门槛；Delta实时目标持仓与初始未调仓持仓明确区分，动态模拟可直接进入。金融引擎和R核心未修改。实现、截图、真实R与浏览器验收见 [EXPERIMENT11-ZERO-FRICTION-UX.md](EXPERIMENT11-ZERO-FRICTION-UX.md)。
+部分R示例需要安装对应的R包，例如正则化回归使用的`glmnet`。网页交互与独立R脚本运行是不同的执行环境。
 
-### v2.2.1：完整R代码优先
+## 06. Repository Structure
 
-五模型默认完整代码，主复制始终提供当前参数的独立R脚本；实验11精修IV结果/精度、Greeks范围与解释、动态对冲策略层级。实际文件、截图、真实R逐值核对和浏览器验收见 [FINMODEL-V2.2.1-CODE-AND-UX.md](FINMODEL-V2.2.1-CODE-AND-UX.md)。
+```text
+finmodel-lab/
+├── dist/                    # 可部署静态网站
+├── examples/                # 可运行R语言示例
+├── tests/                   # 数学、R及浏览器测试
+├── tools/                   # 构建与开发工具
+├── deploy-evidence/         # 部署验证和界面截图
+├── CLASSROOM-EXPERIMENT04.md
+├── EXPERIMENT04-FINAL.md
+├── EXPERIMENT06-FINAL.md
+├── EXPERIMENT07-V2.7.2-FINAL-VALIDATION.md
+└── README.md
+```
 
-### 实验08 v2.3.0：多资产优化与本地CSV
+详细实验验证及设计决策参见：
 
-保留双资产直觉，新增3～5资产的约束精确优化、GMV与有效前沿、本地CSV估计、样本不确定性探索；默认完整基础R脚本，复制时嵌入清洗后的收益数据。实验11源模块与原五模型金融引擎保持冻结。
+- [Experiment 04 · 回归与正则化](EXPERIMENT04-FINAL.md)
+- [Experiment 06 · 波动率模型](EXPERIMENT06-FINAL.md)
+- [Experiment 07 · 风险计量](EXPERIMENT07-V2.7.2-FINAL-VALIDATION.md)
+- [Experiment 08 · 投资组合优化](EXPERIMENT08-UPGRADE.md)
+- [Experiment 09 · CAPM](EXPERIMENT09-V2.4.1-UX.md)
+- [Experiment 11 · Black-Scholes](EXPERIMENT11-ROUND3.md)
 
-打开 http://127.0.0.1:8765/index.html ，切换“多资产组合”。真实测试、源文件清单、服务身份、数据来源边界、截图与课程目标完成表见 [EXPERIMENT08-UPGRADE.md](EXPERIMENT08-UPGRADE.md)。随附价格示例是合成数据，不是真实行情；本轮不宣称已达到经课堂验证的95分。
+## 07. Validation & Limitations
 
-### 实验08 v2.3.1：权重与教学体验精修
+FinModel Lab的核心金融计算经过多轮自动化测试，包括数学边界、数值优化、JavaScript与R结果对照、浏览器交互及跨实验回归检查。
 
-新增默认便捷权重调整、精确草稿输入、完整精度保留、当前/GMV/目标重合识别、真实优化前后对比，以及完整R代码五段导航；图表按实际容器尺寸绘制，双资产只减少必要空白。原优化引擎、CSV和实验11源码保持哈希不变。修改、真实截图、测试命令、验收结果与限制见 [EXPERIMENT08-V2.3.1-UX.md](EXPERIMENT08-V2.3.1-UX.md)。
+各实验的测试方法、执行记录和已知限制保留在相应交付报告中。
+
+**Current limitations**
+
+- 平台目前覆盖六个核心实验，并非完整覆盖课程全部12个实验。
+- 默认示例主要使用合成教学数据，不代表真实市场行情。
+- 模型输出用于教学与分析，不构成投资建议。
+- 数学与软件验收不等于模型具有真实市场预测能力。
+- 真实课堂学习效果仍需通过教师反馈和学生试用进行验证。
+
+## 08. Roadmap
+
+当前阶段不再优先增加金融模型，而是集中于实际教学场景验证。
+
+- [x] 六个核心金融建模实验
+- [x] 统一交互式工作台
+- [x] 完整R代码生成与复现
+- [x] 数学和浏览器自动化验证
+- [x] 在线演示部署
+- [ ] 正式课堂试用与学生任务评估
+- [ ] 根据教师反馈优化教学流程
+- [ ] 评估后续课程实验扩展需求
+
+---
+
+**FinModel Lab** is an independently developed educational technology project exploring how interactive visualization, reproducible code, and financial modeling can improve the experience of learning quantitative finance.
