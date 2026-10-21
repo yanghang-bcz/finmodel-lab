@@ -1,0 +1,2 @@
+sigma,price,error,vega,next_sigma,a,b,next_a,next_b,stop
+10,99.9999440858279,89.5493605136423,0.000144999415408611,-617574.28653861,NA,NA,NA,NA,newton_out_of_range

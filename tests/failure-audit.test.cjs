@@ -1,0 +1,51 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'/Users/emobcccz/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const out=path.resolve('tests/audit-1912'),base=process.env.FINMODEL_URL||'http://127.0.0.1:8765',root=path.resolve('dist');fs.mkdirSync(out,{recursive:true});
+const ids=['garch','var','portfolio','capm','bs'],numbers={garch:6,var:7,portfolio:8,capm:9,bs:11};
+const titles=['R软件基础实验','金融市场数据整理与预处理','资产收益率计算','多元回归与逐步回归分析','ARMA与VAR模型','GARCH类波动率模型','VaR与ES投资风险计算','均值-方差投资组合决策分析','资本资产定价模型','因子模型与APT模型','Black-Scholes期权定价','证券投资基金绩效评价'];
+const manifest=JSON.parse(fs.readFileSync(root+'/build-manifest.json')),checks=[],errors=[],network=[],receipts=[];
+let browser,page,mode;
+function check(name,pass,detail){checks.push({mode,name,passed:!!pass,detail});assert(pass,name+' '+JSON.stringify(detail));}
+const tip=()=>page.locator('#chartTooltip:visible,#pointDetails:visible');
+const catalog=()=>page.locator('body[data-model=portfolio] #catalogNav,body.multi-workbench #catalog').first();
+const url=id=>base+(id==='portfolio'?'/index.html':'/experiments.html?model='+id);
+async function settle(){await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(200);}
+async function leave(){await page.mouse.move(200,65);await page.waitForTimeout(180);check('visible popup DOM count after leave = 0',await tip().count()===0);}
+async function position(el){return el.evaluate(el=>{let p;if(el.tagName.toLowerCase()==='path'&&el.getTotalLength())p=el.getPointAtLength(el.getTotalLength()*.72);else{const b=el.getBBox();p={x:b.x+b.width/2,y:b.y+b.height/2};}const r=new DOMPoint(p.x,p.y).matrixTransform(el.getScreenCTM());return{x:r.x,y:r.y};});}
+function primary(id){return page.locator({garch:'[data-chart=shock] circle[data-marker=shock]',var:'[data-marker=hES] .marker-hit',portfolio:'#currentMarker .dot',capm:'[data-chart=sml] circle[data-marker=sml]',bs:'[data-marker=SK] .marker-hit'}[id]);}
+async function catalogCheck(id,shot=false){await catalog().click();const rows=await page.locator('.catalog-list > *').evaluateAll(xs=>xs.map(x=>({n:x.dataset.number,title:x.querySelector('.course-name')?.textContent,status:x.querySelector('.course-status')?.textContent,current:x.getAttribute('aria-current'),disabled:x.disabled,href:x.getAttribute('href')})));
+ check(id+' exactly 12 rows',rows.length===12,rows);for(let i=0;i<12;i++){const r=rows[i],n=i+1,online=Object.values(numbers).includes(n);check(id+' row '+n,r.n===String(n).padStart(2,'0')&&r.title===titles[i]&&(r.current==='page')===(n===numbers[id])&&r.status===(n===numbers[id]?'当前实验':online?'进入 →':'暂未上线')&&(online?!!r.href:r.disabled&&!r.href),r);}
+ check(id+' no legacy catalog text',!/(货币时间价值|债券定价)/.test(await page.locator('.catalog-list').innerText()));if(shot)await page.screenshot({path:out+'/'+mode+'-'+id+'-catalog.png'});await page.keyboard.press('Escape');check(id+' catalog closes',!await page.locator('#catalogDialog').isVisible());await settle();}
+async function identity(id){check(id+' actual model',await page.locator('body').getAttribute('data-model')===id);const receipt=await page.evaluate(async()=>({build:window.FINMODEL_BUILD?.buildId,dom:document.documentElement.dataset.finmodelBuild,scripts:[...document.scripts].filter(x=>x.src).map(x=>x.src),resources:performance.getEntriesByType('resource').map(x=>({url:x.name,transfer:x.transferSize})),sw:(await navigator.serviceWorker.getRegistrations()).map(x=>x.scope),cache:await caches.keys()}));check(id+' HTML/runtime version match',receipt.build===manifest.buildId&&receipt.dom===manifest.buildId,receipt);check(id+' no service worker',receipt.sw.length===0,receipt.sw);receipts.push({mode,id,url:page.url(),...receipt});check(id+' no initial tooltip',await tip().count()===0);}
+async function hoverSuite(id,shot=false){await page.mouse.move(200,65);const target=primary(id),p=await position(target);await page.mouse.move(p.x,p.y);await page.waitForTimeout(60);check(id+' hover preview visible',await tip().count()===1&&await tip().getAttribute('data-mode')==='preview');check(id+' hover has no interactive X',await tip().locator('#closePoint:visible,#closeTooltip:visible').count()===0);check(id+' preview pointer events none',await tip().evaluate(x=>getComputedStyle(x).pointerEvents)==='none');if(shot)await page.screenshot({path:out+'/'+mode+'-'+id+'-hover.png'});await leave();if(shot)await page.screenshot({path:out+'/'+mode+'-'+id+'-leave.png'});
+ for(let i=0;i<10;i++){await page.mouse.move(p.x,p.y);await page.mouse.move(200,65);}await page.waitForTimeout(180);check(id+' 10 rapid crossings = 0 popup',await tip().count()===0);
+ await page.mouse.click(p.x,p.y);await page.waitForTimeout(120);await page.mouse.move(200,65);await page.waitForTimeout(180);check(id+' explicit click pins after leave',await tip().count()===1&&await tip().getAttribute('data-mode')==='pinned');await page.keyboard.press('Escape');check(id+' Esc closes',await tip().count()===0);
+ await page.mouse.click(p.x,p.y);await page.waitForTimeout(120);await page.mouse.move(200,65);await tip().locator('button:visible').first().click();check(id+' X closes',await tip().count()===0);
+ await page.mouse.click(p.x,p.y);await page.waitForTimeout(120);const box=await page.locator(id==='portfolio'?'#chart':'#chartHost svg').first().boundingBox();await page.mouse.click(box.x+5,box.y+5);check(id+' chart background closes pin',await tip().count()===0);
+ await page.mouse.click(p.x,p.y);await page.waitForTimeout(120);await page.mouse.click(p.x,p.y);await page.waitForTimeout(120);await page.mouse.move(200,65);check(id+' same item toggles pin off',await tip().count()===0);
+ await page.mouse.move(p.x,p.y);await catalog().click();check(id+' modal open clears tooltip',await tip().count()===0);await page.keyboard.press('Escape');check(id+' modal close clears tooltip',await tip().count()===0);
+ await page.mouse.move(p.x,p.y);const input=page.locator(id==='portfolio'?'#rho':'#input-'+({garch:'shock',var:'alpha',capm:'beta',bs:'S'}[id]));await input.fill({garch:'6',var:'.99',capm:'1.8',bs:'120',portfolio:'-.5'}[id]);await settle();check(id+' parameter change clears tooltip',await tip().count()===0);await page.locator('#reset').click();await settle();
+ // Native pointer cancellation must clear temporary preview while preserving click semantics.
+ const p2=await position(primary(id));await page.mouse.move(p2.x,p2.y);await primary(id).dispatchEvent('pointercancel',{pointerType:'mouse'});check(id+' pointercancel clears preview',await tip().count()===0);await page.mouse.move(200,65);
+}
+(async()=>{try{browser=await chromium.launch({channel:'chrome',headless:true});for(mode of ['normal-cache','cache-disabled']){
+ const context=await browser.newContext({viewport:{width:1440,height:900}});page=await context.newPage();page.on('pageerror',e=>errors.push({mode,message:e.message}));const cdp=await context.newCDPSession(page);await cdp.send('Network.enable');await cdp.send('Network.setCacheDisabled',{cacheDisabled:mode==='cache-disabled'});
+ const status=await(await context.request.get(base+'/__finmodel__/status')).json();check('service absolute document root',status.documentRoot===root,status);check('service build matches disk',status.buildId===manifest.buildId,status);
+ page.on('response',r=>{if(/\.(html|js|css)(\?|$)/.test(r.url()))network.push({mode,url:r.url(),status:r.status(),headers:r.headers()});});
+ for(const id of ids){await page.goto(url(id));await settle();await identity(id);await catalogCheck(id,true);await hoverSuite(id,true);
+ // Test every interactive identity, not only the principal point in screenshots.
+ const controls=id==='portfolio'?page.locator('.legend [data-point]'):page.locator('[data-tip]');for(let i=0;i<await controls.count();i++){await controls.nth(i).hover();check(id+' legend '+i+' hover',await tip().count()===1);await leave();}
+ }
+ // Two complete rounds through actual directory links, ordinary reload and CDP hard reload.
+ for(let round=0;round<2;round++)for(const id of ids){await catalog().click();await Promise.all([page.waitForURL(url(id)),page.locator('.course-row[data-number="'+String(numbers[id]).padStart(2,'0')+'"]').click()]);await settle();await identity(id);await catalogCheck(id);await hoverSuite(id);
+ await page.reload();await settle();await identity(id);await catalogCheck(id);
+ await Promise.all([page.waitForEvent('load'),cdp.send('Page.reload',{ignoreCache:true})]);await settle();await identity(id);await catalogCheck(id);
+ }
+ // Back/forward may restore BFCache, but no previous dialog or preview may return.
+ await page.goto(url('garch'));await settle();await page.goto(url('bs'));await settle();await page.goBack();await settle();await identity('garch');await catalogCheck('garch');await hoverSuite('garch');await page.goForward();await settle();await identity('bs');await catalogCheck('bs');await hoverSuite('bs');
+ await page.close();page=await context.newPage();await page.goto(url('capm'));await settle();await identity('capm');await catalogCheck('capm');await hoverSuite('capm');
+ // Verify actual HTTP bytes from each runtime script/CSS and entry against deployed files.
+ for(const [file,hash]of Object.entries(manifest.assets)){if(!/bundle\.js$|build-info\.js$|\.html$|\.css$/.test(file))continue;const response=await context.request.get(base+'/'+file);const bytes=await response.body();check('served bytes '+file,crypto.createHash('sha256').update(bytes).digest('hex')===hash);check('no-store '+file,/no-store/.test(response.headers()['cache-control']||''));}
+ await context.close();}
+ check('uncaught browser exceptions',errors.length===0,errors);check('HTTP resource errors',network.every(x=>x.status<400),network.filter(x=>x.status>=400));console.log('PASS',checks.length,'real Chrome assertions');
+ }catch(e){errors.push({fatal:String(e),stack:e.stack,url:page?.url()});if(page&&!page.isClosed())await page.screenshot({path:out+'/failure.png'});throw e;}finally{fs.writeFileSync(out+'/browser-results.json',JSON.stringify({browser:browser?await browser.version():null,buildId:manifest.buildId,checks,errors,receipts,network},null,2));await browser?.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

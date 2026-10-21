@@ -1,0 +1,399 @@
+{
+  "buildId": "2.7.1-risk-final.f4c172afee0bf60f",
+  "service": {
+    "pid": 84833,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "2.7.1-risk-final.f4c172afee0bf60f",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "math": {
+    "checks": 16008,
+    "passed": 16008,
+    "failed": 0,
+    "skipped": 2,
+    "skipCases": [
+      "GARCH样本MLE收敛：未实现可选估计模式",
+      "GARCH样本MLE失败处理：未实现可选估计模式"
+    ],
+    "Rruns": 18,
+    "maxAbsoluteDifference": 0.00037257813528412953,
+    "outcomes": [
+      {
+        "name": "basic",
+        "view": "basic",
+        "values": 4
+      },
+      {
+        "name": "dynamic-0.9",
+        "view": "dynamic",
+        "values": 1506
+      },
+      {
+        "name": "dynamic-0.94",
+        "view": "dynamic",
+        "values": 1506
+      },
+      {
+        "name": "dynamic-0.98",
+        "view": "dynamic",
+        "values": 1506
+      },
+      {
+        "name": "garch-near-unit",
+        "view": "dynamic",
+        "values": 1506
+      },
+      {
+        "name": "constant",
+        "view": "dynamic",
+        "values": 1506
+      },
+      {
+        "name": "evt-default",
+        "view": "evt",
+        "values": 8
+      },
+      {
+        "name": "evt-99",
+        "view": "evt",
+        "values": 8
+      },
+      {
+        "name": "evt-threshold",
+        "view": "evt",
+        "values": 8
+      },
+      {
+        "name": "backtest-30",
+        "view": "backtest",
+        "values": 1796
+      },
+      {
+        "name": "backtest-150",
+        "view": "backtest",
+        "values": 836
+      },
+      {
+        "name": "backtest-230",
+        "view": "backtest",
+        "values": 196
+      },
+      {
+        "name": "csv-dynamic",
+        "view": "dynamic",
+        "values": 1506
+      },
+      {
+        "name": "csv-backtest",
+        "view": "backtest",
+        "values": 836
+      },
+      {
+        "name": "evt-shape--0.2",
+        "view": "evt",
+        "values": 8
+      },
+      {
+        "name": "evt-shape-1.2",
+        "view": "evt",
+        "values": 8
+      }
+    ],
+    "tolerance": {
+      "deterministic": "1e-8 + 2e-9*abs(expected)",
+      "gpdMLE": "0.001 yuan + 1e-7*abs(expected), optimizer summation tolerance",
+      "kupiecP": "2e-7 absolute (erfc approximation)"
+    }
+  },
+  "browser": {
+    "passed": 1535,
+    "failed": 0,
+    "scripts": 17,
+    "errors": [],
+    "screens": [
+      "basic-comparison-1440.png",
+      "dynamic-comparison-1440.png",
+      "evt-1440.png",
+      "backtest-1440.png",
+      "csv-backtest-1440.png",
+      "evt-infinite-ES.png",
+      "basic-1440x900.png",
+      "dynamic-1440x900.png",
+      "evt-1440x900.png",
+      "backtest-1440x900.png",
+      "basic-1366x768.png",
+      "dynamic-1366x768.png",
+      "evt-1366x768.png",
+      "backtest-1366x768.png",
+      "basic-1920x1080.png",
+      "dynamic-1920x1080.png",
+      "evt-1920x1080.png",
+      "backtest-1920x1080.png",
+      "zoom125-basic.png",
+      "zoom125-dynamic.png",
+      "zoom125-evt.png",
+      "zoom125-backtest.png"
+    ],
+    "chrome": "155.0.8059.85",
+    "buildId": "2.7.1-risk-final.f4c172afee0bf60f"
+  },
+  "allSiteSuites": [
+    {
+      "name": "math",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "learning",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "numerics",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "scale",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "r-code",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "typography",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "exploration",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "teaching",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "new-models",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "bs-round1",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "bs-round2",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "bs-round3",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "teaching-ux",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "zero-friction",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "code-ux-221",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "portfolio-multi",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "portfolio-ux231",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "capm-upgrade",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "capm-241",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "risk-round1",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "risk-final",
+      "passed": true,
+      "exit": 0
+    }
+  ],
+  "frozen": {
+    "unchanged": [
+      "app.js",
+      "bs-lesson.js",
+      "capm-code.js",
+      "capm-math.js",
+      "capm-teaching.js",
+      "capm-workbench.js",
+      "capm.css",
+      "chart-interaction.js",
+      "chart-scale.js",
+      "classroom-ui.js",
+      "experiment-lessons.js",
+      "experiment-math.js",
+      "experiments-config.js",
+      "experiments.css",
+      "experiments.js",
+      "exploration.js",
+      "financial-charts.js",
+      "font-audit.js",
+      "font-specimen.html",
+      "hedge-code.js",
+      "hedge-math.js",
+      "hedge-workbench.js",
+      "iv-code.js",
+      "iv-math.js",
+      "iv-workbench.js",
+      "lesson-presentation.js",
+      "lessons.js",
+      "math.js",
+      "modal-ui.js",
+      "portfolio-bundle.js",
+      "portfolio-csv.js",
+      "portfolio-multi-code.js",
+      "portfolio-multi-math.js",
+      "portfolio-multi-ui.js",
+      "portfolio-multi.css",
+      "portfolio-ux.js",
+      "risk-math.js",
+      "runtime-version.js",
+      "style.css",
+      "teaching-ux-charts.js",
+      "teaching-ux-data.js",
+      "teaching-ux.js",
+      "teaching.js",
+      "typography.css",
+      "typography.js",
+      "workbench-system.css",
+      "workbench-ui.js",
+      "workbench.css",
+      "zero-friction-data.js"
+    ],
+    "changed": [
+      "build-info.js",
+      "experiments-bundle.js",
+      "experiments.html",
+      "index.html",
+      "risk-charts.js",
+      "risk-code.js",
+      "risk-workbench.js",
+      "risk.css"
+    ],
+    "coreFrozenVerified": true
+  },
+  "examples": [
+    {
+      "command": "Rscript --vanilla examples/experiment07-basic.R",
+      "exitCode": 0
+    },
+    {
+      "command": "Rscript --vanilla examples/experiment07-dynamic.R",
+      "exitCode": 0
+    },
+    {
+      "command": "Rscript --vanilla examples/experiment07-evt.R",
+      "exitCode": 0
+    },
+    {
+      "command": "Rscript --vanilla examples/experiment07-backtest.R",
+      "exitCode": 0
+    }
+  ],
+  "internalScore": 94,
+  "studentValidation": "软件与数学验收完成，真实课堂学习效果待验证。",
+  "browserLoadedIdentity": {
+    "dom": {
+      "meta": "2.7.1-risk-final.f4c172afee0bf60f",
+      "build": "2.7.1-risk-final.f4c172afee0bf60f",
+      "title": "FinModel Lab · 实验07 · VaR与ES投资风险计算",
+      "view": "basic"
+    },
+    "loaded": [
+      {
+        "url": "http://127.0.0.1:8765/experiments.html?model=var",
+        "sha256": "2cee703109c70c99e872d8c4e6a0f07943cae7bdf2f8f1625a90e72c4093587c",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/style.css?v=ab186d5e6d5ee4a4",
+        "sha256": "ab186d5e6d5ee4a4d62494267edf57776f8c5c1ce5e292408161733fcadd824a",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/fonts/glow-faces.css?v=0896e62cf0b74955",
+        "sha256": "0896e62cf0b74955bfe1ecb509d228b151b1f4271df6f6df1c8a64433af3584d",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/typography.css?v=834fb038f8229297",
+        "sha256": "834fb038f8229297d37c0c81f655484cfa34f9dbeda69d68d1b30c53be4f3b8e",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/vendor/katex/katex.min.css?v=144d9ea8097c553f",
+        "sha256": "144d9ea8097c553f5672ea8bb89b4241c486e0e89ec844580823155fd4fdf303",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/experiments.css?v=81b94df939ce9bbf",
+        "sha256": "81b94df939ce9bbfc251ceb392a064d42c9fc0733c4d7dcc2eabd0b9b8db733f",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/workbench-system.css?v=34b1937a2ae140a9",
+        "sha256": "34b1937a2ae140a95e9ba834218f2ebed8457e9efac3a78fd1e43e779f2cabdf",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/capm.css?v=5706ecadd997832c",
+        "sha256": "5706ecadd997832cb7e2a0ba2442ff459bdcaf21e61a00c868c6563291f23aec",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/risk.css?v=7afee9aa617cffc3",
+        "sha256": "7afee9aa617cffc3d99e82d65761cafcc14138eae7197bd6190eb52464e24293",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/build-info.js?v=48bda10dbbd4487b",
+        "sha256": "48bda10dbbd4487b59a0ec649f89209ad397b5c3464b87ec04761b1458c6509c",
+        "localMatch": true
+      },
+      {
+        "url": "http://127.0.0.1:8765/experiments-bundle.js?v=6e2af5d2e0a270e6",
+        "sha256": "6e2af5d2e0a270e657cad556314ffc02bafbd0ac4fa6b8268308bdf7ea36988a",
+        "localMatch": true
+      }
+    ],
+    "passed": 14,
+    "failed": 0
+  }
+}

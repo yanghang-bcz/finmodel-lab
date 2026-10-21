@@ -1,0 +1,2993 @@
+{
+  "name": "Chrome页面无未捕获异常",
+  "checks": [
+    {
+      "name": "var 1920×1080 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 210,
+            "y": 64,
+            "right": 771.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 785.671875,
+            "y": 64,
+            "right": 1446.46875,
+            "bottom": 1060
+          },
+          {
+            "x": 1460.46875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": [
+          {
+            "width": 631,
+            "height": 670,
+            "plotHeight": 604.453125,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1795.703125,
+          "y": 437.140625,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 437.140625,
+          "right": 1873,
+          "bottom": 466.9375,
+          "left": 1795.703125
+        }
+      }
+    },
+    {
+      "name": "var 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 631,
+          "height": 670,
+          "plotHeight": 604.453125,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "var 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1795.703125,
+        "y": 437.140625,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 437.140625,
+        "right": 1873,
+        "bottom": 466.9375,
+        "left": 1795.703125
+      }
+    },
+    {
+      "name": "var 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "var 1920×1080 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 30,
+            "y": 64,
+            "right": 652.875,
+            "bottom": 1060
+          },
+          {
+            "x": 666.875,
+            "y": 64,
+            "right": 1399.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 1413.671875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": [
+          {
+            "width": 703,
+            "height": 645,
+            "plotHeight": 578.53125,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1795.703125,
+          "y": 458.796875,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 458.796875,
+          "right": 1873,
+          "bottom": 488.59375,
+          "left": 1795.703125
+        }
+      }
+    },
+    {
+      "name": "var 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 703,
+          "height": 645,
+          "plotHeight": 578.53125,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "var 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1795.703125,
+        "y": 458.796875,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 458.796875,
+        "right": 1873,
+        "bottom": 488.59375,
+        "left": 1795.703125
+      }
+    },
+    {
+      "name": "var 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "var 1440×900 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 202,
+            "y": 64,
+            "right": 605.90625,
+            "bottom": 880
+          },
+          {
+            "x": 619.90625,
+            "y": 64,
+            "right": 1095.109375,
+            "bottom": 880
+          },
+          {
+            "x": 1109.109375,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": [
+          {
+            "width": 445,
+            "height": 471,
+            "plotHeight": 405.265625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1323.703125,
+          "y": 437.140625,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 437.140625,
+          "right": 1401,
+          "bottom": 466.9375,
+          "left": 1323.703125
+        }
+      }
+    },
+    {
+      "name": "var 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 445,
+          "height": 471,
+          "plotHeight": 405.265625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "var 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1323.703125,
+        "y": 437.140625,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 437.140625,
+        "right": 1401,
+        "bottom": 466.9375,
+        "left": 1323.703125
+      }
+    },
+    {
+      "name": "var 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "var 1440×900 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 22,
+            "y": 64,
+            "right": 487.109375,
+            "bottom": 880
+          },
+          {
+            "x": 501.109375,
+            "y": 64,
+            "right": 1048.3125,
+            "bottom": 880
+          },
+          {
+            "x": 1062.3125,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": [
+          {
+            "width": 517,
+            "height": 444,
+            "plotHeight": 377.734375,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1323.703125,
+          "y": 468.390625,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 468.390625,
+          "right": 1401,
+          "bottom": 498.1875,
+          "left": 1323.703125
+        }
+      }
+    },
+    {
+      "name": "var 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 517,
+          "height": 444,
+          "plotHeight": 377.734375,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "var 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1323.703125,
+        "y": 468.390625,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 468.390625,
+        "right": 1401,
+        "bottom": 498.1875,
+        "left": 1323.703125
+      }
+    },
+    {
+      "name": "var 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "var 1366×768 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 202,
+            "y": 64,
+            "right": 580.75,
+            "bottom": 748
+          },
+          {
+            "x": 594.75,
+            "y": 64,
+            "right": 1040.359375,
+            "bottom": 748
+          },
+          {
+            "x": 1054.359375,
+            "y": 64,
+            "right": 1344,
+            "bottom": 748
+          }
+        ],
+        "charts": [
+          {
+            "width": 416,
+            "height": 339,
+            "plotHeight": 273.265625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1249.703125,
+          "y": 441.421875,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 441.421875,
+          "right": 1327,
+          "bottom": 471.21875,
+          "left": 1249.703125
+        }
+      }
+    },
+    {
+      "name": "var 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 416,
+          "height": 339,
+          "plotHeight": 273.265625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "var 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1249.703125,
+        "y": 441.421875,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 441.421875,
+        "right": 1327,
+        "bottom": 471.21875,
+        "left": 1249.703125
+      }
+    },
+    {
+      "name": "var 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "var 1366×768 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 22,
+            "y": 64,
+            "right": 461.953125,
+            "bottom": 748
+          },
+          {
+            "x": 475.953125,
+            "y": 64,
+            "right": 993.546875,
+            "bottom": 748
+          },
+          {
+            "x": 1007.546875,
+            "y": 64,
+            "right": 1343.984375,
+            "bottom": 748
+          }
+        ],
+        "charts": [
+          {
+            "width": 488,
+            "height": 312,
+            "plotHeight": 245.734375,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1249.6875,
+          "y": 468.390625,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 468.390625,
+          "right": 1326.984375,
+          "bottom": 498.1875,
+          "left": 1249.6875
+        }
+      }
+    },
+    {
+      "name": "var 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 488,
+          "height": 312,
+          "plotHeight": 245.734375,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "var 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1249.6875,
+        "y": 468.390625,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 468.390625,
+        "right": 1326.984375,
+        "bottom": 498.1875,
+        "left": 1249.6875
+      }
+    },
+    {
+      "name": "var 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "garch 1920×1080 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 210,
+            "y": 64,
+            "right": 771.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 785.671875,
+            "y": 64,
+            "right": 1446.46875,
+            "bottom": 1060
+          },
+          {
+            "x": 1460.46875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": [
+          {
+            "width": 631,
+            "height": 392,
+            "plotHeight": 326.453125,
+            "badPath": false
+          },
+          {
+            "width": 631,
+            "height": 309,
+            "plotHeight": 243.1875,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1795.703125,
+          "y": 392.140625,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 392.140625,
+          "right": 1873,
+          "bottom": 421.9375,
+          "left": 1795.703125
+        }
+      }
+    },
+    {
+      "name": "garch 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 631,
+          "height": 392,
+          "plotHeight": 326.453125,
+          "badPath": false
+        },
+        {
+          "width": 631,
+          "height": 309,
+          "plotHeight": 243.1875,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "garch 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1795.703125,
+        "y": 392.140625,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 392.140625,
+        "right": 1873,
+        "bottom": 421.9375,
+        "left": 1795.703125
+      }
+    },
+    {
+      "name": "garch 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "garch 1920×1080 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 30,
+            "y": 64,
+            "right": 652.875,
+            "bottom": 1060
+          },
+          {
+            "x": 666.875,
+            "y": 64,
+            "right": 1399.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 1413.671875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": [
+          {
+            "width": 703,
+            "height": 380,
+            "plotHeight": 313.828125,
+            "badPath": false
+          },
+          {
+            "width": 703,
+            "height": 298,
+            "plotHeight": 232.1875,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1795.703125,
+          "y": 409.796875,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 409.796875,
+          "right": 1873,
+          "bottom": 439.59375,
+          "left": 1795.703125
+        }
+      }
+    },
+    {
+      "name": "garch 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 703,
+          "height": 380,
+          "plotHeight": 313.828125,
+          "badPath": false
+        },
+        {
+          "width": 703,
+          "height": 298,
+          "plotHeight": 232.1875,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "garch 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1795.703125,
+        "y": 409.796875,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 409.796875,
+        "right": 1873,
+        "bottom": 439.59375,
+        "left": 1795.703125
+      }
+    },
+    {
+      "name": "garch 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "garch 1440×900 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 202,
+            "y": 64,
+            "right": 605.90625,
+            "bottom": 880
+          },
+          {
+            "x": 619.90625,
+            "y": 64,
+            "right": 1095.109375,
+            "bottom": 880
+          },
+          {
+            "x": 1109.109375,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": [
+          {
+            "width": 445,
+            "height": 292,
+            "plotHeight": 226.453125,
+            "badPath": false
+          },
+          {
+            "width": 445,
+            "height": 229,
+            "plotHeight": 163.1875,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1323.703125,
+          "y": 392.140625,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 392.140625,
+          "right": 1401,
+          "bottom": 421.9375,
+          "left": 1323.703125
+        }
+      }
+    },
+    {
+      "name": "garch 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 445,
+          "height": 292,
+          "plotHeight": 226.453125,
+          "badPath": false
+        },
+        {
+          "width": 445,
+          "height": 229,
+          "plotHeight": 163.1875,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "garch 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1323.703125,
+        "y": 392.140625,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 392.140625,
+        "right": 1401,
+        "bottom": 421.9375,
+        "left": 1323.703125
+      }
+    },
+    {
+      "name": "garch 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "garch 1440×900 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 22,
+            "y": 64,
+            "right": 487.109375,
+            "bottom": 880
+          },
+          {
+            "x": 501.109375,
+            "y": 64,
+            "right": 1048.3125,
+            "bottom": 880
+          },
+          {
+            "x": 1062.3125,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": [
+          {
+            "width": 517,
+            "height": 280,
+            "plotHeight": 213.828125,
+            "badPath": false
+          },
+          {
+            "width": 517,
+            "height": 218,
+            "plotHeight": 152.1875,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1323.703125,
+          "y": 409.796875,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 409.796875,
+          "right": 1401,
+          "bottom": 439.59375,
+          "left": 1323.703125
+        }
+      }
+    },
+    {
+      "name": "garch 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 517,
+          "height": 280,
+          "plotHeight": 213.828125,
+          "badPath": false
+        },
+        {
+          "width": 517,
+          "height": 218,
+          "plotHeight": 152.1875,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "garch 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1323.703125,
+        "y": 409.796875,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 409.796875,
+        "right": 1401,
+        "bottom": 439.59375,
+        "left": 1323.703125
+      }
+    },
+    {
+      "name": "garch 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "garch 1366×768 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 202,
+            "y": 64,
+            "right": 580.75,
+            "bottom": 748
+          },
+          {
+            "x": 594.75,
+            "y": 64,
+            "right": 1040.359375,
+            "bottom": 748
+          },
+          {
+            "x": 1054.359375,
+            "y": 64,
+            "right": 1344,
+            "bottom": 748
+          }
+        ],
+        "charts": [
+          {
+            "width": 416,
+            "height": 219,
+            "plotHeight": 153.125,
+            "badPath": false
+          },
+          {
+            "width": 416,
+            "height": 171,
+            "plotHeight": 104.515625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1249.703125,
+          "y": 392.140625,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 392.140625,
+          "right": 1327,
+          "bottom": 421.9375,
+          "left": 1249.703125
+        }
+      }
+    },
+    {
+      "name": "garch 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 416,
+          "height": 219,
+          "plotHeight": 153.125,
+          "badPath": false
+        },
+        {
+          "width": 416,
+          "height": 171,
+          "plotHeight": 104.515625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "garch 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1249.703125,
+        "y": 392.140625,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 392.140625,
+        "right": 1327,
+        "bottom": 421.9375,
+        "left": 1249.703125
+      }
+    },
+    {
+      "name": "garch 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "garch 1366×768 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 22,
+            "y": 64,
+            "right": 461.953125,
+            "bottom": 748
+          },
+          {
+            "x": 475.953125,
+            "y": 64,
+            "right": 993.546875,
+            "bottom": 748
+          },
+          {
+            "x": 1007.546875,
+            "y": 64,
+            "right": 1343.984375,
+            "bottom": 748
+          }
+        ],
+        "charts": [
+          {
+            "width": 488,
+            "height": 207,
+            "plotHeight": 140.5,
+            "badPath": false
+          },
+          {
+            "width": 488,
+            "height": 160,
+            "plotHeight": 93.515625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1249.6875,
+          "y": 409.796875,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 409.796875,
+          "right": 1326.984375,
+          "bottom": 439.59375,
+          "left": 1249.6875
+        }
+      }
+    },
+    {
+      "name": "garch 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 488,
+          "height": 207,
+          "plotHeight": 140.5,
+          "badPath": false
+        },
+        {
+          "width": 488,
+          "height": 160,
+          "plotHeight": 93.515625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "garch 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1249.6875,
+        "y": 409.796875,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 409.796875,
+        "right": 1326.984375,
+        "bottom": 439.59375,
+        "left": 1249.6875
+      }
+    },
+    {
+      "name": "garch 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "capm 1920×1080 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 210,
+            "y": 64,
+            "right": 771.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 785.671875,
+            "y": 64,
+            "right": 1446.46875,
+            "bottom": 1060
+          },
+          {
+            "x": 1460.46875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": [
+          {
+            "width": 631,
+            "height": 362,
+            "plotHeight": 296.40625,
+            "badPath": false
+          },
+          {
+            "width": 631,
+            "height": 362,
+            "plotHeight": 296.421875,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1795.703125,
+          "y": 347.140625,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 347.140625,
+          "right": 1873,
+          "bottom": 376.9375,
+          "left": 1795.703125
+        }
+      }
+    },
+    {
+      "name": "capm 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 631,
+          "height": 362,
+          "plotHeight": 296.40625,
+          "badPath": false
+        },
+        {
+          "width": 631,
+          "height": 362,
+          "plotHeight": 296.421875,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "capm 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1795.703125,
+        "y": 347.140625,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 347.140625,
+        "right": 1873,
+        "bottom": 376.9375,
+        "left": 1795.703125
+      }
+    },
+    {
+      "name": "capm 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "capm 1920×1080 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 30,
+            "y": 64,
+            "right": 652.875,
+            "bottom": 1060
+          },
+          {
+            "x": 666.875,
+            "y": 64,
+            "right": 1399.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 1413.671875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": [
+          {
+            "width": 703,
+            "height": 351,
+            "plotHeight": 285.40625,
+            "badPath": false
+          },
+          {
+            "width": 703,
+            "height": 351,
+            "plotHeight": 285.40625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1795.703125,
+          "y": 379.984375,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 379.984375,
+          "right": 1873,
+          "bottom": 409.78125,
+          "left": 1795.703125
+        }
+      }
+    },
+    {
+      "name": "capm 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 703,
+          "height": 351,
+          "plotHeight": 285.40625,
+          "badPath": false
+        },
+        {
+          "width": 703,
+          "height": 351,
+          "plotHeight": 285.40625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "capm 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1795.703125,
+        "y": 379.984375,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 379.984375,
+        "right": 1873,
+        "bottom": 409.78125,
+        "left": 1795.703125
+      }
+    },
+    {
+      "name": "capm 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "capm 1440×900 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 202,
+            "y": 64,
+            "right": 605.90625,
+            "bottom": 880
+          },
+          {
+            "x": 619.90625,
+            "y": 64,
+            "right": 1095.109375,
+            "bottom": 880
+          },
+          {
+            "x": 1109.109375,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": [
+          {
+            "width": 445,
+            "height": 263,
+            "plotHeight": 196.8125,
+            "badPath": false
+          },
+          {
+            "width": 445,
+            "height": 263,
+            "plotHeight": 196.828125,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1323.703125,
+          "y": 355.703125,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 355.703125,
+          "right": 1401,
+          "bottom": 385.5,
+          "left": 1323.703125
+        }
+      }
+    },
+    {
+      "name": "capm 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 445,
+          "height": 263,
+          "plotHeight": 196.8125,
+          "badPath": false
+        },
+        {
+          "width": 445,
+          "height": 263,
+          "plotHeight": 196.828125,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "capm 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1323.703125,
+        "y": 355.703125,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 355.703125,
+        "right": 1401,
+        "bottom": 385.5,
+        "left": 1323.703125
+      }
+    },
+    {
+      "name": "capm 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "capm 1440×900 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 22,
+            "y": 64,
+            "right": 487.109375,
+            "bottom": 880
+          },
+          {
+            "x": 501.109375,
+            "y": 64,
+            "right": 1048.3125,
+            "bottom": 880
+          },
+          {
+            "x": 1062.3125,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": [
+          {
+            "width": 517,
+            "height": 251,
+            "plotHeight": 185,
+            "badPath": false
+          },
+          {
+            "width": 517,
+            "height": 251,
+            "plotHeight": 185.015625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1323.703125,
+          "y": 379.984375,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 379.984375,
+          "right": 1401,
+          "bottom": 409.78125,
+          "left": 1323.703125
+        }
+      }
+    },
+    {
+      "name": "capm 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 517,
+          "height": 251,
+          "plotHeight": 185,
+          "badPath": false
+        },
+        {
+          "width": 517,
+          "height": 251,
+          "plotHeight": 185.015625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "capm 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1323.703125,
+        "y": 379.984375,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 379.984375,
+        "right": 1401,
+        "bottom": 409.78125,
+        "left": 1323.703125
+      }
+    },
+    {
+      "name": "capm 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "capm 1366×768 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 202,
+            "y": 64,
+            "right": 580.75,
+            "bottom": 748
+          },
+          {
+            "x": 594.75,
+            "y": 64,
+            "right": 1040.359375,
+            "bottom": 748
+          },
+          {
+            "x": 1054.359375,
+            "y": 64,
+            "right": 1344,
+            "bottom": 748
+          }
+        ],
+        "charts": [
+          {
+            "width": 416,
+            "height": 197,
+            "plotHeight": 130.8125,
+            "badPath": false
+          },
+          {
+            "width": 416,
+            "height": 197,
+            "plotHeight": 130.828125,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1249.703125,
+          "y": 355.703125,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 355.703125,
+          "right": 1327,
+          "bottom": 385.5,
+          "left": 1249.703125
+        }
+      }
+    },
+    {
+      "name": "capm 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 416,
+          "height": 197,
+          "plotHeight": 130.8125,
+          "badPath": false
+        },
+        {
+          "width": 416,
+          "height": 197,
+          "plotHeight": 130.828125,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "capm 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1249.703125,
+        "y": 355.703125,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 355.703125,
+        "right": 1327,
+        "bottom": 385.5,
+        "left": 1249.703125
+      }
+    },
+    {
+      "name": "capm 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "capm 1366×768 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 22,
+            "y": 64,
+            "right": 461.953125,
+            "bottom": 748
+          },
+          {
+            "x": 475.953125,
+            "y": 64,
+            "right": 993.546875,
+            "bottom": 748
+          },
+          {
+            "x": 1007.546875,
+            "y": 64,
+            "right": 1343.984375,
+            "bottom": 748
+          }
+        ],
+        "charts": [
+          {
+            "width": 488,
+            "height": 185,
+            "plotHeight": 119,
+            "badPath": false
+          },
+          {
+            "width": 488,
+            "height": 185,
+            "plotHeight": 119.015625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1249.6875,
+          "y": 379.984375,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 379.984375,
+          "right": 1326.984375,
+          "bottom": 409.78125,
+          "left": 1249.6875
+        }
+      }
+    },
+    {
+      "name": "capm 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 488,
+          "height": 185,
+          "plotHeight": 119,
+          "badPath": false
+        },
+        {
+          "width": 488,
+          "height": 185,
+          "plotHeight": 119.015625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "capm 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1249.6875,
+        "y": 379.984375,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 379.984375,
+        "right": 1326.984375,
+        "bottom": 409.78125,
+        "left": 1249.6875
+      }
+    },
+    {
+      "name": "capm 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "bs 1920×1080 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 210,
+            "y": 64,
+            "right": 771.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 785.671875,
+            "y": 64,
+            "right": 1446.46875,
+            "bottom": 1060
+          },
+          {
+            "x": 1460.46875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": [
+          {
+            "width": 631,
+            "height": 591,
+            "plotHeight": 524.890625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1795.703125,
+          "y": 437.140625,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 437.140625,
+          "right": 1873,
+          "bottom": 466.9375,
+          "left": 1795.703125
+        }
+      }
+    },
+    {
+      "name": "bs 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 631,
+          "height": 591,
+          "plotHeight": 524.890625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "bs 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1795.703125,
+        "y": 437.140625,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 437.140625,
+        "right": 1873,
+        "bottom": 466.9375,
+        "left": 1795.703125
+      }
+    },
+    {
+      "name": "bs 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "bs 1920×1080 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 30,
+            "y": 64,
+            "right": 652.875,
+            "bottom": 1060
+          },
+          {
+            "x": 666.875,
+            "y": 64,
+            "right": 1399.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 1413.671875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": [
+          {
+            "width": 703,
+            "height": 557,
+            "plotHeight": 490.953125,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1795.703125,
+          "y": 458.796875,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 458.796875,
+          "right": 1873,
+          "bottom": 488.59375,
+          "left": 1795.703125
+        }
+      }
+    },
+    {
+      "name": "bs 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 703,
+          "height": 557,
+          "plotHeight": 490.953125,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "bs 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1795.703125,
+        "y": 458.796875,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 458.796875,
+        "right": 1873,
+        "bottom": 488.59375,
+        "left": 1795.703125
+      }
+    },
+    {
+      "name": "bs 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "bs 1440×900 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 202,
+            "y": 64,
+            "right": 605.90625,
+            "bottom": 880
+          },
+          {
+            "x": 619.90625,
+            "y": 64,
+            "right": 1095.109375,
+            "bottom": 880
+          },
+          {
+            "x": 1109.109375,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": [
+          {
+            "width": 445,
+            "height": 411,
+            "plotHeight": 344.890625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1323.703125,
+          "y": 445.703125,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 445.703125,
+          "right": 1401,
+          "bottom": 475.5,
+          "left": 1323.703125
+        }
+      }
+    },
+    {
+      "name": "bs 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 445,
+          "height": 411,
+          "plotHeight": 344.890625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "bs 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1323.703125,
+        "y": 445.703125,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 445.703125,
+        "right": 1401,
+        "bottom": 475.5,
+        "left": 1323.703125
+      }
+    },
+    {
+      "name": "bs 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "bs 1440×900 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 22,
+            "y": 64,
+            "right": 487.109375,
+            "bottom": 880
+          },
+          {
+            "x": 501.109375,
+            "y": 64,
+            "right": 1048.3125,
+            "bottom": 880
+          },
+          {
+            "x": 1062.3125,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": [
+          {
+            "width": 517,
+            "height": 377,
+            "plotHeight": 310.953125,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1323.703125,
+          "y": 477.984375,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 477.984375,
+          "right": 1401,
+          "bottom": 507.78125,
+          "left": 1323.703125
+        }
+      }
+    },
+    {
+      "name": "bs 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 517,
+          "height": 377,
+          "plotHeight": 310.953125,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "bs 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1323.703125,
+        "y": 477.984375,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 477.984375,
+        "right": 1401,
+        "bottom": 507.78125,
+        "left": 1323.703125
+      }
+    },
+    {
+      "name": "bs 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "bs 1366×768 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 202,
+            "y": 64,
+            "right": 580.75,
+            "bottom": 748
+          },
+          {
+            "x": 594.75,
+            "y": 64,
+            "right": 1040.359375,
+            "bottom": 748
+          },
+          {
+            "x": 1054.359375,
+            "y": 64,
+            "right": 1344,
+            "bottom": 748
+          }
+        ],
+        "charts": [
+          {
+            "width": 416,
+            "height": 279,
+            "plotHeight": 212.890625,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1249.703125,
+          "y": 445.703125,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 445.703125,
+          "right": 1327,
+          "bottom": 475.5,
+          "left": 1249.703125
+        }
+      }
+    },
+    {
+      "name": "bs 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 416,
+          "height": 279,
+          "plotHeight": 212.890625,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "bs 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1249.703125,
+        "y": 445.703125,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 445.703125,
+        "right": 1327,
+        "bottom": 475.5,
+        "left": 1249.703125
+      }
+    },
+    {
+      "name": "bs 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "bs 1366×768 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 22,
+            "y": 64,
+            "right": 461.953125,
+            "bottom": 748
+          },
+          {
+            "x": 475.953125,
+            "y": 64,
+            "right": 993.546875,
+            "bottom": 748
+          },
+          {
+            "x": 1007.546875,
+            "y": 64,
+            "right": 1343.984375,
+            "bottom": 748
+          }
+        ],
+        "charts": [
+          {
+            "width": 488,
+            "height": 262,
+            "plotHeight": 195.5,
+            "badPath": false
+          }
+        ],
+        "explore": {
+          "x": 1249.6875,
+          "y": 477.984375,
+          "width": 77.296875,
+          "height": 29.796875,
+          "top": 477.984375,
+          "right": 1326.984375,
+          "bottom": 507.78125,
+          "left": 1249.6875
+        }
+      }
+    },
+    {
+      "name": "bs 绘图区实际高度",
+      "passed": true,
+      "detail": [
+        {
+          "width": 488,
+          "height": 262,
+          "plotHeight": 195.5,
+          "badPath": false
+        }
+      ]
+    },
+    {
+      "name": "bs 探索入口可见",
+      "passed": true,
+      "detail": {
+        "x": 1249.6875,
+        "y": 477.984375,
+        "width": 77.296875,
+        "height": 29.796875,
+        "top": 477.984375,
+        "right": 1326.984375,
+        "bottom": 507.78125,
+        "left": 1249.6875
+      }
+    },
+    {
+      "name": "bs 坐标文字在SVG内",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "portfolio 1920×1080 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 210,
+            "y": 64,
+            "right": 771.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 785.671875,
+            "y": 64,
+            "right": 1446.46875,
+            "bottom": 1060
+          },
+          {
+            "x": 1460.46875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": []
+      }
+    },
+    {
+      "name": "08 SVG与当前标记实际可见",
+      "passed": true,
+      "detail": {
+        "width": 642.796875,
+        "height": 650.203125,
+        "valid": true
+      }
+    },
+    {
+      "name": "portfolio 1920×1080 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "pageW": 1920,
+        "pageH": 1080,
+        "panels": [
+          {
+            "x": 30,
+            "y": 64,
+            "right": 652.875,
+            "bottom": 1060
+          },
+          {
+            "x": 666.875,
+            "y": 64,
+            "right": 1399.671875,
+            "bottom": 1060
+          },
+          {
+            "x": 1413.671875,
+            "y": 64,
+            "right": 1890,
+            "bottom": 1060
+          }
+        ],
+        "charts": []
+      }
+    },
+    {
+      "name": "08 SVG与当前标记实际可见",
+      "passed": true,
+      "detail": {
+        "width": 714.796875,
+        "height": 626.5,
+        "valid": true
+      }
+    },
+    {
+      "name": "portfolio 1440×900 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 202,
+            "y": 64,
+            "right": 605.90625,
+            "bottom": 880
+          },
+          {
+            "x": 619.90625,
+            "y": 64,
+            "right": 1095.109375,
+            "bottom": 880
+          },
+          {
+            "x": 1109.109375,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": []
+      }
+    },
+    {
+      "name": "08 SVG与当前标记实际可见",
+      "passed": true,
+      "detail": {
+        "width": 457.203125,
+        "height": 470.203125,
+        "valid": true
+      }
+    },
+    {
+      "name": "portfolio 1440×900 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "pageW": 1440,
+        "pageH": 900,
+        "panels": [
+          {
+            "x": 22,
+            "y": 64,
+            "right": 487.109375,
+            "bottom": 880
+          },
+          {
+            "x": 501.109375,
+            "y": 64,
+            "right": 1048.3125,
+            "bottom": 880
+          },
+          {
+            "x": 1062.3125,
+            "y": 64,
+            "right": 1418,
+            "bottom": 880
+          }
+        ],
+        "charts": []
+      }
+    },
+    {
+      "name": "08 SVG与当前标记实际可见",
+      "passed": true,
+      "detail": {
+        "width": 529.203125,
+        "height": 446.5,
+        "valid": true
+      }
+    },
+    {
+      "name": "portfolio 1366×768 常规 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 202,
+            "y": 56,
+            "right": 580.75,
+            "bottom": 740
+          },
+          {
+            "x": 594.75,
+            "y": 56,
+            "right": 1040.359375,
+            "bottom": 740
+          },
+          {
+            "x": 1054.359375,
+            "y": 56,
+            "right": 1344,
+            "bottom": 740
+          }
+        ],
+        "charts": []
+      }
+    },
+    {
+      "name": "08 SVG与当前标记实际可见",
+      "passed": true,
+      "detail": {
+        "width": 427.609375,
+        "height": 348.203125,
+        "valid": true
+      }
+    },
+    {
+      "name": "portfolio 1366×768 投屏 页面与三栏",
+      "passed": true,
+      "detail": {
+        "width": 1366,
+        "height": 768,
+        "pageW": 1366,
+        "pageH": 768,
+        "panels": [
+          {
+            "x": 22,
+            "y": 56,
+            "right": 461.953125,
+            "bottom": 740
+          },
+          {
+            "x": 475.953125,
+            "y": 56,
+            "right": 993.546875,
+            "bottom": 740
+          },
+          {
+            "x": 1007.546875,
+            "y": 56,
+            "right": 1343.984375,
+            "bottom": 740
+          }
+        ],
+        "charts": []
+      }
+    },
+    {
+      "name": "08 SVG与当前标记实际可见",
+      "passed": true,
+      "detail": {
+        "width": 499.59375,
+        "height": 317.5,
+        "valid": true
+      }
+    },
+    {
+      "name": "var 导航当前模型路由",
+      "passed": true
+    },
+    {
+      "name": "var 刷新保留实验路由",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 0 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 1 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 2 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 3 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 4 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 5 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 6 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 7 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 8 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 9 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 10 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 11 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 12 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 逻辑语句 13 完整解析",
+      "passed": true
+    },
+    {
+      "name": "var 复制basic完整脚本",
+      "passed": true
+    },
+    {
+      "name": "var 复制full完整脚本",
+      "passed": true
+    },
+    {
+      "name": "var 完整假设内部滚动",
+      "passed": true
+    },
+    {
+      "name": "var 预测锁定输入",
+      "passed": true
+    },
+    {
+      "name": "var 实验仅开放单个参数",
+      "passed": true
+    },
+    {
+      "name": "var 实验解释与前后数值",
+      "passed": true
+    },
+    {
+      "name": "garch 导航当前模型路由",
+      "passed": true
+    },
+    {
+      "name": "garch 刷新保留实验路由",
+      "passed": true
+    },
+    {
+      "name": "garch 逻辑语句 0 完整解析",
+      "passed": true
+    },
+    {
+      "name": "garch 逻辑语句 1 完整解析",
+      "passed": true
+    },
+    {
+      "name": "garch 逻辑语句 2 完整解析",
+      "passed": true
+    },
+    {
+      "name": "garch 逻辑语句 3 完整解析",
+      "passed": true
+    },
+    {
+      "name": "garch 逻辑语句 4 完整解析",
+      "passed": true
+    },
+    {
+      "name": "garch 逻辑语句 5 完整解析",
+      "passed": true
+    },
+    {
+      "name": "garch 逻辑语句 6 完整解析",
+      "passed": true
+    },
+    {
+      "name": "garch 逻辑语句 7 完整解析",
+      "passed": true
+    },
+    {
+      "name": "garch 复制basic完整脚本",
+      "passed": true
+    },
+    {
+      "name": "garch 复制full完整脚本",
+      "passed": true
+    },
+    {
+      "name": "garch 完整假设内部滚动",
+      "passed": true
+    },
+    {
+      "name": "garch 预测锁定输入",
+      "passed": true
+    },
+    {
+      "name": "garch 实验仅开放单个参数",
+      "passed": true
+    },
+    {
+      "name": "garch 实验解释与前后数值",
+      "passed": true
+    },
+    {
+      "name": "capm 导航当前模型路由",
+      "passed": true
+    },
+    {
+      "name": "capm 刷新保留实验路由",
+      "passed": true
+    },
+    {
+      "name": "capm 逻辑语句 0 完整解析",
+      "passed": true
+    },
+    {
+      "name": "capm 逻辑语句 1 完整解析",
+      "passed": true
+    },
+    {
+      "name": "capm 逻辑语句 2 完整解析",
+      "passed": true
+    },
+    {
+      "name": "capm 逻辑语句 3 完整解析",
+      "passed": true
+    },
+    {
+      "name": "capm 逻辑语句 4 完整解析",
+      "passed": true
+    },
+    {
+      "name": "capm 逻辑语句 5 完整解析",
+      "passed": true
+    },
+    {
+      "name": "capm 逻辑语句 6 完整解析",
+      "passed": true
+    },
+    {
+      "name": "capm 逻辑语句 7 完整解析",
+      "passed": true
+    },
+    {
+      "name": "capm 复制basic完整脚本",
+      "passed": true
+    },
+    {
+      "name": "capm 复制full完整脚本",
+      "passed": true
+    },
+    {
+      "name": "capm 完整假设内部滚动",
+      "passed": true
+    },
+    {
+      "name": "capm 预测锁定输入",
+      "passed": true
+    },
+    {
+      "name": "capm 实验仅开放单个参数",
+      "passed": true
+    },
+    {
+      "name": "capm 实验解释与前后数值",
+      "passed": true
+    },
+    {
+      "name": "bs 导航当前模型路由",
+      "passed": true
+    },
+    {
+      "name": "bs 刷新保留实验路由",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 0 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 1 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 2 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 3 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 4 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 5 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 6 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 7 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 8 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 9 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 10 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 11 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 12 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 13 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 14 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 逻辑语句 15 完整解析",
+      "passed": true
+    },
+    {
+      "name": "bs 复制basic完整脚本",
+      "passed": true
+    },
+    {
+      "name": "bs 复制full完整脚本",
+      "passed": true
+    },
+    {
+      "name": "bs 完整假设内部滚动",
+      "passed": true
+    },
+    {
+      "name": "bs 预测锁定输入",
+      "passed": true
+    },
+    {
+      "name": "bs 实验仅开放单个参数",
+      "passed": true
+    },
+    {
+      "name": "bs 实验解释与前后数值",
+      "passed": true
+    },
+    {
+      "name": "07 万元密度与尾部概率 250/.9",
+      "passed": true,
+      "detail": {
+        "area": 1.0000000000000002,
+        "mass": 0.1
+      }
+    },
+    {
+      "name": "07 hVaR 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 hES 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 nVaR 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 nES 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 万元密度与尾部概率 253/.95",
+      "passed": true,
+      "detail": {
+        "area": 1.0000000000000002,
+        "mass": 0.050000000000000086
+      }
+    },
+    {
+      "name": "07 hVaR 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 hES 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 nVaR 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 nES 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 万元密度与尾部概率 50/.999",
+      "passed": true,
+      "detail": {
+        "area": 0.9999999999999999,
+        "mass": 0.0010000000000000009
+      }
+    },
+    {
+      "name": "07 hVaR 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 hES 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 nVaR 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 nES 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 万元密度与尾部概率 2000/.99",
+      "passed": true,
+      "detail": {
+        "area": 0.9999999999999966,
+        "mass": 0.010000000000000002
+      }
+    },
+    {
+      "name": "07 hVaR 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 hES 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 nVaR 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 nES 键盘详情不越界",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "07 Tooltip不改变图表尺寸",
+      "passed": true
+    },
+    {
+      "name": "07 非法置信水平提示",
+      "passed": true
+    },
+    {
+      "name": "07 矮屏投屏键盘详情仍在可视面板",
+      "passed": true,
+      "detail": {
+        "top": 217.390625,
+        "bottom": 357.140625,
+        "panelTop": 64,
+        "panelBottom": 748
+      }
+    },
+    {
+      "name": "11 动态S参考线与曲线",
+      "passed": true
+    },
+    {
+      "name": "11 动态K参考线与曲线",
+      "passed": true
+    },
+    {
+      "name": "11 动态T参考线与曲线",
+      "passed": true
+    },
+    {
+      "name": "11 动态sigma参考线与曲线",
+      "passed": true
+    },
+    {
+      "name": "11 K详情显示S/K/C/P",
+      "passed": true
+    },
+    {
+      "name": "11 S=K合并为单个交互标记",
+      "passed": true
+    },
+    {
+      "name": "11 到期自动完整实现",
+      "passed": true
+    },
+    {
+      "name": "11 零波动边界正确",
+      "passed": true
+    },
+    {
+      "name": "07 正态VaR独立高亮",
+      "passed": true
+    },
+    {
+      "name": "11 S定义对应合并参考线及单个输入",
+      "passed": true
+    },
+    {
+      "name": "11 Gamma对应表格行",
+      "passed": true
+    },
+    {
+      "name": "06 冲击点击定位递推代码",
+      "passed": true
+    },
+    {
+      "name": "06 shock 上下轴同一整数时期",
+      "passed": true
+    },
+    {
+      "name": "06 a 上下轴同一整数时期",
+      "passed": true
+    },
+    {
+      "name": "06 b 上下轴同一整数时期",
+      "passed": true
+    },
+    {
+      "name": "06 非平稳输入被阻止",
+      "passed": true
+    },
+    {
+      "name": "09 beta 理论变化保持样本独立",
+      "passed": true
+    },
+    {
+      "name": "09 rf 理论变化保持样本独立",
+      "passed": true
+    },
+    {
+      "name": "09 rm 理论变化保持样本独立",
+      "passed": true
+    },
+    {
+      "name": "09 OLS对应SCL",
+      "passed": true
+    },
+    {
+      "name": "08 原案例收益风险",
+      "passed": true
+    },
+    {
+      "name": "08 原有效性诊断",
+      "passed": true
+    },
+    {
+      "name": "08 比较基准",
+      "passed": true
+    },
+    {
+      "name": "08 探索解释",
+      "passed": true
+    },
+    {
+      "name": "08 原课堂工具",
+      "passed": true
+    },
+    {
+      "name": "var 窄屏无全页横移",
+      "passed": true
+    },
+    {
+      "name": "garch 窄屏无全页横移",
+      "passed": true
+    },
+    {
+      "name": "capm 窄屏无全页横移",
+      "passed": true
+    },
+    {
+      "name": "bs 窄屏无全页横移",
+      "passed": true
+    },
+    {
+      "name": "Chrome页面无未捕获异常",
+      "passed": false,
+      "detail": [
+        "ExperimentLessons is not defined"
+      ]
+    }
+  ],
+  "errors": [
+    "ExperimentLessons is not defined"
+  ]
+}

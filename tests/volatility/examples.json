@@ -1,0 +1,42 @@
+[
+  {
+    "file": "examples/experiment06-arch-lm.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment06-arch-parameters.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment06-garch-parameters.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment06-garch-estimated.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment06-gjr-parameters.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment06-gjr-estimated.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment06-garchm-parameters.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment06-garchm-estimated.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment06-ccc-parameters.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment06-ccc-estimated.R",
+    "exit": 0
+  }
+]

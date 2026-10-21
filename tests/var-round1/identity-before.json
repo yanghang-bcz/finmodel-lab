@@ -1,0 +1,12 @@
+{
+  "service": {
+    "pid": 55872,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "2.4.1-capm-ux.ebdc1a4700f3cfd6",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "manifest": "2.4.1-capm-ux.ebdc1a4700f3cfd6",
+  "resources": 51,
+  "mismatch": []
+}

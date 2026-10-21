@@ -1,0 +1,47 @@
+[
+  {
+    "name": "math",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "name": "learning",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "name": "numerics",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "name": "scale",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "name": "r-code",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "name": "typography",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "name": "exploration",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "name": "teaching",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "name": "new-models",
+    "passed": true,
+    "exit": 0
+  }
+]

@@ -1,0 +1,215 @@
+Window: "FinModel Lab · 实验11 · Black-Scholes期权定价", App: Safari浏览器.
+0 标准窗口 FinModel Lab · 实验11 · Black-Scholes期权定价, ID: SafariWindow?IsSecure=false&UUID=029E9492-388C-436B-9D25-F1E71912D650, Secondary Actions: Raise
+	1 分离组
+		2 分离器 (disabled, settable, float) -1
+		3 标签页组
+			4 滚动区
+				5 HTML内容 Description: FinModel Lab · 实验11 · Black-Scholes期权定价, URL: 127.0.0.1:8765/experiments.html?model=bs
+					6 container
+						7 标题 实验11 · Black-Scholes期权定价, Value: 1
+							8 文本 实验11 · Black-Scholes期权定价
+						9 按钮 教师提示
+						10 开关按钮 投屏模式, Value: off
+						11 按钮 实验目录
+						12 container R Code
+							13 标题 R Code, Value: 2
+								14 文本 R Code
+							15 按钮 复制代码
+							16 container 代码版本
+								17 开关按钮 基础代码, Value: on
+								18 开关按钮 完整代码, Value: off
+								19 文本 可独立运行 · 当前参数
+							20 container 点击 R 逻辑语句查看中文解析
+								21 开关按钮 第1行：模型与口径, Value: on
+								22 开关按钮 第2行：模型与口径, Value: on
+								23 开关按钮 第3行：参数 · S, Value: off
+								24 开关按钮 第4行：参数 · K, Value: off
+								25 开关按钮 第5行：参数 · T, Value: off
+								26 开关按钮 第6行：参数 · r, Value: off
+								27 开关按钮 第7行：参数 · sigma, Value: off
+								28 开关按钮 第8行：行权价现值, Value: off
+								29 开关按钮 第9行：标准化距离 d₁、d₂, Value: off
+								30 开关按钮 第10行：标准化距离 d₁、d₂, Value: off
+								31 开关按钮 第11行：标准化距离 d₁、d₂, Value: off
+								32 开关按钮 第12行：标准化距离 d₁、d₂, Value: off
+								33 开关按钮 第13行：看涨价格 Call, Value: off
+								34 开关按钮 第14行：看跌价格 Put, Value: off
+								35 开关按钮 第15行：Delta · 价格一阶敏感度, Value: off
+								36 开关按钮 第16行：Delta · 价格一阶敏感度, Value: off
+								37 开关按钮 第17行：Gamma · 价格二阶敏感度, Value: off
+								38 开关按钮 第18行：Gamma · 价格二阶敏感度, Value: off
+								39 开关按钮 第19行：Vega · 每1个百分点, Value: off
+								40 开关按钮 第20行：Theta · 每日历天, Value: off
+								41 开关按钮 第21行：Theta · 每日历天, Value: off
+								42 开关按钮 第22行：Theta · 每日历天, Value: off
+								43 开关按钮 第23行：Theta · 每日历天, Value: off
+								44 开关按钮 第24行：Theta · 每日历天, Value: off
+								45 开关按钮 第25行：Theta · 每日历天, Value: off
+								46 开关按钮 第26行：输出价格与Greeks, Value: off
+								47 开关按钮 第27行：输出价格与Greeks, Value: off
+								48 开关按钮 第28行：输出价格与Greeks, Value: off
+								49 开关按钮 第29行：输出价格与Greeks, Value: off
+								50 开关按钮 第30行：输出价格与Greeks, Value: off
+								51 开关按钮 第31行：绘制价格与S/K参考线, Value: off
+								52 开关按钮 第32行：绘制价格与S/K参考线, Value: off
+								53 开关按钮 第33行：绘制价格与S/K参考线, Value: off
+								54 开关按钮 第34行：绘制价格与S/K参考线, Value: off
+								55 开关按钮 第35行：绘制价格与S/K参考线, Value: off
+								56 开关按钮 第36行：绘制价格与S/K参考线, Value: off
+								57 开关按钮 第37行：绘制价格与S/K参考线, Value: off
+								58 开关按钮 第38行：绘制价格与S/K参考线, Value: off
+								59 开关按钮 第39行：绘制价格与S/K参考线, Value: off
+								60 开关按钮 第40行：绘制价格与S/K参考线, Value: off
+								61 开关按钮 第41行：绘制价格与S/K参考线, Value: off
+							62 分离器 上下方向键调整代码区域, Value: 60
+							63 container
+								64 标题 模型与口径, Value: 3
+									65 文本 模型与口径
+								66 文本 输入现价、行权价、剩余期限、年利率与年化波动率。
+								67 container
+									68 text D = K
+									69 文本 e
+									70 container
+										71 text − r T
+								72 text 行权价现值 D=95.122942 元 金融含义：S与K单位相同，r与σ使用小数而非百分数。
+							73 文本 逻辑语句整体高亮 · 长行可在代码内横向滚动
+						74 container Model Visualization
+							75 标题 Model Visualization, Value: 2
+								76 文本 Model Visualization
+							77 text 欧式 · 无分红 Call · 元／股 10.45 Put · 元／股 5.57
+							78 标题 期权理论价格（元／股）, Value: 3
+								79 文本 期权理论价格（元／股）
+							80 container 期权理论价格（元／股）
+								81 图像
+								82 图像
+								83 文本 0
+								84 图像
+								85 文本 20
+								86 图像
+								87 文本 40
+								88 图像
+								89 文本 60
+								90 文本 50
+								91 文本 100
+								92 文本 150
+								93 文本 标的现价 S（元／股）
+								94 按钮 Call 看涨期权 · 价格随 S 的曲线
+								95 按钮 Put 看跌期权 · 价格随 S 的曲线
+								96 按钮 现价 S 与执行价 K 重合
+								97 按钮 Call 看涨期权 · 价格随 S 的曲线
+								98 按钮 Put 看跌期权 · 价格随 S 的曲线
+							99 按钮 查看Call
+							100 按钮 查看Put
+							101 按钮 查看S = K
+							102 表格
+								103 row (selectable) Greeks · 单位
+Call
+Put
+								104 row (selectable)
+									105 单元格 (selectable) Delta · 元/元
+									106 单元格 (selectable) 0.636831
+									107 单元格 (selectable) -0.363169
+								108 row (selectable)
+									109 单元格 (selectable) Gamma · 1/元
+									110 单元格 (selectable) 0.018762
+									111 单元格 (selectable) 0.018762
+								112 row (selectable)
+									113 单元格 (selectable) Vega · 元/1百分点
+									114 单元格 (selectable) 0.375240
+									115 单元格 (selectable) 0.375240
+								116 row (selectable)
+									117 单元格 (selectable) Theta · 元/日历天
+									118 单元格 (selectable) -0.017573
+									119 单元格 (selectable) -0.004542
+							120 container
+								121 text d₁=0.35 · d₂=0.15 C−P=4.88 = S−Ke⁻ʳᵀ；Theta按365天换算。
+						122 标题 Parameters, Value: 2
+							123 文本 Parameters
+						124 按钮 恢复默认
+						125 container 参数与教学任务，可滚动
+							126 container
+								127 文本 标的现价 S（元／股）
+								128 数字栏 (settable) 标的现价 S（元／股）, Value: 100
+									129 步进器 0
+										130 未知
+										131 未知
+							132 container
+								133 文本 行权价 K（元／股）
+								134 数字栏 (settable) 行权价 K（元／股）, Value: 100
+									135 步进器 0
+										136 未知
+										137 未知
+							138 container
+								139 文本 剩余期限 T（年）
+								140 数字栏 (settable) 剩余期限 T（年）, Value: 1
+									141 步进器 0
+										142 未知
+										143 未知
+							144 container
+								145 文本 无风险连续复利年利率 r（小数）
+								146 数字栏 (settable) 无风险连续复利年利率 r（小数）, Value: 0.05
+									147 步进器 0
+										148 未知
+										149 未知
+							150 container
+								151 文本 年化波动率 σ（0.20 = 20%）
+								152 数字栏 (settable) 年化波动率 σ（0.20 = 20%）, Value: 0.2
+									153 步进器 0
+										154 未知
+										155 未知
+							156 文本 欧式 · 无分红
+							157 文本 常数波动率
+							158 文本 连续复利
+							159 摘要 查看完整模型假设, Value: off
+								160 文本 查看完整模型假设
+							161 标题 教学探索, Value: 3
+								162 文本 教学探索
+							163 按钮 (collapsed) 开始探索 →, Secondary Actions: Expand
+				164 滚动条 (settable, float) 0
+	165 工具栏
+		166 container Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+			167 按钮 Description: 显示边栏, ID: SidebarButton
+			168 菜单按钮 Description: 标签页组选择器, ID: TabGroupPickerButton?TabGroup=
+		169 container BackForwardSegmentedControl
+			170 按钮 Description: 返回, Help: 显示上一页, ID: BackButton
+			171 按钮 (disabled) Description: 前进, Help: 显示下一页, ID: ForwardButton
+		172 container Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+			173 按钮 页面菜单, ID: AssistantButton
+				174 弹出窗口 Secondary Actions: Cancel
+					175 滚动区 PageMenu
+						176 集合 (disabled) PageFormatMenu
+							177 节 (disabled)
+								178 container
+									179 图像 放大
+									180 text 缩放
+									181 弹出式按钮 125%
+								182 container
+									183 图像 搜索文稿
+									184 text 在页面上查找…
+									185 按钮
+								186 container
+									187 图像 设置
+									188 text 网站设置…
+									189 按钮
+			190 按钮 将页面添加到阅读列表, ID: OneStepBookmarkingButton
+			191 文本栏 (settable) Description: 智能搜索栏, Value: 127.0.0.1:8765/experiments.html?model=bs, ID: WEB_BROWSER_ADDRESS_AND_SEARCH_FIELD
+			192 按钮 翻译可用, ID: TranslationButton
+			193 按钮 重新加载此页面, ID: ReloadButton
+		194 按钮 Description: 共享, ID: ShareButton, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		195 按钮 Description: 新建标签页, ID: NewTabButton, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		196 按钮 Description: 标签页概览, ID: TabOverviewButton, Secondary Actions: 移到上一项, 从工具栏移除
+	197 关闭按钮
+	198 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	199 最小化按钮
+200 menu bar
+	201 Safari浏览器
+	202 文件
+	203 编辑
+	204 显示, ID: SafariViewMenu
+	205 历史记录
+	206 书签, ID: SafariBookmarksMenu
+	207 开发
+	208 窗口, ID: SafariWindowMenu
+	209 帮助, ID: SafariHelpMenu
+
+The focused UI element is 5 HTML内容 Description: FinModel Lab · 实验11 · Black-Scholes期权定价, URL: 127.0.0.1:8765/experiments.html?model=bs

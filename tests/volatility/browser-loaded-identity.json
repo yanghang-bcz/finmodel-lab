@@ -1,0 +1,72 @@
+{
+  "dom": {
+    "meta": "2.8.0-volatility.a2b8b2497d4416a1",
+    "build": "2.8.0-volatility.a2b8b2497d4416a1",
+    "title": "FinModel Lab · 实验06 · GARCH类波动率模型",
+    "view": "arch"
+  },
+  "loaded": [
+    {
+      "url": "http://127.0.0.1:8765/experiments.html?model=garch",
+      "sha256": "8928475ad1e48886c1c60f3cd42af6e6ef995d52dac8201e6e601f5108759c33",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/style.css?v=ab186d5e6d5ee4a4",
+      "sha256": "ab186d5e6d5ee4a4d62494267edf57776f8c5c1ce5e292408161733fcadd824a",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/assets/fonts/glow-faces.css?v=0896e62cf0b74955",
+      "sha256": "0896e62cf0b74955bfe1ecb509d228b151b1f4271df6f6df1c8a64433af3584d",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/typography.css?v=834fb038f8229297",
+      "sha256": "834fb038f8229297d37c0c81f655484cfa34f9dbeda69d68d1b30c53be4f3b8e",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/vendor/katex/katex.min.css?v=144d9ea8097c553f",
+      "sha256": "144d9ea8097c553f5672ea8bb89b4241c486e0e89ec844580823155fd4fdf303",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/experiments.css?v=81b94df939ce9bbf",
+      "sha256": "81b94df939ce9bbfc251ceb392a064d42c9fc0733c4d7dcc2eabd0b9b8db733f",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/workbench-system.css?v=34b1937a2ae140a9",
+      "sha256": "34b1937a2ae140a95e9ba834218f2ebed8457e9efac3a78fd1e43e779f2cabdf",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/capm.css?v=5706ecadd997832c",
+      "sha256": "5706ecadd997832cb7e2a0ba2442ff459bdcaf21e61a00c868c6563291f23aec",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/risk.css?v=a565aa27efdd21f0",
+      "sha256": "a565aa27efdd21f07ffb4d19df4507578683629a1f82d5f09a348ff3d8e6c896",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/vol.css?v=4b6398484580716f",
+      "sha256": "4b6398484580716f62aa819fedbad1c4c39b9b03feb8d56e97bc45f3d772f45b",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/build-info.js?v=766cac2b5edbdd3f",
+      "sha256": "766cac2b5edbdd3f3b66383fa9afc03849a2144531260a8b733a5120f1e04058",
+      "localMatch": true
+    },
+    {
+      "url": "http://127.0.0.1:8765/experiments-bundle.js?v=1811651b6ac50df0",
+      "sha256": "1811651b6ac50df0e480b180b685bb908031443fd0f6f3859ff0efba66434a87",
+      "localMatch": true
+    }
+  ],
+  "passed": 15,
+  "failed": 0
+}

@@ -1,0 +1,39 @@
+{
+  "status": {
+    "pid": 36377,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "2.3.1-portfolio-ux.7854bf7d1bee3f9e",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "manifestBuild": "2.3.1-portfolio-ux.7854bf7d1bee3f9e",
+  "buildMatches": true,
+  "hashMatches": {
+    "index.html": true,
+    "experiments.html": true,
+    "build-info.js": true,
+    "build-manifest.json": true,
+    "portfolio-bundle.js": true,
+    "experiments-bundle.js": true,
+    "portfolio-multi.css": true,
+    "portfolio-multi-ui.js": true,
+    "portfolio-multi-code.js": true,
+    "portfolio-ux.js": true,
+    "portfolio-multi-math.js": true,
+    "portfolio-csv.js": true
+  },
+  "headerBuildMatches": {
+    "index.html": true,
+    "experiments.html": true,
+    "build-info.js": true,
+    "build-manifest.json": true,
+    "portfolio-bundle.js": true,
+    "experiments-bundle.js": true,
+    "portfolio-multi.css": true,
+    "portfolio-multi-ui.js": true,
+    "portfolio-multi-code.js": true,
+    "portfolio-ux.js": true,
+    "portfolio-multi-math.js": true,
+    "portfolio-csv.js": true
+  }
+}

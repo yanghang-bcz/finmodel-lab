@@ -1,0 +1,54 @@
+{
+  "error": "Error: 06 普通条件波动率点可预览: undefined",
+  "checks": [
+    {
+      "name": "07 hVaR 实际参考线Hover",
+      "passed": true
+    },
+    {
+      "name": "07 hVaR 实际参考线Leave",
+      "passed": true
+    },
+    {
+      "name": "07 hES 实际参考线Hover",
+      "passed": true
+    },
+    {
+      "name": "07 hES 实际参考线Leave",
+      "passed": true
+    },
+    {
+      "name": "07 nVaR 实际参考线Hover",
+      "passed": true
+    },
+    {
+      "name": "07 nVaR 实际参考线Leave",
+      "passed": true
+    },
+    {
+      "name": "07 nES 实际参考线Hover",
+      "passed": true
+    },
+    {
+      "name": "07 nES 实际参考线Leave",
+      "passed": true
+    },
+    {
+      "name": "长时间Hover不会固定",
+      "passed": true
+    },
+    {
+      "name": "进入预览所在区域不会固定",
+      "passed": true
+    },
+    {
+      "name": "离开仍清除",
+      "passed": true
+    },
+    {
+      "name": "06 普通条件波动率点可预览",
+      "passed": false
+    }
+  ],
+  "errors": []
+}

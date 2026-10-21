@@ -1,0 +1,64 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FinModel Lab 失败修复验收证据</title><style>body{max-width:1400px;margin:32px auto;padding:0 20px;font:16px/1.6 system-ui;color:#243746;background:#f2f5f7}a{color:#265d88}h1{font-size:28px}section{margin:28px 0}figure{margin:12px 0;background:white;padding:16px;border-radius:12px}img{width:100%;height:auto}summary{cursor:pointer}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:18px}small{color:#526572}</style><h1>FinModel Lab：真实服务与浏览器验收</h1>
+<p>2026-10-19 · 1.9.1-audit.829515775e3098be · Chrome 155.0.8059.84</p>
+<p>新增双缓存 2050 项通过；既有交互 355 项通过；9套数学/教学回归通过。Safari未开启远程自动化，完整矩阵未测。以下为真实截图，无录屏。</p>
+<p><a href="../../AUDIT-20261019.md">完整根因及修改报告</a> · <a href="browser-results.json">2050项断言／网络／DOM凭据</a> · <a href="service-identity.json">实际服务身份</a> · <a href="regression-results.json">数学回归</a> · <a href="safari-session.json">Safari阻塞原文</a></p>
+<section><h2>用户原会话与更新后可见页面</h2><p>旧目录的七项顺序见 <a href="user-before-catalog.txt">原Chrome目录文本</a>；第一张图记录驻留Tooltip，不能当作旧目录截图。</p><div class="grid">
+<figure><figcaption>修复前：原GARCH中驻留的详情框</figcaption><a href="user-before-tooltip.png"><img loading="lazy" src="user-before-tooltip.png"></a></figure>
+<figure><figcaption>更新后：用户可见Chrome的01–12目录</figcaption><a href="user-after-catalog.png"><img loading="lazy" src="user-after-catalog.png"></a></figure>
+<figure><figcaption>迁移中发现：旧历史BS文档仍可出现；对应旧标签页已关闭</figcaption><a href="user-restored-old-bs.png"><img loading="lazy" src="user-restored-old-bs.png"></a></figure>
+</div></section>
+<section><h2>普通缓存开启</h2>
+<details><summary>garch：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="normal-cache-garch-catalog.png"><img loading="lazy" src="normal-cache-garch-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="normal-cache-garch-hover.png"><img loading="lazy" src="normal-cache-garch-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="normal-cache-garch-leave.png"><img loading="lazy" src="normal-cache-garch-leave.png"></a></figure>
+</div></details>
+<details><summary>var：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="normal-cache-var-catalog.png"><img loading="lazy" src="normal-cache-var-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="normal-cache-var-hover.png"><img loading="lazy" src="normal-cache-var-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="normal-cache-var-leave.png"><img loading="lazy" src="normal-cache-var-leave.png"></a></figure>
+</div></details>
+<details><summary>portfolio：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="normal-cache-portfolio-catalog.png"><img loading="lazy" src="normal-cache-portfolio-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="normal-cache-portfolio-hover.png"><img loading="lazy" src="normal-cache-portfolio-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="normal-cache-portfolio-leave.png"><img loading="lazy" src="normal-cache-portfolio-leave.png"></a></figure>
+</div></details>
+<details><summary>capm：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="normal-cache-capm-catalog.png"><img loading="lazy" src="normal-cache-capm-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="normal-cache-capm-hover.png"><img loading="lazy" src="normal-cache-capm-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="normal-cache-capm-leave.png"><img loading="lazy" src="normal-cache-capm-leave.png"></a></figure>
+</div></details>
+<details><summary>bs：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="normal-cache-bs-catalog.png"><img loading="lazy" src="normal-cache-bs-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="normal-cache-bs-hover.png"><img loading="lazy" src="normal-cache-bs-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="normal-cache-bs-leave.png"><img loading="lazy" src="normal-cache-bs-leave.png"></a></figure>
+</div></details>
+</section>
+<section><h2>禁用缓存</h2>
+<details><summary>garch：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="cache-disabled-garch-catalog.png"><img loading="lazy" src="cache-disabled-garch-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="cache-disabled-garch-hover.png"><img loading="lazy" src="cache-disabled-garch-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="cache-disabled-garch-leave.png"><img loading="lazy" src="cache-disabled-garch-leave.png"></a></figure>
+</div></details>
+<details><summary>var：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="cache-disabled-var-catalog.png"><img loading="lazy" src="cache-disabled-var-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="cache-disabled-var-hover.png"><img loading="lazy" src="cache-disabled-var-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="cache-disabled-var-leave.png"><img loading="lazy" src="cache-disabled-var-leave.png"></a></figure>
+</div></details>
+<details><summary>portfolio：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="cache-disabled-portfolio-catalog.png"><img loading="lazy" src="cache-disabled-portfolio-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="cache-disabled-portfolio-hover.png"><img loading="lazy" src="cache-disabled-portfolio-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="cache-disabled-portfolio-leave.png"><img loading="lazy" src="cache-disabled-portfolio-leave.png"></a></figure>
+</div></details>
+<details><summary>capm：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="cache-disabled-capm-catalog.png"><img loading="lazy" src="cache-disabled-capm-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="cache-disabled-capm-hover.png"><img loading="lazy" src="cache-disabled-capm-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="cache-disabled-capm-leave.png"><img loading="lazy" src="cache-disabled-capm-leave.png"></a></figure>
+</div></details>
+<details><summary>bs：目录／悬停／移开后</summary><div class="grid">
+<figure><figcaption>12项目录</figcaption><a href="cache-disabled-bs-catalog.png"><img loading="lazy" src="cache-disabled-bs-catalog.png"></a></figure>
+<figure><figcaption>仅悬停的临时预览</figcaption><a href="cache-disabled-bs-hover.png"><img loading="lazy" src="cache-disabled-bs-hover.png"></a></figure>
+<figure><figcaption>移到无关区域180ms后，popup可见数量为0</figcaption><a href="cache-disabled-bs-leave.png"><img loading="lazy" src="cache-disabled-bs-leave.png"></a></figure>
+</div></details>
+</section>
+<small>测试脚本：tests/failure-audit.test.cjs。所有通过数字均从本轮最终JSON读取。failure.png是调试失败阶段截图，不作为最终结果。</small></html>

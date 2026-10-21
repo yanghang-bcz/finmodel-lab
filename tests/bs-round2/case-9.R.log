@@ -1,0 +1,38 @@
+
+ bisection 
+$status
+[1] "max_iterations"
+
+$sigma
+[1] 0.125
+
+$error
+[1] -2.766789
+
+$expansions
+[1] 0
+
+  sigma         price          error          vega next_sigma a    b next_a
+1 0.125 7.68379485021 -2.76678872198 35.8476684183         NA 0 0.25  0.125
+  next_b           stop
+1   0.25 max_iterations
+
+ newton 
+$status
+[1] "max_iterations"
+
+$sigma
+[1] 0.3
+
+$error
+[1] 3.780671
+
+$expansions
+[1] 0
+
+  sigma        price        error          vega     next_sigma  a  b next_a
+1   0.3 14.231254786 3.7806712138 37.9432933117 0.200359961305 NA NA     NA
+  next_b           stop
+1     NA max_iterations
+RESULT bisection max_iterations 0.125 -2.7667887219778535 0 
+RESULT newton max_iterations 0.29999999999999999 3.7806712138002538 0 

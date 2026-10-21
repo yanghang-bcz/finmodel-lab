@@ -1,0 +1,59 @@
+pdf('tests/teaching-ux/pricing-1-A-example.R.pdf')
+bs <- function(S,K,T,r,sigma,q=0) {
+  x <- c(S,K,T,r,sigma,q)
+  if (length(x)!=6 || any(!is.finite(x)) ||
+      any(x < c(.01,.01,0,-.1,0,0)) ||
+      any(x > c(1e5,1e5,10,.3,2,1)))
+    stop("Invalid BS input")
+  E <- exp(-q*T)
+  A <- S*E; D <- K*exp(-r*T)
+  if (T==0 || sigma==0) {
+    dc <- if (
+  T==0 || A==D) NA_real_ else as.numeric(A>D)
+    ok <- !is.na(dc)
+    return(c(C=max(A-D,0),P=max(D-A,0),d1=NA,
+  d2=NA,
+      deltaC=E*dc,deltaP=E*(dc-1),
+      gamma=if(ok) 0 else NA,vega=if(
+  ok) 0 else NA,
+      thetaC=if(ok) dc*(q*A-r*D)/365 else NA,
+      thetaP=if(ok) (1-dc)*(r*D-q*A)/
+  365 else NA))
+  }
+  E <- exp(-q*T)
+  A <- S*E
+  D <- K*exp(-r*T)
+  d1 <- (log(S/K)+(r-q+sigma^2/2)*T)/
+    (sigma*sqrt(T))
+  d2 <- d1-sigma*sqrt(T)
+  N1 <- pnorm(d1)
+  N2 <- pnorm(d2)
+  C <- max(0,A-D,A*N1-D*N2)
+  P <- max(0,D-A,D*pnorm(-d2)-A*pnorm(-d1))
+  deltaC <- E*N1
+  deltaP <- -E*pnorm(-d1)
+  gamma <- E*dnorm(d1)/(S*sigma*sqrt(T))
+  vega <- A*dnorm(d1)*sqrt(T)/100
+  base <- -A*dnorm(d1)*sigma/(2*sqrt(T))
+  thetaC <- (base-r*D*N2+q*A*N1)/365
+  thetaP <- (base+r*D*pnorm(-d2)-q*A*pnorm(-
+  d1))/365
+  result <- c(C=C,P=P,d1=d1,d2=d2,
+    deltaC=deltaC,deltaP=deltaP,gamma=gamma,vega=vega,
+    thetaC=thetaC,thetaP=thetaP)
+  return(result)
+}
+S <- 100
+K <- 100
+T <- 1
+r <- 0.05
+sigma <- 0.2
+q <- 0
+ST <- 120; K <- 100
+call_payoff <- max(ST-K,0)
+put_payoff <- max(K-ST,0)
+print(c(call_payoff=call_payoff,
+  put_payoff=put_payoff))
+
+cat('FINISHED','\n')
+dev.off()

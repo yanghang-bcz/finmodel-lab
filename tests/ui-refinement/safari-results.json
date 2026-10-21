@@ -1,0 +1,77 @@
+{
+  "browser": "Safari native app",
+  "initialAttempts": [
+    {
+      "name": "Safari 11现价调节与K参考详情",
+      "passed": false
+    },
+    {
+      "name": "Safari原生125% var载入与三栏",
+      "passed": false
+    }
+  ],
+  "finalChecks": [
+    {
+      "name": "Safari 07参数99%实时重算与指标详情",
+      "passed": true
+    },
+    {
+      "name": "Safari garch实际载入及三栏",
+      "passed": true
+    },
+    {
+      "name": "Safari capm实际载入及三栏",
+      "passed": true
+    },
+    {
+      "name": "Safari bs实际载入及三栏",
+      "passed": true
+    },
+    {
+      "name": "Safari 08原工作台载入",
+      "passed": true
+    },
+    {
+      "name": "Safari原生125% garch载入与三栏",
+      "passed": true
+    },
+    {
+      "name": "Safari原生125% capm载入与三栏",
+      "passed": true
+    },
+    {
+      "name": "Safari原生125% bs载入与三栏",
+      "passed": true
+    },
+    {
+      "name": "Safari原生125% portfolio载入与三栏",
+      "passed": true
+    },
+    {
+      "name": "Safari原生125% var载入复验",
+      "passed": true
+    },
+    {
+      "name": "Safari 11现价与K详情最终复验",
+      "passed": true
+    },
+    {
+      "name": "Safari桌面原生125% garch",
+      "passed": true
+    },
+    {
+      "name": "Safari桌面原生125% capm",
+      "passed": true
+    },
+    {
+      "name": "Safari桌面原生125% bs",
+      "passed": true
+    },
+    {
+      "name": "Safari桌面原生125% portfolio",
+      "passed": true
+    }
+  ],
+  "desktopZoomEvidence": "safari-desktop-zoom125-menu.txt",
+  "resolution": "早期两项未确认的操作已分别完成VaR与BS最终复验。Safari为原生抽查，非Chrome全套断言。"
+}

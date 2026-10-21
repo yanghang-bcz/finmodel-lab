@@ -1,0 +1,32 @@
+[
+  {
+    "file": "dist/math.js",
+    "before": "c9777ed899c56782157830ee7144178a5ade8c4d5cd3c11d389d3311c983e091",
+    "after": "c9777ed899c56782157830ee7144178a5ade8c4d5cd3c11d389d3311c983e091",
+    "unchanged": true
+  },
+  {
+    "file": "dist/experiment-math.js",
+    "before": "80f4fbea2d6a644820440015090a185c36ab8ae25f4cc045b0b5d188d24b4ac9",
+    "after": "80f4fbea2d6a644820440015090a185c36ab8ae25f4cc045b0b5d188d24b4ac9",
+    "unchanged": true
+  },
+  {
+    "file": "dist/lessons.js",
+    "before": "1b34abd12f8ae5cded10c339b58d211ebde3f636bcaf8739c9b7bc931a6c4a69",
+    "after": "1b34abd12f8ae5cded10c339b58d211ebde3f636bcaf8739c9b7bc931a6c4a69",
+    "unchanged": true
+  },
+  {
+    "file": "dist/experiment-lessons.js",
+    "before": "7daa00a2c9212460f6a4bca8d549b7bb8c9774f7978fe5111dd6ea4ec48ca865",
+    "after": "261b72a64b7dd7d388503c2da0c13d0baf7b7076ffdcd91ecd3e104a15c38387",
+    "unchanged": false
+  },
+  {
+    "file": "dist/lesson-presentation.js",
+    "before": "d88bb89dab30f8f2599e96ef02b504711d13b600a651737aa740c8fbdfbcf16e",
+    "after": "d88bb89dab30f8f2599e96ef02b504711d13b600a651737aa740c8fbdfbcf16e",
+    "unchanged": true
+  }
+]

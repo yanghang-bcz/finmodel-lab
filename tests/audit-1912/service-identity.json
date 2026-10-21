@@ -1,0 +1,17 @@
+{
+  "pid": 74465,
+  "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+  "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+  "buildId": "1.9.1-audit.829515775e3098be",
+  "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\"",
+  "listeners": "COMMAND   PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nPython  74465 emobcccz    3u  IPv4 0x92e79e5f4590978a      0t0  TCP 127.0.0.1:8765 (LISTEN)\n",
+  "process": "  PID  PPID COMMAND\n74465 70854 /Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python tools/serve.py\n",
+  "cwd": "COMMAND   PID     USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME\nPython  74465 emobcccz  cwd    DIR   1,18     1376 39682313 /Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab\n",
+  "before": {
+    "pid": 71375,
+    "command": "python3 tools/serve.py",
+    "sameProjectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "responseHeadersFile": "pre-service-headers.txt",
+    "oldUserDOM": "user-before-catalog.txt"
+  }
+}

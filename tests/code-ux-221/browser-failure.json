@@ -1,0 +1,206 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: DOM server manifest same",
+  "checks": [
+    {
+      "name": "full default http://127.0.0.1:8765/index.html",
+      "passed": true
+    },
+    {
+      "name": "usable code viewport portfolio",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels portfolio-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics portfolio-default",
+      "passed": true
+    },
+    {
+      "name": "full script has outputs portfolio",
+      "passed": true
+    },
+    {
+      "name": "reading mode persists after params portfolio",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels portfolio-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics portfolio-changed-key",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/index.html",
+      "passed": true
+    },
+    {
+      "name": "copy stays visible while code scrolls portfolio",
+      "passed": true
+    },
+    {
+      "name": "code independently scrolls portfolio",
+      "passed": true
+    },
+    {
+      "name": "desktop body not lengthened portfolio",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=var",
+      "passed": true
+    },
+    {
+      "name": "usable code viewport var",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels var-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics var-default",
+      "passed": true
+    },
+    {
+      "name": "full script has outputs var",
+      "passed": true
+    },
+    {
+      "name": "reading mode persists after params var",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels var-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics var-changed-key",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=var",
+      "passed": true
+    },
+    {
+      "name": "copy stays visible while code scrolls var",
+      "passed": true
+    },
+    {
+      "name": "code independently scrolls var",
+      "passed": true
+    },
+    {
+      "name": "desktop body not lengthened var",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=garch",
+      "passed": true
+    },
+    {
+      "name": "usable code viewport garch",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels garch-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics garch-default",
+      "passed": true
+    },
+    {
+      "name": "full script has outputs garch",
+      "passed": true
+    },
+    {
+      "name": "reading mode persists after params garch",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels garch-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics garch-changed-key",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=garch",
+      "passed": true
+    },
+    {
+      "name": "copy stays visible while code scrolls garch",
+      "passed": true
+    },
+    {
+      "name": "code independently scrolls garch",
+      "passed": true
+    },
+    {
+      "name": "desktop body not lengthened garch",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=capm",
+      "passed": true
+    },
+    {
+      "name": "usable code viewport capm",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels capm-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics capm-default",
+      "passed": true
+    },
+    {
+      "name": "full script has outputs capm",
+      "passed": true
+    },
+    {
+      "name": "reading mode persists after params capm",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels capm-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics capm-changed-key",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=capm",
+      "passed": true
+    },
+    {
+      "name": "copy stays visible while code scrolls capm",
+      "passed": true
+    },
+    {
+      "name": "code independently scrolls capm",
+      "passed": true
+    },
+    {
+      "name": "desktop body not lengthened capm",
+      "passed": true
+    },
+    {
+      "name": "served absolute project",
+      "passed": true
+    },
+    {
+      "name": "DOM server manifest same",
+      "passed": false
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,282 @@
+{
+  "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#tuReturn')\u001b[22m\n\u001b[2m    - locator resolved to <button id=\"tuReturn\">返回分步学习</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+  "checks": [
+    {
+      "name": "exact project root",
+      "passed": true
+    },
+    {
+      "name": "build identity",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 experiments.html",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 experiments-bundle.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 experiments.css",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 teaching-ux.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 teaching-ux-data.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 teaching-ux-charts.js",
+      "passed": true
+    },
+    {
+      "name": "fresh page beginner pricing",
+      "passed": true
+    },
+    {
+      "name": "only compact top module row",
+      "passed": true
+    },
+    {
+      "name": "dividend beginner entry",
+      "passed": true
+    },
+    {
+      "name": "IV entry no final answer",
+      "passed": true
+    },
+    {
+      "name": "hedge enters risk step",
+      "passed": true
+    },
+    {
+      "name": "entry avoids Gamma",
+      "passed": true
+    },
+    {
+      "name": "entry avoids 净Delta",
+      "passed": true
+    },
+    {
+      "name": "entry avoids 现金账户",
+      "passed": true
+    },
+    {
+      "name": "entry avoids 随机种子",
+      "passed": true
+    },
+    {
+      "name": "entry avoids 调仓次数",
+      "passed": true
+    },
+    {
+      "name": "no unrelated input visible",
+      "passed": true
+    },
+    {
+      "name": "no payoff or loss leaked",
+      "passed": true
+    },
+    {
+      "name": "no code answer leaked",
+      "passed": true
+    },
+    {
+      "name": "copy locked before prediction",
+      "passed": true
+    },
+    {
+      "name": "choice alone no result",
+      "passed": true
+    },
+    {
+      "name": "result only after confirm",
+      "passed": true
+    },
+    {
+      "name": "simple result caveat",
+      "passed": true
+    },
+    {
+      "name": "wrong answer feedback",
+      "passed": true
+    },
+    {
+      "name": "copied context risk",
+      "passed": true
+    },
+    {
+      "name": "actual R executed risk",
+      "passed": true
+    },
+    {
+      "name": "step2 risk bars",
+      "passed": true
+    },
+    {
+      "name": "small focused code",
+      "passed": true
+    },
+    {
+      "name": "cash hidden until detail",
+      "passed": true
+    },
+    {
+      "name": "cash calculation exact",
+      "passed": true
+    },
+    {
+      "name": "cash negative is borrowing",
+      "passed": true
+    },
+    {
+      "name": "line formula linked",
+      "passed": true
+    },
+    {
+      "name": "copied context neutral",
+      "passed": true
+    },
+    {
+      "name": "actual R executed neutral",
+      "passed": true
+    },
+    {
+      "name": "copied standalone delta value",
+      "passed": true
+    },
+    {
+      "name": "step3 no future delta",
+      "passed": true
+    },
+    {
+      "name": "submit still no result",
+      "passed": true
+    },
+    {
+      "name": "actual same-time delta comparison",
+      "passed": true
+    },
+    {
+      "name": "Gamma delayed",
+      "passed": true
+    },
+    {
+      "name": "Gamma after observation",
+      "passed": true
+    },
+    {
+      "name": "changing scene invalidates forecast",
+      "passed": true
+    },
+    {
+      "name": "copied context adjust",
+      "passed": true
+    },
+    {
+      "name": "actual R executed adjust",
+      "passed": true
+    },
+    {
+      "name": "step4 stage A default",
+      "passed": true
+    },
+    {
+      "name": "stage A no full cash account",
+      "passed": true
+    },
+    {
+      "name": "seed folded",
+      "passed": true
+    },
+    {
+      "name": "next period sync",
+      "passed": true
+    },
+    {
+      "name": "pause cancels",
+      "passed": true
+    },
+    {
+      "name": "tooltip preview",
+      "passed": true
+    },
+    {
+      "name": "hover leave hides",
+      "passed": true
+    },
+    {
+      "name": "click pins",
+      "passed": true
+    },
+    {
+      "name": "close pinned",
+      "passed": true
+    },
+    {
+      "name": "stage B cash only then disclosed",
+      "passed": true
+    },
+    {
+      "name": "three strategies same view",
+      "passed": true
+    },
+    {
+      "name": "final value same old engine",
+      "passed": true
+    },
+    {
+      "name": "copied context hedge-full",
+      "passed": true
+    },
+    {
+      "name": "actual R executed hedge-full",
+      "passed": true
+    },
+    {
+      "name": "full script retained",
+      "passed": true
+    },
+    {
+      "name": "back to knowledge",
+      "passed": true
+    },
+    {
+      "name": "new params reset time",
+      "passed": true
+    },
+    {
+      "name": "new interval math same",
+      "passed": true
+    },
+    {
+      "name": "advanced params retained",
+      "passed": true
+    },
+    {
+      "name": "copied context put-cash",
+      "passed": true
+    },
+    {
+      "name": "actual R executed put-cash",
+      "passed": true
+    },
+    {
+      "name": "full hedge original features",
+      "passed": true
+    },
+    {
+      "name": "public full deep link",
+      "passed": true
+    },
+    {
+      "name": "full original graph",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

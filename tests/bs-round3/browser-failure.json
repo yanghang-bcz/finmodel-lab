@@ -1,0 +1,14 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: build identity agreement",
+  "checks": [
+    {
+      "name": "exact project served",
+      "passed": true
+    },
+    {
+      "name": "build identity agreement",
+      "passed": false
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,13 @@
+   none  static dynamic 
+      0       0       0 
+       i t tau            S price delta gamma oldHolding holding quantity
+price  0 0   1 100000.00000     0     0     0          0       0        0
+price1 1 1   0  95122.94245     0    NA    NA          0       0        0
+       cashBefore interest dividend tradeCash cash net netDelta rebalance
+price           0        0        0         0    0   0        0     FALSE
+price1          0        0        0         0    0   0       NA     FALSE
+       settlement
+price           0
+price1          0
+null device 
+          1 

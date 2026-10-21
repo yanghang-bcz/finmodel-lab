@@ -1,0 +1,32 @@
+
+ bisection 
+$status
+[1] "precision_limit"
+
+$sigma
+[1] NA
+
+$error
+[1] NA
+
+$expansions
+[1] 0
+
+data frame with 0 columns and 0 rows
+
+ newton 
+$status
+[1] "precision_limit"
+
+$sigma
+[1] NA
+
+$error
+[1] NA
+
+$expansions
+[1] 0
+
+data frame with 0 columns and 0 rows
+RESULT bisection precision_limit NA NA 0 
+RESULT newton precision_limit NA NA 0 

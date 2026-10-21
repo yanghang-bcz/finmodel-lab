@@ -1,0 +1,30 @@
+{
+  "height": 339.8984375,
+  "items": [
+    {
+      "font": "\"Monaspace Neon\", \"Glow Sans SC\", monospace",
+      "selector": "#grid text",
+      "size": "15.4456px",
+      "screenPixels": 12.499989620535715
+    },
+    {
+      "font": "\"Glow Sans SC\", \"Noto Sans CJK SC\", \"PingFang SC\", sans-serif",
+      "selector": "#yAxisTitle",
+      "size": "17.2991px",
+      "screenPixels": 14.00001103515625
+    },
+    {
+      "font": "\"Monaspace Neon\", \"Glow Sans SC\", monospace",
+      "selector": "#assetA text",
+      "size": "16.0634px",
+      "screenPixels": 12.999969782366072
+    },
+    {
+      "font": "\"Glow Sans SC\", \"Noto Sans CJK SC\", \"PingFang SC\", sans-serif",
+      "selector": "#currentLabel",
+      "size": "16.0634px",
+      "screenPixels": 12.999969782366072
+    }
+  ],
+  "width": 453.203125
+}

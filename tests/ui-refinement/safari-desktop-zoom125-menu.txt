@@ -1,0 +1,255 @@
+Window: "FinModel Lab · 实验08", App: Safari浏览器.
+0 标准窗口 FinModel Lab · 实验08, ID: SafariWindow?IsSecure=false&UUID=C8961FEE-2591-4BBD-91D0-9CD3EA2F7FF9, Secondary Actions: Raise
+	1 分离组
+		2 分离器 (disabled, settable, float) -1
+		3 标签页组
+			4 滚动区
+				5 HTML内容 Description: FinModel Lab · 实验08, URL: 127.0.0.1:8765/
+					6 container
+						7 link FinModel Lab 实验工作台, Value: 127.0.0.1:8765/#workbench
+						8 container 主要导航
+							9 按钮 模型实验室
+							10 按钮 实验目录
+							11 按钮 帮助与资源
+					12 container
+						13 标题 FinModel Lab / 实验08 · 均值–方差投资组合, Value: 1
+							14 文本 FinModel Lab / 实验08 · 均值–方差投资组合
+						15 按钮 课堂工具
+						16 开关按钮 投屏模式, Value: off
+						17 container 实验八工作台
+							18 container R 代码与步骤解析
+								19 标题 R Code, Value: 2
+									20 文本 R Code
+								21 按钮 复制代码
+								22 container 点击 R 代码查看逻辑语句解析
+									23 开关按钮 第1行：模型设定, Value: off
+									24 开关按钮 第2行：定义两资产预期收益率, Value: off
+									25 开关按钮 第3行：定义两资产标准差, Value: off
+									26 开关按钮 第4行：定义相关系数, Value: off
+									27 开关按钮 第5行：分配投资组合权重, Value: off
+									28 开关按钮 第6行：分配投资组合权重, Value: off
+									29 开关按钮 第7行：计算投资组合预期收益率, Value: on
+									30 开关按钮 第8行：计算投资组合方差, Value: off
+									31 开关按钮 第9行：计算投资组合方差, Value: off
+									32 开关按钮 第10行：计算投资组合方差, Value: off
+									33 开关按钮 第11行：由方差得到组合标准差, Value: off
+									34 开关按钮 第12行：判断风险是否随权重变化, Value: off
+									35 开关按钮 第13行：判断风险是否随权重变化, Value: off
+									36 开关按钮 第14行：求最小方差组合, Value: off
+									37 开关按钮 第15行：求最小方差组合, Value: off
+									38 开关按钮 第16行：求最小方差组合, Value: off
+									39 开关按钮 第17行：求最小方差组合, Value: off
+									40 开关按钮 第18行：求最小方差组合, Value: off
+									41 开关按钮 第19行：求最小方差组合, Value: off
+									42 开关按钮 第20行：求最小方差组合, Value: off
+									43 开关按钮 第21行：枚举可行组合, Value: off
+									44 开关按钮 第22行：枚举可行组合, Value: off
+									45 开关按钮 第23行：计算曲线的收益坐标, Value: off
+									46 开关按钮 第24行：计算曲线的风险坐标, Value: off
+									47 开关按钮 第25行：计算曲线的风险坐标, Value: off
+									48 开关按钮 第26行：计算曲线的风险坐标, Value: off
+									49 开关按钮 第27行：识别有效部分, Value: off
+									50 开关按钮 第28行：绘制全部可行组合, Value: off
+									51 开关按钮 第29行：绘制全部可行组合, Value: off
+									52 开关按钮 第30行：绘制全部可行组合, Value: off
+									53 开关按钮 第31行：绘制有效部分, Value: off
+									54 开关按钮 第32行：绘制有效部分, Value: off
+									55 开关按钮 第33行：绘制有效部分, Value: off
+									56 开关按钮 第34行：绘制有效部分, Value: off
+									57 开关按钮 第35行：标记当前投资组合, Value: off
+									58 开关按钮 第36行：标记当前投资组合, Value: off
+									59 开关按钮 第37行：输出当前计算结果, Value: off
+									60 开关按钮 第38行：输出当前计算结果, Value: off
+								61 分离器 调整代码与解析比例，上下方向键调整，Home与End设为边界, Help: 拖动调整代码与解析；也可使用上下方向键, Value: 68, Details: 代码 68%，解析 32%
+								62 container 当前步骤解析
+									63 标题 计算投资组合预期收益率, Value: 3
+										64 文本 计算投资组合预期收益率
+									65 开关按钮 展开解析 ↗, Value: off
+									66 container
+										67 text E (
+										68 文本 R
+										69 文本 p
+										70 text ) =
+										71 文本 w
+										72 文本 1
+										73 文本 μ
+										74 文本 1
+										75 文本 +
+										76 文本 w
+										77 文本 2
+										78 文本 μ
+										79 文本 2
+									80 文本 按投资权重对两只资产的预期收益率加权平均。
+									81 container
+										82 text 0.5 × 0.08 + 0.5 × 0.14 = 0.11
+									83 文本 结果：11.00%
+									84 文本 金融意义
+									85 文本 收益由资产预期收益和投资比例决定；相关系数不直接进入这条收益公式。
+							86 container 投资组合风险收益模型
+								87 标题 Model Visualization, Value: 2
+									88 文本 Model Visualization
+								89 开关按钮 自动适配 ⇄, Help: 自动适配当前曲线；点击切换固定比较, Value: off
+								90 文本 试试看：降低相关系数，组合风险会如何变化？
+								91 弹出式按钮 (collapsed) 选择探索任务, Value: 相关系数, Secondary Actions: Expand
+								92 按钮 (collapsed) 开始探索 →, Secondary Actions: Expand
+								93 text Expected Return 11.00% Portfolio Risk 13.54%
+								94 按钮 设为比较基准
+								95 文本 自动适配当前可行集
+								96 container 风险收益图：灰色可行集，绿色有效部分；可点击组合点查看详情
+									97 图像
+									98 文本 10.2%
+									99 文本 7.2%
+									100 图像
+									101 文本 13.5%
+									102 文本 9.1%
+									103 图像
+									104 文本 16.7%
+									105 文本 11.0%
+									106 图像
+									107 文本 19.9%
+									108 文本 12.9%
+									109 图像
+									110 文本 23.1%
+									111 文本 14.8%
+									112 文本 组合预期收益率
+									113 文本 组合风险（标准差） →
+									114 图像
+									115 图像
+									116 图像
+									117 图像
+									118 图像
+									119 文本 A
+									120 图像
+									121 文本 B
+									122 按钮 查看最小方差组合详情
+									123 按钮 查看当前组合详情
+								124 text 可行集 有效部分
+								125 按钮 当前组合
+								126 按钮 最小方差
+								127 按钮 有效组合 · 查看原因
+							128 container 参数调节
+								129 标题 Parameters, Value: 2
+									130 文本 Parameters
+								131 按钮 恢复默认
+								132 container 组合权重
+									133 标题 组合权重, Value: 3
+										134 文本 组合权重
+									135 text Asset A 50.00% Asset B 50.00%
+									136 滑块 (settable, float) 资产 A 权重, Value: 50
+										137 值指示器 50
+									138 text 0% 100%
+								139 container 资产假设
+									140 标题 资产假设, Value: 3
+										141 文本 资产假设
+									142 文本 同一分析期的预期收益率与标准差
+									143 表格
+										144 row (selectable) Asset A
+Asset B
+										145 row (selectable)
+											146 单元格 (selectable) 预期收益率
+											147 单元格 (selectable)
+												148 数字栏 (settable) 资产 A 预期收益率（%）, Value: 8
+													149 步进器 0
+														150 未知
+														151 未知
+												152 文本 %
+											153 单元格 (selectable)
+												154 数字栏 (settable) 资产 B 预期收益率（%）, Value: 14
+													155 步进器 0
+														156 未知
+														157 未知
+												158 文本 %
+										159 row (selectable)
+											160 单元格 (selectable) 标准差
+											161 单元格 (selectable)
+												162 数字栏 (settable) 资产 A 标准差（%）, Value: 12
+													163 步进器 0
+														164 未知
+														165 未知
+												166 文本 %
+											167 单元格 (selectable)
+												168 数字栏 (settable) 资产 B 标准差（%）, Value: 22
+													169 步进器 0
+														170 未知
+														171 未知
+												172 文本 %
+								173 container 相关系数 ρ
+									174 标题 相关系数 ρ, Value: 3
+										175 文本 相关系数 ρ
+									176 数字栏 (settable) 相关系数精确数值, Value: 0.2
+										177 步进器 0
+											178 未知
+											179 未知
+									180 滑块 (settable, float) 相关系数滑块, Value: 0.2
+										181 值指示器 0.2
+									182 text −1 0 +1
+								183 文本 正相关
+					184 菜单 Secondary Actions: Cancel
+					185 菜单 Secondary Actions: Cancel
+					186 菜单 Secondary Actions: Cancel
+					187 菜单 Secondary Actions: Cancel
+					188 菜单 Secondary Actions: Cancel
+					189 菜单 Secondary Actions: Cancel
+	190 工具栏
+		191 container Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+			192 按钮 (disabled) Description: 显示边栏, ID: SidebarButton
+			193 菜单按钮 (disabled) Description: 标签页组选择器, ID: TabGroupPickerButton?TabGroup=
+		194 container BackForwardSegmentedControl
+			195 按钮 (disabled) Description: 返回, Help: 显示上一页, ID: BackButton
+			196 按钮 (disabled) Description: 前进, Help: 显示下一页, ID: ForwardButton
+		197 container Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+			198 按钮 页面菜单, ID: AssistantButton
+				199 弹出窗口 Secondary Actions: Cancel
+					200 滚动区 PageMenu
+						201 集合 (disabled) PageFormatMenu
+							202 节 (disabled)
+								203 container
+									204 图像 隐藏
+									205 text 隐藏干扰项目…
+									206 按钮 HideDistractingItemsButton
+							207 节 (disabled)
+								208 container
+									209 图像 放大
+									210 text 缩放
+									211 弹出式按钮 125%
+										212 菜单 Secondary Actions: Cancel
+											213 50%
+											214 75%
+											215 85%
+											216 100%
+											217 115%
+											218 (selected) 125%
+											219 150%
+											220 175%
+											221 200%
+											222 250%
+											223 300%
+								224 container
+									225 图像 搜索文稿
+									226 text 在页面上查找…
+									227 按钮
+								228 container
+									229 图像 提醒
+									230 text 报告网站问题…
+									231 按钮
+								232 container
+									233 图像 设置
+									234 text 网站设置…
+									235 按钮
+			236 按钮 将页面添加到阅读列表, ID: OneStepBookmarkingButton
+			237 文本栏 (settable) Description: 智能搜索栏, Value: 127.0.0.1:8765, ID: WEB_BROWSER_ADDRESS_AND_SEARCH_FIELD
+			238 按钮 翻译可用, ID: TranslationButton
+			239 按钮 重新加载此页面, ID: ReloadButton
+		240 按钮 (disabled) Description: 共享, ID: ShareButton, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		241 按钮 (disabled) Description: 新建标签页, ID: NewTabButton, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		242 按钮 (disabled) Description: 标签页概览, ID: TabOverviewButton, Secondary Actions: 移到上一项, 从工具栏移除
+243 menu bar
+	244 Safari浏览器
+	245 文件
+	246 编辑
+	247 显示, ID: SafariViewMenu
+	248 历史记录
+	249 书签, ID: SafariBookmarksMenu
+	250 开发
+	251 窗口, ID: SafariWindowMenu
+	252 帮助, ID: SafariHelpMenu

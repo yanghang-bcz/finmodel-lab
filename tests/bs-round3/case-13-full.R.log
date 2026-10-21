@@ -1,0 +1,13 @@
+         none        static       dynamic 
+4.67329397452 5.42857056557 5.42857056557 
+       i t tau           S        price        delta         gamma   oldHolding
+price  0 0   1 100.0000000 10.450583572 0.6368306512 0.01876201735 0.0000000000
+price1 1 1   0 106.3131025  6.313102475           NA            NA 0.6368306512
+            holding     quantity   cashBefore     interest dividend
+price  0.6368306512 0.6368306512  10.45058357  0.000000000        0
+price1 0.6368306512 0.0000000000 -55.96176924 -2.729287692        0
+          tradeCash         cash         net netDelta rebalance settlement
+price  -63.68306512 -53.23248155 0.000000000        0     FALSE          0
+price1   0.00000000 -55.96176924 5.428570566       NA     FALSE          0
+null device 
+          1 

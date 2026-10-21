@@ -1,0 +1,135 @@
+Window: "FinModel Lab · 实验09 · CAPM", App: Google Chrome.
+0 标准窗口 FinModel Lab · 实验09 · CAPM - Google Chrome, URL: 127.0.0.1:8765/experiments.html?model=capm, Secondary Actions: Raise
+	1 container FinModel Lab · 实验09 · CAPM - Google Chrome, URL: 127.0.0.1:8765/experiments.html?model=capm
+		2 container
+			3 container
+				4 滚动区
+					5 HTML 内容 FinModel Lab · 实验09 · CAPM, URL: 127.0.0.1:8765/experiments.html?model=capm
+						6 container
+							7 link f m FinModel, Value: 127.0.0.1:8765/index.html
+							8 container 主要导航
+								9 link 实验08 工作台, Value: 127.0.0.1:8765/index.html
+								10 按钮 实验目录
+								11 按钮 帮助与资源
+						12 container
+							13 标题 实验09 · CAPM, Value: 1
+								14 文本 实验09 · CAPM
+							15 按钮 教师提示
+							16 切换按钮 投屏模式, Value: 0
+							17 container
+								18 标题 R Code, Value: 2
+									19 文本 R Code
+								20 按钮 复制代码
+								21 container 点击 R 逻辑语句查看中文解析
+									22 切换按钮 第1行：01 · 理论 CAPM 输入, Value: 1
+									23 切换按钮 第2行：01 · 理论 CAPM 输入, Value: 1
+									24 切换按钮 第3行：01 · 理论 CAPM 输入, Value: 1
+									25 切换按钮 第4行：01 · 理论 CAPM 输入, Value: 1
+									26 切换按钮 第5行：01 · 理论 CAPM 输入, Value: 1
+									27 切换按钮 第6行：02 · 证券市场线 SML, Value: 0
+									28 切换按钮 第7行：02 · 证券市场线 SML, Value: 0
+									29 切换按钮 第8行：02 · 证券市场线 SML, Value: 0
+									30 切换按钮 第9行：03 · 独立合成月度样本, Value: 0
+									31 切换按钮 第10行：03 · 独立合成月度样本, Value: 0
+									32 切换按钮 第11行：03 · 独立合成月度样本, Value: 0
+									33 切换按钮 第12行：03 · 独立合成月度样本, Value: 0
+									34 切换按钮 第13行：04 · 样本 OLS 与证券特征线, Value: 0
+									35 切换按钮 第14行：04 · 样本 OLS 与证券特征线, Value: 0
+									36 切换按钮 第15行：04 · 样本 OLS 与证券特征线, Value: 0
+									37 切换按钮 第16行：04 · 样本 OLS 与证券特征线, Value: 0
+								38 分离器 上下方向键调整代码区域, Value: 60
+								39 标题 01 · 理论 CAPM 输入, Value: 3
+									40 文本 01 · 理论 CAPM 输入
+								41 文本 同一年度口径计算证券要求的预期收益。
+								42 container
+									43 text 𝐸 (
+									44 文本 𝑅
+									45 文本 𝑖
+									46 text ) =
+									47 文本 𝑅
+									48 文本 𝑓
+									49 文本 +
+									50 文本 𝛽
+									51 文本 𝑖
+									52 text [ 𝐸 (
+									53 文本 𝑅
+									54 文本 𝑚
+									55 text ) −
+									56 文本 𝑅
+									57 文本 𝑓
+									58 文本 ]
+								59 文本 3% + 1.2 × (9%−3%) = 10.2%
+								60 文本 金融含义：此处是理论定价关系，不是从样本预测已实现收益。
+							61 container
+								62 标题 Model Visualization, Value: 2
+									63 文本 Model Visualization
+								64 text 理论与样本分开 CAPM 年度预期收益
+								65 文本 10.2%
+								66 文本 样本回归 β̂
+								67 文本 1.195046
+								68 图像 实验09 · CAPM；上：理论证券市场线　下：固定合成样本与OLS证券特征线
+								69 文本 上：理论证券市场线　下：固定合成样本与OLS证券特征线
+								70 文本 理论 β=1.2；样本 β̂=1.195046、α̂=0.099011%／月。样本与理论输入独立，非真实市场估计。
+							71 container
+								72 标题 Parameters, Value: 2
+									73 文本 Parameters
+								74 按钮 恢复默认
+								75 container 参数与教学任务，可滚动
+									76 container
+										77 文本 无风险收益率 Rf（同一年度，小数）
+										78 步进器 (settable, float) 无风险收益率 Rf（同一年度，小数）, Value: 0.03
+										79 文本 市场预期收益 E(Rm)（年度，小数）
+										80 步进器 (settable, float) 市场预期收益 E(Rm)（年度，小数）, Value: 0.09
+										81 文本 理论证券 β
+										82 步进器 (settable, float) 理论证券 β, Value: 1.2
+									83 container
+										84 开合三角标记 模型假设与口径
+											85 文本 模型假设与口径
+										86 文本 SML 为 CAPM 理论：同一年度的预期收益、无风险利率及市场风险溢价。假设均值方差投资者、同质预期、无摩擦等。另有60个月固定合成超额收益，使用含截距 OLS 估计样本 α/β，非真实市场拟合；月度截距不能直接称为年度超额收益。两张图分别以 β 与市场月度超额收益为横轴；样本回归不会随理论参数变化。
+									87 container
+										88 标题 预测 → 实验 → 解释, Value: 3
+											89 文本 预测 → 实验 → 解释
+										90 文本 市场预期收益9%、无风险利率3%不变，把理论 β 从1.2提高到1.8，CAPM预期收益怎样变化？
+										91 切换按钮 上升, Value: 0
+										92 切换按钮 下降, Value: 0
+										93 切换按钮 与 β 无关, Value: 0
+										94 按钮 (disabled) 确认预测，开始实验
+										95 文本 选择预测后确认；进入探索会载入题目默认情景，退出恢复原参数。
+		96 container
+			97 container
+				98 工具栏
+					99 按钮 返回
+					100 按钮 (disabled) 前进
+					101 按钮 重新加载
+					102 container
+						103 弹出式按钮 查看网站信息
+						104 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:8765/experiments.html?model=capm, Placeholder: 在 Google 中搜索，或输入网址
+						105 按钮 为此标签页添加书签
+					106 按钮 bcz
+					107 弹出式按钮 Chrome
+			108 container
+				109 弹出式按钮 标签页搜索
+				110 标签页组
+					111 标签 (selected, settable, boolean) FinModel Lab · 实验09 · CAPM, Value: on
+						112 按钮 关闭
+					113 标签 (settable, boolean) Item not available, Value: off
+						114 按钮 关闭
+					115 标签 (settable, boolean) FinModel Lab · 实验06 · GARCH类波动率模型, Value: off
+						116 按钮 关闭
+				117 按钮 新标签页
+	118 container
+		119 关闭按钮
+		120 缩放按钮
+121 menu bar
+	122 Chrome
+	123 文件
+	124 编辑
+	125 显示
+	126 历史记录
+	127 书签
+	128 个人资料
+	129 标签页
+	130 窗口
+	131 帮助
+
+The focused UI element is 5 HTML 内容 FinModel Lab · 实验09 · CAPM, URL: 127.0.0.1:8765/experiments.html?model=capm

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "var",
+    "passed": true,
+    "bytes": 717
+  },
+  {
+    "id": "bs",
+    "passed": true,
+    "bytes": 1241
+  },
+  {
+    "id": "garch",
+    "passed": true,
+    "bytes": 597
+  },
+  {
+    "id": "capm",
+    "passed": true,
+    "bytes": 529
+  }
+]

@@ -1,0 +1,1101 @@
+{
+  "passed": 273,
+  "failed": 0,
+  "scripts": 19,
+  "checks": [
+    {
+      "name": "full default http://127.0.0.1:8765/index.html",
+      "passed": true
+    },
+    {
+      "name": "usable code viewport portfolio",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels portfolio-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics portfolio-default",
+      "passed": true
+    },
+    {
+      "name": "full script has outputs portfolio",
+      "passed": true
+    },
+    {
+      "name": "reading mode persists after params portfolio",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels portfolio-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics portfolio-changed-key",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/index.html",
+      "passed": true
+    },
+    {
+      "name": "copy stays visible while code scrolls portfolio",
+      "passed": true
+    },
+    {
+      "name": "code independently scrolls portfolio",
+      "passed": true
+    },
+    {
+      "name": "desktop body not lengthened portfolio",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=var",
+      "passed": true
+    },
+    {
+      "name": "usable code viewport var",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels var-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics var-default",
+      "passed": true
+    },
+    {
+      "name": "full script has outputs var",
+      "passed": true
+    },
+    {
+      "name": "reading mode persists after params var",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels var-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics var-changed-key",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=var",
+      "passed": true
+    },
+    {
+      "name": "copy stays visible while code scrolls var",
+      "passed": true
+    },
+    {
+      "name": "code independently scrolls var",
+      "passed": true
+    },
+    {
+      "name": "desktop body not lengthened var",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=garch",
+      "passed": true
+    },
+    {
+      "name": "usable code viewport garch",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels garch-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics garch-default",
+      "passed": true
+    },
+    {
+      "name": "full script has outputs garch",
+      "passed": true
+    },
+    {
+      "name": "reading mode persists after params garch",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels garch-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics garch-changed-key",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=garch",
+      "passed": true
+    },
+    {
+      "name": "copy stays visible while code scrolls garch",
+      "passed": true
+    },
+    {
+      "name": "code independently scrolls garch",
+      "passed": true
+    },
+    {
+      "name": "desktop body not lengthened garch",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=capm",
+      "passed": true
+    },
+    {
+      "name": "usable code viewport capm",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels capm-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics capm-default",
+      "passed": true
+    },
+    {
+      "name": "full script has outputs capm",
+      "passed": true
+    },
+    {
+      "name": "reading mode persists after params capm",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels capm-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics capm-changed-key",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=capm",
+      "passed": true
+    },
+    {
+      "name": "copy stays visible while code scrolls capm",
+      "passed": true
+    },
+    {
+      "name": "code independently scrolls capm",
+      "passed": true
+    },
+    {
+      "name": "desktop body not lengthened capm",
+      "passed": true
+    },
+    {
+      "name": "served absolute project",
+      "passed": true
+    },
+    {
+      "name": "DOM server manifest same",
+      "passed": true
+    },
+    {
+      "name": "HTTP source identity index.html",
+      "passed": true
+    },
+    {
+      "name": "HTTP source identity experiments.html",
+      "passed": true
+    },
+    {
+      "name": "HTTP source identity experiments-bundle.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP source identity portfolio-bundle.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP source identity teaching-ux.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP source identity zero-friction-data.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP source identity experiments.css",
+      "passed": true
+    },
+    {
+      "name": "HTTP source identity workbench-system.css",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=pricing",
+      "passed": true
+    },
+    {
+      "name": "single primary copy pricing",
+      "passed": true
+    },
+    {
+      "name": "no required steps pricing",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels pricing-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics pricing-default",
+      "passed": true
+    },
+    {
+      "name": "key mode retains current reading pricing",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels pricing-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics pricing-changed-key",
+      "passed": true
+    },
+    {
+      "name": "key view copies complete function pricing",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=pricing",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=dividend",
+      "passed": true
+    },
+    {
+      "name": "single primary copy dividend",
+      "passed": true
+    },
+    {
+      "name": "no required steps dividend",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels dividend-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics dividend-default",
+      "passed": true
+    },
+    {
+      "name": "key mode retains current reading dividend",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels dividend-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics dividend-changed-key",
+      "passed": true
+    },
+    {
+      "name": "key view copies complete function dividend",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=dividend",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=iv",
+      "passed": true
+    },
+    {
+      "name": "single primary copy iv",
+      "passed": true
+    },
+    {
+      "name": "no required steps iv",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels iv-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics iv-default",
+      "passed": true
+    },
+    {
+      "name": "key mode retains current reading iv",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels iv-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics iv-changed-key",
+      "passed": true
+    },
+    {
+      "name": "key view copies complete function iv",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=iv",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=hedge",
+      "passed": true
+    },
+    {
+      "name": "single primary copy hedge",
+      "passed": true
+    },
+    {
+      "name": "no required steps hedge",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels hedge-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics hedge-default",
+      "passed": true
+    },
+    {
+      "name": "key mode retains current reading hedge",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels hedge-changed-key",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics hedge-changed-key",
+      "passed": true
+    },
+    {
+      "name": "key view copies complete function hedge",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=hedge",
+      "passed": true
+    },
+    {
+      "name": "d1 explanation",
+      "passed": true
+    },
+    {
+      "name": "d1 exact substitution",
+      "passed": true
+    },
+    {
+      "name": "Call correct graph link",
+      "passed": true
+    },
+    {
+      "name": "Call exact formula",
+      "passed": true
+    },
+    {
+      "name": "ordinary validation no bogus graph highlight",
+      "passed": true
+    },
+    {
+      "name": "pricing explains financial reason",
+      "passed": true
+    },
+    {
+      "name": "pricing explanation follows edited sigma",
+      "passed": true
+    },
+    {
+      "name": "payoff not net profit",
+      "passed": true
+    },
+    {
+      "name": "Greek title specific",
+      "passed": true
+    },
+    {
+      "name": "Call delta upper bound not above1",
+      "passed": true
+    },
+    {
+      "name": "q effect on current Delta explained",
+      "passed": true
+    },
+    {
+      "name": "Gamma topic",
+      "passed": true
+    },
+    {
+      "name": "Vega correct units",
+      "passed": true
+    },
+    {
+      "name": "Vega targeted lower explanation",
+      "passed": true
+    },
+    {
+      "name": "Theta current explanation",
+      "passed": true
+    },
+    {
+      "name": "Put chart correct negative domain",
+      "passed": true
+    },
+    {
+      "name": "display quote four decimals",
+      "passed": true
+    },
+    {
+      "name": "focus exposes full precision",
+      "passed": true
+    },
+    {
+      "name": "blur only formats",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels iv-precision-noedit",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics iv-precision-noedit",
+      "passed": true
+    },
+    {
+      "name": "rounding never changes calculation",
+      "passed": true
+    },
+    {
+      "name": "final IV explicit",
+      "passed": true
+    },
+    {
+      "name": "current is intermediate",
+      "passed": true
+    },
+    {
+      "name": "step changes current estimate",
+      "passed": true
+    },
+    {
+      "name": "comparison easy fields",
+      "passed": true
+    },
+    {
+      "name": "comparison both method names",
+      "passed": true
+    },
+    {
+      "name": "failed Newton never displays old final20",
+      "passed": true
+    },
+    {
+      "name": "failure cause visible",
+      "passed": true
+    },
+    {
+      "name": "actual initial remains",
+      "passed": true
+    },
+    {
+      "name": "target updates",
+      "passed": true
+    },
+    {
+      "name": "full shares line maps to stock bar",
+      "passed": true
+    },
+    {
+      "name": "full net line maps cancellation",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=hedge",
+      "passed": true
+    },
+    {
+      "name": "seed advanced",
+      "passed": true
+    },
+    {
+      "name": "interval direct",
+      "passed": true
+    },
+    {
+      "name": "interval explanation",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels dynamic-default",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics dynamic-default",
+      "passed": true
+    },
+    {
+      "name": "selected strategy visually primary none",
+      "passed": true
+    },
+    {
+      "name": "same color assignment none",
+      "passed": true
+    },
+    {
+      "name": "strategy plain definition none",
+      "passed": true
+    },
+    {
+      "name": "selected strategy visually primary static",
+      "passed": true
+    },
+    {
+      "name": "same color assignment static",
+      "passed": true
+    },
+    {
+      "name": "strategy plain definition static",
+      "passed": true
+    },
+    {
+      "name": "selected strategy visually primary dynamic",
+      "passed": true
+    },
+    {
+      "name": "same color assignment dynamic",
+      "passed": true
+    },
+    {
+      "name": "strategy plain definition dynamic",
+      "passed": true
+    },
+    {
+      "name": "current not realized profit",
+      "passed": true
+    },
+    {
+      "name": "future result folded",
+      "passed": true
+    },
+    {
+      "name": "full account accessible",
+      "passed": true
+    },
+    {
+      "name": "cash explanation targeted",
+      "passed": true
+    },
+    {
+      "name": "copied no HTML/line labels dynamic-put-q-interval",
+      "passed": true
+    },
+    {
+      "name": "clean R numerics dynamic-put-q-interval",
+      "passed": true
+    },
+    {
+      "name": "hover tooltip",
+      "passed": true
+    },
+    {
+      "name": "hover leave clears",
+      "passed": true
+    },
+    {
+      "name": "Escape clears pinned",
+      "passed": true
+    },
+    {
+      "name": "pause stable",
+      "passed": true
+    },
+    {
+      "name": "full default http://127.0.0.1:8765/experiments.html?model=bs&lesson=pricing",
+      "passed": true
+    },
+    {
+      "name": "catalog sorted",
+      "passed": true
+    },
+    {
+      "name": "independent code height pricing 1920",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow pricing 1920",
+      "passed": true
+    },
+    {
+      "name": "copy accessible pricing 1920",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen pricing 1920",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen pricing 1920",
+      "passed": true
+    },
+    {
+      "name": "independent code height dividend 1920",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow dividend 1920",
+      "passed": true
+    },
+    {
+      "name": "copy accessible dividend 1920",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen dividend 1920",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen dividend 1920",
+      "passed": true
+    },
+    {
+      "name": "independent code height iv 1920",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow iv 1920",
+      "passed": true
+    },
+    {
+      "name": "copy accessible iv 1920",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen iv 1920",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen iv 1920",
+      "passed": true
+    },
+    {
+      "name": "independent code height hedge 1920",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow hedge 1920",
+      "passed": true
+    },
+    {
+      "name": "copy accessible hedge 1920",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen hedge 1920",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen hedge 1920",
+      "passed": true
+    },
+    {
+      "name": "independent code height pricing 1440",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow pricing 1440",
+      "passed": true
+    },
+    {
+      "name": "copy accessible pricing 1440",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen pricing 1440",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen pricing 1440",
+      "passed": true
+    },
+    {
+      "name": "independent code height dividend 1440",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow dividend 1440",
+      "passed": true
+    },
+    {
+      "name": "copy accessible dividend 1440",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen dividend 1440",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen dividend 1440",
+      "passed": true
+    },
+    {
+      "name": "independent code height iv 1440",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow iv 1440",
+      "passed": true
+    },
+    {
+      "name": "copy accessible iv 1440",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen iv 1440",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen iv 1440",
+      "passed": true
+    },
+    {
+      "name": "independent code height hedge 1440",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow hedge 1440",
+      "passed": true
+    },
+    {
+      "name": "copy accessible hedge 1440",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen hedge 1440",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen hedge 1440",
+      "passed": true
+    },
+    {
+      "name": "independent code height pricing 1366",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow pricing 1366",
+      "passed": true
+    },
+    {
+      "name": "copy accessible pricing 1366",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen pricing 1366",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen pricing 1366",
+      "passed": true
+    },
+    {
+      "name": "independent code height dividend 1366",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow dividend 1366",
+      "passed": true
+    },
+    {
+      "name": "copy accessible dividend 1366",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen dividend 1366",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen dividend 1366",
+      "passed": true
+    },
+    {
+      "name": "independent code height iv 1366",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow iv 1366",
+      "passed": true
+    },
+    {
+      "name": "copy accessible iv 1366",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen iv 1366",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen iv 1366",
+      "passed": true
+    },
+    {
+      "name": "independent code height hedge 1366",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow hedge 1366",
+      "passed": true
+    },
+    {
+      "name": "copy accessible hedge 1366",
+      "passed": true
+    },
+    {
+      "name": "body remains one screen hedge 1366",
+      "passed": true
+    },
+    {
+      "name": "copy inside screen hedge 1366",
+      "passed": true
+    },
+    {
+      "name": "independent code height pricing 375",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow pricing 375",
+      "passed": true
+    },
+    {
+      "name": "copy accessible pricing 375",
+      "passed": true
+    },
+    {
+      "name": "independent code height dividend 375",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow dividend 375",
+      "passed": true
+    },
+    {
+      "name": "copy accessible dividend 375",
+      "passed": true
+    },
+    {
+      "name": "independent code height iv 375",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow iv 375",
+      "passed": true
+    },
+    {
+      "name": "copy accessible iv 375",
+      "passed": true
+    },
+    {
+      "name": "independent code height hedge 375",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow hedge 375",
+      "passed": true
+    },
+    {
+      "name": "copy accessible hedge 375",
+      "passed": true
+    },
+    {
+      "name": "other model usable code portfolio 1920",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible portfolio 1920",
+      "passed": true
+    },
+    {
+      "name": "other model body one screen portfolio 1920",
+      "passed": true
+    },
+    {
+      "name": "other model usable code var 1920",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible var 1920",
+      "passed": true
+    },
+    {
+      "name": "other model body one screen var 1920",
+      "passed": true
+    },
+    {
+      "name": "other model usable code garch 1920",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible garch 1920",
+      "passed": true
+    },
+    {
+      "name": "other model body one screen garch 1920",
+      "passed": true
+    },
+    {
+      "name": "other model usable code capm 1920",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible capm 1920",
+      "passed": true
+    },
+    {
+      "name": "other model body one screen capm 1920",
+      "passed": true
+    },
+    {
+      "name": "other model usable code portfolio 1366",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible portfolio 1366",
+      "passed": true
+    },
+    {
+      "name": "other model body one screen portfolio 1366",
+      "passed": true
+    },
+    {
+      "name": "other model usable code var 1366",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible var 1366",
+      "passed": true
+    },
+    {
+      "name": "other model body one screen var 1366",
+      "passed": true
+    },
+    {
+      "name": "other model usable code garch 1366",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible garch 1366",
+      "passed": true
+    },
+    {
+      "name": "other model body one screen garch 1366",
+      "passed": true
+    },
+    {
+      "name": "other model usable code capm 1366",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible capm 1366",
+      "passed": true
+    },
+    {
+      "name": "other model body one screen capm 1366",
+      "passed": true
+    },
+    {
+      "name": "other model usable code portfolio 375",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible portfolio 375",
+      "passed": true
+    },
+    {
+      "name": "other model usable code var 375",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible var 375",
+      "passed": true
+    },
+    {
+      "name": "other model usable code garch 375",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible garch 375",
+      "passed": true
+    },
+    {
+      "name": "other model usable code capm 375",
+      "passed": true
+    },
+    {
+      "name": "other model copy accessible capm 375",
+      "passed": true
+    },
+    {
+      "name": "real125 browser zoom",
+      "passed": true
+    },
+    {
+      "name": "125 copy inside",
+      "passed": true
+    },
+    {
+      "name": "125 usable code portfolio",
+      "passed": true
+    },
+    {
+      "name": "125 copy inside portfolio",
+      "passed": true
+    },
+    {
+      "name": "125 usable code var",
+      "passed": true
+    },
+    {
+      "name": "125 copy inside var",
+      "passed": true
+    },
+    {
+      "name": "125 usable code garch",
+      "passed": true
+    },
+    {
+      "name": "125 copy inside garch",
+      "passed": true
+    },
+    {
+      "name": "125 usable code capm",
+      "passed": true
+    },
+    {
+      "name": "125 copy inside capm",
+      "passed": true
+    },
+    {
+      "name": "no runtime exceptions",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "browser": "155.0.8059.85"
+}

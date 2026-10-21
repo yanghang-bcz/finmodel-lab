@@ -1,0 +1,9 @@
+Actual Rscript output (browser-copied scripts)
+
+Case C:
+ return.A variance.A sd.A
+0.44400000 0.00997056 0.09985269
+
+Applied analytic witness:
+ return.A variance.A sd.A
+0.644884009 0.002742542 0.052369284

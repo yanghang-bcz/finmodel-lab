@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "sources": [
+    "math.js",
+    "chart-scale.js",
+    "teaching.js",
+    "lessons.js",
+    "vendor/katex/katex.min.js",
+    "typography.js",
+    "exploration.js",
+    "classroom-ui.js",
+    "app.js"
+  ],
+  "sha256": "ae2c4688d089a315935a433e412b8b698aa3b12f6ca3d9e455d9276913d4805f"
+}

@@ -1,0 +1,378 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: parameter clears old pin",
+  "checks": [
+    {
+      "name": "correct absolute root",
+      "pass": true
+    },
+    {
+      "name": "service DOM manifest same",
+      "pass": true
+    },
+    {
+      "name": "hash app.js",
+      "pass": true
+    },
+    {
+      "name": "hash bs-lesson.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm-teaching.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm.css",
+      "pass": true
+    },
+    {
+      "name": "hash chart-interaction.js",
+      "pass": true
+    },
+    {
+      "name": "hash chart-scale.js",
+      "pass": true
+    },
+    {
+      "name": "hash classroom-ui.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiment-lessons.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiment-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiments-bundle.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiments-config.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiments.css",
+      "pass": true
+    },
+    {
+      "name": "hash experiments.js",
+      "pass": true
+    },
+    {
+      "name": "hash exploration.js",
+      "pass": true
+    },
+    {
+      "name": "hash financial-charts.js",
+      "pass": true
+    },
+    {
+      "name": "hash font-audit.js",
+      "pass": true
+    },
+    {
+      "name": "hash hedge-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash hedge-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash hedge-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "hash iv-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash iv-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash iv-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "hash lesson-presentation.js",
+      "pass": true
+    },
+    {
+      "name": "hash lessons.js",
+      "pass": true
+    },
+    {
+      "name": "hash math.js",
+      "pass": true
+    },
+    {
+      "name": "hash modal-ui.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-bundle.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-csv.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-multi-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-multi-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-multi-ui.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-multi.css",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-ux.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk-charts.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk.css",
+      "pass": true
+    },
+    {
+      "name": "hash runtime-version.js",
+      "pass": true
+    },
+    {
+      "name": "hash style.css",
+      "pass": true
+    },
+    {
+      "name": "hash teaching-ux-charts.js",
+      "pass": true
+    },
+    {
+      "name": "hash teaching-ux-data.js",
+      "pass": true
+    },
+    {
+      "name": "hash teaching-ux.js",
+      "pass": true
+    },
+    {
+      "name": "hash teaching.js",
+      "pass": true
+    },
+    {
+      "name": "hash typography.css",
+      "pass": true
+    },
+    {
+      "name": "hash typography.js",
+      "pass": true
+    },
+    {
+      "name": "hash workbench-system.css",
+      "pass": true
+    },
+    {
+      "name": "hash workbench-ui.js",
+      "pass": true
+    },
+    {
+      "name": "hash workbench.css",
+      "pass": true
+    },
+    {
+      "name": "hash zero-friction-data.js",
+      "pass": true
+    },
+    {
+      "name": "hash build-info.js",
+      "pass": true
+    },
+    {
+      "name": "hash index.html",
+      "pass": true
+    },
+    {
+      "name": "hash experiments.html",
+      "pass": true
+    },
+    {
+      "name": "basic default",
+      "pass": true
+    },
+    {
+      "name": "full default",
+      "pass": true
+    },
+    {
+      "name": "no forced steps",
+      "pass": true
+    },
+    {
+      "name": "one main graph",
+      "pass": true
+    },
+    {
+      "name": "default history unchanged",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs historical-default",
+      "pass": true
+    },
+    {
+      "name": "R length historical-default",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths historical-default",
+      "pass": true
+    },
+    {
+      "name": "normal headline",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs normal-default",
+      "pass": true
+    },
+    {
+      "name": "R length normal-default",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths normal-default",
+      "pass": true
+    },
+    {
+      "name": "four accessible risk markers",
+      "pass": true
+    },
+    {
+      "name": "ES diamond not quantile line",
+      "pass": true
+    },
+    {
+      "name": "actual marker hover hVaR",
+      "pass": true
+    },
+    {
+      "name": "actual marker leave hVaR",
+      "pass": true
+    },
+    {
+      "name": "only click pins hVaR",
+      "pass": true
+    },
+    {
+      "name": "close pinned hVaR",
+      "pass": true
+    },
+    {
+      "name": "Escape clear hVaR",
+      "pass": true
+    },
+    {
+      "name": "actual marker hover hES",
+      "pass": true
+    },
+    {
+      "name": "actual marker leave hES",
+      "pass": true
+    },
+    {
+      "name": "only click pins hES",
+      "pass": true
+    },
+    {
+      "name": "close pinned hES",
+      "pass": true
+    },
+    {
+      "name": "Escape clear hES",
+      "pass": true
+    },
+    {
+      "name": "actual marker hover nVaR",
+      "pass": true
+    },
+    {
+      "name": "actual marker leave nVaR",
+      "pass": true
+    },
+    {
+      "name": "only click pins nVaR",
+      "pass": true
+    },
+    {
+      "name": "close pinned nVaR",
+      "pass": true
+    },
+    {
+      "name": "Escape clear nVaR",
+      "pass": true
+    },
+    {
+      "name": "actual marker hover nES",
+      "pass": true
+    },
+    {
+      "name": "actual marker leave nES",
+      "pass": true
+    },
+    {
+      "name": "only click pins nES",
+      "pass": true
+    },
+    {
+      "name": "close pinned nES",
+      "pass": true
+    },
+    {
+      "name": "Escape clear nES",
+      "pass": true
+    },
+    {
+      "name": "parameter clears old pin",
+      "pass": false
+    }
+  ],
+  "errors": []
+}

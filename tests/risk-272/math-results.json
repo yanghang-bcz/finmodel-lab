@@ -1,0 +1,85 @@
+{
+  "passed": 6734,
+  "failed": 0,
+  "skipped": 0,
+  "Rruns": 9,
+  "maxAbsoluteDifference": 0.0033840305550256744,
+  "cases": [
+    {
+      "name": "default-fit",
+      "view": "dynamic",
+      "train": 150,
+      "omega": 1.8361764816249791e-7,
+      "a": 4.968703826081583e-18,
+      "b": 0.9999999979388429,
+      "logLikelihood": 448.54141452350996,
+      "warning": "估计接近参数边界，弱识别与局部最优仍需谨慎。"
+    },
+    {
+      "name": "default-backtest",
+      "view": "backtest",
+      "train": 150,
+      "omega": 1.8361764816249791e-7,
+      "a": 4.968703826081583e-18,
+      "b": 0.9999999979388429,
+      "logLikelihood": 448.54141452350996,
+      "warning": "估计接近参数边界，弱识别与局部最优仍需谨慎。"
+    },
+    {
+      "name": "train-120",
+      "view": "dynamic",
+      "train": 120,
+      "omega": 1.7669405312329657e-7,
+      "a": 5.64982070787554e-18,
+      "b": 0.9999999979388413,
+      "logLikelihood": 363.02862115575965,
+      "warning": "估计接近参数边界，弱识别与局部最优仍需谨慎。"
+    },
+    {
+      "name": "simulated-fit",
+      "view": "dynamic",
+      "train": 250,
+      "omega": 0.000004083203035209534,
+      "a": 0.13654064932469873,
+      "b": 0.7912302592686307,
+      "logLikelihood": 877.1172474499965,
+      "warning": ""
+    },
+    {
+      "name": "simulated-backtest",
+      "view": "backtest",
+      "train": 250,
+      "omega": 0.000004083203035209534,
+      "a": 0.13654064932469873,
+      "b": 0.7912302592686307,
+      "logLikelihood": 877.1172474499965,
+      "warning": ""
+    },
+    {
+      "name": "small-scale",
+      "view": "dynamic",
+      "train": 150,
+      "omega": 1.836176645972122e-21,
+      "a": 5.291424752450314e-17,
+      "b": 0.9999999979388442,
+      "logLikelihood": 2866.2557621672577,
+      "warning": "估计接近参数边界，弱识别与局部最优仍需谨慎。"
+    },
+    {
+      "name": "extreme-shock",
+      "view": "dynamic",
+      "train": 150,
+      "omega": 9.08483504502268e-12,
+      "a": 1.424054760116859e-11,
+      "b": 0.993090987170516,
+      "logLikelihood": 201.04255375198497,
+      "warning": "估计接近参数边界，弱识别与局部最优仍需谨慎。"
+    }
+  ],
+  "tolerances": {
+    "objective": 0.001,
+    "varianceAndRisk": "0.05 + 1e-5*abs(expected); optimization path tolerance",
+    "parameters": "1e-8 + 1e-4*abs(expected)",
+    "analytic": "1e-7 + 1e-6*abs(expected)"
+  }
+}

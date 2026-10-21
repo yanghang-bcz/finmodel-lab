@@ -1,0 +1,617 @@
+{
+  "passed": 152,
+  "failed": 0,
+  "scripts": 14,
+  "checks": [
+    {
+      "name": "correct absolute project",
+      "passed": true
+    },
+    {
+      "name": "server DOM manifest match",
+      "passed": true
+    },
+    {
+      "name": "HTTP source hash experiments.html",
+      "passed": true
+    },
+    {
+      "name": "HTTP source hash experiments-bundle.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP source hash experiments.css",
+      "passed": true
+    },
+    {
+      "name": "HTTP source hash teaching-ux.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP source hash teaching-ux-charts.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP source hash zero-friction-data.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP source hash build-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "no mandatory tutorial pricing",
+      "passed": true
+    },
+    {
+      "name": "chart ready pricing",
+      "passed": true
+    },
+    {
+      "name": "immediate editable input pricing",
+      "passed": true
+    },
+    {
+      "name": "basic code visible pricing",
+      "passed": true
+    },
+    {
+      "name": "no locked copy pricing",
+      "passed": true
+    },
+    {
+      "name": "first screen pricing .tu-question",
+      "passed": true
+    },
+    {
+      "name": "first screen pricing #tuFigure svg",
+      "passed": true
+    },
+    {
+      "name": "first screen pricing #tuParams input:visible",
+      "passed": true
+    },
+    {
+      "name": "first screen pricing #tuBody .tu-facts",
+      "passed": true
+    },
+    {
+      "name": "first screen pricing #tuCodeLines .code-line",
+      "passed": true
+    },
+    {
+      "name": "copied complete context pricing-basic",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes pricing-basic",
+      "passed": true
+    },
+    {
+      "name": "copied complete context pricing-full",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes pricing-full",
+      "passed": true
+    },
+    {
+      "name": "no mandatory tutorial dividend",
+      "passed": true
+    },
+    {
+      "name": "chart ready dividend",
+      "passed": true
+    },
+    {
+      "name": "immediate editable input dividend",
+      "passed": true
+    },
+    {
+      "name": "basic code visible dividend",
+      "passed": true
+    },
+    {
+      "name": "no locked copy dividend",
+      "passed": true
+    },
+    {
+      "name": "first screen dividend .tu-question",
+      "passed": true
+    },
+    {
+      "name": "first screen dividend #tuFigure svg",
+      "passed": true
+    },
+    {
+      "name": "first screen dividend #tuParams input:visible",
+      "passed": true
+    },
+    {
+      "name": "first screen dividend #tuBody .tu-facts",
+      "passed": true
+    },
+    {
+      "name": "first screen dividend #tuCodeLines .code-line",
+      "passed": true
+    },
+    {
+      "name": "copied complete context dividend-basic",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes dividend-basic",
+      "passed": true
+    },
+    {
+      "name": "copied complete context dividend-full",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes dividend-full",
+      "passed": true
+    },
+    {
+      "name": "no mandatory tutorial iv",
+      "passed": true
+    },
+    {
+      "name": "chart ready iv",
+      "passed": true
+    },
+    {
+      "name": "immediate editable input iv",
+      "passed": true
+    },
+    {
+      "name": "basic code visible iv",
+      "passed": true
+    },
+    {
+      "name": "no locked copy iv",
+      "passed": true
+    },
+    {
+      "name": "first screen iv .tu-question",
+      "passed": true
+    },
+    {
+      "name": "first screen iv #tuFigure svg",
+      "passed": true
+    },
+    {
+      "name": "first screen iv #tuParams input:visible",
+      "passed": true
+    },
+    {
+      "name": "first screen iv #tuBody .tu-facts",
+      "passed": true
+    },
+    {
+      "name": "first screen iv #tuCodeLines .code-line",
+      "passed": true
+    },
+    {
+      "name": "copied complete context iv-basic",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes iv-basic",
+      "passed": true
+    },
+    {
+      "name": "copied complete context iv-full",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes iv-full",
+      "passed": true
+    },
+    {
+      "name": "no mandatory tutorial hedge",
+      "passed": true
+    },
+    {
+      "name": "chart ready hedge",
+      "passed": true
+    },
+    {
+      "name": "immediate editable input hedge",
+      "passed": true
+    },
+    {
+      "name": "basic code visible hedge",
+      "passed": true
+    },
+    {
+      "name": "no locked copy hedge",
+      "passed": true
+    },
+    {
+      "name": "first screen hedge .tu-question",
+      "passed": true
+    },
+    {
+      "name": "first screen hedge #tuFigure svg",
+      "passed": true
+    },
+    {
+      "name": "first screen hedge #tuParams input:visible",
+      "passed": true
+    },
+    {
+      "name": "first screen hedge #tuBody .tu-facts",
+      "passed": true
+    },
+    {
+      "name": "first screen hedge #tuCodeLines .code-line",
+      "passed": true
+    },
+    {
+      "name": "copied complete context hedge-basic",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes hedge-basic",
+      "passed": true
+    },
+    {
+      "name": "copied complete context hedge-full",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes hedge-full",
+      "passed": true
+    },
+    {
+      "name": "live delta updates",
+      "passed": true
+    },
+    {
+      "name": "historical holding unchanged",
+      "passed": true
+    },
+    {
+      "name": "live explanation",
+      "passed": true
+    },
+    {
+      "name": "live graph updated",
+      "passed": true
+    },
+    {
+      "name": "delta-specific link",
+      "passed": true
+    },
+    {
+      "name": "shares-specific link",
+      "passed": true
+    },
+    {
+      "name": "net-specific link",
+      "passed": true
+    },
+    {
+      "name": "slider survives continuous drag",
+      "passed": true
+    },
+    {
+      "name": "slider and input synced",
+      "passed": true
+    },
+    {
+      "name": "cash borrowing explained",
+      "passed": true
+    },
+    {
+      "name": "optional challenge gives explanation",
+      "passed": true
+    },
+    {
+      "name": "challenge cannot lock input",
+      "passed": true
+    },
+    {
+      "name": "Put negative target",
+      "passed": true
+    },
+    {
+      "name": "Put correct graph directions",
+      "passed": true
+    },
+    {
+      "name": "copied complete context put",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes put",
+      "passed": true
+    },
+    {
+      "name": "direct dynamic no prerequisites",
+      "passed": true
+    },
+    {
+      "name": "path settings visible",
+      "passed": true
+    },
+    {
+      "name": "same price path interval only",
+      "passed": true
+    },
+    {
+      "name": "next advances current account",
+      "passed": true
+    },
+    {
+      "name": "previous period",
+      "passed": true
+    },
+    {
+      "name": "pause cancels timer",
+      "passed": true
+    },
+    {
+      "name": "resume advances",
+      "passed": true
+    },
+    {
+      "name": "reset timeline",
+      "passed": true
+    },
+    {
+      "name": "preview tooltip",
+      "passed": true
+    },
+    {
+      "name": "leave tooltip hides",
+      "passed": true
+    },
+    {
+      "name": "explicit click pins",
+      "passed": true
+    },
+    {
+      "name": "Escape closes pinned",
+      "passed": true
+    },
+    {
+      "name": "button closes pin",
+      "passed": true
+    },
+    {
+      "name": "strategy immediately updates",
+      "passed": true
+    },
+    {
+      "name": "three strategies retained",
+      "passed": true
+    },
+    {
+      "name": "copied complete context dynamic-basic",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes dynamic-basic",
+      "passed": true
+    },
+    {
+      "name": "copied complete context dynamic-full",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes dynamic-full",
+      "passed": true
+    },
+    {
+      "name": "full code accessible",
+      "passed": true
+    },
+    {
+      "name": "module switch stops timer",
+      "passed": true
+    },
+    {
+      "name": "both price curves",
+      "passed": true
+    },
+    {
+      "name": "pricing immediate updates",
+      "passed": true
+    },
+    {
+      "name": "payoff distinguished",
+      "passed": true
+    },
+    {
+      "name": "copied complete context payoff",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes payoff",
+      "passed": true
+    },
+    {
+      "name": "dividend immediate price",
+      "passed": true
+    },
+    {
+      "name": "one Greek at a time",
+      "passed": true
+    },
+    {
+      "name": "Vega units",
+      "passed": true
+    },
+    {
+      "name": "copied complete context vega",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes vega",
+      "passed": true
+    },
+    {
+      "name": "Theta units",
+      "passed": true
+    },
+    {
+      "name": "bisection initial bracket",
+      "passed": true
+    },
+    {
+      "name": "percentage x axis",
+      "passed": true
+    },
+    {
+      "name": "next iteration immediate",
+      "passed": true
+    },
+    {
+      "name": "Newton tangent visible",
+      "passed": true
+    },
+    {
+      "name": "low Vega failure visible",
+      "passed": true
+    },
+    {
+      "name": "invalid quote visible",
+      "passed": true
+    },
+    {
+      "name": "method comparison exact",
+      "passed": true
+    },
+    {
+      "name": "log select sync",
+      "passed": true
+    },
+    {
+      "name": "copied complete context newton",
+      "passed": true
+    },
+    {
+      "name": "actual copied R executes newton",
+      "passed": true
+    },
+    {
+      "name": "expiry has no fabricated IV",
+      "passed": true
+    },
+    {
+      "name": "invalid input clears graph",
+      "passed": true
+    },
+    {
+      "name": "valid input recovers",
+      "passed": true
+    },
+    {
+      "name": "keyboard slider immediate",
+      "passed": true
+    },
+    {
+      "name": "reduced motion manual mode",
+      "passed": true
+    },
+    {
+      "name": "reduced motion no autoplay",
+      "passed": true
+    },
+    {
+      "name": "touch direct dynamic",
+      "passed": true
+    },
+    {
+      "name": "touch next period",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow 1920",
+      "passed": true
+    },
+    {
+      "name": "core parameter accessible 1920",
+      "passed": true
+    },
+    {
+      "name": "main graph actual size 1920",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow 1440",
+      "passed": true
+    },
+    {
+      "name": "core parameter accessible 1440",
+      "passed": true
+    },
+    {
+      "name": "main graph actual size 1440",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow 1366",
+      "passed": true
+    },
+    {
+      "name": "core parameter accessible 1366",
+      "passed": true
+    },
+    {
+      "name": "main graph actual size 1366",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow 375",
+      "passed": true
+    },
+    {
+      "name": "core parameter accessible 375",
+      "passed": true
+    },
+    {
+      "name": "main graph actual size 375",
+      "passed": true
+    },
+    {
+      "name": "projection mode preserved",
+      "passed": true
+    },
+    {
+      "name": "real Chrome125% zoom",
+      "passed": true
+    },
+    {
+      "name": "zoom no overflow",
+      "passed": true
+    },
+    {
+      "name": "zoom parameter fully inside viewport",
+      "passed": true
+    },
+    {
+      "name": "catalog01..12 sorted",
+      "passed": true
+    },
+    {
+      "name": "legacy advanced access",
+      "passed": true
+    },
+    {
+      "name": "return free not steps",
+      "passed": true
+    },
+    {
+      "name": "reload new free version",
+      "passed": true
+    },
+    {
+      "name": "no JS runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "browser": "155.0.8059.85"
+}

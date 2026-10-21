@@ -1,0 +1,379 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "label": "HTTP server points to exact repository",
+      "passed": true
+    },
+    {
+      "label": "HTML DOM manifest server same build",
+      "passed": true
+    },
+    {
+      "label": "Live resource hash experiments.html",
+      "passed": true
+    },
+    {
+      "label": "Live resource hash experiments-bundle.js",
+      "passed": true
+    },
+    {
+      "label": "Live resource hash experiments-config.js",
+      "passed": true
+    },
+    {
+      "label": "Live resource hash chart-interaction.js",
+      "passed": true
+    },
+    {
+      "label": "Live resource hash bs-lesson.js",
+      "passed": true
+    },
+    {
+      "label": "Live resource hash index.html",
+      "passed": true
+    },
+    {
+      "label": "Default q=0 prices preserved",
+      "passed": true
+    },
+    {
+      "label": "Three columns fit 1440x900",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 参数 · S",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 参数 · K",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 参数 · T",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 参数 · r",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 参数 · sigma",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 参数 · q",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 股息贴现因子",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 标的贴现值",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 行权价现值",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 标准化距离 d₁",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 标准化距离 d₂",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 正态权重",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 风险中性概率",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 看涨价格",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation 看跌价格",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation Delta",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation Gamma",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation Vega",
+      "passed": true
+    },
+    {
+      "label": "R/formula/parameter explanation Theta",
+      "passed": true
+    },
+    {
+      "label": "Dividend slider visible",
+      "passed": true
+    },
+    {
+      "label": "q sync prices 0.01",
+      "passed": true
+    },
+    {
+      "label": "q sync input 0.01",
+      "passed": true
+    },
+    {
+      "label": "q sync prices 0.03",
+      "passed": true
+    },
+    {
+      "label": "q sync input 0.03",
+      "passed": true
+    },
+    {
+      "label": "q sync prices 0.05",
+      "passed": true
+    },
+    {
+      "label": "q sync input 0.05",
+      "passed": true
+    },
+    {
+      "label": "Main curve responds to q",
+      "passed": true
+    },
+    {
+      "label": "Same-parameter q0 comparison visible",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live C",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live P",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live d1",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live d2",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live deltaC",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live deltaP",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live gamma",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live vega",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live thetaC",
+      "passed": true
+    },
+    {
+      "label": "Copied basic R matches live thetaP",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live C",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live P",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live d1",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live d2",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live deltaC",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live deltaP",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live gamma",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live vega",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live thetaC",
+      "passed": true
+    },
+    {
+      "label": "Copied full R matches live thetaP",
+      "passed": true
+    },
+    {
+      "label": "Honest RStudio practice instruction",
+      "passed": true
+    },
+    {
+      "label": "Predict phase before selection",
+      "passed": true
+    },
+    {
+      "label": "No answer leaked in Predict",
+      "passed": true
+    },
+    {
+      "label": "Predict locks S",
+      "passed": true
+    },
+    {
+      "label": "Predict locks K",
+      "passed": true
+    },
+    {
+      "label": "Predict locks T",
+      "passed": true
+    },
+    {
+      "label": "Predict locks r",
+      "passed": true
+    },
+    {
+      "label": "Predict locks sigma",
+      "passed": true
+    },
+    {
+      "label": "Predict locks q",
+      "passed": true
+    },
+    {
+      "label": "Predict hides comparison",
+      "passed": true
+    },
+    {
+      "label": "Predict reset scenario q0",
+      "passed": true
+    },
+    {
+      "label": "Choice alone stays Predict",
+      "passed": true
+    },
+    {
+      "label": "Experiment locks S",
+      "passed": true
+    },
+    {
+      "label": "Experiment locks K",
+      "passed": true
+    },
+    {
+      "label": "Experiment locks T",
+      "passed": true
+    },
+    {
+      "label": "Experiment locks r",
+      "passed": true
+    },
+    {
+      "label": "Experiment locks sigma",
+      "passed": true
+    },
+    {
+      "label": "Only q enabled",
+      "passed": true
+    },
+    {
+      "label": "Require target before Explain",
+      "passed": true
+    },
+    {
+      "label": "Explain checks wrong prediction",
+      "passed": true
+    },
+    {
+      "label": "Explain q locked",
+      "passed": true
+    },
+    {
+      "label": "Reexperiment q reset",
+      "passed": true
+    },
+    {
+      "label": "Restart clears choice",
+      "passed": true
+    },
+    {
+      "label": "Exit restores original q",
+      "passed": true
+    },
+    {
+      "label": "Boundary forces full code",
+      "passed": true
+    },
+    {
+      "label": "Expiry zero payoff",
+      "passed": true
+    },
+    {
+      "label": "Expiry Greeks empty",
+      "passed": true
+    },
+    {
+      "label": "Sigma zero has finite price",
+      "passed": true
+    },
+    {
+      "label": "Invalid q blocks copy",
+      "passed": true
+    },
+    {
+      "label": "Invalid q explains error",
+      "passed": true
+    },
+    {
+      "label": "Empty q blocks copy",
+      "passed": true
+    },
+    {
+      "label": "Code pane scrolls locally",
+      "passed": true
+    },
+    {
+      "label": "Explanation scroll supported",
+      "passed": true
+    },
+    {
+      "label": "Mobile no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "label": "No uncaught page errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "browser": "155.0.8059.85"
+}

@@ -1,0 +1,25 @@
+{
+  "version": "2.4.0-capm.76e82b57cef85441",
+  "resources": [
+    "http://127.0.0.1:8765/style.css?v=ab186d5e6d5ee4a4",
+    "http://127.0.0.1:8765/typography.css?v=834fb038f8229297",
+    "http://127.0.0.1:8765/vendor/katex/katex.min.css?v=144d9ea8097c553f",
+    "http://127.0.0.1:8765/assets/fonts/glow-faces.css?v=0896e62cf0b74955",
+    "http://127.0.0.1:8765/workbench-system.css?v=34b1937a2ae140a9",
+    "http://127.0.0.1:8765/experiments.css?v=81b94df939ce9bbf",
+    "http://127.0.0.1:8765/capm.css?v=81e77fbb1cfe2c99",
+    "http://127.0.0.1:8765/build-info.js?v=b1f5056dfd92983c",
+    "http://127.0.0.1:8765/experiments-bundle.js?v=72b49afebda47f11"
+  ],
+  "hashes": {
+    "style.css": "ab186d5e6d5ee4a4d62494267edf57776f8c5c1ce5e292408161733fcadd824a",
+    "typography.css": "834fb038f8229297d37c0c81f655484cfa34f9dbeda69d68d1b30c53be4f3b8e",
+    "vendor/katex/katex.min.css": "144d9ea8097c553f5672ea8bb89b4241c486e0e89ec844580823155fd4fdf303",
+    "assets/fonts/glow-faces.css": "0896e62cf0b74955bfe1ecb509d228b151b1f4271df6f6df1c8a64433af3584d",
+    "workbench-system.css": "34b1937a2ae140a95e9ba834218f2ebed8457e9efac3a78fd1e43e779f2cabdf",
+    "experiments.css": "81b94df939ce9bbfc251ceb392a064d42c9fc0733c4d7dcc2eabd0b9b8db733f",
+    "capm.css": "81e77fbb1cfe2c993491e5c6167391826ecf9e9e22a8c8e39d60e98b78102c9a",
+    "build-info.js": "b1f5056dfd92983c5dfaf7aa2c013fa06274c0f51e6a1c1c6b0a37df8cdb22cf",
+    "experiments-bundle.js": "72b49afebda47f1122bbf9e59219622e2db9eda9963390c0288d06ddeeaa4394"
+  }
+}

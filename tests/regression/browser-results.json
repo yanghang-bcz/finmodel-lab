@@ -1,0 +1,203 @@
+{
+  "passed": 2873,
+  "failed": 0,
+  "copiedR": 21,
+  "errors": [],
+  "records": [
+    {
+      "name": "ols-default",
+      "view": "traditional",
+      "method": "ols",
+      "reg": "ridge",
+      "mode": "manual",
+      "values": 54
+    },
+    {
+      "name": "ols-high-correlation",
+      "view": "traditional",
+      "method": "ols",
+      "reg": "ridge",
+      "mode": "manual",
+      "values": 54
+    },
+    {
+      "name": "ols-predicted",
+      "view": "traditional",
+      "method": "ols",
+      "reg": "ridge",
+      "mode": "manual",
+      "values": 54
+    },
+    {
+      "name": "ols-residual",
+      "view": "traditional",
+      "method": "ols",
+      "reg": "ridge",
+      "mode": "manual",
+      "values": 54
+    },
+    {
+      "name": "ols-qq",
+      "view": "traditional",
+      "method": "ols",
+      "reg": "ridge",
+      "mode": "manual",
+      "values": 54
+    },
+    {
+      "name": "step-forward",
+      "view": "traditional",
+      "method": "stepwise",
+      "reg": "ridge",
+      "mode": "manual",
+      "values": 59
+    },
+    {
+      "name": "step-backward",
+      "view": "traditional",
+      "method": "stepwise",
+      "reg": "ridge",
+      "mode": "manual",
+      "values": 56
+    },
+    {
+      "name": "step-both",
+      "view": "traditional",
+      "method": "stepwise",
+      "reg": "ridge",
+      "mode": "manual",
+      "values": 56
+    },
+    {
+      "name": "ridge-manual",
+      "view": "regularization",
+      "method": "stepwise",
+      "reg": "ridge",
+      "mode": "manual",
+      "values": 164
+    },
+    {
+      "name": "ridge-cv",
+      "view": "regularization",
+      "method": "stepwise",
+      "reg": "ridge",
+      "mode": "cv",
+      "values": 164
+    },
+    {
+      "name": "ridge-current",
+      "view": "regularization",
+      "method": "stepwise",
+      "reg": "ridge",
+      "mode": "cv",
+      "values": 164
+    },
+    {
+      "name": "lasso-manual",
+      "view": "regularization",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "manual",
+      "values": 164
+    },
+    {
+      "name": "lasso-cv",
+      "view": "regularization",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "cv",
+      "values": 164
+    },
+    {
+      "name": "lasso-current",
+      "view": "regularization",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "cv",
+      "values": 164
+    },
+    {
+      "name": "compare-rmse",
+      "view": "compare",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "manual",
+      "values": 164
+    },
+    {
+      "name": "compare-mae",
+      "view": "compare",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "manual",
+      "values": 164
+    },
+    {
+      "name": "split75",
+      "view": "compare",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "manual",
+      "values": 201
+    },
+    {
+      "name": "csv-returns",
+      "view": "compare",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "manual",
+      "values": 156
+    },
+    {
+      "name": "csv-missing-disclosed",
+      "view": "compare",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "manual",
+      "values": 156
+    },
+    {
+      "name": "csv-prices",
+      "view": "compare",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "manual",
+      "values": 156
+    },
+    {
+      "name": "failed-lasso-cleared",
+      "view": "compare",
+      "method": "stepwise",
+      "reg": "lasso",
+      "mode": "manual",
+      "values": 110
+    }
+  ],
+  "screens": [
+    "ols-default.png",
+    "ols-high-correlation.png",
+    "ols-predicted.png",
+    "ols-residual.png",
+    "ols-qq.png",
+    "step-forward.png",
+    "step-backward.png",
+    "step-both.png",
+    "ridge-path.png",
+    "ridge-validation.png",
+    "lasso-path.png",
+    "lasso-validation.png",
+    "four-models.png",
+    "csv-import.png",
+    "traditional-1920x1080.png",
+    "regularization-1920x1080.png",
+    "compare-1920x1080.png",
+    "traditional-1440x900.png",
+    "regularization-1440x900.png",
+    "compare-1440x900.png",
+    "traditional-1366x768.png",
+    "regularization-1366x768.png",
+    "compare-1366x768.png"
+  ],
+  "chrome": "155.0.8059.85",
+  "buildId": "2.9.0-regression.a8a2cd0a020ac777"
+}

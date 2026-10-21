@@ -1,0 +1,531 @@
+
+Call:
+lm(formula = y ~ ., data = training, tol = 1e-10)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0206080 -0.0054419  0.0001142  0.0066280  0.0171585 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.0005243  0.0005984   0.876 0.382031    
+x1           0.5134447  0.0750088   6.845 1.08e-10 ***
+x2          -0.3999674  0.0755922  -5.291 3.40e-07 ***
+x3           0.2019192  0.0584545   3.454 0.000683 ***
+x4           0.0036034  0.0448350   0.080 0.936029    
+x5           0.0831536  0.0576117   1.443 0.150605    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.008145 on 186 degrees of freedom
+Multiple R-squared:  0.2724,	Adjusted R-squared:  0.2528 
+F-statistic: 13.92 on 5 and 186 DF,  p-value: 1.47e-11
+
+  (Intercept)            x1            x2            x3            x4 
+ 0.0005242993  0.5134447018 -0.3999673857  0.2019191596  0.0036034040 
+           x5 
+ 0.0831536232 
+       RMSE         MAE 
+0.008851971 0.006893251 
+[1] 4.000957 3.974041 1.021117 1.020747 1.006983
+            x1          x2          x3          x4          x5
+x1  1.00000000  0.86180231  0.12012963 -0.01128453 -0.03054696
+x2  0.86180231  1.00000000  0.07308125  0.05795756 -0.01005626
+x3  0.12012963  0.07308125  1.00000000 -0.01635863  0.04490526
+x4 -0.01128453  0.05795756 -0.01635863  1.00000000  0.05257008
+x5 -0.03054696 -0.01005626  0.04490526  0.05257008  1.00000000
+[1] 1.334239
+[[1]]
+[[1]]$ids
+[1] 1 2 3 4 5
+
+[[1]]$aic
+[1] -1841.265
+
+[[1]]$operation
+[1] "initial"
+
+
+[[2]]
+[[2]]$ids
+[1] 1 2 3 5
+
+[[2]]$aic
+[1] -1843.259
+
+[[2]]$operation
+[1] "drop 4"
+
+
+[[1]]
+[[1]]$ids
+[1] 1 2 3 4 5
+
+[[1]]$aic
+[1] -1841.265
+
+[[1]]$candidates
+[[1]]$candidates[[1]]
+[[1]]$candidates[[1]]$ids
+[1] 2 3 4 5
+
+[[1]]$candidates[[1]]$aic
+[1] -1800.128
+
+[[1]]$candidates[[1]]$variable
+[1] 1
+
+[[1]]$candidates[[1]]$action
+[1] "drop"
+
+[[1]]$candidates[[1]]$q
+[[1]]$candidates[[1]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x2           x3           x4           x5  
+  0.0003504    0.0469664    0.2472318   -0.0323170    0.0663699  
+
+
+[[1]]$candidates[[1]]$q$aic
+[1] -1800.128
+
+
+
+[[1]]$candidates[[2]]
+[[1]]$candidates[[2]]$ids
+[1] 1 3 4 5
+
+[[1]]$candidates[[2]]$aic
+[1] -1816.345
+
+[[1]]$candidates[[2]]$variable
+[1] 2
+
+[[1]]$candidates[[2]]$action
+[1] "drop"
+
+[[1]]$candidates[[2]]$q
+[[1]]$candidates[[2]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x1           x3           x4           x5  
+  0.0003648    0.1706419    0.2205809   -0.0275173    0.0744965  
+
+
+[[1]]$candidates[[2]]$q$aic
+[1] -1816.345
+
+
+
+[[1]]$candidates[[3]]
+[[1]]$candidates[[3]]$ids
+[1] 1 2 4 5
+
+[[1]]$candidates[[3]]$aic
+[1] -1831.327
+
+[[1]]$candidates[[3]]$variable
+[1] 3
+
+[[1]]$candidates[[3]]$action
+[1] "drop"
+
+[[1]]$candidates[[3]]$q
+[[1]]$candidates[[3]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x1           x2           x4           x5  
+  0.0008026    0.5427869   -0.4157226    0.0021141    0.0933863  
+
+
+[[1]]$candidates[[3]]$q$aic
+[1] -1831.327
+
+
+
+[[1]]$candidates[[4]]
+[[1]]$candidates[[4]]$ids
+[1] 1 2 3 5
+
+[[1]]$candidates[[4]]$aic
+[1] -1843.259
+
+[[1]]$candidates[[4]]$variable
+[1] 4
+
+[[1]]$candidates[[4]]$action
+[1] "drop"
+
+[[1]]$candidates[[4]]$q
+[[1]]$candidates[[4]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x1           x2           x3           x5  
+  0.0005197    0.5127391   -0.3991704    0.2018740    0.0833798  
+
+
+[[1]]$candidates[[4]]$q$aic
+[1] -1843.259
+
+
+
+[[1]]$candidates[[5]]
+[[1]]$candidates[[5]]$ids
+[1] 1 2 3 4
+
+[[1]]$candidates[[5]]$aic
+[1] -1841.127
+
+[[1]]$candidates[[5]]$variable
+[1] 5
+
+[[1]]$candidates[[5]]$action
+[1] "drop"
+
+[[1]]$candidates[[5]]$q
+[[1]]$candidates[[5]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x1           x2           x3           x4  
+   0.000589     0.508837    -0.396869     0.206257     0.006765  
+
+
+[[1]]$candidates[[5]]$q$aic
+[1] -1841.127
+
+
+
+
+[[1]]$accepted
+[1] TRUE
+
+
+[[2]]
+[[2]]$ids
+[1] 1 2 3 5
+
+[[2]]$aic
+[1] -1843.259
+
+[[2]]$candidates
+[[2]]$candidates[[1]]
+[[2]]$candidates[[1]]$ids
+[1] 2 3 5
+
+[[2]]$candidates[[1]]$aic
+[1] -1801.694
+
+[[2]]$candidates[[1]]$variable
+[1] 1
+
+[[2]]$candidates[[1]]$action
+[1] "drop"
+
+[[2]]$candidates[[1]]$q
+[[2]]$candidates[[1]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x2           x3           x5  
+  0.0003901    0.0453041    0.2482089    0.0641031  
+
+
+[[2]]$candidates[[1]]$q$aic
+[1] -1801.694
+
+
+
+[[2]]$candidates[[2]]
+[[2]]$candidates[[2]]$ids
+[1] 1 3 5
+
+[[2]]$candidates[[2]]$aic
+[1] -1818.001
+
+[[2]]$candidates[[2]]$variable
+[1] 2
+
+[[2]]$candidates[[2]]$action
+[1] "drop"
+
+[[2]]$candidates[[2]]$q
+[[2]]$candidates[[2]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x1           x3           x5  
+  0.0003982    0.1708167    0.2212209    0.0726046  
+
+
+[[2]]$candidates[[2]]$q$aic
+[1] -1818.001
+
+
+
+[[2]]$candidates[[3]]
+[[2]]$candidates[[3]]$ids
+[1] 1 2 5
+
+[[2]]$candidates[[3]]$aic
+[1] -1833.325
+
+[[2]]$candidates[[3]]$variable
+[1] 3
+
+[[2]]$candidates[[3]]$action
+[1] "drop"
+
+[[2]]$candidates[[3]]$q
+[[2]]$candidates[[3]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x1           x2           x5  
+  0.0007999    0.5423691   -0.4152529    0.0935177  
+
+
+[[2]]$candidates[[3]]$q$aic
+[1] -1833.325
+
+
+
+[[2]]$candidates[[4]]
+[[2]]$candidates[[4]]$ids
+[1] 1 2 3
+
+[[2]]$candidates[[4]]$aic
+[1] -1843.104
+
+[[2]]$candidates[[4]]$variable
+[1] 5
+
+[[2]]$candidates[[4]]$action
+[1] "drop"
+
+[[2]]$candidates[[4]]$q
+[[2]]$candidates[[4]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x1           x2           x3  
+  0.0005806    0.5074856   -0.3953530    0.2061945  
+
+
+[[2]]$candidates[[4]]$q$aic
+[1] -1843.104
+
+
+
+[[2]]$candidates[[5]]
+[[2]]$candidates[[5]]$ids
+[1] 1 2 3 4 5
+
+[[2]]$candidates[[5]]$aic
+[1] -1841.265
+
+[[2]]$candidates[[5]]$variable
+[1] 4
+
+[[2]]$candidates[[5]]$action
+[1] "add"
+
+[[2]]$candidates[[5]]$q
+[[2]]$candidates[[5]]$q$fit
+
+Call:
+lm(formula = reformulate(if (length(ids)) paste0("x", ids) else "1", 
+    response = "y"), data = df, tol = 1e-10)
+
+Coefficients:
+(Intercept)           x1           x2           x3           x4           x5  
+  0.0005243    0.5134447   -0.3999674    0.2019192    0.0036034    0.0831536  
+
+
+[[2]]$candidates[[5]]$q$aic
+[1] -1841.265
+
+
+
+
+[[2]]$accepted
+[1] FALSE
+
+
+y ~ x1 + x2 + x3 + x5
+<environment: 0x7cc3eb4008>
+  Step Df     Deviance Resid. Df Resid. Dev       AIC
+1      NA           NA       186 0.01233976 -1841.265
+2 - x4  1 4.285346e-07       187 0.01234019 -1843.259
+       RMSE         MAE 
+0.008854688 0.006889933 
+$coef
+                         x1            x2            x3            x4 
+ 0.0005109711  0.4653250528 -0.3523016536  0.2023508797 -0.0001600513 
+           x5 
+ 0.0805884404 
+
+$standardCoef
+[1]  7.294111e-03 -5.461349e-03  2.056228e-03 -2.120057e-06  8.251248e-04
+
+$lambda
+[1] 0.01584893
+
+$iter
+[1] 1
+
+$kkt
+[1] 1.244122e-17
+
+$edf
+[1] 5.838622
+
+$nonzero
+[1] 5
+
+       RMSE         MAE 
+0.008865450 0.006921194 
+$coef
+                         x1            x2            x3            x4 
+ 0.0005309145  0.4399939013 -0.3252095800  0.1922960453  0.0000000000 
+           x5 
+ 0.0660513878 
+
+$standardCoef
+[1]  0.0068970377 -0.0050413704  0.0019540538  0.0000000000  0.0006762836
+
+$lambda
+[1] 0.0001584893
+
+$iter
+[1] 50
+
+$kkt
+[1] 6.119146e-10
+
+$edf
+[1] 5
+
+$nonzero
+[1] 4
+
+       RMSE         MAE 
+0.008895108 0.006994268 
+$lambda
+[1] 0.01584893
+
+$loss
+ [1] 0.008491425 0.008491424 0.008491423 0.008491420 0.008491416 0.008491409
+ [7] 0.008491398 0.008491382 0.008491355 0.008491313 0.008491246 0.008491141
+[13] 0.008490976 0.008490717 0.008490312 0.008489688 0.008488738 0.008487332
+[19] 0.008485343 0.008482753 0.008479926 0.008478178 0.008480749 0.008493863
+[25] 0.008526664 0.008588220 0.008681888 0.008801968 0.008937376 0.009078810
+[31] 0.009221437
+
+$best
+[1] 22
+
+$ranges
+$ranges[[1]]
+train start   end 
+   96    97   128 
+
+$ranges[[2]]
+train start   end 
+  128   129   160 
+
+$ranges[[3]]
+train start   end 
+  160   161   192 
+
+
+$lambda
+[1] 0.0001584893
+
+$loss
+ [1] 0.008491051 0.008490833 0.008490474 0.008489909 0.008489026 0.008487657
+ [7] 0.008485567 0.008482450 0.008478004 0.008472201 0.008466133 0.008464391
+[13] 0.008481409 0.008555100 0.008791946 0.009235057 0.009483472 0.009878370
+[19] 0.009937222 0.009937222 0.009937222 0.009937222 0.009937222 0.009937222
+[25] 0.009937222 0.009937222 0.009937222 0.009937222 0.009937222 0.009937222
+[31] 0.009937222
+
+$best
+[1] 12
+
+$ranges
+$ranges[[1]]
+train start   end 
+   96    97   128 
+
+$ranges[[2]]
+train start   end 
+  128   129   160 
+
+$ranges[[3]]
+train start   end 
+  160   161   192 
+
+
+$OLS
+                Model            Train_RMSE                  RMSE 
+                "OLS" "0.00801683048045262" "0.00885197095640042" 
+                  MAE            Complexity 
+ "0.0068932507119308"                   "5" 
+
+$Stepwise
+                Model            Train_RMSE                  RMSE 
+           "Stepwise" "0.00801696968333423" "0.00885468837670361" 
+                  MAE            Complexity 
+"0.00688993276910478"                   "4" 
+
+$Ridge
+                Model            Train_RMSE                  RMSE 
+              "Ridge" "0.00802626476839367" "0.00886544991042099" 
+                  MAE            Complexity 
+"0.00692119442897595"    "5.83862213736658" 
+
+$Lasso
+                Model            Train_RMSE                  RMSE 
+              "Lasso" "0.00804225016877467"  "0.0088951080716474" 
+                  MAE            Complexity 
+"0.00699426751612359"                   "4" 
+
+[1] "ridge"                "6.20038720020033e-10"
+[1] "lasso"                "7.25032620746413e-12"
+Warning messages:
+1: In .resolve_control(control = control, nvars = nvars, deprecated = list(thresh = if (!missing(thresh)) thresh,  :
+  Passing 'thresh' to glmnet() is deprecated. Use control = list(thresh = ...) instead.
+2: In .resolve_control(control = control, nvars = nvars, deprecated = list(thresh = if (!missing(thresh)) thresh,  :
+  Passing 'maxit' to glmnet() is deprecated. Use control = list(maxit = ...) instead.

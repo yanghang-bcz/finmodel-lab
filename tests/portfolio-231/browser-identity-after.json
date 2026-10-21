@@ -1,0 +1,8 @@
+{
+  "build": "2.3.1-portfolio-ux.7854bf7d1bee3f9e",
+  "meta": "2.3.1-portfolio-ux.7854bf7d1bee3f9e",
+  "scripts": [
+    "http://127.0.0.1:8765/build-info.js?v=b9815a89d434879d",
+    "http://127.0.0.1:8765/portfolio-bundle.js?v=fab85b958734e3ea"
+  ]
+}

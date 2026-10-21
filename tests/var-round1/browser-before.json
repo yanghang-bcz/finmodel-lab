@@ -1,0 +1,14 @@
+{
+  "version": "2.4.1-capm-ux.ebdc1a4700f3cfd6",
+  "resources": [
+    "http://127.0.0.1:8765/style.css?v=ab186d5e6d5ee4a4",
+    "http://127.0.0.1:8765/typography.css?v=834fb038f8229297",
+    "http://127.0.0.1:8765/assets/fonts/glow-faces.css?v=0896e62cf0b74955",
+    "http://127.0.0.1:8765/vendor/katex/katex.min.css?v=144d9ea8097c553f",
+    "http://127.0.0.1:8765/experiments.css?v=81b94df939ce9bbf",
+    "http://127.0.0.1:8765/workbench-system.css?v=34b1937a2ae140a9",
+    "http://127.0.0.1:8765/capm.css?v=5706ecadd997832c",
+    "http://127.0.0.1:8765/build-info.js?v=fdd96caf4f196936",
+    "http://127.0.0.1:8765/experiments-bundle.js?v=91ec4d893bbf8dae"
+  ]
+}

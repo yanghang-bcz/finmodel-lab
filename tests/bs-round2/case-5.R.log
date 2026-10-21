@@ -1,0 +1,48 @@
+
+ bisection 
+$status
+[1] "converged"
+
+$sigma
+[1] 1.5
+
+$error
+[1] -7.105427e-15
+
+$expansions
+[1] 3
+
+  sigma         price              error          vega next_sigma a b next_a
+1   1.0 37.8971348311 -1.51855367644e+01 32.6218285846         NA 0 2      1
+2   1.5 53.0826715956 -7.10542735760e-15 27.9223124116         NA 1 2      1
+  next_b      stop
+1      2          
+2      2 converged
+
+ newton 
+$status
+[1] "converged"
+
+$sigma
+[1] 1.5
+
+$error
+[1] -2.494005e-12
+
+$expansions
+[1] 0
+
+          sigma         price              error          vega    next_sigma  a
+1 0.30000000000 13.5371883000 -3.95454832956e+01 36.0927770605 1.39566197218 NA
+2 1.39566197218 50.1130512435 -2.96962035207e+00 28.9944921004 1.49808212639 NA
+3 1.49808212639 53.0291009139 -5.35706816946e-02 27.9423488147 1.49999931245 NA
+4 1.49999931245 53.0826523975 -1.91980383946e-05 27.9223195966 1.50000000000 NA
+5 1.50000000000 53.0826715956 -2.49400500252e-12 27.9223124116 1.50000000000 NA
+   b next_a next_b      stop
+1 NA     NA     NA          
+2 NA     NA     NA          
+3 NA     NA     NA          
+4 NA     NA     NA          
+5 NA     NA     NA converged
+RESULT bisection converged 1.5 -7.1054273576010019e-15 3 
+RESULT newton converged 1.4999999999999116 -2.4940050025179517e-12 0 

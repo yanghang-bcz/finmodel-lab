@@ -1,0 +1,156 @@
+{
+  "passed": 1166,
+  "failed": 0,
+  "skipped": 0,
+  "copiedR": 20,
+  "errors": [],
+  "records": [
+    {
+      "name": "arch-effect",
+      "view": "arch",
+      "mode": "teaching",
+      "n": 160
+    },
+    {
+      "name": "arch-model-demo",
+      "view": "model",
+      "mode": "teaching",
+      "n": 160
+    },
+    {
+      "name": "garch-fixed",
+      "view": "model",
+      "mode": "teaching",
+      "n": 160
+    },
+    {
+      "name": "garch-estimated",
+      "view": "model",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "garch-diagnostics",
+      "view": "model",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "one-step-forecast",
+      "view": "model",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "multi-step-forecast",
+      "view": "model",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "model-comparison",
+      "view": "model",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "gjr-teaching",
+      "view": "extension",
+      "mode": "teaching",
+      "n": 160
+    },
+    {
+      "name": "gjr-estimated",
+      "view": "extension",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "garchm-teaching",
+      "view": "extension",
+      "mode": "teaching",
+      "n": 160
+    },
+    {
+      "name": "garchm-estimated",
+      "view": "extension",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "ccc-estimated",
+      "view": "multi",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "ccc-manual",
+      "view": "multi",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "ccc-basic-reading-full-copy",
+      "view": "multi",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "csv-single",
+      "view": "model",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "csv-paired",
+      "view": "multi",
+      "mode": "estimate",
+      "n": 159
+    },
+    {
+      "name": "csv-paired-prices",
+      "view": "multi",
+      "mode": "estimate",
+      "n": 160
+    },
+    {
+      "name": "csv-price-date-gap",
+      "view": "multi",
+      "mode": "estimate",
+      "n": 159
+    },
+    {
+      "name": "constant-fit-failure",
+      "view": "model",
+      "mode": "estimate",
+      "n": 160
+    }
+  ],
+  "screens": [
+    "arch-effect.png",
+    "garch-estimated.png",
+    "forecast.png",
+    "gjr-impact.png",
+    "garchm-estimated.png",
+    "ccc-portfolio.png",
+    "csv-paired.png",
+    "arch-1440x900.png",
+    "model-1440x900.png",
+    "extension-1440x900.png",
+    "multi-1440x900.png",
+    "arch-1366x768.png",
+    "model-1366x768.png",
+    "extension-1366x768.png",
+    "multi-1366x768.png",
+    "arch-1920x1080.png",
+    "model-1920x1080.png",
+    "extension-1920x1080.png",
+    "multi-1920x1080.png",
+    "zoom125-arch.png",
+    "zoom125-model.png",
+    "zoom125-extension.png",
+    "zoom125-multi.png"
+  ],
+  "chrome": "155.0.8059.85",
+  "buildId": "2.9.0-regression.a8a2cd0a020ac777"
+}

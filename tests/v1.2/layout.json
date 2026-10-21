@@ -1,0 +1,120 @@
+{
+  "code": {
+    "bottom": 689,
+    "height": 560,
+    "right": 616.796875,
+    "width": 413.796875,
+    "x": 203,
+    "y": 129
+  },
+  "document": [
+    1440,
+    900
+  ],
+  "explanation": {
+    "bottom": 879,
+    "height": 190,
+    "right": 616.796875,
+    "width": 413.796875,
+    "x": 203,
+    "y": 689
+  },
+  "inputBounds": [
+    {
+      "bottom": 259.5,
+      "height": 20,
+      "id": "w",
+      "right": 1398,
+      "width": 257,
+      "x": 1141,
+      "y": 239.5
+    },
+    {
+      "bottom": 417,
+      "height": 35,
+      "id": "mu1",
+      "right": 1298.2421875,
+      "width": 70.0078125,
+      "x": 1228.234375,
+      "y": 382
+    },
+    {
+      "bottom": 417,
+      "height": 35,
+      "id": "mu2",
+      "right": 1385.625,
+      "width": 70.0078125,
+      "x": 1315.6171875,
+      "y": 382
+    },
+    {
+      "bottom": 464,
+      "height": 35,
+      "id": "s1",
+      "right": 1298.2421875,
+      "width": 70.0078125,
+      "x": 1228.234375,
+      "y": 429
+    },
+    {
+      "bottom": 464,
+      "height": 35,
+      "id": "s2",
+      "right": 1385.625,
+      "width": 70.0078125,
+      "x": 1315.6171875,
+      "y": 429
+    },
+    {
+      "bottom": 543,
+      "height": 35,
+      "id": "rho",
+      "right": 1398,
+      "width": 76,
+      "x": 1322,
+      "y": 508
+    },
+    {
+      "bottom": 581,
+      "height": 20,
+      "id": "rhoSlider",
+      "right": 1398,
+      "width": 257,
+      "x": 1141,
+      "y": 561
+    }
+  ],
+  "params": {
+    "bottom": 880,
+    "height": 816,
+    "right": 1418,
+    "width": 297,
+    "x": 1121,
+    "y": 64
+  },
+  "paramsScroll": [
+    814,
+    814
+  ],
+  "plot": {
+    "bottom": 830,
+    "height": 607.6015625,
+    "right": 1096,
+    "width": 453.203125,
+    "x": 642.796875,
+    "y": 222.3984375
+  },
+  "scrollY": 0,
+  "viewport": [
+    1440,
+    900
+  ],
+  "workspace": {
+    "bottom": 880,
+    "height": 816,
+    "right": 1418,
+    "width": 1216,
+    "x": 202,
+    "y": 64
+  }
+}

@@ -1,0 +1,1533 @@
+{
+  "checks": [
+    {
+      "name": "dual graph present larger usable area",
+      "passed": true
+    },
+    {
+      "name": "easy default",
+      "passed": true
+    },
+    {
+      "name": "full code default",
+      "passed": true
+    },
+    {
+      "name": "rules transparent",
+      "passed": true
+    },
+    {
+      "name": "3 draft retained while typing",
+      "passed": true
+    },
+    {
+      "name": "3 no calculation from uncommitted text",
+      "passed": true
+    },
+    {
+      "name": "3 proportional weights",
+      "passed": true
+    },
+    {
+      "name": "3 budget",
+      "passed": true
+    },
+    {
+      "name": "3 nonnegative",
+      "passed": true
+    },
+    {
+      "name": "3 engine frontier unchanged",
+      "passed": true
+    },
+    {
+      "name": "3 display two decimals",
+      "passed": true
+    },
+    {
+      "name": "3 endpoint/boundary budget 0",
+      "passed": true
+    },
+    {
+      "name": "3 submitted high precision 0",
+      "passed": true
+    },
+    {
+      "name": "3 endpoint values finite 0",
+      "passed": true
+    },
+    {
+      "name": "3 endpoint/boundary budget 100",
+      "passed": true
+    },
+    {
+      "name": "3 submitted high precision 100",
+      "passed": true
+    },
+    {
+      "name": "3 endpoint values finite 100",
+      "passed": true
+    },
+    {
+      "name": "3 endpoint/boundary budget 40",
+      "passed": true
+    },
+    {
+      "name": "3 submitted high precision 40",
+      "passed": true
+    },
+    {
+      "name": "3 endpoint values finite 40",
+      "passed": true
+    },
+    {
+      "name": "3 from 100 equal fallback",
+      "passed": true
+    },
+    {
+      "name": "3 endpoint/boundary budget 12.3456789012345",
+      "passed": true
+    },
+    {
+      "name": "3 submitted high precision 12.3456789012345",
+      "passed": true
+    },
+    {
+      "name": "3 endpoint values finite 12.3456789012345",
+      "passed": true
+    },
+    {
+      "name": "3 focus blur retains full precision",
+      "passed": true
+    },
+    {
+      "name": "3 invalid retains current -1",
+      "passed": true
+    },
+    {
+      "name": "3 invalid not copied -1",
+      "passed": true
+    },
+    {
+      "name": "3 invalid clear explanation -1",
+      "passed": true
+    },
+    {
+      "name": "3 invalid retains current 101",
+      "passed": true
+    },
+    {
+      "name": "3 invalid not copied 101",
+      "passed": true
+    },
+    {
+      "name": "3 invalid clear explanation 101",
+      "passed": true
+    },
+    {
+      "name": "3 invalid retains current bad",
+      "passed": true
+    },
+    {
+      "name": "3 invalid not copied bad",
+      "passed": true
+    },
+    {
+      "name": "3 invalid clear explanation bad",
+      "passed": true
+    },
+    {
+      "name": "3 invalid retains current ",
+      "passed": true
+    },
+    {
+      "name": "3 invalid not copied ",
+      "passed": true
+    },
+    {
+      "name": "3 invalid clear explanation ",
+      "passed": true
+    },
+    {
+      "name": "3 invalid retains current 1.2.3",
+      "passed": true
+    },
+    {
+      "name": "3 invalid not copied 1.2.3",
+      "passed": true
+    },
+    {
+      "name": "3 invalid clear explanation 1.2.3",
+      "passed": true
+    },
+    {
+      "name": "3 rapid typing keeps input",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R easy3",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier easy3",
+      "passed": true
+    },
+    {
+      "name": "R target exact easy3",
+      "passed": true
+    },
+    {
+      "name": "4 draft retained while typing",
+      "passed": true
+    },
+    {
+      "name": "4 no calculation from uncommitted text",
+      "passed": true
+    },
+    {
+      "name": "4 proportional weights",
+      "passed": true
+    },
+    {
+      "name": "4 budget",
+      "passed": true
+    },
+    {
+      "name": "4 nonnegative",
+      "passed": true
+    },
+    {
+      "name": "4 engine frontier unchanged",
+      "passed": true
+    },
+    {
+      "name": "4 display two decimals",
+      "passed": true
+    },
+    {
+      "name": "4 endpoint/boundary budget 0",
+      "passed": true
+    },
+    {
+      "name": "4 submitted high precision 0",
+      "passed": true
+    },
+    {
+      "name": "4 endpoint values finite 0",
+      "passed": true
+    },
+    {
+      "name": "4 endpoint/boundary budget 100",
+      "passed": true
+    },
+    {
+      "name": "4 submitted high precision 100",
+      "passed": true
+    },
+    {
+      "name": "4 endpoint values finite 100",
+      "passed": true
+    },
+    {
+      "name": "4 endpoint/boundary budget 40",
+      "passed": true
+    },
+    {
+      "name": "4 submitted high precision 40",
+      "passed": true
+    },
+    {
+      "name": "4 endpoint values finite 40",
+      "passed": true
+    },
+    {
+      "name": "4 from 100 equal fallback",
+      "passed": true
+    },
+    {
+      "name": "4 endpoint/boundary budget 12.3456789012345",
+      "passed": true
+    },
+    {
+      "name": "4 submitted high precision 12.3456789012345",
+      "passed": true
+    },
+    {
+      "name": "4 endpoint values finite 12.3456789012345",
+      "passed": true
+    },
+    {
+      "name": "4 focus blur retains full precision",
+      "passed": true
+    },
+    {
+      "name": "4 invalid retains current -1",
+      "passed": true
+    },
+    {
+      "name": "4 invalid not copied -1",
+      "passed": true
+    },
+    {
+      "name": "4 invalid clear explanation -1",
+      "passed": true
+    },
+    {
+      "name": "4 invalid retains current 101",
+      "passed": true
+    },
+    {
+      "name": "4 invalid not copied 101",
+      "passed": true
+    },
+    {
+      "name": "4 invalid clear explanation 101",
+      "passed": true
+    },
+    {
+      "name": "4 invalid retains current bad",
+      "passed": true
+    },
+    {
+      "name": "4 invalid not copied bad",
+      "passed": true
+    },
+    {
+      "name": "4 invalid clear explanation bad",
+      "passed": true
+    },
+    {
+      "name": "4 invalid retains current ",
+      "passed": true
+    },
+    {
+      "name": "4 invalid not copied ",
+      "passed": true
+    },
+    {
+      "name": "4 invalid clear explanation ",
+      "passed": true
+    },
+    {
+      "name": "4 invalid retains current 1.2.3",
+      "passed": true
+    },
+    {
+      "name": "4 invalid not copied 1.2.3",
+      "passed": true
+    },
+    {
+      "name": "4 invalid clear explanation 1.2.3",
+      "passed": true
+    },
+    {
+      "name": "4 rapid typing keeps input",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R easy4",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier easy4",
+      "passed": true
+    },
+    {
+      "name": "R target exact easy4",
+      "passed": true
+    },
+    {
+      "name": "5 draft retained while typing",
+      "passed": true
+    },
+    {
+      "name": "5 no calculation from uncommitted text",
+      "passed": true
+    },
+    {
+      "name": "5 proportional weights",
+      "passed": true
+    },
+    {
+      "name": "5 budget",
+      "passed": true
+    },
+    {
+      "name": "5 nonnegative",
+      "passed": true
+    },
+    {
+      "name": "5 engine frontier unchanged",
+      "passed": true
+    },
+    {
+      "name": "5 display two decimals",
+      "passed": true
+    },
+    {
+      "name": "5 endpoint/boundary budget 0",
+      "passed": true
+    },
+    {
+      "name": "5 submitted high precision 0",
+      "passed": true
+    },
+    {
+      "name": "5 endpoint values finite 0",
+      "passed": true
+    },
+    {
+      "name": "5 endpoint/boundary budget 100",
+      "passed": true
+    },
+    {
+      "name": "5 submitted high precision 100",
+      "passed": true
+    },
+    {
+      "name": "5 endpoint values finite 100",
+      "passed": true
+    },
+    {
+      "name": "5 endpoint/boundary budget 40",
+      "passed": true
+    },
+    {
+      "name": "5 submitted high precision 40",
+      "passed": true
+    },
+    {
+      "name": "5 endpoint values finite 40",
+      "passed": true
+    },
+    {
+      "name": "5 from 100 equal fallback",
+      "passed": true
+    },
+    {
+      "name": "5 endpoint/boundary budget 12.3456789012345",
+      "passed": true
+    },
+    {
+      "name": "5 submitted high precision 12.3456789012345",
+      "passed": true
+    },
+    {
+      "name": "5 endpoint values finite 12.3456789012345",
+      "passed": true
+    },
+    {
+      "name": "5 focus blur retains full precision",
+      "passed": true
+    },
+    {
+      "name": "5 invalid retains current -1",
+      "passed": true
+    },
+    {
+      "name": "5 invalid not copied -1",
+      "passed": true
+    },
+    {
+      "name": "5 invalid clear explanation -1",
+      "passed": true
+    },
+    {
+      "name": "5 invalid retains current 101",
+      "passed": true
+    },
+    {
+      "name": "5 invalid not copied 101",
+      "passed": true
+    },
+    {
+      "name": "5 invalid clear explanation 101",
+      "passed": true
+    },
+    {
+      "name": "5 invalid retains current bad",
+      "passed": true
+    },
+    {
+      "name": "5 invalid not copied bad",
+      "passed": true
+    },
+    {
+      "name": "5 invalid clear explanation bad",
+      "passed": true
+    },
+    {
+      "name": "5 invalid retains current ",
+      "passed": true
+    },
+    {
+      "name": "5 invalid not copied ",
+      "passed": true
+    },
+    {
+      "name": "5 invalid clear explanation ",
+      "passed": true
+    },
+    {
+      "name": "5 invalid retains current 1.2.3",
+      "passed": true
+    },
+    {
+      "name": "5 invalid not copied 1.2.3",
+      "passed": true
+    },
+    {
+      "name": "5 invalid clear explanation 1.2.3",
+      "passed": true
+    },
+    {
+      "name": "5 rapid typing keeps input",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R easy5",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier easy5",
+      "passed": true
+    },
+    {
+      "name": "R target exact easy5",
+      "passed": true
+    },
+    {
+      "name": "precise applied 20,30,50",
+      "passed": true
+    },
+    {
+      "name": "hand 20/30/50 ->40 0",
+      "passed": true
+    },
+    {
+      "name": "hand 20/30/50 ->40 1",
+      "passed": true
+    },
+    {
+      "name": "hand 20/30/50 ->40 2",
+      "passed": true
+    },
+    {
+      "name": "precise no auto adjustment",
+      "passed": true
+    },
+    {
+      "name": "overbudget prompt",
+      "passed": true
+    },
+    {
+      "name": "overbudget draft input retained",
+      "passed": true
+    },
+    {
+      "name": "invalid draft prevents silent mode discard",
+      "passed": true
+    },
+    {
+      "name": "exact normalize total",
+      "passed": true
+    },
+    {
+      "name": "exact normalize uses full raw values",
+      "passed": true
+    },
+    {
+      "name": "zero normalization error",
+      "passed": true
+    },
+    {
+      "name": "zero draft preserves graph",
+      "passed": true
+    },
+    {
+      "name": "underbudget remains unapplied",
+      "passed": true
+    },
+    {
+      "name": "switch easy after explicit discard",
+      "passed": true
+    },
+    {
+      "name": "precise applied 28.0539923456789,2.6996575012345,69.2463501530866",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R precise-high",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier precise-high",
+      "passed": true
+    },
+    {
+      "name": "R target exact precise-high",
+      "passed": true
+    },
+    {
+      "name": "focus full digits",
+      "passed": true
+    },
+    {
+      "name": "focus blur no rounded R rewrite",
+      "passed": true
+    },
+    {
+      "name": "GMV actual snapshot exists",
+      "passed": true
+    },
+    {
+      "name": "GMV actual before weights copied",
+      "passed": true
+    },
+    {
+      "name": "GMV actual before mean",
+      "passed": true
+    },
+    {
+      "name": "GMV actual before risk",
+      "passed": true
+    },
+    {
+      "name": "GMV actual after mean",
+      "passed": true
+    },
+    {
+      "name": "GMV actual after risk",
+      "passed": true
+    },
+    {
+      "name": "GMV actual delta mu",
+      "passed": true
+    },
+    {
+      "name": "GMV actual delta sd",
+      "passed": true
+    },
+    {
+      "name": "GMV actual direct variance",
+      "passed": true
+    },
+    {
+      "name": "GMV actual constraint snapshot",
+      "passed": true
+    },
+    {
+      "name": "GMV actual visual before point",
+      "passed": true
+    },
+    {
+      "name": "GMV actual percentage points",
+      "passed": true
+    },
+    {
+      "name": "GMV risk and return can both fall",
+      "passed": true
+    },
+    {
+      "name": "merged current/GMV marker",
+      "passed": true
+    },
+    {
+      "name": "GMV meaning and coincidence",
+      "passed": true
+    },
+    {
+      "name": "GMV no change snapshot exists",
+      "passed": true
+    },
+    {
+      "name": "GMV no change before weights copied",
+      "passed": true
+    },
+    {
+      "name": "GMV no change before mean",
+      "passed": true
+    },
+    {
+      "name": "GMV no change before risk",
+      "passed": true
+    },
+    {
+      "name": "GMV no change after mean",
+      "passed": true
+    },
+    {
+      "name": "GMV no change after risk",
+      "passed": true
+    },
+    {
+      "name": "GMV no change delta mu",
+      "passed": true
+    },
+    {
+      "name": "GMV no change delta sd",
+      "passed": true
+    },
+    {
+      "name": "GMV no change direct variance",
+      "passed": true
+    },
+    {
+      "name": "GMV no change constraint snapshot",
+      "passed": true
+    },
+    {
+      "name": "GMV no change visual before point",
+      "passed": true
+    },
+    {
+      "name": "GMV no change percentage points",
+      "passed": true
+    },
+    {
+      "name": "no change message",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk snapshot exists",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk before weights copied",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk before mean",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk before risk",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk after mean",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk after risk",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk delta mu",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk delta sd",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk direct variance",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk constraint snapshot",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk visual before point",
+      "passed": true
+    },
+    {
+      "name": "Target higher return risk percentage points",
+      "passed": true
+    },
+    {
+      "name": "tradeoff honest higher risk",
+      "passed": true
+    },
+    {
+      "name": "target has zero weights",
+      "passed": true
+    },
+    {
+      "name": "target/current merged",
+      "passed": true
+    },
+    {
+      "name": "target request and result teaching",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R target-after",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier target-after",
+      "passed": true
+    },
+    {
+      "name": "R target exact target-after",
+      "passed": true
+    },
+    {
+      "name": "editing clears comparison immediately",
+      "passed": true
+    },
+    {
+      "name": "infeasible target no fake solution",
+      "passed": true
+    },
+    {
+      "name": "three way merged marker",
+      "passed": true
+    },
+    {
+      "name": "triple identity explained",
+      "passed": true
+    },
+    {
+      "name": "hover temporary",
+      "passed": true
+    },
+    {
+      "name": "leave closes",
+      "passed": true
+    },
+    {
+      "name": "click pins",
+      "passed": true
+    },
+    {
+      "name": "Escape closes",
+      "passed": true
+    },
+    {
+      "name": "nav scroll in code frontier",
+      "passed": true
+    },
+    {
+      "name": "nav precise anchor frontier",
+      "passed": true
+    },
+    {
+      "name": "nav no source mutation frontier",
+      "passed": true
+    },
+    {
+      "name": "nav no page scroll frontier",
+      "passed": true
+    },
+    {
+      "name": "nav financial explanation frontier",
+      "passed": true
+    },
+    {
+      "name": "nav scroll in code params",
+      "passed": true
+    },
+    {
+      "name": "nav precise anchor params",
+      "passed": true
+    },
+    {
+      "name": "nav no source mutation params",
+      "passed": true
+    },
+    {
+      "name": "nav no page scroll params",
+      "passed": true
+    },
+    {
+      "name": "nav financial explanation params",
+      "passed": true
+    },
+    {
+      "name": "nav scroll in code gmv",
+      "passed": true
+    },
+    {
+      "name": "nav precise anchor gmv",
+      "passed": true
+    },
+    {
+      "name": "nav no source mutation gmv",
+      "passed": true
+    },
+    {
+      "name": "nav no page scroll gmv",
+      "passed": true
+    },
+    {
+      "name": "nav financial explanation gmv",
+      "passed": true
+    },
+    {
+      "name": "nav scroll in code covariance",
+      "passed": true
+    },
+    {
+      "name": "nav precise anchor covariance",
+      "passed": true
+    },
+    {
+      "name": "nav no source mutation covariance",
+      "passed": true
+    },
+    {
+      "name": "nav no page scroll covariance",
+      "passed": true
+    },
+    {
+      "name": "nav financial explanation covariance",
+      "passed": true
+    },
+    {
+      "name": "nav scroll in code risk",
+      "passed": true
+    },
+    {
+      "name": "nav precise anchor risk",
+      "passed": true
+    },
+    {
+      "name": "nav no source mutation risk",
+      "passed": true
+    },
+    {
+      "name": "nav no page scroll risk",
+      "passed": true
+    },
+    {
+      "name": "nav financial explanation risk",
+      "passed": true
+    },
+    {
+      "name": "nav hidden in optional key mode",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R key-mode",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier key-mode",
+      "passed": true
+    },
+    {
+      "name": "R target exact key-mode",
+      "passed": true
+    },
+    {
+      "name": "CSV retained",
+      "passed": true
+    },
+    {
+      "name": "CSV nav anchors computed covariance",
+      "passed": true
+    },
+    {
+      "name": "CSV nav no page scroll",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV snapshot exists",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV before weights copied",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV before mean",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV before risk",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV after mean",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV after risk",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV delta mu",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV delta sd",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV direct variance",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV constraint snapshot",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV visual before point",
+      "passed": true
+    },
+    {
+      "name": "CSV GMV percentage points",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R csv-gmv",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier csv-gmv",
+      "passed": true
+    },
+    {
+      "name": "R target exact csv-gmv",
+      "passed": true
+    },
+    {
+      "name": "CSV target snapshot exists",
+      "passed": true
+    },
+    {
+      "name": "CSV target before weights copied",
+      "passed": true
+    },
+    {
+      "name": "CSV target before mean",
+      "passed": true
+    },
+    {
+      "name": "CSV target before risk",
+      "passed": true
+    },
+    {
+      "name": "CSV target after mean",
+      "passed": true
+    },
+    {
+      "name": "CSV target after risk",
+      "passed": true
+    },
+    {
+      "name": "CSV target delta mu",
+      "passed": true
+    },
+    {
+      "name": "CSV target delta sd",
+      "passed": true
+    },
+    {
+      "name": "CSV target direct variance",
+      "passed": true
+    },
+    {
+      "name": "CSV target constraint snapshot",
+      "passed": true
+    },
+    {
+      "name": "CSV target visual before point",
+      "passed": true
+    },
+    {
+      "name": "CSV target percentage points",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R csv-target",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier csv-target",
+      "passed": true
+    },
+    {
+      "name": "R target exact csv-target",
+      "passed": true
+    },
+    {
+      "name": "CSV exact invalid no recomputation",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R csv-normalized",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier csv-normalized",
+      "passed": true
+    },
+    {
+      "name": "R target exact csv-normalized",
+      "passed": true
+    },
+    {
+      "name": "nav highlight remains semantic after recalculation",
+      "passed": true
+    },
+    {
+      "name": "CSV uncertainty clears comparison",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R csv-half",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier csv-half",
+      "passed": true
+    },
+    {
+      "name": "R target exact csv-half",
+      "passed": true
+    },
+    {
+      "name": "actual clipboard clean R csv-period",
+      "passed": true
+    },
+    {
+      "name": "R full precision current/GMV/frontier csv-period",
+      "passed": true
+    },
+    {
+      "name": "R target exact csv-period",
+      "passed": true
+    },
+    {
+      "name": "matrix symmetry still rejected",
+      "passed": true
+    },
+    {
+      "name": "PSD errors protected",
+      "passed": true
+    },
+    {
+      "name": "layout panel 1920",
+      "passed": true
+    },
+    {
+      "name": "measured SVG 1920",
+      "passed": true
+    },
+    {
+      "name": "tooltip within plot 1920",
+      "passed": true
+    },
+    {
+      "name": "axis labels within plot 1920",
+      "passed": true
+    },
+    {
+      "name": "layout panel 1440",
+      "passed": true
+    },
+    {
+      "name": "measured SVG 1440",
+      "passed": true
+    },
+    {
+      "name": "tooltip within plot 1440",
+      "passed": true
+    },
+    {
+      "name": "axis labels within plot 1440",
+      "passed": true
+    },
+    {
+      "name": "layout panel 1366",
+      "passed": true
+    },
+    {
+      "name": "measured SVG 1366",
+      "passed": true
+    },
+    {
+      "name": "tooltip within plot 1366",
+      "passed": true
+    },
+    {
+      "name": "axis labels within plot 1366",
+      "passed": true
+    },
+    {
+      "name": "real 125 zoom",
+      "passed": true
+    },
+    {
+      "name": "125 layout copy/nav",
+      "passed": true
+    },
+    {
+      "name": "no browser exceptions",
+      "passed": true
+    },
+    {
+      "name": "local only requests",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "scripts": 11,
+  "cases": [
+    {
+      "label": "应用GMV",
+      "before": {
+        "w": [
+          0.34,
+          0.33,
+          0.33
+        ],
+        "mean": 0.1097,
+        "variance": 0.013812138000000002,
+        "sd": 0.1175250526483609
+      },
+      "after": {
+        "w": [
+          0.6329849278411819,
+          0.11392173455618333,
+          0.2530933376026348
+        ],
+        "mean": 0.09442810420145005,
+        "variance": 0.010749110536788418,
+        "sd": 0.10367791730541474
+      },
+      "constraints": {
+        "budget": 1,
+        "longOnly": true,
+        "riskFree": false,
+        "lambda": 0,
+        "unit": "年化假设 · 简单收益",
+        "mu": [
+          0.08,
+          0.14,
+          0.11
+        ],
+        "Sigma": [
+          [
+            0.0144,
+            0.00528,
+            0.00408
+          ],
+          [
+            0.00528,
+            0.0484,
+            0.007480000000000001
+          ],
+          [
+            0.00408,
+            0.0074800000000000005,
+            0.028900000000000006
+          ]
+        ]
+      },
+      "deltaMu": -0.015271895798549956,
+      "deltaSd": -0.013847135342946154,
+      "noChange": false
+    },
+    {
+      "label": "应用GMV",
+      "before": {
+        "w": [
+          0.6329849278411819,
+          0.11392173455618333,
+          0.2530933376026348
+        ],
+        "mean": 0.09442810420145005,
+        "variance": 0.010749110536788418,
+        "sd": 0.10367791730541474
+      },
+      "after": {
+        "w": [
+          0.6329849278411819,
+          0.11392173455618333,
+          0.2530933376026348
+        ],
+        "mean": 0.09442810420145005,
+        "variance": 0.010749110536788418,
+        "sd": 0.10367791730541474
+      },
+      "constraints": {
+        "budget": 1,
+        "longOnly": true,
+        "riskFree": false,
+        "lambda": 0,
+        "unit": "年化假设 · 简单收益",
+        "mu": [
+          0.08,
+          0.14,
+          0.11
+        ],
+        "Sigma": [
+          [
+            0.0144,
+            0.00528,
+            0.00408
+          ],
+          [
+            0.00528,
+            0.0484,
+            0.007480000000000001
+          ],
+          [
+            0.00408,
+            0.0074800000000000005,
+            0.028900000000000006
+          ]
+        ]
+      },
+      "deltaMu": 0,
+      "deltaSd": 0,
+      "noChange": true
+    },
+    {
+      "label": "应用目标收益最小方差组合",
+      "before": {
+        "w": [
+          0.6329849278411819,
+          0.11392173455618333,
+          0.2530933376026348
+        ],
+        "mean": 0.09442810420145005,
+        "variance": 0.010749110536788418,
+        "sd": 0.10367791730541474
+      },
+      "after": {
+        "w": [
+          0,
+          1,
+          0
+        ],
+        "mean": 0.14,
+        "variance": 0.0484,
+        "sd": 0.22
+      },
+      "constraints": {
+        "budget": 1,
+        "longOnly": true,
+        "riskFree": false,
+        "lambda": 0,
+        "unit": "年化假设 · 简单收益",
+        "mu": [
+          0.08,
+          0.14,
+          0.11
+        ],
+        "Sigma": [
+          [
+            0.0144,
+            0.00528,
+            0.00408
+          ],
+          [
+            0.00528,
+            0.0484,
+            0.007480000000000001
+          ],
+          [
+            0.00408,
+            0.0074800000000000005,
+            0.028900000000000006
+          ]
+        ]
+      },
+      "deltaMu": 0.04557189579854996,
+      "deltaSd": 0.11632208269458526,
+      "noChange": false
+    },
+    {
+      "label": "应用GMV",
+      "before": {
+        "w": [
+          0.45123456789000005,
+          0.274382716055,
+          0.274382716055
+        ],
+        "mean": 0.2600710116789231,
+        "variance": 0.004125692838630025,
+        "sd": 0.06423155640827977
+      },
+      "after": {
+        "w": [
+          0.32257232284539783,
+          0.32142917450717334,
+          0.3559985026474289
+        ],
+        "mean": 0.25804487292730416,
+        "variance": 0.0037603113795188874,
+        "sd": 0.061321377834478635
+      },
+      "constraints": {
+        "budget": 1,
+        "longOnly": true,
+        "riskFree": false,
+        "lambda": 0,
+        "unit": "年化 · 简单收益",
+        "mu": [
+          0.2824627049442756,
+          0.14840388700307838,
+          0.33491400187506026
+        ],
+        "Sigma": [
+          [
+            0.01363514388636788,
+            -0.0006654559256970938,
+            -0.0011913300314926592
+          ],
+          [
+            -0.0006654559256970938,
+            0.014715545034935336,
+            -0.0021208978244718437
+          ],
+          [
+            -0.0011913300314926592,
+            -0.0021208978244718437,
+            0.013557135426400527
+          ]
+        ]
+      },
+      "deltaMu": -0.0020261387516189444,
+      "deltaSd": -0.002910178573801131,
+      "noChange": false
+    },
+    {
+      "label": "应用目标收益最小方差组合",
+      "before": {
+        "w": [
+          0.32257232284539783,
+          0.32142917450717334,
+          0.3559985026474289
+        ],
+        "mean": 0.25804487292730416,
+        "variance": 0.0037603113795188874,
+        "sd": 0.061321377834478635
+      },
+      "after": {
+        "w": [
+          0,
+          0,
+          1
+        ],
+        "mean": 0.33491400187506026,
+        "variance": 0.013557135426400527,
+        "sd": 0.1164351125150851
+      },
+      "constraints": {
+        "budget": 1,
+        "longOnly": true,
+        "riskFree": false,
+        "lambda": 0,
+        "unit": "年化 · 简单收益",
+        "mu": [
+          0.2824627049442756,
+          0.14840388700307838,
+          0.33491400187506026
+        ],
+        "Sigma": [
+          [
+            0.01363514388636788,
+            -0.0006654559256970938,
+            -0.0011913300314926592
+          ],
+          [
+            -0.0006654559256970938,
+            0.014715545034935336,
+            -0.0021208978244718437
+          ],
+          [
+            -0.0011913300314926592,
+            -0.0021208978244718437,
+            0.013557135426400527
+          ]
+        ]
+      },
+      "deltaMu": 0.0768691289477561,
+      "deltaSd": 0.05511373468060647,
+      "noChange": false
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/index.html"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/assets/fonts/glow-normal-400-core.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/assets/fonts/argon-400.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/assets/fonts/bricolage-latin.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/style.css?v=ab186d5e6d5ee4a4"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/vendor/katex/katex.min.css?v=144d9ea8097c553f"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/assets/fonts/glow-faces.css?v=0896e62cf0b74955"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/typography.css?v=834fb038f8229297"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/workbench.css?v=ed933704c9693b3b"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/workbench-system.css?v=34b1937a2ae140a9"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/portfolio-multi.css?v=bf352b20cbcf25f7"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/build-info.js?v=9cb1876cefa132fc"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/portfolio-bundle.js?v=fbbd75c9b589e428"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/assets/fonts/neon-500.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/assets/fonts/neon-400.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/assets/fonts/glow-normal-600-core.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/assets/fonts/glow-normal-600-common.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/assets/fonts/glow-normal-400-common.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/vendor/katex/fonts/KaTeX_Main-Regular.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/vendor/katex/fonts/KaTeX_Math-Italic.woff2"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/build-manifest.json"
+    }
+  ]
+}

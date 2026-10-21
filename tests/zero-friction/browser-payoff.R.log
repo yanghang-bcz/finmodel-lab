@@ -1,0 +1,9 @@
+           C            P           d1           d2       deltaC       deltaP 
+13.857906267  3.980848717  0.593950821  0.393950821  0.723727497 -0.276272503 
+       gamma         vega       thetaC       thetaP 
+ 0.015925244  0.351151629 -0.018132028 -0.005101488 
+call_payoff  put_payoff 
+          5           0 
+EXECUTED 
+null device 
+          1 

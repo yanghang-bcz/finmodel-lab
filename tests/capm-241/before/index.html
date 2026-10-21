@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="通过 R 代码、实时计算和风险收益图，理解两资产均值—方差投资组合。">
+<title>FinModel Lab</title><link rel="preload" href="assets/fonts/glow-normal-400-core.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/argon-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v=ab186d5e6d5ee4a4"><link rel="stylesheet" href="vendor/katex/katex.min.css?v=144d9ea8097c553f"><link rel="stylesheet" href="assets/fonts/glow-faces.css?v=0896e62cf0b74955"><link rel="stylesheet" href="typography.css?v=834fb038f8229297"><link rel="stylesheet" href="workbench.css?v=ed933704c9693b3b">
+<link rel="stylesheet" href="workbench-system.css?v=34b1937a2ae140a9"><link rel="stylesheet" href="portfolio-multi.css?v=bf352b20cbcf25f7"><meta name="finmodel-build" content="2.4.0-capm.76e82b57cef85441"></head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="#workbench" aria-label="FinModel Lab 实验工作台"><b class="logo" aria-hidden="true">f<span>m</span></b><strong>FinModel</strong></a>
+  <nav aria-label="主要导航"><button class="nav active" id="workbenchNav" aria-current="page">模型实验室</button><button class="nav" id="catalogNav">实验目录</button><button class="nav" id="helpNav">帮助与资源</button></nav>
+</aside>
+<main>
+  <header><h1 id="title"></h1><div class="header-actions"><button id="mobileMenu" aria-expanded="false" aria-controls="mobileNav">菜单</button><button id="classroomTools">课堂工具</button><button id="projector" aria-pressed="false">投屏模式</button></div><nav id="mobileNav" hidden aria-label="手机导航"><button data-mobile="workbench">实验工作台</button><button data-mobile="catalog">实验目录</button><button data-mobile="help">帮助与资源</button></nav></header>
+  <section class="workspace" id="workspace" aria-label="实验八工作台">
+    <article class="panel code-panel" aria-label="R 代码与步骤解析">
+      <div class="panel-head"><h2>R Code</h2><button id="copy">复制完整 R 代码</button></div>
+      <div class="portfolio-code-toolbar"><button data-portfolio-code="full" aria-pressed="true">完整代码</button><button data-portfolio-code="basic" aria-pressed="false">关键逻辑</button><button id="portfolioPractice">RStudio 实践</button><span>基础R，无额外包；主复制始终包含完整脚本</span></div>
+      <div id="code" role="group" aria-label="点击 R 代码查看逻辑语句解析"></div>
+      <div id="splitter" role="separator" tabindex="0" aria-label="调整代码与解析比例，上下方向键调整，Home与End设为边界" aria-orientation="horizontal" aria-valuemin="40" aria-valuemax="80" aria-valuenow="68" aria-controls="code explanation" title="拖动调整代码与解析；也可使用上下方向键"><span></span></div>
+      <section id="explanation" class="explanation" aria-label="当前步骤解析" aria-live="polite"></section>
+    </article>
+    <article class="panel model-panel" aria-label="投资组合风险收益模型">
+      <div class="panel-head"><h2>Model Visualization</h2><button id="axisMode" class="quiet" aria-describedby="axisStatus" aria-pressed="false" title="当前自动适配；点击切换固定比较">自动适配 ⇄</button></div>
+      <div class="explore-prompt"><span>试试看：降低相关系数，组合风险会如何变化？</span><select id="exploreTask" aria-label="选择探索任务"><option value="correlation">相关系数</option><option value="efficiency">有效前沿</option></select><button id="exploreToggle" class="text-button" aria-expanded="false" aria-controls="explorePanel">开始探索 →</button></div>
+
+      <div class="metric-area"><div class="metrics"><div id="returnMetric"><span>Expected Return</span><b id="return">—</b></div><div id="riskMetric"><span>Portfolio Risk</span><b id="risk">—</b><div id="comparison" class="comparison" hidden><div id="comparisonText"></div></div><div class="baseline-actions"><button id="endComparison" class="text-button" hidden>结束比较</button><button id="saveBaseline" class="text-button">设为比较基准</button><button id="viewComparison" class="text-button" hidden>查看变化</button></div></div></div></div><span id="axisStatus" class="sr-only" aria-live="polite">自动适配当前可行集</span><p id="changeFeedback" class="change-feedback" aria-live="polite">调整参数，观察代码与曲线的对应关系。</p>
+      <div class="plot-area">
+        <svg id="chart" role="group" aria-label="风险收益图：灰色可行集，绿色有效部分；可点击组合点查看详情" viewBox="0 0 560 420" preserveAspectRatio="xMidYMid meet">
+          <g id="grid"></g><text id="yAxisTitle" class="axis-title" x="70" y="27">组合预期收益率</text><text id="xAxisTitle" class="axis-title" x="536" y="405" text-anchor="end">组合风险（标准差） →</text>
+          <g id="improvementMarker" hidden><rect x="-9" y="-9" width="18" height="18" rx="2"/></g><path id="baselinePath" class="baseline-path" hidden/><path id="feasiblePath" class="feasible-path"/><path id="efficientPath" class="efficient-path"/>
+          <path id="riskGuide" class="guide"/><path id="returnGuide" class="guide"/>
+          <g id="assetA" class="asset-point"><circle r="5"/><text>A</text></g><g id="assetB" class="asset-point"><circle r="5"/><text>B</text></g>
+          <g id="minimumMarker" class="chart-marker minimum-marker" role="button" tabindex="0" aria-label="查看最小方差组合详情"><circle class="hit" r="18"/><path class="minimum-diamond" d="M0 -9 L9 0 L0 9 L-9 0 Z"/></g>
+          <g id="currentMarker" class="chart-marker current-marker" role="button" tabindex="0" aria-label="查看当前组合详情"><circle class="hit" r="18"/><circle class="halo" r="12"/><circle class="dot" r="6"/></g>
+        </svg>
+        <div id="pointDetails" class="point-details" hidden><div class="popover-head"><strong id="pointTitle"></strong><button id="closePoint" aria-label="关闭组合详情">×</button></div><div id="pointValues"></div><div class="point-identities" aria-label="选择组合身份"><button data-point="current">当前组合</button><button data-point="minimum">最小方差</button></div></div>
+
+      </div>
+      <div class="legend"><span id="baselineLegend" hidden><i class="line baseline"></i>比较基准</span><span><i class="line"></i>可行集</span><span><i class="line efficient"></i>有效部分</span><button data-point="current"><i class="point"></i>当前组合</button><button data-point="minimum"><i class="minimum-key"></i>最小方差</button></div>
+      <div class="diagnosis-entry"><button id="efficiencyStatus" class="text-button">查看组合有效性</button><button id="undoImprovement" class="text-button" hidden>撤销配置</button></div>
+    </article>
+    <section class="panel parameters" aria-label="参数调节">
+      <div class="panel-head"><h2>Parameters</h2><button id="reset" class="quiet">恢复默认</button></div>
+      <section class="param-group" id="allocationGroup" aria-labelledby="allocationTitle"><h3 id="allocationTitle">组合权重</h3><div class="allocation-values"><span class="asset-a">Asset A <b id="weightA">50%</b></span><span class="asset-b">Asset B <b id="weightB">50%</b></span></div><input id="w" type="range" min="0" max="100" step="any" value="50" aria-label="资产 A 权重"><div class="ticks"><span>0%</span><span>100%</span></div></section>
+      <section class="param-group" id="assumptionsGroup" aria-labelledby="assumptionsTitle"><h3 id="assumptionsTitle">资产假设</h3><p class="period-label">同一分析期的预期收益率与标准差</p><table class="assumptions"><thead><tr><th scope="col"></th><th scope="col" class="asset-a">Asset A</th><th scope="col" class="asset-b">Asset B</th></tr></thead><tbody><tr id="returnsRow"><th scope="row">预期收益率</th><td><div class="number-unit"><input id="mu1" aria-label="资产 A 预期收益率（%）" type="number" min="-100" max="100" step="any" value="8"><span>%</span></div></td><td><div class="number-unit"><input id="mu2" aria-label="资产 B 预期收益率（%）" type="number" min="-100" max="100" step="any" value="14"><span>%</span></div></td></tr><tr id="volatilityRow"><th scope="row">标准差</th><td><div class="number-unit"><input id="s1" aria-label="资产 A 标准差（%）" type="number" min="0" max="100" step="any" value="12"><span>%</span></div></td><td><div class="number-unit"><input id="s2" aria-label="资产 B 标准差（%）" type="number" min="0" max="100" step="any" value="22"><span>%</span></div></td></tr></tbody></table><details id="assumptionNotice" hidden><summary>教学假设提示（不阻断计算）</summary><p id="assumptionReasons"></p><p>当前参数偏离预设教学示例范围，仍可正常计算；结果是假设情景，不代表真实市场收益预测。</p><small id="assumptionBounds"></small></details></section>
+      <section class="param-group" id="correlationGroup" aria-labelledby="correlationTitle"><div class="correlation-heading"><h3 id="correlationTitle">相关系数 ρ</h3><input id="rho" aria-label="相关系数精确数值" type="number" min="-1" max="1" step="any" value="0.2"></div><input id="rhoSlider" aria-label="相关系数滑块" type="range" min="-1" max="1" step="0.01" value="0.2"><div class="ticks"><span>−1</span><span id="rhoMid">0</span><span id="rhoMax">+1</span></div></section>
+      <p id="correlationState" class="correlation-state"></p>
+      <section id="explorePanel" class="explore-panel" hidden aria-label="探索问题">
+        <div class="explore-heading"><strong id="exploreStage">01 / 预测</strong><button id="restartExplore" class="text-button">重新开始</button></div>
+        <div class="explore-progress" aria-label="探索进度"><span data-phase="Predict">预测</span><span aria-hidden="true">→</span><span data-phase="Experiment">实验</span><span aria-hidden="true">→</span><span data-phase="Explain">解释</span></div>
+        <div id="exploreStart" hidden><p>当前相关系数已经达到最低值，无法继续降低。</p><button id="startRho" class="text-button">使用默认参数开始探索</button></div>
+        <p id="exploreQuestion">保持权重、收益率和标准差不变，只降低相关系数，组合风险会如何变化？</p>
+        <div class="efficiency-predictions" role="group" aria-label="预测是否存在改进" hidden><button data-prediction="yes" aria-pressed="false">存在</button><button data-prediction="no" aria-pressed="false">不存在</button></div><div class="prediction-options" role="group" aria-label="先预测风险变化"><button data-prediction="down" aria-pressed="false">下降</button><button data-prediction="same" aria-pressed="false">不变</button><button data-prediction="up" aria-pressed="false">上升</button></div>
+        <button id="confirmPrediction" class="text-button" disabled>确认预测，开始实验 →</button>
+        <p id="exploreFeedback" aria-live="polite"></p><div id="exploreExplanation" hidden></div>
+        <button id="explainVariance" class="text-button" hidden disabled>查看实验解释 →</button><button id="reexperiment" class="text-button" hidden>重新实验</button>
+        <div class="explore-exits"><button id="exitExplore" class="text-button">退出并恢复实验前参数</button><button id="keepExplore" class="text-button">保留当前参数并退出</button></div>
+      </section><p id="validation" role="status"></p>
+    </section>
+  </section>
+</main>
+<dialog id="catalogDialog" aria-labelledby="catalogTitle"><div class="dialog-head"><h2 id="catalogTitle">实验目录</h2><button data-close="catalogDialog" aria-label="关闭实验目录">×</button></div><div class="catalog-list"></div></dialog>
+<dialog id="helpDialog" aria-labelledby="helpTitle"><div class="dialog-head"><h2 id="helpTitle">帮助与资源</h2><button data-close="helpDialog" aria-label="关闭帮助">×</button></div><div class="help-content"><h3>从代码出发</h3><p>点击任一代码行，查看整个逻辑语句、公式与当前计算。选中权重或相关系数定义时，右侧对应控件会高亮。</p><h3>探索图表</h3><p>灰线表示全部可行组合，绿线表示有效部分。点击、轻触或键盘选中“当前组合”和“Minimum Variance”，查看权重与风险收益。极端情形下多个点可能重合，可用底部图例分别查看。</p><h3>模型约束</h3><p>所有数值为教学假设，不读取市场行情。资产权重非负、之和为 1，不允许卖空。两只资产的收益率与标准差必须使用同一时间尺度。收益率输入范围 −100%～100%，标准差 0%～100%，相关系数 −1～1。</p><p>有效组合不被其他组合支配：不存在风险不高且收益不低、至少一项严格更优的组合。相同收益仅最小风险有效；风险恒定时仅最高收益有效；风险收益完全相同的组合等价。</p><h3>进阶知识：数值稳定性</h3><p>网页内部用数学等价的非负形式计算方差；测试代码按机器精度和资产波动尺度检查两种表达式的一致性。默认教学脚本不包含机器精度、容差或断言。若当前参数完全负相关或接近风险抵消，脚本会补充一条有中文解析的等价方差公式，保证复制后也能正确计算该边界情形。它仍使用基础 R，无需额外安装包。</p><h3>解析与坐标</h3><p>拖动代码与解析之间的分隔条，或聚焦后用上下方向键调整；Home/End切换到40%/80%。展开解析将代码保留40%，收起时恢复原比例。自动适配充分显示当前曲线；固定比较保留基准虚线与共同坐标，超范围时明确扩展。预测阶段冻结所有参数且隐藏比较；确认预测后只开放相关系数，且不能高于起点。查看解释后再次锁定参数；重新实验会回到同一起点。重新开始使用当前参数建立新预测基准。退出可选择恢复首次实验前参数或明确保留当前参数。</p><h3>运行 R 代码</h3><p>“复制代码”生成当前有效参数的基础 R 脚本，粘贴到 RStudio 整体运行即可；浏览器不执行任意 R 输入。剪贴板不可用时自动下载 portfolio.R。投屏模式隐藏侧栏并放大代码，按 Escape 退出。</p></div></dialog>
+<dialog id="classroomDialog" aria-labelledby="classroomTitle"><div class="dialog-head"><h2 id="classroomTitle">课堂工具</h2><button data-close="classroomDialog" aria-label="关闭课堂工具">×</button></div>
+<nav class="classroom-tabs"><button data-class-tab="presets" aria-pressed="true">教学示例</button><button data-class-tab="quiz" aria-pressed="false">理解检验</button><button data-class-tab="feedback" aria-pressed="false">试用反馈</button></nav>
+<section data-class-pane="presets"><p>三个示例均为教学假设，使用同一分析期口径。</p><select id="presetSelect" aria-label="选择教学示例"></select><p id="presetPurpose"></p><p>加载将重置当前参数、比较与探索过程。</p><button id="loadPreset">确认重置并加载示例</button></section>
+<section data-class-pane="quiz" hidden><label for="quizQuestion">选择知识点</label><select id="quizQuestion"></select><p id="quizPrompt"></p><div id="quizOptions"></div><button id="submitQuiz">提交答案</button><div id="quizFeedback" aria-live="polite"></div><button id="locateQuizCode" class="text-button" hidden>定位相关 R 代码 →</button></section>
+<section data-class-pane="feedback" hidden><p>仅用于经教师同意的课堂试用。不记录鼠标行为，不自动上传或保存个人信息。</p><label><input type="checkbox" id="feedbackConsent"> 经教师同意，在本设备填写匿名反馈</label><fieldset id="feedbackFields" disabled><label>指定任务完成情况<select id="feedbackCompletion"><option value="">请选择</option><option>完成</option><option>部分完成</option><option>未完成</option></select></label><label>最难理解的 R 知识点<select id="feedbackCode"><option>无</option><option>向量与下标</option><option>权重与加权求和</option><option>方差与开平方</option><option>最小方差与有效前沿</option></select></label><label>仍困惑的金融概念<textarea id="feedbackConcept" rows="2" maxlength="500" placeholder="仅写知识点，请勿填写姓名或学号"></textarea></label><label>最有帮助的可视化<select id="feedbackHelpful"><option>风险收益曲线</option><option>方差分项</option><option>代码联动</option><option>有效性比较</option><option>尚不明确</option></select></label><label>愿意课后使用吗<select id="feedbackWilling"><option>愿意</option><option>不确定</option><option>暂不愿意</option></select></label><button id="exportFeedback">导出匿名反馈 JSON（不上传）</button></fieldset><p id="feedbackStatus" role="status"></p><p>尚无真实使用人数或学习效果数据。教师可用导出的匿名反馈配合前后测评价。</p></section>
+</dialog>
+<dialog id="portfolioRDialog"><div class="dialog-head"><h2>RStudio 实践</h2><button data-close="portfolioRDialog" aria-label="关闭R实践">×</button></div><p id="portfolioRTask"></p></dialog>
+<div id="toast" role="status"></div><script src="build-info.js?v=b1f5056dfd92983c"></script><script src="portfolio-bundle.js?v=7988e48c7b41795e"></script>
+<script>if(new URLSearchParams(location.search).has("audit")){const s=document.createElement("script");s.src="font-audit.js?v=a68b70a23cd54127";document.body.append(s);}</script>
+</body></html>

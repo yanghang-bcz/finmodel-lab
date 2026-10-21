@@ -1,0 +1,127 @@
+{
+  "status": "completed",
+  "version": "2.9.0-regression.a8a2cd0a020ac777",
+  "service": {
+    "pid": 52325,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "2.9.0-regression.a8a2cd0a020ac777",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "math": {
+    "passed": 8247,
+    "failed": 0,
+    "cleanR": 14,
+    "glmnetChecks": 8,
+    "maxDiff": 4.930324343233039e-08,
+    "records": [
+      {
+        "name": "default",
+        "values": 712,
+        "nt": 192,
+        "source": "合成教学金融数据，非真实市场行情"
+      },
+      {
+        "name": "forward",
+        "values": 718,
+        "nt": 192,
+        "source": "合成教学金融数据，非真实市场行情"
+      },
+      {
+        "name": "backward",
+        "values": 712,
+        "nt": 192,
+        "source": "合成教学金融数据，非真实市场行情"
+      },
+      {
+        "name": "high-correlation",
+        "values": 712,
+        "nt": 192,
+        "source": "合成教学金融数据，非真实市场行情"
+      },
+      {
+        "name": "changed-scale-noise",
+        "values": 380,
+        "nt": 80,
+        "source": "合成教学金融数据，非真实市场行情"
+      },
+      {
+        "name": "ridge-manual",
+        "values": 712,
+        "nt": 192,
+        "source": "合成教学金融数据，非真实市场行情"
+      },
+      {
+        "name": "ridge-zero",
+        "values": 712,
+        "nt": 192,
+        "source": "合成教学金融数据，非真实市场行情"
+      },
+      {
+        "name": "lasso-manual",
+        "values": 712,
+        "nt": 192,
+        "source": "合成教学金融数据，非真实市场行情"
+      },
+      {
+        "name": "lasso-zero",
+        "values": 712,
+        "nt": 192,
+        "source": "合成教学金融数据，非真实市场行情"
+      },
+      {
+        "name": "csv-lagged",
+        "values": 681,
+        "nt": 191,
+        "source": "用户导入数据（来源未独立核实）"
+      },
+      {
+        "name": "csv-price",
+        "values": 679,
+        "nt": 190,
+        "source": "用户导入数据（来源未独立核实）"
+      }
+    ],
+    "tolerance": "BaseR 2e-8 + 1e-6 relative; glmnet 2e-7 + 2e-5 relative; unrounded coefficients, returns, stats"
+  },
+  "browser": {
+    "passed": 2873,
+    "failed": 0,
+    "copiedR": 21,
+    "errors": [],
+    "chrome": "155.0.8059.85",
+    "buildId": "2.9.0-regression.a8a2cd0a020ac777"
+  },
+  "examplesExecuted": 9,
+  "score": {
+    "coverage": 30,
+    "math": 19,
+    "R": 19,
+    "visualization": 14,
+    "finance": 9,
+    "system": 5,
+    "total": 96
+  },
+  "studentValidation": "pending",
+  "deployment": "local teacher demonstration only",
+  "frozen": {
+    "unchanged": 60,
+    "changed": [
+      "experiments-bundle.js",
+      "experiments-config.js",
+      "experiments.js",
+      "portfolio-bundle.js",
+      "build-info.js",
+      "index.html",
+      "experiments.html"
+    ],
+    "new": [
+      "reg-charts.js",
+      "reg-code.js",
+      "reg-math.js",
+      "reg-r.js",
+      "reg-workbench.js",
+      "reg.css"
+    ]
+  }
+}

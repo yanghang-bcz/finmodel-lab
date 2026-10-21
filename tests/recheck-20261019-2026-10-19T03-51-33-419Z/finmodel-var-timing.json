@@ -1,0 +1,1842 @@
+[
+  {
+    "i": 0,
+    "elapsed": 191,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 744.8000000119209,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 744.8000000119209,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 761.3000000119209,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 761.3000000119209,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 761.3000000119209,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 761.3000000119209,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 761.3000000119209,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 761.3000000119209,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 761.3000000119209,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 761.3000000119209,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 761.4000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 761.4000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 1,
+    "elapsed": 203,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 1294.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 1294.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1294.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1294.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1294.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1294.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1294.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1294.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1294.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1294.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1294.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 1294.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "elapsed": 189,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 1844.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 1844.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1861.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1861.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1861.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1861.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1861.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1861.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1861.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1861.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 1861.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 1861.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 3,
+    "elapsed": 193,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 2394.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 2394.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2411.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2411.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2411.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2411.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2411.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2411.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2411.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2411.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2411.4000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 2411.4000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "elapsed": 190,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 2944.699999988079,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 2944.699999988079,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2961.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2961.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2961.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2961.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2961.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2961.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2961.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2961.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 2961.5,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 2961.5,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 5,
+    "elapsed": 196,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 3494.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 3494.699999988079,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 3494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 3494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 3494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 3494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 3494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 3494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 3494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 3494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 3494.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 3494.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 6,
+    "elapsed": 195,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 4044.699999988079,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 4044.699999988079,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4061.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4061.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4061.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4061.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4061.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4061.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4061.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4061.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4061.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 4061.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 7,
+    "elapsed": 195,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 4594.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 4594.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4611.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4611.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4611.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4611.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4611.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4611.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4611.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4611.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 4611.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 4611.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 8,
+    "elapsed": 188,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 5144.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 5144.5999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5161.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5161.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5161.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5161.199999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5161.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5161.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5161.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5161.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5161.4000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 5161.4000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 9,
+    "elapsed": 186,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 5661.0999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 5661.0999999940395,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5677.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5677.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5677.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5677.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5678,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5678,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5678,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5678,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 5678.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 5678.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 10,
+    "elapsed": 195,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 6211.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 6211.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6227.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6227.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6227.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6227.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6227.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6227.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6227.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6227.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6228,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 6228,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 11,
+    "elapsed": 191,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 6761.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 6761.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6777.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6777.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6777.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6777.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6777.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6777.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6777.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6777.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 6778,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 6778,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 12,
+    "elapsed": 192,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 7311.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 7311.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7327.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7327.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7327.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7327.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7327.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7327.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7327.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7327.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7327.9000000059605,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 7328,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 13,
+    "elapsed": 194,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 7861.5,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 7861.5,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7878.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7878.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7878.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7878.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7878.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7878.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7878.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7878.0999999940395,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 7878.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 7878.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 14,
+    "elapsed": 196,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 8411.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 8411.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8411.40000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8411.40000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8411.40000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8411.40000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8411.40000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8411.40000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8411.40000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8411.40000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8411.5,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 8411.5,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 15,
+    "elapsed": 188,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 8961.40000000596,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 8961.40000000596,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8978,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8978,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8978,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8978,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8978,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8978,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8978,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8978,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 8978.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 8978.300000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 16,
+    "elapsed": 201,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 9494.5,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 9494.5,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 9494.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 9494.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 9494.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 9494.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 9494.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 9494.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 9494.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 9494.699999988079,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 9494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 9494.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 17,
+    "elapsed": 195,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 10061.40000000596,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 10061.40000000596,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10077.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10077.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10077.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10077.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10077.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10077.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10077.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10077.800000011921,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10078,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 10078,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 18,
+    "elapsed": 195,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 10611.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 10611.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10627.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10627.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10627.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10627.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10627.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10627.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10627.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10627.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 10628.09999999404,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 10628.09999999404,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  },
+  {
+    "i": 19,
+    "elapsed": 191,
+    "hidden": false,
+    "mode": "preview",
+    "events": [
+      {
+        "type": "pointerenter",
+        "t": 11161.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointermove",
+        "t": 11161.300000011921,
+        "x": 200,
+        "y": 60,
+        "target": "MAIN"
+      },
+      {
+        "type": "pointerenter",
+        "t": 11177.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 11177.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "ARTICLE"
+      },
+      {
+        "type": "pointerenter",
+        "t": 11177.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "chartHost"
+      },
+      {
+        "type": "pointerenter",
+        "t": 11177.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "SECTION"
+      },
+      {
+        "type": "pointerenter",
+        "t": 11177.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "DIV"
+      },
+      {
+        "type": "pointerenter",
+        "t": 11177.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "svg"
+      },
+      {
+        "type": "pointerenter",
+        "t": 11177.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "g"
+      },
+      {
+        "type": "pointerenter",
+        "t": 11177.90000000596,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "hVaR"
+      },
+      {
+        "type": "pointerenter",
+        "t": 11178.09999999404,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      },
+      {
+        "type": "pointermove",
+        "t": 11178.09999999404,
+        "x": 870.51953125,
+        "y": 295.2265625,
+        "target": "path"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "id": "var",
+  "url": "http://127.0.0.1:8765/experiments.html?model=var",
+  "status": 200,
+  "errors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:8765/experiments-bundle.js?v=191",
+      "failure": {
+        "errorText": "net::ERR_CONNECTION_RESET"
+      }
+    }
+  ]
+}

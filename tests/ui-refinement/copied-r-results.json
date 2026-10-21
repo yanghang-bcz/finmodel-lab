@@ -1,0 +1,47 @@
+[
+  {
+    "file": "tests/ui-refinement/var-browser-basic.R",
+    "passed": true,
+    "sha256": "f3d8f212a3c2bc97e0d8de74e266671d9e9f85d42c69c9743cc99d3ee166172b"
+  },
+  {
+    "file": "tests/ui-refinement/var-browser-full.R",
+    "passed": true,
+    "sha256": "f3d8f212a3c2bc97e0d8de74e266671d9e9f85d42c69c9743cc99d3ee166172b"
+  },
+  {
+    "file": "tests/ui-refinement/garch-browser-basic.R",
+    "passed": true,
+    "sha256": "88f008d0152e895e35775c099c7375d1865a337f0f7fc4a2b9695e078a70a607"
+  },
+  {
+    "file": "tests/ui-refinement/garch-browser-full.R",
+    "passed": true,
+    "sha256": "e8d4513a8e815630126028bcbc70616555574414cd2d2949efe7f0830bc611ff"
+  },
+  {
+    "file": "tests/ui-refinement/capm-browser-basic.R",
+    "passed": true,
+    "sha256": "6f3b3085d1846073fe42ff4cb77128c79cec1ea0f9ee4b6a81c3e8e6b1363bb8"
+  },
+  {
+    "file": "tests/ui-refinement/capm-browser-full.R",
+    "passed": true,
+    "sha256": "6f3b3085d1846073fe42ff4cb77128c79cec1ea0f9ee4b6a81c3e8e6b1363bb8"
+  },
+  {
+    "file": "tests/ui-refinement/bs-browser-basic.R",
+    "passed": true,
+    "sha256": "ecf2d8cfb2fe96d62fcb415591715f8d319c85ff0d159ec97e2803a709d0f493"
+  },
+  {
+    "file": "tests/ui-refinement/bs-browser-full.R",
+    "passed": true,
+    "sha256": "ad83c588dbd4ebd89d08d12805c4195d469f17fd1de854dedb6a2a9922041f79"
+  },
+  {
+    "file": "tests/ui-refinement/garch-browser-extreme.R",
+    "passed": true,
+    "sha256": "5bd85909040036ae470acd573cf2b826a0383eff2c83451366557bfde582cf8c"
+  }
+]

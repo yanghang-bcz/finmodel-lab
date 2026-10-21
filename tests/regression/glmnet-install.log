@@ -1,0 +1,12 @@
+also installing the dependencies ‘iterators’, ‘foreach’, ‘shape’, ‘Rcpp’, ‘RcppEigen’
+
+trying URL 'https://cloud.r-project.org/bin/macosx/sonoma-arm64/contrib/4.6/iterators_1.0.14.tgz'
+trying URL 'https://cloud.r-project.org/bin/macosx/sonoma-arm64/contrib/4.6/foreach_1.5.2.tgz'
+trying URL 'https://cloud.r-project.org/bin/macosx/sonoma-arm64/contrib/4.6/shape_1.4.6.1.tgz'
+trying URL 'https://cloud.r-project.org/bin/macosx/sonoma-arm64/contrib/4.6/Rcpp_1.1.2.tgz'
+trying URL 'https://cloud.r-project.org/bin/macosx/sonoma-arm64/contrib/4.6/RcppEigen_0.3.4.0.2.tgz'
+trying URL 'https://cloud.r-project.org/bin/macosx/sonoma-arm64/contrib/4.6/glmnet_5.1.tgz'
+package ‘glmnet’ successfully unpacked and SHA256 sums checked
+
+The downloaded binary packages are in
+	/var/folders/_n/frv4l22x00n22qm5ydlv70zc0000gn/T//Rtmp98ZNhg/downloaded_packages

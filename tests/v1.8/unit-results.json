@@ -1,0 +1,91 @@
+[
+  {
+    "test": "math",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "baf352",
+      "wall_time_seconds": 0.310843583,
+      "exit_code": 0,
+      "original_token_count": 32,
+      "output": "PASS: defaults, endpoints, correlations \u00b11, zero risk, equal returns; 54159 feasible points checked against Pareto dominance.\n"
+    }
+  },
+  {
+    "test": "learning",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "fe90c6",
+      "wall_time_seconds": 0.212544375,
+      "exit_code": 0,
+      "original_token_count": 35,
+      "output": "PASS input validation, degenerate/nonunique minima, tiny volatility, lesson groups/contributions, live exploration and zero-exposure cases.\n"
+    }
+  },
+  {
+    "test": "numerics",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "bebe5d",
+      "wall_time_seconds": 0.255041708,
+      "exit_code": 0,
+      "original_token_count": 18,
+      "output": "PASS 384 scale-aware numerical identities and clean teaching scripts.\n"
+    }
+  },
+  {
+    "test": "scale",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "c941c4",
+      "wall_time_seconds": 0.217923834,
+      "exit_code": 0,
+      "original_token_count": 22,
+      "output": "PASS automatic tight ranges, weight invariance, fixed union and zero-volatility ranges.\n"
+    }
+  },
+  {
+    "test": "r-code",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "c1398d",
+      "wall_time_seconds": 2.11942875,
+      "exit_code": 0,
+      "original_token_count": 333,
+      "output": "PASS generated R scenario 0 [ 0.11000000000000001, 0.01834, 0.1354252561378416 ]\nPASS generated R scenario 1 [ 0.44400000000000006, 0.00997056, 0.09985269150103065 ]\nPASS generated R scenario 2 [ 0.11000000000000001, 0.009099999999999999, 0.09539392014169455 ]\nPASS generated R scenario 3 [ 0.10117647058823531, 2.677443042362455e-18, 1.6362894127758864e-9 ]\nPASS generated R scenario 4 [ 0.10117647058823531, 1.2057864741279312e-14, 1.0980830907212492e-7 ]\nPASS generated R scenario 5 [ 0.14, 0.0484, 0.22 ]\nPASS generated R scenario 6 [ 0.08, 0.0144, 0.12 ]\nPASS generated R scenario 7 [ 0.11000000000000001, 0, 0 ]\nPASS generated R scenario 8 [ 0.14, 0.0157, 0.12529964086141668 ]\nPASS generated R scenario 9 [ 0.11000000000000001, 0.0144, 0.12 ]\nPASS generated R scenario 10 [ 0.11000000000000001, 0.0025000000000000005, 0.05 ]\nPASS generated R scenario 11 [ 0.10117647058823531, 7.703719777548943e-34, 2.7755575615628914e-17 ]\nPASS generated R scenario 12 [ 0.11000000000000001, 1.4500000000000001e-16, 1.2041594578792296e-8 ]\nPASS generated R scenario 13 [ -0.11000000000000001, 0.01834, 0.1354252561378416 ]\nPASS generated R scenario 14 [ 0.11000000000000001, 0.0121, 0.11 ]\nPASS generated R scenario 15 [ 0.14, 0.0144, 0.12 ]\nPASS generated R scenario 16 [ 0.1400000000000005, 0.018340000000000124, 0.13542525613784204 ]\n"
+    }
+  },
+  {
+    "test": "typography",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "4f1766",
+      "wall_time_seconds": 0.257788166,
+      "exit_code": 0,
+      "original_token_count": 31,
+      "output": "PASS 120 KaTeX formulas/calculations; operator text preserved; official font binary hashes; math implementation unchanged.\n"
+    }
+  },
+  {
+    "test": "exploration",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "c5bedf",
+      "wall_time_seconds": 0.187394375,
+      "exit_code": 0,
+      "original_token_count": 42,
+      "output": "PASS strict Idle/Predict/Experiment/Explain transitions, immutable baseline, no early comparison, lower-only inputs, no-change guard, restart/exit and zero exposures.\n"
+    }
+  },
+  {
+    "test": "teaching",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "3342fc",
+      "wall_time_seconds": 0.258067791,
+      "exit_code": 0,
+      "original_token_count": 33,
+      "output": "PASS screenshot case, 486 analytic diagnoses/dominance certificates, degeneracies, baseline snapshots, example bounds and presets.\n"
+    },
+    "note": "Rerun after strict-risk rounding guard; five constant-risk weights also checked."
+  }
+]

@@ -1,0 +1,122 @@
+{
+  "passed": 15602,
+  "failed": 0,
+  "skipped": 0,
+  "Rruns": 16,
+  "maxAbsoluteDifference": 0.000008476746018004633,
+  "cases": [
+    {
+      "name": "lm-arch-structure",
+      "view": "arch",
+      "model": "garch",
+      "values": 5
+    },
+    {
+      "name": "lm-iid-normal",
+      "view": "arch",
+      "model": "garch",
+      "values": 5
+    },
+    {
+      "name": "lm",
+      "view": "arch",
+      "model": "garch",
+      "values": 5
+    },
+    {
+      "name": "lm-lag1",
+      "view": "arch",
+      "model": "garch",
+      "values": 5
+    },
+    {
+      "name": "arch-demo",
+      "view": "model",
+      "model": "arch",
+      "values": 694,
+      "mode": "teaching"
+    },
+    {
+      "name": "garch-demo",
+      "view": "model",
+      "model": "garch",
+      "values": 694,
+      "mode": "teaching"
+    },
+    {
+      "name": "garch-fit",
+      "view": "model",
+      "model": "garch",
+      "values": 694,
+      "mode": "estimate"
+    },
+    {
+      "name": "arch-fit",
+      "view": "model",
+      "model": "arch",
+      "values": 694,
+      "mode": "estimate"
+    },
+    {
+      "name": "gjr-demo",
+      "view": "extension",
+      "model": "gjr",
+      "values": 694,
+      "mode": "teaching"
+    },
+    {
+      "name": "gjr-fit",
+      "view": "extension",
+      "model": "gjr",
+      "values": 694,
+      "mode": "estimate"
+    },
+    {
+      "name": "m-demo",
+      "view": "extension",
+      "model": "m",
+      "values": 694,
+      "mode": "teaching"
+    },
+    {
+      "name": "m-fit",
+      "view": "extension",
+      "model": "m",
+      "values": 694,
+      "mode": "estimate"
+    },
+    {
+      "name": "ccc-demo",
+      "view": "multi",
+      "model": "garch",
+      "values": 806,
+      "mode": "teaching"
+    },
+    {
+      "name": "ccc-fit",
+      "view": "multi",
+      "model": "garch",
+      "values": 806,
+      "mode": "estimate"
+    },
+    {
+      "name": "csv-paired",
+      "view": "multi",
+      "model": "garch",
+      "values": 801,
+      "mode": "estimate"
+    },
+    {
+      "name": "csv-single",
+      "view": "model",
+      "model": "garch",
+      "values": 694,
+      "mode": "estimate"
+    }
+  ],
+  "tolerance": {
+    "analytic": "1e-11 + 1e-8 relative",
+    "optimized": "omega 1e-10, variance/cov 1e-9, determinant 1e-13, mean/residual/SD 1e-7, unitless coefficients 2e-5; relative 5e-4; LL absolute .002",
+    "pValues": "same tolerances, primary R lm / Box.test / pchisq"
+  }
+}

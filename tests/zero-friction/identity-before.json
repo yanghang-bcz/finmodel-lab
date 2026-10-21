@@ -1,0 +1,27 @@
+{
+  "status": {
+    "pid": 2083,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "2.1.0-teaching.dd1f92c76de51c69",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "assets": {
+    "experiments.html": {
+      "sha256": "0949e02addee590fd3f492aa57249ecf6e5a4ab90b421d536b41dc1454bd15c2",
+      "matches": true
+    },
+    "experiments-bundle.js": {
+      "sha256": "cafcc33b53a3023082cea6b27eb7a98073bf3d894f7a80b6a4873e9463146e1c",
+      "matches": true
+    },
+    "experiments.css": {
+      "sha256": "0e790c02c4a95c60ca1f78e4aac6cca258632d142ffc53e5e15149ab33f6d0b6",
+      "matches": true
+    },
+    "build-manifest.json": {
+      "sha256": "bc077456511dc0e7208e43aeb7246494249aa0329295bccfaa4d09212b5a3aac",
+      "matches": true
+    }
+  }
+}

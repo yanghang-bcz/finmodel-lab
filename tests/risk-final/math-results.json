@@ -1,0 +1,99 @@
+{
+  "checks": 16008,
+  "passed": 16008,
+  "failed": 0,
+  "skipped": 2,
+  "skipCases": [
+    "GARCH样本MLE收敛：未实现可选估计模式",
+    "GARCH样本MLE失败处理：未实现可选估计模式"
+  ],
+  "Rruns": 18,
+  "maxAbsoluteDifference": 0.00037257813528412953,
+  "outcomes": [
+    {
+      "name": "basic",
+      "view": "basic",
+      "values": 4
+    },
+    {
+      "name": "dynamic-0.9",
+      "view": "dynamic",
+      "values": 1506
+    },
+    {
+      "name": "dynamic-0.94",
+      "view": "dynamic",
+      "values": 1506
+    },
+    {
+      "name": "dynamic-0.98",
+      "view": "dynamic",
+      "values": 1506
+    },
+    {
+      "name": "garch-near-unit",
+      "view": "dynamic",
+      "values": 1506
+    },
+    {
+      "name": "constant",
+      "view": "dynamic",
+      "values": 1506
+    },
+    {
+      "name": "evt-default",
+      "view": "evt",
+      "values": 8
+    },
+    {
+      "name": "evt-99",
+      "view": "evt",
+      "values": 8
+    },
+    {
+      "name": "evt-threshold",
+      "view": "evt",
+      "values": 8
+    },
+    {
+      "name": "backtest-30",
+      "view": "backtest",
+      "values": 1796
+    },
+    {
+      "name": "backtest-150",
+      "view": "backtest",
+      "values": 836
+    },
+    {
+      "name": "backtest-230",
+      "view": "backtest",
+      "values": 196
+    },
+    {
+      "name": "csv-dynamic",
+      "view": "dynamic",
+      "values": 1506
+    },
+    {
+      "name": "csv-backtest",
+      "view": "backtest",
+      "values": 836
+    },
+    {
+      "name": "evt-shape--0.2",
+      "view": "evt",
+      "values": 8
+    },
+    {
+      "name": "evt-shape-1.2",
+      "view": "evt",
+      "values": 8
+    }
+  ],
+  "tolerance": {
+    "deterministic": "1e-8 + 2e-9*abs(expected)",
+    "gpdMLE": "0.001 yuan + 1e-7*abs(expected), optimizer summation tolerance",
+    "kupiecP": "2e-7 absolute (erfc approximation)"
+  }
+}

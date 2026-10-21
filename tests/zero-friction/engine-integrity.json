@@ -1,0 +1,26 @@
+{
+  "experiment-math.js": {
+    "sha256": "685c09646d34f29f74b30eac5032e357c78068e7c234de931579f2b63238da5e",
+    "unchanged": true
+  },
+  "bs-lesson.js": {
+    "sha256": "109d1705b8bbc9d6fba75fe6225d775dd59815a66addf30d62290fa39ebac12e",
+    "unchanged": true
+  },
+  "iv-math.js": {
+    "sha256": "c96b3af21af7baf34578a6e6094e9c0dfaabba63a1b01d7fb9b7787b2cbf0d0b",
+    "unchanged": true
+  },
+  "iv-code.js": {
+    "sha256": "8277e90b87c4edf7701b7f38a177e3c6ff9f3417c7a83dc99fc130c76af00add",
+    "unchanged": true
+  },
+  "hedge-math.js": {
+    "sha256": "f1c427a35c6516c5e90a02d1aa6c3a21a0101443d3545939478353c2dd830422",
+    "unchanged": true
+  },
+  "hedge-code.js": {
+    "sha256": "2199d16a5378368949bae6f002afdd7362fd3213069acf3357d225fd60f30531",
+    "unchanged": true
+  }
+}

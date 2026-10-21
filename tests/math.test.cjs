@@ -1,0 +1,5 @@
+const assert=require('node:assert/strict');const {portfolio,model}=require('../dist/math.js');const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10,`${a} != ${b}`);const base={w:.5,mu1:.08,mu2:.14,s1:.12,s2:.22,rho:.2};
+near(portfolio(base).mean,.11);near(portfolio(base).variance,.01834);near(portfolio(base,0).sd,.22);near(portfolio(base,1).sd,.12);
+near(portfolio({...base,rho:-1}).sd,.05);near(portfolio({...base,rho:1}).sd,.17);near(portfolio({...base,rho:-1},.22/.34).sd,0);
+let count=0;for(const rho of [-1,-.4,0,.2,1])for(const s1 of [0,.12,.22])for(const s2 of [0,.12,.22])for(const mu1 of [-.1,.08,.14]){const p={...base,rho,s1,s2,mu1},m=model(p);for(const q of m.points){assert.ok(Number.isFinite(q.sd));assert.ok(q.variance>=0);near(q.w+(1-q.w),1);const dominated=m.points.some(z=>z.sd<=q.sd+1e-12&&z.mean>=q.mean-1e-12&&(z.sd<q.sd-1e-10||z.mean>q.mean+1e-10));assert.equal(q.efficient,!dominated,JSON.stringify({p,q}));count++}}
+console.log(`PASS: defaults, endpoints, correlations ±1, zero risk, equal returns; ${count} feasible points checked against Pareto dominance.`);

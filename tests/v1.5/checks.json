@@ -1,0 +1,214 @@
+[
+  {
+    "name": "真实曲线高度扩大超过15%",
+    "pass": true
+  },
+  {
+    "name": "mu仅高亮两个收益输入",
+    "pass": true
+  },
+  {
+    "name": "s仅高亮标准差输入",
+    "pass": true
+  },
+  {
+    "name": "w只高亮权重滑块",
+    "pass": true
+  },
+  {
+    "name": "rho精确映射",
+    "pass": true
+  },
+  {
+    "name": "跨三行整体高亮",
+    "pass": true
+  },
+  {
+    "name": "显示实时数值代入",
+    "pass": true
+  },
+  {
+    "name": "负项向左且风险9.54%",
+    "pass": true
+  },
+  {
+    "name": "解释更新不挤压代码",
+    "pass": true
+  },
+  {
+    "name": "探索不改变图表位置尺寸",
+    "pass": true
+  },
+  {
+    "name": "仅开放rho",
+    "pass": true
+  },
+  {
+    "name": "探索同坐标系",
+    "pass": true
+  },
+  {
+    "name": "解释含数学公式与风险变化",
+    "pass": true
+  },
+  {
+    "name": "首屏与全部参数 1440",
+    "pass": true
+  },
+  {
+    "name": "探索不挤图 1440",
+    "pass": true
+  },
+  {
+    "name": "探索中参数同屏 1440",
+    "pass": true
+  },
+  {
+    "name": "退出解锁 1440",
+    "pass": true
+  },
+  {
+    "name": "首屏与全部参数 1366",
+    "pass": true
+  },
+  {
+    "name": "探索不挤图 1366",
+    "pass": true
+  },
+  {
+    "name": "探索中参数同屏 1366",
+    "pass": true
+  },
+  {
+    "name": "退出解锁 1366",
+    "pass": true
+  },
+  {
+    "name": "首屏与全部参数 1920",
+    "pass": true
+  },
+  {
+    "name": "探索不挤图 1920",
+    "pass": true
+  },
+  {
+    "name": "探索中参数同屏 1920",
+    "pass": true
+  },
+  {
+    "name": "退出解锁 1920",
+    "pass": true
+  },
+  {
+    "name": "投屏代码字号19",
+    "pass": true
+  },
+  {
+    "name": "当前点键盘可访问",
+    "pass": true
+  },
+  {
+    "name": "浮层内可切换两种身份",
+    "pass": true
+  },
+  {
+    "name": "重合点两种身份且非唯一提示",
+    "pass": true
+  },
+  {
+    "name": "w0端点14%",
+    "pass": true
+  },
+  {
+    "name": "权重不重绘曲线形状",
+    "pass": true
+  },
+  {
+    "name": "w1端点8%",
+    "pass": true
+  },
+  {
+    "name": "rho边界 -1",
+    "pass": true
+  },
+  {
+    "name": "rho边界 0",
+    "pass": true
+  },
+  {
+    "name": "rho边界 1",
+    "pass": true
+  },
+  {
+    "name": "非法输入阻断",
+    "pass": true
+  },
+  {
+    "name": "复制三项式完整代码",
+    "pass": true
+  },
+  {
+    "name": "零权重探索不变",
+    "pass": true
+  },
+  {
+    "name": "零波动探索不变",
+    "pass": true
+  },
+  {
+    "name": "同收益有效集准确解释",
+    "pass": true
+  },
+  {
+    "name": "mu实时修改",
+    "pass": true
+  },
+  {
+    "name": "s实时修改",
+    "pass": true
+  },
+  {
+    "name": "目录未上线提示",
+    "pass": true
+  },
+  {
+    "name": "目录未上线提示",
+    "pass": true
+  },
+  {
+    "name": "目录未上线提示",
+    "pass": true
+  },
+  {
+    "name": "375手机无横向溢出",
+    "pass": true
+  },
+  {
+    "name": "手机可调参",
+    "pass": true
+  },
+  {
+    "name": "手机浮层在图表内",
+    "pass": true
+  },
+  {
+    "name": "手机菜单帮助",
+    "pass": true
+  },
+  {
+    "name": "320无横向溢出",
+    "pass": true
+  },
+  {
+    "name": "入口展开文字反馈",
+    "pass": true
+  },
+  {
+    "name": "退出恢复入口",
+    "pass": true
+  },
+  {
+    "name": "退出后图表仍稳定",
+    "pass": true
+  }
+]

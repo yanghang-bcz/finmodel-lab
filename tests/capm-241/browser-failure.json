@@ -1,0 +1,14 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: DOM manifest service same version",
+  "checks": [
+    {
+      "name": "absolute project root",
+      "pass": true
+    },
+    {
+      "name": "DOM manifest service same version",
+      "pass": false
+    }
+  ],
+  "errors": []
+}

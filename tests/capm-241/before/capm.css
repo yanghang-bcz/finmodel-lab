@@ -1,0 +1,38 @@
+body.capm-workbench #capmViews{display:flex;gap:6px;padding:0 16px 8px;flex:none;flex-wrap:wrap}
+body.capm-workbench #capmViews button,body.capm-workbench .capm-subviews button{font-size:12px;padding:6px 8px}
+body.capm-workbench [aria-pressed=true]{border-color:#b3a9c6}
+body.capm-workbench #capmViews [aria-pressed=true],body.capm-workbench .capm-subviews [aria-pressed=true]{background:#eeebf4}
+body.capm-workbench #chartHost{flex:1;min-height:285px;margin:0 14px;position:relative}
+body.capm-workbench #capmChartTitle{font-size:14px;font-weight:500;margin:0 0 4px}
+body.capm-workbench #capmPlot svg{display:block;width:100%;height:100%;max-height:440px;min-height:245px}
+body.capm-workbench #capmPlot text{font:12px var(--font-ui);fill:#607580}
+body.capm-workbench #capmPlot circle{cursor:pointer}
+body.capm-workbench #capmPlot circle:focus{stroke:#9b88ac;stroke-width:3;outline:none}
+body.capm-workbench #capmInsight{font-size:13px;line-height:1.8;margin:8px 0}
+body.capm-workbench #capmTests p{font-size:12px;line-height:1.8;margin:6px 0}
+body.capm-workbench #capmTests th:first-child{width:12%}
+body.capm-workbench #capmData{font-size:12px;line-height:1.8;border-top:1px solid var(--border);padding-top:10px}
+body.capm-workbench #capmData h3{font-size:14px;margin:0 0 6px}
+body.capm-workbench #capmData label{display:block;margin:9px 0}
+body.capm-workbench #capmData input,body.capm-workbench #capmData select{display:block;width:100%;font:12px var(--font-ui);padding:6px;min-width:0}
+body.capm-workbench #capmData button{font-size:12px;padding:5px;margin:3px 4px 3px 0}
+body.capm-workbench #capmDataStatus{padding:8px;background:#edf2f5;overflow-wrap:anywhere}
+body.capm-workbench #code .code-line code{white-space:pre-wrap;overflow-wrap:anywhere}
+body.capm-workbench #code .code-line{width:100%;min-width:0;align-items:start}
+body.capm-workbench #code .code-line.selected{background:#eeebf4}
+body.capm-workbench #explanation p{font-size:13px;line-height:1.9}
+body.capm-workbench [hidden]{display:none!important}
+body.capm-workbench #details{overflow-wrap:anywhere}
+
+body.capm-workbench #capmTip[data-state=preview]{pointer-events:none}
+body.capm-workbench #capmCloseTip{float:right;font-size:16px;padding:0 4px;margin-left:5px}
+/* Give the SVG a definite box: captions must not overflow into the legend on short projectors. */
+body.capm-workbench #chartHost{display:flex;flex-direction:column;min-height:310px}
+body.capm-workbench #capmChartTitle{flex:none}
+body.capm-workbench #capmPlot{position:relative;flex:1;min-height:270px}
+body.capm-workbench #capmPlot svg{position:absolute;inset:0;width:100%;height:100%;min-height:0;max-height:none}
+
+body.capm-workbench #capmPlot text{font-size:14px}
+body.capm-workbench.projector #capmPlot text{font-size:17px}
+body.capm-workbench.projector #capmChartTitle{font-size:17px}
+body.capm-workbench.projector #capmInsight{font-size:16px}

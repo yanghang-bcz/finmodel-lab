@@ -1,0 +1,35 @@
+/* Shared design contract for all five workbenches; financial engines are untouched. */
+:root{--interaction:#8c80a3;--panel-gap:14px;--panel-padding:16px;--control-border:#d8e1e6;--control-bg:#f8fafb}.workspace{grid-template-columns:minmax(0,34fr) minmax(0,40fr) minmax(0,26fr);gap:var(--panel-gap);min-height:0}.panel{box-shadow:none}.panel-head,.code-panel .panel-head{height:56px;padding:12px 16px}.panel-head h2{font:600 16px/1.4 var(--font-brand)}.panel-head button{font:500 12px/1.4 var(--font-ui);padding:5px 7px}.sidebar a.nav{display:block;color:inherit;text-decoration:none}.sidebar .nav{font-size:14px}header h1{font-size:18px}.header-actions{display:flex;gap:6px}input[type=number]{border:1px solid var(--control-border);background:var(--control-bg);border-radius:6px;box-shadow:none;appearance:auto;-webkit-appearance:auto;min-width:0}input[type=number]:hover{border-color:#bbcbd5}input[type=number]:focus-visible{border-color:var(--interaction);outline:2px solid #b3a9c844;outline-offset:1px}input[type=number][aria-invalid=true]{border-color:#b8796b;background:#faf3f0}input[type=number]:disabled{opacity:1;color:#84909a;background:#edf0f2;border-color:#e3e8ec;cursor:not-allowed}button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--interaction);outline-offset:2px}#code{overscroll-behavior:contain;scrollbar-width:thin}#code code{font-feature-settings:'liga' 0,'calt' 0}#code .code-line{font-size:15px}.code-line .num{font-variant-numeric:tabular-nums}.parameters .explore-progress{color:#86949e}body.projector main{margin-left:0}body.projector .sidebar{display:none}body.projector .workspace{grid-template-columns:minmax(0,34fr) minmax(0,40fr) minmax(0,26fr)}body.projector #code .code-line{font-size:18px}body.projector .code-hint{font-size:12px}body.projector .code-toolbar button{font-size:14px}body.projector .code-toolbar span{font-size:12px}body.projector .panel-head h2{font-size:18px}body.projector .multi-workbench .workspace{min-height:0}body.projector #metrics b{font-size:34px}body.projector[data-model=capm] #metrics>div:last-child b{font-size:24px}body.projector #inputs label>span{font-size:16px}body.projector #inputs input{font-size:17px;height:40px}body.projector .chart-frame h3{font-size:17px}body.projector .svg-host .axis-caption{font-size:16px}body.projector .legend{font-size:15px}body.projector .explanation p{font-size:16px}body.projector .explanation .economic{font-size:15px!important}body.projector .formula{font-size:21px}body.projector .learning p,body.projector #choices button{font-size:15px}body.projector .model-details table{font-size:14px}body.projector .model-details thead th{font-size:13px}body.projector .chart-note{font-size:13px}body.projector .assumption-summary{font-size:12px}body.projector .chart-tooltip{font-size:16px;width:min(330px,calc(100% - 20px))}
+@media(min-width:981px){body{height:100dvh;overflow:hidden}main{height:100dvh}.workspace{height:calc(100dvh - 84px)}.code-panel .explanation{max-width:100%}}
+@media(min-width:981px) and (max-width:1250px){.sidebar{display:none}main{margin-left:0;padding-inline:16px}.workspace{grid-template-columns:minmax(0,34fr) minmax(0,40fr) minmax(0,26fr)}.header-brand{display:none}}
+@media(max-width:980px){.sidebar{display:none}main{margin-left:0;padding-inline:12px}header h1{font-size:16px}.workspace{display:flex;height:auto;flex-direction:column}body,main{height:auto;overflow:auto}#code .code-line{font-size:15px}}
+/* Safari: give the mature portfolio SVG a definite containing block in flex. */
+body:not(.multi-workbench) .plot-area{position:relative}body:not(.multi-workbench) #chart{position:absolute;inset:0;width:100%;height:100%}
+/* v1.9.1 stateful overlays: preview never intercepts the chart. */
+.chart-tooltip[data-mode=preview],.point-details[data-mode=preview]{pointer-events:none}
+.chart-tooltip[data-mode=pinned],.point-details[data-mode=pinned]{pointer-events:auto}
+.chart-tooltip[data-mode=closed],.point-details[hidden]{display:none}
+.data-line[data-marker],.tail-bin[data-marker],.asset-point{cursor:pointer}
+.data-line[data-marker]{pointer-events:stroke}
+.point-details{max-width:calc(100% - 24px);max-height:calc(100% - 60px);overflow:auto}
+.point-identities{flex-wrap:wrap}
+body #catalogDialog{width:min(600px,calc(100vw - 32px));max-width:calc(100vw - 32px);max-height:calc(100dvh - 40px);padding:0;overflow:hidden}
+body #catalogDialog[open]{display:flex;flex-direction:column}
+#catalogDialog .dialog-head{flex:none;margin:0;padding:16px 20px;border-bottom:1px solid var(--border)}
+#catalogDialog .dialog-head h2{margin:0;font-size:18px}
+body #catalogDialog .catalog-list{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:6px 14px 12px;scrollbar-gutter:stable}
+body #catalogDialog .course-row{display:grid;grid-template-columns:30px minmax(0,1fr) 68px;align-items:center;gap:12px;min-height:48px;width:100%;margin:0;padding:10px 6px;border:0;border-bottom:1px solid var(--border);border-radius:0;background:transparent;color:var(--ink);font:13px/1.6 var(--font-ui);text-align:left;text-decoration:none}
+#catalogDialog .course-number{font-family:var(--font-number);color:var(--muted)}
+#catalogDialog .course-name{overflow-wrap:anywhere}
+#catalogDialog .course-status{text-align:right;white-space:nowrap;font-size:12px;color:var(--muted)}
+body #catalogDialog .course-row[aria-current=page]{background:#e8edf2;border-radius:5px}
+body #catalogDialog .course-row:disabled{opacity:1;color:#83919b}
+#catalogDialog .course-row[href]:hover{background:#edf1f4}
+dialog::backdrop{background:#263d4e45;backdrop-filter:blur(2px)}
+
+#catalogHeader{display:none}body.projector #catalogMobile,body.projector #catalogHeader{display:block}
+
+/* Invisible hit targets preserve the existing continuous volatility line. */
+.interactive-point.ghost-point{stroke:none;pointer-events:all}
+.interactive-point.ghost-point.focused-mark,.interactive-point.ghost-point:focus{fill:var(--interaction);stroke:#fafbfc;stroke-width:2}
+body #catalogDialog .catalog-list{display:block}

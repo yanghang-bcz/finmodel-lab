@@ -1,0 +1,320 @@
+{
+  "passed": 78,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "exact project served",
+      "passed": true
+    },
+    {
+      "name": "build identity agreement",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash experiments.html",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash experiments-bundle.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash experiments.css",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash hedge-math.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash hedge-code.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash hedge-workbench.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash chart-interaction.js",
+      "passed": true
+    },
+    {
+      "name": "fourth module in three columns",
+      "passed": true
+    },
+    {
+      "name": "initial neutrality and unit",
+      "passed": true
+    },
+    {
+      "name": "same R syntax colors",
+      "passed": true
+    },
+    {
+      "name": "prediction hides results and code",
+      "passed": true
+    },
+    {
+      "name": "predict copy disabled",
+      "passed": true
+    },
+    {
+      "name": "prediction locks input",
+      "passed": true
+    },
+    {
+      "name": "choice alone no experiment",
+      "passed": true
+    },
+    {
+      "name": "explanation requires experiment",
+      "passed": true
+    },
+    {
+      "name": "actual105 experiment",
+      "passed": true
+    },
+    {
+      "name": "explanation checks wrong choice",
+      "passed": true
+    },
+    {
+      "name": "restart hides answers",
+      "passed": true
+    },
+    {
+      "name": "exit restores unlocked inputs",
+      "passed": true
+    },
+    {
+      "name": "real SVG path rendered",
+      "passed": true
+    },
+    {
+      "name": "keyboard next step",
+      "passed": true
+    },
+    {
+      "name": "keyboard focus retained for repeated steps",
+      "passed": true
+    },
+    {
+      "name": "previous returns1",
+      "passed": true
+    },
+    {
+      "name": "previous returns0",
+      "passed": true
+    },
+    {
+      "name": "play advances",
+      "passed": true
+    },
+    {
+      "name": "pause stable",
+      "passed": true
+    },
+    {
+      "name": "resume advances",
+      "passed": true
+    },
+    {
+      "name": "reset progress",
+      "passed": true
+    },
+    {
+      "name": "step metrics sync",
+      "passed": true
+    },
+    {
+      "name": "performance three paths",
+      "passed": true
+    },
+    {
+      "name": "rebalance markers",
+      "passed": true
+    },
+    {
+      "name": "hover tooltip",
+      "passed": true
+    },
+    {
+      "name": "leave hides tooltip",
+      "passed": true
+    },
+    {
+      "name": "click pins tooltip",
+      "passed": true
+    },
+    {
+      "name": "close pinned detail",
+      "passed": true
+    },
+    {
+      "name": "Escape closes tooltip",
+      "passed": true
+    },
+    {
+      "name": "R logical highlight basic",
+      "passed": true
+    },
+    {
+      "name": "copied actual hedge code basic",
+      "passed": true
+    },
+    {
+      "name": "copied R matches live basic 0",
+      "passed": true
+    },
+    {
+      "name": "copied R matches live basic 1",
+      "passed": true
+    },
+    {
+      "name": "copied R matches live basic 2",
+      "passed": true
+    },
+    {
+      "name": "R logical highlight full",
+      "passed": true
+    },
+    {
+      "name": "copied actual hedge code full",
+      "passed": true
+    },
+    {
+      "name": "copied R matches live full 0",
+      "passed": true
+    },
+    {
+      "name": "copied R matches live full 1",
+      "passed": true
+    },
+    {
+      "name": "copied R matches live full 2",
+      "passed": true
+    },
+    {
+      "name": "RStudio actual expected results",
+      "passed": true
+    },
+    {
+      "name": "parameter cancels running timer",
+      "passed": true
+    },
+    {
+      "name": "parameter clears old progress",
+      "passed": true
+    },
+    {
+      "name": "invalid tooltip cleared",
+      "passed": true
+    },
+    {
+      "name": "interval final error sync",
+      "passed": true
+    },
+    {
+      "name": "unhedged UI shows zero holdings",
+      "passed": true
+    },
+    {
+      "name": "static current account selectable",
+      "passed": true
+    },
+    {
+      "name": "put signed dividend",
+      "passed": true
+    },
+    {
+      "name": "actual maturity settlement",
+      "passed": true
+    },
+    {
+      "name": "expiry blocked honestly",
+      "passed": true
+    },
+    {
+      "name": "invalid seed clears chart",
+      "passed": true
+    },
+    {
+      "name": "no horizontal overflow 1440",
+      "passed": true
+    },
+    {
+      "name": "real chart area 1440",
+      "passed": true
+    },
+    {
+      "name": "no horizontal overflow 1366",
+      "passed": true
+    },
+    {
+      "name": "real chart area 1366",
+      "passed": true
+    },
+    {
+      "name": "no horizontal overflow 1920",
+      "passed": true
+    },
+    {
+      "name": "real chart area 1920",
+      "passed": true
+    },
+    {
+      "name": "no horizontal overflow 375",
+      "passed": true
+    },
+    {
+      "name": "real chart area 375",
+      "passed": true
+    },
+    {
+      "name": "projector graph remains visible",
+      "passed": true
+    },
+    {
+      "name": "reduce motion respected",
+      "passed": true
+    },
+    {
+      "name": "IV preserved",
+      "passed": true
+    },
+    {
+      "name": "switch clears playing progress",
+      "passed": true
+    },
+    {
+      "name": "pricing retained",
+      "passed": true
+    },
+    {
+      "name": "dividend retained",
+      "passed": true
+    },
+    {
+      "name": "reload fourth module",
+      "passed": true
+    },
+    {
+      "name": "touch step works",
+      "passed": true
+    },
+    {
+      "name": "touch pins details",
+      "passed": true
+    },
+    {
+      "name": "touch closes details",
+      "passed": true
+    },
+    {
+      "name": "no uncaught errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "browser": "155.0.8059.85"
+}

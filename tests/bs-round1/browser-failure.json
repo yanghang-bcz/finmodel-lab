@@ -1,0 +1,14 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: HTML DOM manifest server same build",
+  "checks": [
+    {
+      "label": "HTTP server points to exact repository",
+      "passed": true
+    },
+    {
+      "label": "HTML DOM manifest server same build",
+      "passed": false
+    }
+  ],
+  "errors": []
+}

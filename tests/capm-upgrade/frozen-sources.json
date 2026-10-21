@@ -1,0 +1,42 @@
+{
+  "changedExistingDistFiles": [
+    "dist/experiments-bundle.js",
+    "dist/index.html",
+    "dist/experiments-config.js",
+    "dist/build-manifest.json",
+    "dist/portfolio-bundle.js",
+    "dist/experiments.html",
+    "dist/experiments.js",
+    "dist/build-info.js"
+  ],
+  "frozenSourceFiles": [
+    "dist/workbench-system.css",
+    "dist/portfolio-csv.js",
+    "dist/iv-code.js",
+    "dist/portfolio-multi-ui.js",
+    "dist/chart-interaction.js",
+    "dist/portfolio-multi-code.js",
+    "dist/teaching-ux-charts.js",
+    "dist/lesson-presentation.js",
+    "dist/portfolio-multi.css",
+    "dist/hedge-math.js",
+    "dist/experiment-lessons.js",
+    "dist/portfolio-ux.js",
+    "dist/hedge-workbench.js",
+    "dist/lessons.js",
+    "dist/math.js",
+    "dist/portfolio-multi-math.js",
+    "dist/teaching-ux-data.js",
+    "dist/style.css",
+    "dist/iv-math.js",
+    "dist/zero-friction-data.js",
+    "dist/hedge-code.js",
+    "dist/teaching-ux.js",
+    "dist/experiment-math.js",
+    "dist/app.js",
+    "dist/experiments.css",
+    "dist/bs-lesson.js",
+    "dist/iv-workbench.js"
+  ],
+  "frozenChanges": []
+}

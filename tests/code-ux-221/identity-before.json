@@ -1,0 +1,31 @@
+{
+  "server": {
+    "pid": 10410,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "2.2.0-zero-friction.b79a33bbaffc234f",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "assets": {
+    "experiments.html": {
+      "sha256": "86ccae3609f78d297e2735f05ad318d1b7aa5af9a00b22112122a072667f0583",
+      "matches": true
+    },
+    "index.html": {
+      "sha256": "e41958da399069c797b41db1c8a1d33283624a73826c30023cda52c3e6508188",
+      "matches": true
+    },
+    "experiments-bundle.js": {
+      "sha256": "89798db48dd47eaa47fb02034c7ce3f2d03f81e4e10799535518cd161675edbc",
+      "matches": true
+    },
+    "portfolio-bundle.js": {
+      "sha256": "7d7241cadec011e63179b161d74b35b39b6501509d0b82bb0aef74f404ab4963",
+      "matches": true
+    },
+    "experiments.css": {
+      "sha256": "0cc805ba787c151ee73acd7a7c878bcb6e044dc30aec5d9fe0e435948e59f0cd",
+      "matches": true
+    }
+  }
+}

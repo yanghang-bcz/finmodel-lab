@@ -1,0 +1,5 @@
+            theoretical alpha_month.(Intercept)           beta_sample.x 
+           0.1020000000            0.0009901051            1.1950458142 
+CHECK 0.10199999999999999 0.00099010510612259879 1.1950458142328102 
+null device 
+          1 

@@ -1,0 +1,6 @@
+{
+  passed: true,
+  checks: 13514,
+  rCases: 28,
+  scope: 'q grid / parity / price bounds / monotonicity / Greeks central differences both call and put / invalid inputs / real R basic+full'
+}

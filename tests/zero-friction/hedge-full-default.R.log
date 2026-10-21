@@ -1,0 +1,9 @@
+           C            P           d1           d2       deltaC       deltaP 
+10.450583572  5.573526022  0.350000000  0.150000000  0.636830651 -0.363169349 
+       gamma         vega       thetaC       thetaP 
+ 0.018762017  0.375240347 -0.017572678 -0.004542138 
+         delta         shares      net_delta initial_shares   trade_needed 
+     0.6368307      0.6368307      0.0000000      0.6368307      0.0000000 
+       premium           cash      net_value 
+    10.4505836    -53.2324815      0.0000000 
+SCRIPT_OK

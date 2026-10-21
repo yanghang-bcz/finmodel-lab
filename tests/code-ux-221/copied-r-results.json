@@ -1,0 +1,84 @@
+{
+  "scripts": 19,
+  "values": 4116,
+  "cases": [
+    {
+      "file": "tests/code-ux-221/copied-capm-changed-key.R.log",
+      "values": 123
+    },
+    {
+      "file": "tests/code-ux-221/copied-capm-default.R.log",
+      "values": 123
+    },
+    {
+      "file": "tests/code-ux-221/copied-dividend-changed-key.R.log",
+      "values": 10
+    },
+    {
+      "file": "tests/code-ux-221/copied-dividend-default.R.log",
+      "values": 10
+    },
+    {
+      "file": "tests/code-ux-221/copied-dynamic-default.R.log",
+      "values": 1159
+    },
+    {
+      "file": "tests/code-ux-221/copied-dynamic-put-q-interval.R.log",
+      "values": 1159
+    },
+    {
+      "file": "tests/code-ux-221/copied-garch-changed-key.R.log",
+      "values": 480
+    },
+    {
+      "file": "tests/code-ux-221/copied-garch-default.R.log",
+      "values": 480
+    },
+    {
+      "file": "tests/code-ux-221/copied-hedge-changed-key.R.log",
+      "values": 8
+    },
+    {
+      "file": "tests/code-ux-221/copied-hedge-default.R.log",
+      "values": 8
+    },
+    {
+      "file": "tests/code-ux-221/copied-iv-changed-key.R.log",
+      "values": 6
+    },
+    {
+      "file": "tests/code-ux-221/copied-iv-default.R.log",
+      "values": 6
+    },
+    {
+      "file": "tests/code-ux-221/copied-iv-precision-noedit.R.log",
+      "values": 6
+    },
+    {
+      "file": "tests/code-ux-221/copied-portfolio-changed-key.R.log",
+      "values": 5
+    },
+    {
+      "file": "tests/code-ux-221/copied-portfolio-default.R.log",
+      "values": 5
+    },
+    {
+      "file": "tests/code-ux-221/copied-pricing-changed-key.R.log",
+      "values": 10
+    },
+    {
+      "file": "tests/code-ux-221/copied-pricing-default.R.log",
+      "values": 10
+    },
+    {
+      "file": "tests/code-ux-221/copied-var-changed-key.R.log",
+      "values": 254
+    },
+    {
+      "file": "tests/code-ux-221/copied-var-default.R.log",
+      "values": 254
+    }
+  ],
+  "cleanSession": "Rscript --vanilla",
+  "tolerance": "1e-8 + abs(expected)*1e-10"
+}

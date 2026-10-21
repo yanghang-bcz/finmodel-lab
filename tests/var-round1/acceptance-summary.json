@@ -1,0 +1,16 @@
+{
+  "build": "2.5.0-risk-round1.d04d5ac40d7bda72",
+  "pid": 76648,
+  "resources": 56,
+  "mathChecks": 23025,
+  "generatedRScripts": 24,
+  "maxNumericError": 6.984919309616089e-10,
+  "browserChecks": 294,
+  "actualCopiedRScripts": 16,
+  "regressionSuites": 20,
+  "frozenSources": 46,
+  "firstRoundStatus": "complete",
+  "internalQuality": 94,
+  "studentValidation": "pending",
+  "garch_evt_backtest": "not implemented"
+}

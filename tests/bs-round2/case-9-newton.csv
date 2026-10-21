@@ -1,0 +1,2 @@
+sigma,price,error,vega,next_sigma,a,b,next_a,next_b,stop
+0.3,14.2312547859858,3.78067121380025,37.9432933116945,0.200359961304808,NA,NA,NA,NA,max_iterations

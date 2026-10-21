@@ -1,0 +1,63 @@
+{
+  "passed": 975,
+  "failed": 0,
+  "skipped": 0,
+  "copiedR": 12,
+  "errors": [],
+  "records": [
+    {
+      "name": "custom-teaching-initial",
+      "view": "dynamic",
+      "train": 150
+    },
+    {
+      "name": "garch-estimate",
+      "view": "dynamic",
+      "train": 150,
+      "LL": 448.54141452350996
+    },
+    {
+      "name": "garch-train120",
+      "view": "dynamic",
+      "train": 120,
+      "LL": 363.02862115575965
+    },
+    {
+      "name": "estimated-comparison",
+      "view": "dynamic",
+      "train": 150,
+      "LL": 448.54141452350996
+    },
+    {
+      "name": "estimated-backtest",
+      "view": "backtest",
+      "train": 150,
+      "LL": 448.54141452350996
+    },
+    {
+      "name": "csv-garch",
+      "view": "dynamic",
+      "train": 250,
+      "LL": 877.1172474499965
+    },
+    {
+      "name": "csv-estimated-backtest",
+      "view": "backtest",
+      "train": 250,
+      "LL": 877.1172474499965
+    },
+    {
+      "name": "price-estimated-backtest",
+      "view": "backtest",
+      "train": 250,
+      "LL": 877.1172474499963
+    },
+    {
+      "name": "price-garch-estimate",
+      "view": "dynamic",
+      "train": 250,
+      "LL": 877.1172474499963
+    }
+  ],
+  "chrome": "155.0.8059.85"
+}

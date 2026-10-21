@@ -1,0 +1,26 @@
+[
+  {
+    "file": "examples/experiment07-basic.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment07-dynamic.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment07-evt.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment07-backtest.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment07-garch-estimated.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment07-garch-estimated-backtest.R",
+    "exit": 0
+  }
+]

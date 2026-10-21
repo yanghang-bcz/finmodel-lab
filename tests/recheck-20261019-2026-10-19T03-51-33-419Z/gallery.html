@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>五实验逐页实测</title><style>body{margin:18px;background:#eef2f5;color:#243746;font:15px/1.5 system-ui}h1{font-size:23px;margin:0}h2{font-size:17px;margin:12px 0 5px}.row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}figure{margin:0;background:white;padding:5px}img{display:block;width:100%}figcaption{font-size:12px}a{color:#265d88}</style><h1>五个实验：目录、悬停与移开后逐页复核</h1>
+<p>Chrome 155.0.8059.84 · 构建 1.9.1-audit.829515775e3098be · 本轮301项断言通过，96个实际SVG目标逐个悬停与移开检查。另核对全部图例、10次快速扫过及刷新后目录。<a href="results.json">完整结果</a></p>
+<h2>06 GARCH：全部通过</h2><div class="row">
+<figure><figcaption>目录：01→12，名称与当前项一致</figcaption><a href="garch-catalog.png"><img src="garch-catalog.png"></a></figure>
+<figure><figcaption>鼠标停在图形上：临时提示出现</figcaption><a href="garch-hover.png"><img src="garch-hover.png"></a></figure>
+<figure><figcaption>鼠标移到无关区域180ms后：提示为0</figcaption><a href="garch-leave.png"><img src="garch-leave.png"></a></figure>
+</div>
+<h2>07 VaR / ES：全部通过</h2><div class="row">
+<figure><figcaption>目录：01→12，名称与当前项一致</figcaption><a href="var-catalog.png"><img src="var-catalog.png"></a></figure>
+<figure><figcaption>鼠标停在图形上：临时提示出现</figcaption><a href="var-hover.png"><img src="var-hover.png"></a></figure>
+<figure><figcaption>鼠标移到无关区域180ms后：提示为0</figcaption><a href="var-leave.png"><img src="var-leave.png"></a></figure>
+</div>
+<h2>08 均值-方差：全部通过</h2><div class="row">
+<figure><figcaption>目录：01→12，名称与当前项一致</figcaption><a href="portfolio-catalog.png"><img src="portfolio-catalog.png"></a></figure>
+<figure><figcaption>鼠标停在图形上：临时提示出现</figcaption><a href="portfolio-hover.png"><img src="portfolio-hover.png"></a></figure>
+<figure><figcaption>鼠标移到无关区域180ms后：提示为0</figcaption><a href="portfolio-leave.png"><img src="portfolio-leave.png"></a></figure>
+</div>
+<h2>09 CAPM：全部通过</h2><div class="row">
+<figure><figcaption>目录：01→12，名称与当前项一致</figcaption><a href="capm-catalog.png"><img src="capm-catalog.png"></a></figure>
+<figure><figcaption>鼠标停在图形上：临时提示出现</figcaption><a href="capm-hover.png"><img src="capm-hover.png"></a></figure>
+<figure><figcaption>鼠标移到无关区域180ms后：提示为0</figcaption><a href="capm-leave.png"><img src="capm-leave.png"></a></figure>
+</div>
+<h2>11 Black-Scholes：全部通过</h2><div class="row">
+<figure><figcaption>目录：01→12，名称与当前项一致</figcaption><a href="bs-catalog.png"><img src="bs-catalog.png"></a></figure>
+<figure><figcaption>鼠标停在图形上：临时提示出现</figcaption><a href="bs-hover.png"><img src="bs-hover.png"></a></figure>
+<figure><figcaption>鼠标移到无关区域180ms后：提示为0</figcaption><a href="bs-leave.png"><img src="bs-leave.png"></a></figure>
+</div>
+<p>首轮可见Chrome逐页检查亦通过。补查时捕获到系统指针重新进入图形的干扰；事件记录证明离开时已关闭、重新进入后再出现。为排除系统鼠标干扰，最终96目标矩阵在独立Chrome鼠标会话完成。没有因此修改产品代码。</p></html>

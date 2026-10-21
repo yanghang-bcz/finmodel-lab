@@ -1,0 +1,283 @@
+{
+  "atMs": 446607,
+  "faces": [
+    {
+      "family": "KaTeX_AMS",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Caligraphic",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Caligraphic",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Fraktur",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Fraktur",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Main",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Main",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Main",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Main",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "KaTeX_Math",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Math",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "KaTeX_SansSerif",
+      "weight": "700",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_SansSerif",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_SansSerif",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Script",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Size1",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Size2",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Size3",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Size4",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "KaTeX_Typewriter",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Glow Sans SC",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "Glow Sans SC",
+      "weight": "400",
+      "status": "unloaded"
+    },
+    {
+      "family": "Glow Sans SC",
+      "weight": "600",
+      "status": "loaded"
+    },
+    {
+      "family": "Glow Sans SC",
+      "weight": "600",
+      "status": "unloaded"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "weight": "400 700",
+      "status": "loaded"
+    },
+    {
+      "family": "Monaspace Argon",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "Monaspace Neon",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "Monaspace Neon",
+      "weight": "500",
+      "status": "loaded"
+    }
+  ],
+  "resources": [
+    {
+      "url": "fonts/glow-normal-400-core.woff2",
+      "bytes": 172900,
+      "transfer": 300,
+      "durationMs": 53
+    },
+    {
+      "url": "fonts/bricolage-latin.woff2",
+      "bytes": 52752,
+      "transfer": 300,
+      "durationMs": 55
+    },
+    {
+      "url": "fonts/argon-400.woff2",
+      "bytes": 199020,
+      "transfer": 300,
+      "durationMs": 54
+    },
+    {
+      "url": "fonts/neon-500.woff2",
+      "bytes": 196756,
+      "transfer": 300,
+      "durationMs": 19
+    },
+    {
+      "url": "fonts/neon-400.woff2",
+      "bytes": 199508,
+      "transfer": 300,
+      "durationMs": 19
+    },
+    {
+      "url": "fonts/glow-normal-600-core.woff2",
+      "bytes": 170568,
+      "transfer": 300,
+      "durationMs": 19
+    },
+    {
+      "url": "fonts/KaTeX_Main-Regular.woff2",
+      "bytes": 26272,
+      "transfer": 300,
+      "durationMs": 6
+    },
+    {
+      "url": "fonts/KaTeX_Math-Italic.woff2",
+      "bytes": 16440,
+      "transfer": 300,
+      "durationMs": 7
+    }
+  ],
+  "fontBytes": 1034216,
+  "fontRequestCount": 8,
+  "paint": [
+    {
+      "name": "first-paint",
+      "ms": 264
+    },
+    {
+      "name": "first-contentful-paint",
+      "ms": 264
+    }
+  ],
+  "domContentLoadedMs": 221,
+  "cls": 0.00002619790285212513,
+  "metrics": [
+    {
+      "family": "Bricolage Grotesque",
+      "text": "FinModel Lab",
+      "weight": 600,
+      "registered": true,
+      "ready": true,
+      "customWidth": 304.0799560546875,
+      "fallbackWidth": 346.78125,
+      "differentFromFallback": true,
+      "pixelHash": 1189241078,
+      "fallbackPixelHash": 3475319522
+    },
+    {
+      "family": "Glow Sans SC",
+      "text": "均值方差投资组合解释风险收益",
+      "weight": 400,
+      "registered": true,
+      "ready": true,
+      "customWidth": 672,
+      "fallbackWidth": 672,
+      "differentFromFallback": false,
+      "pixelHash": 3856508760,
+      "fallbackPixelHash": 2037480355
+    },
+    {
+      "family": "Monaspace Argon",
+      "text": "x <- c(1, 2, 3); A %*% B; x != 0",
+      "weight": 400,
+      "registered": true,
+      "ready": true,
+      "customWidth": 952.3199462890625,
+      "fallbackWidth": 924.75,
+      "differentFromFallback": true,
+      "pixelHash": 3704858599,
+      "fallbackPixelHash": 1316972702
+    },
+    {
+      "family": "Monaspace Neon",
+      "text": "0123456789.65%",
+      "weight": 500,
+      "registered": true,
+      "ready": true,
+      "customWidth": 416.6399230957031,
+      "fallbackWidth": 404.578125,
+      "differentFromFallback": true,
+      "pixelHash": 217482663,
+      "fallbackPixelHash": 327384300
+    },
+    {
+      "family": "KaTeX_Main",
+      "text": "123=()",
+      "weight": 400,
+      "registered": true,
+      "ready": true,
+      "customWidth": 146.68798828125,
+      "fallbackWidth": 173.390625,
+      "differentFromFallback": true,
+      "pixelHash": 932085156,
+      "fallbackPixelHash": 1954497537
+    },
+    {
+      "family": "KaTeX_Math",
+      "text": "xy",
+      "weight": 400,
+      "registered": true,
+      "ready": true,
+      "customWidth": 50.975982666015625,
+      "fallbackWidth": 57.796875,
+      "differentFromFallback": true,
+      "pixelHash": 3880683151,
+      "fallbackPixelHash": 1843302933
+    }
+  ]
+}

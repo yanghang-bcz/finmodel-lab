@@ -1,0 +1,4583 @@
+{
+  "time": "2026-10-19T03:46:18.330Z",
+  "browser": "155.0.8059.84",
+  "visibleBrowser": true,
+  "status": {
+    "pid": 74465,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "1.9.1-audit.829515775e3098be",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "results": [
+    {
+      "id": "garch",
+      "num": "06",
+      "url": "http://127.0.0.1:8765/experiments.html?model=garch",
+      "buildId": "1.9.1-audit.829515775e3098be",
+      "rows": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ],
+      "svgTargets": [
+        {
+          "key": "response",
+          "position": {
+            "x": 797.9915924072266,
+            "y": 374.93328857421875
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "vol-0",
+          "position": {
+            "x": 706.9140625,
+            "y": 277.6642150878906
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "vol-20",
+          "position": {
+            "x": 751.3421249389648,
+            "y": 328.68726348876953
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "vol-40",
+          "position": {
+            "x": 795.7701873779297,
+            "y": 333.0757598876953
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "response",
+          "position": {
+            "x": 797.9915924072266,
+            "y": 255.66796875
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "vol-60",
+          "position": {
+            "x": 840.1982574462891,
+            "y": 330.0745162963867
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "vol-80",
+          "position": {
+            "x": 884.6263275146484,
+            "y": 333.97369384765625
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "vol-100",
+          "position": {
+            "x": 929.0543823242188,
+            "y": 332.1937942504883
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "vol-120",
+          "position": {
+            "x": 973.4824523925781,
+            "y": 334.5976867675781
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "vol-140",
+          "position": {
+            "x": 1017.9105224609375,
+            "y": 335.8156967163086
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "vol-159",
+          "position": {
+            "x": 1060.1171875,
+            "y": 332.490234375
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "shock",
+          "position": {
+            "x": 910.2213745117188,
+            "y": 678.5734405517578
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "shock",
+          "position": {
+            "x": 795.7701873779297,
+            "y": 666.7753143310547
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "shock",
+          "position": {
+            "x": 795.7701873779297,
+            "y": 580.8463535308838
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        }
+      ],
+      "principalHover": true,
+      "principalLeave": true,
+      "rapidSweeps": 10,
+      "catalogAfterReload": true
+    },
+    {
+      "id": "var",
+      "num": "07",
+      "url": "http://127.0.0.1:8765/experiments.html?model=var",
+      "buildId": "1.9.1-audit.829515775e3098be",
+      "rows": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ],
+      "svgTargets": [
+        {
+          "key": "tail",
+          "position": {
+            "x": 710.0581250190735,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 724.3462491035461,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 738.6343731880188,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 752.9224972724915,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 767.2106213569641,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 781.4987530708313,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 795.7868695259094,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 810.0750012397766,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 824.3631176948547,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 838.6512494087219,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 852.9393811225891,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 867.2274975776672,
+            "y": 600.6859016418457
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 881.5156292915344,
+            "y": 641.5234375
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 895.8037457466125,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 910.0918774604797,
+            "y": 641.5234375
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 924.3799939155579,
+            "y": 628.9580364227295
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 938.668110370636,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 952.9562573432922,
+            "y": 635.2407369613647
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 967.2443737983704,
+            "y": 635.2407369613647
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 981.5324902534485,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 995.8206372261047,
+            "y": 635.2407369613647
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 1010.1087536811829,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 1024.396870136261,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 1038.684986591339,
+            "y": 635.2407369613647
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "tail",
+          "position": {
+            "x": 1052.9731335639954,
+            "y": 641.5234375
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "hVaR",
+          "position": {
+            "x": 869.5371856689453,
+            "y": 483.6800842285156
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "hES",
+          "position": {
+            "x": 918.2923889160156,
+            "y": 483.6800842285156
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "nVaR",
+          "position": {
+            "x": 885.839111328125,
+            "y": 483.6800842285156
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "nES",
+          "position": {
+            "x": 906.5445251464844,
+            "y": 483.6800842285156
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        }
+      ],
+      "principalHover": true,
+      "principalLeave": true,
+      "rapidSweeps": 10,
+      "catalogAfterReload": true
+    },
+    {
+      "id": "portfolio",
+      "num": "08",
+      "url": "http://127.0.0.1:8765/index.html",
+      "buildId": "1.9.1-audit.829515775e3098be",
+      "rows": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ],
+      "svgTargets": [
+        {
+          "key": "assetA",
+          "position": {
+            "x": 746.9622307430541,
+            "y": 736.6111700274162
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "assetB",
+          "position": {
+            "x": 1036.7400432151055,
+            "y": 407.2125678311184
+          },
+          "shown": 0,
+          "mode": null,
+          "note": "No tooltip at sampled geometric position (may be clipped/occluded)."
+        },
+        {
+          "key": "minimum",
+          "position": {
+            "x": 721.1030844184827,
+            "y": 673.9351647199423
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "current",
+          "position": {
+            "x": 785.5888680696908,
+            "y": 572.3707868976614
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        }
+      ],
+      "principalHover": true,
+      "principalLeave": true,
+      "rapidSweeps": 10,
+      "catalogAfterReload": true
+    },
+    {
+      "id": "capm",
+      "num": "09",
+      "url": "http://127.0.0.1:8765/experiments.html?model=capm",
+      "buildId": "1.9.1-audit.829515775e3098be",
+      "rows": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ],
+      "svgTargets": [
+        {
+          "key": "sml",
+          "position": {
+            "x": 918.5838623046875,
+            "y": 316.34212493896484
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "sml",
+          "position": {
+            "x": 928.6933898925781,
+            "y": 311.47200775146484
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "scl",
+          "position": {
+            "x": 919.0616455078125,
+            "y": 621.6297149658203
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-0",
+          "position": {
+            "x": 1038.9493103027344,
+            "y": 580.5867652893066
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-1",
+          "position": {
+            "x": 840.9467010498047,
+            "y": 657.7399749755859
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-2",
+          "position": {
+            "x": 734.5361175537109,
+            "y": 688.2417602539062
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-3",
+          "position": {
+            "x": 959.9595642089844,
+            "y": 620.5799407958984
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-4",
+          "position": {
+            "x": 1008.281005859375,
+            "y": 574.0301246643066
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-5",
+          "position": {
+            "x": 770.4056549072266,
+            "y": 680.9547729492188
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-6",
+          "position": {
+            "x": 783.3820648193359,
+            "y": 697.0997161865234
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-7",
+          "position": {
+            "x": 1017.9135437011719,
+            "y": 562.5471038818359
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-8",
+          "position": {
+            "x": 944.5009460449219,
+            "y": 615.1982421875
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-9",
+          "position": {
+            "x": 728.8871002197266,
+            "y": 714.1796875
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-10",
+          "position": {
+            "x": 857.8609924316406,
+            "y": 631.2196502685547
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-11",
+          "position": {
+            "x": 1040.2396850585938,
+            "y": 582.0191917419434
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-12",
+          "position": {
+            "x": 864.2688140869141,
+            "y": 644.6115112304688
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-13",
+          "position": {
+            "x": 727.2358703613281,
+            "y": 693.3152160644531
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-14",
+          "position": {
+            "x": 938.5186462402344,
+            "y": 630.3873748779297
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-15",
+          "position": {
+            "x": 1021.1063232421875,
+            "y": 565.9899139404297
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-16",
+          "position": {
+            "x": 788.5416259765625,
+            "y": 675.8185424804688
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-17",
+          "position": {
+            "x": 765.88330078125,
+            "y": 703.4392547607422
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-18",
+          "position": {
+            "x": 1004.2868041992188,
+            "y": 567.4803352355957
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-19",
+          "position": {
+            "x": 965.5111694335938,
+            "y": 608.705322265625
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-20",
+          "position": {
+            "x": 737.099723815918,
+            "y": 707.9993896484375
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-21",
+          "position": {
+            "x": 834.7344665527344,
+            "y": 642.0786514282227
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-22",
+          "position": {
+            "x": 1037.9865112304688,
+            "y": 584.6256332397461
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-23",
+          "position": {
+            "x": 887.9759674072266,
+            "y": 631.3408966064453
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-24",
+          "position": {
+            "x": 723.3799743652344,
+            "y": 697.22265625
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-25",
+          "position": {
+            "x": 915.8051147460938,
+            "y": 640.2678756713867
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-26",
+          "position": {
+            "x": 1030.8152465820312,
+            "y": 559.6179389953613
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-27",
+          "position": {
+            "x": 808.7532806396484,
+            "y": 669.8545532226562
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-28",
+          "position": {
+            "x": 750.9660491943359,
+            "y": 708.235595703125
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-29",
+          "position": {
+            "x": 987.9191589355469,
+            "y": 574.0813827514648
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-30",
+          "position": {
+            "x": 984.6461791992188,
+            "y": 602.8245468139648
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-31",
+          "position": {
+            "x": 748.5364837646484,
+            "y": 700.2191009521484
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-32",
+          "position": {
+            "x": 812.6523284912109,
+            "y": 652.9385070800781
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-33",
+          "position": {
+            "x": 1032.2400817871094,
+            "y": 588.3388595581055
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-34",
+          "position": {
+            "x": 911.5388793945312,
+            "y": 618.240478515625
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-35",
+          "position": {
+            "x": 723.0545043945312,
+            "y": 699.8644561767578
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-36",
+          "position": {
+            "x": 892.3260498046875,
+            "y": 650.0012893676758
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-37",
+          "position": {
+            "x": 1037.1910095214844,
+            "y": 555.068281173706
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-38",
+          "position": {
+            "x": 830.5893707275391,
+            "y": 663.1797790527344
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-39",
+          "position": {
+            "x": 738.9633712768555,
+            "y": 711.3914031982422
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-40",
+          "position": {
+            "x": 969.176025390625,
+            "y": 582.2060813903809
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-41",
+          "position": {
+            "x": 1001.478759765625,
+            "y": 597.6731948852539
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-42",
+          "position": {
+            "x": 762.9420471191406,
+            "y": 691.0279693603516
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-43",
+          "position": {
+            "x": 792.1076049804688,
+            "y": 663.5501708984375
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-44",
+          "position": {
+            "x": 1023.128662109375,
+            "y": 593.0692977905273
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-45",
+          "position": {
+            "x": 934.4315185546875,
+            "y": 605.6182098388672
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-46",
+          "position": {
+            "x": 726.266731262207,
+            "y": 701.1677093505859
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-47",
+          "position": {
+            "x": 868.6056518554688,
+            "y": 659.3734283447266
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-48",
+          "position": {
+            "x": 1040.0912780761719,
+            "y": 552.4523086547852
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-49",
+          "position": {
+            "x": 853.5623931884766,
+            "y": 655.9270629882812
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-50",
+          "position": {
+            "x": 730.1432113647461,
+            "y": 712.8479919433594
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-51",
+          "position": {
+            "x": 948.4758605957031,
+            "y": 591.6735534667969
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-52",
+          "position": {
+            "x": 1015.6331176757812,
+            "y": 593.3538513183594
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-53",
+          "position": {
+            "x": 779.9947967529297,
+            "y": 680.6472625732422
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-54",
+          "position": {
+            "x": 773.5589294433594,
+            "y": 673.6677551269531
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-55",
+          "position": {
+            "x": 1010.855712890625,
+            "y": 598.7072372436523
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-56",
+          "position": {
+            "x": 956.1427917480469,
+            "y": 593.7703323364258
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-57",
+          "position": {
+            "x": 732.944938659668,
+            "y": 701.0881652832031
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-58",
+          "position": {
+            "x": 845.1734771728516,
+            "y": 668.1808013916016
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "obs-59",
+          "position": {
+            "x": 1039.4512939453125,
+            "y": 551.8359375
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        }
+      ],
+      "principalHover": true,
+      "principalLeave": true,
+      "rapidSweeps": 10,
+      "catalogAfterReload": true
+    },
+    {
+      "id": "bs",
+      "num": "11",
+      "url": "http://127.0.0.1:8765/experiments.html?model=bs",
+      "buildId": "1.9.1-audit.829515775e3098be",
+      "rows": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ],
+      "svgTargets": [
+        {
+          "key": "call",
+          "position": {
+            "x": 951.18408203125,
+            "y": 423.0856628417969
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "put",
+          "position": {
+            "x": 881.45654296875,
+            "y": 527.7679748535156
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "SK",
+          "position": {
+            "x": 881.515625,
+            "y": 446.841796875
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "call",
+          "position": {
+            "x": 881.515625,
+            "y": 506.2415771484375
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        },
+        {
+          "key": "put",
+          "position": {
+            "x": 881.515625,
+            "y": 527.8005065917969
+          },
+          "shown": 1,
+          "mode": "preview",
+          "afterLeave": 0
+        }
+      ],
+      "principalHover": true,
+      "principalLeave": true,
+      "rapidSweeps": 10,
+      "catalogAfterReload": true
+    }
+  ],
+  "checks": [
+    {
+      "model": "garch",
+      "name": "live build identity",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "actual page identity",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "first directory opens",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "first exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "garch",
+      "name": "first correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "garch",
+      "name": "first no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "first directory closes",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG response is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG response disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-0 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-0 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-20 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-20 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-40 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-40 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG response is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG response disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-60 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-60 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-80 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-80 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-100 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-100 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-120 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-120 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-140 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-140 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-159 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG vol-159 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG shock is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG shock disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG shock is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG shock disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG shock is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "SVG shock disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "primary marker hover appears",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "hover has no persistent close X",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "primary marker leave disappears",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "10 fast sweeps leave zero visible tooltips",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "legend 0 hover appears",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "legend 0 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "legend 1 hover appears",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "legend 1 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "after reload directory opens",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "after reload exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "garch",
+      "name": "after reload correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "garch",
+      "name": "after reload no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "garch",
+      "name": "after reload directory closes",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "live build identity",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "actual page identity",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "first directory opens",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "first exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "var",
+      "name": "first correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "var",
+      "name": "first no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "first directory closes",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG tail disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG hVaR is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG hVaR disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG hES is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG hES disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG nVaR is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG nVaR disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG nES is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "SVG nES disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "primary marker hover appears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "hover has no persistent close X",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "primary marker leave disappears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "10 fast sweeps leave zero visible tooltips",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 0 hover appears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 0 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 1 hover appears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 1 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 2 hover appears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 2 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 3 hover appears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 3 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 4 hover appears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "legend 4 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "after reload directory opens",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "after reload exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "var",
+      "name": "after reload correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "var",
+      "name": "after reload no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "var",
+      "name": "after reload directory closes",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "live build identity",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "actual page identity",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "first directory opens",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "first exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "portfolio",
+      "name": "first correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "portfolio",
+      "name": "first no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "first directory closes",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "SVG minimum is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "SVG minimum disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "SVG current is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "SVG current disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "primary marker hover appears",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "hover has no persistent close X",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "primary marker leave disappears",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "10 fast sweeps leave zero visible tooltips",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "legend 0 hover appears",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "legend 0 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "legend 1 hover appears",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "legend 1 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "after reload directory opens",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "after reload exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "portfolio",
+      "name": "after reload correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "portfolio",
+      "name": "after reload no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "portfolio",
+      "name": "after reload directory closes",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "live build identity",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "actual page identity",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "first directory opens",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "first exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "capm",
+      "name": "first correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "capm",
+      "name": "first no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "first directory closes",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG sml is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG sml disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG sml is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG sml disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG scl is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG scl disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-0 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-0 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-1 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-1 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-2 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-2 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-3 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-3 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-4 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-4 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-5 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-5 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-6 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-6 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-7 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-7 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-8 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-8 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-9 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-9 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-10 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-10 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-11 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-11 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-12 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-12 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-13 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-13 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-14 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-14 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-15 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-15 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-16 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-16 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-17 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-17 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-18 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-18 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-19 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-19 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-20 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-20 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-21 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-21 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-22 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-22 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-23 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-23 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-24 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-24 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-25 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-25 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-26 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-26 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-27 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-27 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-28 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-28 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-29 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-29 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-30 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-30 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-31 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-31 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-32 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-32 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-33 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-33 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-34 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-34 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-35 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-35 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-36 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-36 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-37 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-37 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-38 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-38 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-39 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-39 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-40 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-40 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-41 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-41 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-42 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-42 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-43 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-43 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-44 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-44 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-45 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-45 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-46 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-46 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-47 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-47 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-48 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-48 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-49 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-49 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-50 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-50 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-51 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-51 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-52 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-52 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-53 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-53 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-54 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-54 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-55 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-55 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-56 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-56 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-57 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-57 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-58 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-58 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-59 is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "SVG obs-59 disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "primary marker hover appears",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "hover has no persistent close X",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "primary marker leave disappears",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "10 fast sweeps leave zero visible tooltips",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "legend 0 hover appears",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "legend 0 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "legend 1 hover appears",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "legend 1 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "after reload directory opens",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "after reload exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "capm",
+      "name": "after reload correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "capm",
+      "name": "after reload no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "capm",
+      "name": "after reload directory closes",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "live build identity",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "actual page identity",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "first directory opens",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "first exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "bs",
+      "name": "first correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "bs",
+      "name": "first no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "first directory closes",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG call is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG call disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG put is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG put disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG SK is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG SK disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG call is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG call disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG put is temporary preview",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "SVG put disappears on leave",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "primary marker hover appears",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "hover has no persistent close X",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "primary marker leave disappears",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "10 fast sweeps leave zero visible tooltips",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "legend 0 hover appears",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "legend 0 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "legend 1 hover appears",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "legend 1 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "legend 2 hover appears",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "legend 2 leave disappears",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "after reload directory opens",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "after reload exactly 12 ordered names",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "bs",
+      "name": "after reload correct current item",
+      "passed": true,
+      "detail": [
+        {
+          "number": "01",
+          "title": "R软件基础实验",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "02",
+          "title": "金融市场数据整理与预处理",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "03",
+          "title": "资产收益率计算",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "04",
+          "title": "多元回归与逐步回归分析",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "05",
+          "title": "ARMA与VAR模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "06",
+          "title": "GARCH类波动率模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "07",
+          "title": "VaR与ES投资风险计算",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "08",
+          "title": "均值-方差投资组合决策分析",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "09",
+          "title": "资本资产定价模型",
+          "current": null,
+          "status": "进入 →"
+        },
+        {
+          "number": "10",
+          "title": "因子模型与APT模型",
+          "current": null,
+          "status": "暂未上线"
+        },
+        {
+          "number": "11",
+          "title": "Black-Scholes期权定价",
+          "current": "page",
+          "status": "当前实验"
+        },
+        {
+          "number": "12",
+          "title": "证券投资基金绩效评价",
+          "current": null,
+          "status": "暂未上线"
+        }
+      ]
+    },
+    {
+      "model": "bs",
+      "name": "after reload no obsolete catalog",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "after reload directory closes",
+      "passed": true
+    },
+    {
+      "model": "bs",
+      "name": "all five pages no JS exceptions",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

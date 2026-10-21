@@ -1,0 +1,318 @@
+[
+  {
+    "name": "普通模式有独立比较",
+    "pass": true
+  },
+  {
+    "name": "预测阶段锁定所有参数",
+    "pass": true
+  },
+  {
+    "name": "预测清除风险对比与旧文字",
+    "pass": true
+  },
+  {
+    "name": "预测清除旧基准曲线",
+    "pass": true
+  },
+  {
+    "name": "预测模型保持进入时风险9.54%",
+    "pass": true
+  },
+  {
+    "name": "预测无方差实验差异或经济结论",
+    "pass": true
+  },
+  {
+    "name": "预测浮层只有基准风险",
+    "pass": true
+  },
+  {
+    "name": "选择预测仍停留Predict且rho锁定",
+    "pass": true
+  },
+  {
+    "name": "确认后仅rho可编辑",
+    "pass": true
+  },
+  {
+    "name": "未改变rho不能解释",
+    "pass": true
+  },
+  {
+    "name": "风险比较归属Risk",
+    "pass": true
+  },
+  {
+    "name": "风险变化位置无横跨",
+    "pass": true
+  },
+  {
+    "name": "解释锁定所有参数",
+    "pass": true
+  },
+  {
+    "name": "错误预测如实评估",
+    "pass": true
+  },
+  {
+    "name": "解释有五项真实数据表",
+    "pass": true
+  },
+  {
+    "name": "重新实验返回同一起点且清除答案",
+    "pass": true
+  },
+  {
+    "name": "拒绝高于实验起点的rho",
+    "pass": true
+  },
+  {
+    "name": "用户代码选择不被调参夺走",
+    "pass": true
+  },
+  {
+    "name": "收益解释说明控制变量",
+    "pass": true
+  },
+  {
+    "name": "重新开始以当前参数为基准且无旧比较",
+    "pass": true
+  },
+  {
+    "name": "重新开始清除已选预测",
+    "pass": true
+  },
+  {
+    "name": "多次重启仍无旧结论",
+    "pass": true
+  },
+  {
+    "name": "恢复首次进入前参数且Idle无历史对比",
+    "pass": true
+  },
+  {
+    "name": "默认实验风险13.54到9.54且收益11",
+    "pass": true
+  },
+  {
+    "name": "实验过程中坐标真实刻度不变",
+    "pass": true
+  },
+  {
+    "name": "五项表格为真实默认实验数据",
+    "pass": true
+  },
+  {
+    "name": "明确保留结果退出且恢复编辑",
+    "pass": true
+  },
+  {
+    "name": "下界不偷偷改参数",
+    "pass": true
+  },
+  {
+    "name": "显式确认使用默认起点",
+    "pass": true
+  },
+  {
+    "name": "边界实验风险不变 w0",
+    "pass": true
+  },
+  {
+    "name": "边界实验风险不变 w1",
+    "pass": true
+  },
+  {
+    "name": "边界实验风险不变 s1zero",
+    "pass": true
+  },
+  {
+    "name": "零波动统计定义说明",
+    "pass": true
+  },
+  {
+    "name": "简单解释默认72%代码",
+    "pass": true
+  },
+  {
+    "name": "复杂解释默认55%代码",
+    "pass": true
+  },
+  {
+    "name": "用户手调后保持50%代码",
+    "pass": true
+  },
+  {
+    "name": "展开复杂解释40%代码且图表仍可见",
+    "pass": true
+  },
+  {
+    "name": "退出展开恢复用户50%比例",
+    "pass": true
+  },
+  {
+    "name": "实际拖动可调分隔条",
+    "pass": true
+  },
+  {
+    "name": "代码独立滚动",
+    "pass": true
+  },
+  {
+    "name": "解释独立滚动且主页面不滚",
+    "pass": true
+  },
+  {
+    "name": "桌面三栏首屏 1440",
+    "pass": true
+  },
+  {
+    "name": "探索不挤图 1440",
+    "pass": true
+  },
+  {
+    "name": "指标等高且对比在风险内 1440",
+    "pass": true
+  },
+  {
+    "name": "桌面三栏首屏 1366",
+    "pass": true
+  },
+  {
+    "name": "探索不挤图 1366",
+    "pass": true
+  },
+  {
+    "name": "指标等高且对比在风险内 1366",
+    "pass": true
+  },
+  {
+    "name": "桌面三栏首屏 1920",
+    "pass": true
+  },
+  {
+    "name": "探索不挤图 1920",
+    "pass": true
+  },
+  {
+    "name": "指标等高且对比在风险内 1920",
+    "pass": true
+  },
+  {
+    "name": "投屏预测参数仍全部锁定",
+    "pass": true
+  },
+  {
+    "name": "投屏完成完整探索且代码19px",
+    "pass": true
+  },
+  {
+    "name": "普通收益参数联动",
+    "pass": true
+  },
+  {
+    "name": "普通标准差参数联动",
+    "pass": true
+  },
+  {
+    "name": "普通权重只移动当前点",
+    "pass": true
+  },
+  {
+    "name": "自动适配随假设变化",
+    "pass": true
+  },
+  {
+    "name": "固定比较维持尺度且有基准",
+    "pass": true
+  },
+  {
+    "name": "固定范围超出明确扩展",
+    "pass": true
+  },
+  {
+    "name": "实际复制38行R无工程校验",
+    "pass": true
+  },
+  {
+    "name": "未上线入口保留提示",
+    "pass": true
+  },
+  {
+    "name": "未上线入口保留提示",
+    "pass": true
+  },
+  {
+    "name": "未上线入口保留提示",
+    "pass": true
+  },
+  {
+    "name": "375手机无横向溢出",
+    "pass": true
+  },
+  {
+    "name": "手机完整四阶段可完成",
+    "pass": true
+  },
+  {
+    "name": "手机帮助保留",
+    "pass": true
+  },
+  {
+    "name": "320手机无横向溢出",
+    "pass": true
+  },
+  {
+    "name": "重合点与非唯一解仍正确",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 returns",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 volatility",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 correlation",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 weights",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 mean",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 variance",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 sd",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 minimum",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 efficient",
+    "pass": true
+  },
+  {
+    "name": "预测代码入口无本次差异 output",
+    "pass": true
+  },
+  {
+    "name": "预测曲线与进入前基准完全一致",
+    "pass": true
+  },
+  {
+    "name": "最终页面无JavaScript错误",
+    "pass": true
+  }
+]

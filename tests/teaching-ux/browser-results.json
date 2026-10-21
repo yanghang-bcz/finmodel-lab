@@ -1,0 +1,448 @@
+{
+  "passed": 110,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "exact project root",
+      "passed": true
+    },
+    {
+      "name": "build identity",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 experiments.html",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 experiments-bundle.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 experiments.css",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 teaching-ux.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 teaching-ux-data.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP SHA256 teaching-ux-charts.js",
+      "passed": true
+    },
+    {
+      "name": "fresh page beginner pricing",
+      "passed": true
+    },
+    {
+      "name": "only compact top module row",
+      "passed": true
+    },
+    {
+      "name": "dividend beginner entry",
+      "passed": true
+    },
+    {
+      "name": "IV entry no final answer",
+      "passed": true
+    },
+    {
+      "name": "hedge enters risk step",
+      "passed": true
+    },
+    {
+      "name": "entry avoids Gamma",
+      "passed": true
+    },
+    {
+      "name": "entry avoids 净Delta",
+      "passed": true
+    },
+    {
+      "name": "entry avoids 现金账户",
+      "passed": true
+    },
+    {
+      "name": "entry avoids 随机种子",
+      "passed": true
+    },
+    {
+      "name": "entry avoids 调仓次数",
+      "passed": true
+    },
+    {
+      "name": "no unrelated input visible",
+      "passed": true
+    },
+    {
+      "name": "no payoff or loss leaked",
+      "passed": true
+    },
+    {
+      "name": "no code answer leaked",
+      "passed": true
+    },
+    {
+      "name": "copy locked before prediction",
+      "passed": true
+    },
+    {
+      "name": "practice stays within current topic",
+      "passed": true
+    },
+    {
+      "name": "choice alone no result",
+      "passed": true
+    },
+    {
+      "name": "result only after confirm",
+      "passed": true
+    },
+    {
+      "name": "simple result caveat",
+      "passed": true
+    },
+    {
+      "name": "wrong answer feedback",
+      "passed": true
+    },
+    {
+      "name": "copied context risk",
+      "passed": true
+    },
+    {
+      "name": "actual R executed risk",
+      "passed": true
+    },
+    {
+      "name": "step2 risk bars",
+      "passed": true
+    },
+    {
+      "name": "small focused code",
+      "passed": true
+    },
+    {
+      "name": "cash hidden until detail",
+      "passed": true
+    },
+    {
+      "name": "cash calculation exact",
+      "passed": true
+    },
+    {
+      "name": "cash negative is borrowing",
+      "passed": true
+    },
+    {
+      "name": "line formula linked",
+      "passed": true
+    },
+    {
+      "name": "copied context neutral",
+      "passed": true
+    },
+    {
+      "name": "actual R executed neutral",
+      "passed": true
+    },
+    {
+      "name": "copied standalone delta value",
+      "passed": true
+    },
+    {
+      "name": "step3 no future delta",
+      "passed": true
+    },
+    {
+      "name": "submit still no result",
+      "passed": true
+    },
+    {
+      "name": "actual same-time delta comparison",
+      "passed": true
+    },
+    {
+      "name": "Gamma delayed",
+      "passed": true
+    },
+    {
+      "name": "Gamma after observation",
+      "passed": true
+    },
+    {
+      "name": "changing scene invalidates forecast",
+      "passed": true
+    },
+    {
+      "name": "copied context adjust",
+      "passed": true
+    },
+    {
+      "name": "actual R executed adjust",
+      "passed": true
+    },
+    {
+      "name": "step4 stage A default",
+      "passed": true
+    },
+    {
+      "name": "stage A no full cash account",
+      "passed": true
+    },
+    {
+      "name": "seed folded",
+      "passed": true
+    },
+    {
+      "name": "period advance preserves local reading position",
+      "passed": true
+    },
+    {
+      "name": "next period sync",
+      "passed": true
+    },
+    {
+      "name": "pause cancels",
+      "passed": true
+    },
+    {
+      "name": "tooltip preview",
+      "passed": true
+    },
+    {
+      "name": "hover leave hides",
+      "passed": true
+    },
+    {
+      "name": "click pins",
+      "passed": true
+    },
+    {
+      "name": "close pinned",
+      "passed": true
+    },
+    {
+      "name": "stage B cash only then disclosed",
+      "passed": true
+    },
+    {
+      "name": "three strategies same view",
+      "passed": true
+    },
+    {
+      "name": "final value same old engine",
+      "passed": true
+    },
+    {
+      "name": "copied context hedge-full",
+      "passed": true
+    },
+    {
+      "name": "actual R executed hedge-full",
+      "passed": true
+    },
+    {
+      "name": "full script retained",
+      "passed": true
+    },
+    {
+      "name": "back to knowledge",
+      "passed": true
+    },
+    {
+      "name": "new params reset time",
+      "passed": true
+    },
+    {
+      "name": "new interval math same",
+      "passed": true
+    },
+    {
+      "name": "advanced params retained",
+      "passed": true
+    },
+    {
+      "name": "copied context put-cash",
+      "passed": true
+    },
+    {
+      "name": "actual R executed put-cash",
+      "passed": true
+    },
+    {
+      "name": "full hedge original features",
+      "passed": true
+    },
+    {
+      "name": "public full deep link",
+      "passed": true
+    },
+    {
+      "name": "full original graph",
+      "passed": true
+    },
+    {
+      "name": "return remembers step4",
+      "passed": true
+    },
+    {
+      "name": "free jump back and reset answer",
+      "passed": true
+    },
+    {
+      "name": "copied context payoff",
+      "passed": true
+    },
+    {
+      "name": "actual R executed payoff",
+      "passed": true
+    },
+    {
+      "name": "copied context pricing-full",
+      "passed": true
+    },
+    {
+      "name": "actual R executed pricing-full",
+      "passed": true
+    },
+    {
+      "name": "module progress retained",
+      "passed": true
+    },
+    {
+      "name": "unfinished scenario input does not poison another step",
+      "passed": true
+    },
+    {
+      "name": "vol results require experiment",
+      "passed": true
+    },
+    {
+      "name": "vol result shown",
+      "passed": true
+    },
+    {
+      "name": "dividend default q5%",
+      "passed": true
+    },
+    {
+      "name": "one Greek plot",
+      "passed": true
+    },
+    {
+      "name": "copied context vega",
+      "passed": true
+    },
+    {
+      "name": "actual R executed vega",
+      "passed": true
+    },
+    {
+      "name": "bisection real bracket",
+      "passed": true
+    },
+    {
+      "name": "iteration step updates",
+      "passed": true
+    },
+    {
+      "name": "Newton tangent",
+      "passed": true
+    },
+    {
+      "name": "Newton failure honest",
+      "passed": true
+    },
+    {
+      "name": "algorithm comparison honest",
+      "passed": true
+    },
+    {
+      "name": "copied context iv-full",
+      "passed": true
+    },
+    {
+      "name": "actual R executed iv-full",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow 1920",
+      "passed": true
+    },
+    {
+      "name": "step navigation usable 1920",
+      "passed": true
+    },
+    {
+      "name": "main mechanism visible 1920",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow 1440",
+      "passed": true
+    },
+    {
+      "name": "step navigation usable 1440",
+      "passed": true
+    },
+    {
+      "name": "main mechanism visible 1440",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow 1366",
+      "passed": true
+    },
+    {
+      "name": "step navigation usable 1366",
+      "passed": true
+    },
+    {
+      "name": "main mechanism visible 1366",
+      "passed": true
+    },
+    {
+      "name": "no page horizontal overflow 375",
+      "passed": true
+    },
+    {
+      "name": "step navigation usable 375",
+      "passed": true
+    },
+    {
+      "name": "main mechanism visible 375",
+      "passed": true
+    },
+    {
+      "name": "teacher projection preserved",
+      "passed": true
+    },
+    {
+      "name": "real Chrome125% zoom",
+      "passed": true
+    },
+    {
+      "name": "125% no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "full reload preserved",
+      "passed": true
+    },
+    {
+      "name": "catalog01–12 sorted",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "browser": "155.0.8059.84"
+}

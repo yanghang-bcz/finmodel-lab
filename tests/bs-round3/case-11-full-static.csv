@@ -1,0 +1,3 @@
+i,t,tau,S,price,delta,gamma,oldHolding,holding,quantity,cashBefore,interest,dividend,tradeCash,cash,net,netDelta,rebalance,settlement
+0,0,1,1e+05,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,0
+1,1,0,95122.9424500714,0,NA,NA,0,0,0,0,0,0,0,0,0,NA,FALSE,0

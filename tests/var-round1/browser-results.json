@@ -1,0 +1,1184 @@
+{
+  "checks": 294,
+  "scripts": 16,
+  "errors": [],
+  "browser": "155.0.8059.85",
+  "results": [
+    {
+      "name": "correct absolute root",
+      "pass": true
+    },
+    {
+      "name": "service DOM manifest same",
+      "pass": true
+    },
+    {
+      "name": "hash app.js",
+      "pass": true
+    },
+    {
+      "name": "hash bs-lesson.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm-teaching.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "hash capm.css",
+      "pass": true
+    },
+    {
+      "name": "hash chart-interaction.js",
+      "pass": true
+    },
+    {
+      "name": "hash chart-scale.js",
+      "pass": true
+    },
+    {
+      "name": "hash classroom-ui.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiment-lessons.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiment-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiments-bundle.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiments-config.js",
+      "pass": true
+    },
+    {
+      "name": "hash experiments.css",
+      "pass": true
+    },
+    {
+      "name": "hash experiments.js",
+      "pass": true
+    },
+    {
+      "name": "hash exploration.js",
+      "pass": true
+    },
+    {
+      "name": "hash financial-charts.js",
+      "pass": true
+    },
+    {
+      "name": "hash font-audit.js",
+      "pass": true
+    },
+    {
+      "name": "hash hedge-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash hedge-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash hedge-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "hash iv-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash iv-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash iv-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "hash lesson-presentation.js",
+      "pass": true
+    },
+    {
+      "name": "hash lessons.js",
+      "pass": true
+    },
+    {
+      "name": "hash math.js",
+      "pass": true
+    },
+    {
+      "name": "hash modal-ui.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-bundle.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-csv.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-multi-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-multi-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-multi-ui.js",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-multi.css",
+      "pass": true
+    },
+    {
+      "name": "hash portfolio-ux.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk-charts.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk-code.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk-math.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "hash risk.css",
+      "pass": true
+    },
+    {
+      "name": "hash runtime-version.js",
+      "pass": true
+    },
+    {
+      "name": "hash style.css",
+      "pass": true
+    },
+    {
+      "name": "hash teaching-ux-charts.js",
+      "pass": true
+    },
+    {
+      "name": "hash teaching-ux-data.js",
+      "pass": true
+    },
+    {
+      "name": "hash teaching-ux.js",
+      "pass": true
+    },
+    {
+      "name": "hash teaching.js",
+      "pass": true
+    },
+    {
+      "name": "hash typography.css",
+      "pass": true
+    },
+    {
+      "name": "hash typography.js",
+      "pass": true
+    },
+    {
+      "name": "hash workbench-system.css",
+      "pass": true
+    },
+    {
+      "name": "hash workbench-ui.js",
+      "pass": true
+    },
+    {
+      "name": "hash workbench.css",
+      "pass": true
+    },
+    {
+      "name": "hash zero-friction-data.js",
+      "pass": true
+    },
+    {
+      "name": "hash build-info.js",
+      "pass": true
+    },
+    {
+      "name": "hash index.html",
+      "pass": true
+    },
+    {
+      "name": "hash experiments.html",
+      "pass": true
+    },
+    {
+      "name": "basic default",
+      "pass": true
+    },
+    {
+      "name": "full default",
+      "pass": true
+    },
+    {
+      "name": "no forced steps",
+      "pass": true
+    },
+    {
+      "name": "one main graph",
+      "pass": true
+    },
+    {
+      "name": "default history unchanged",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs historical-default",
+      "pass": true
+    },
+    {
+      "name": "R length historical-default",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths historical-default",
+      "pass": true
+    },
+    {
+      "name": "normal headline",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs normal-default",
+      "pass": true
+    },
+    {
+      "name": "R length normal-default",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths normal-default",
+      "pass": true
+    },
+    {
+      "name": "four accessible risk markers",
+      "pass": true
+    },
+    {
+      "name": "ES diamond not quantile line",
+      "pass": true
+    },
+    {
+      "name": "actual marker hover hVaR",
+      "pass": true
+    },
+    {
+      "name": "actual marker leave hVaR",
+      "pass": true
+    },
+    {
+      "name": "only click pins hVaR",
+      "pass": true
+    },
+    {
+      "name": "close pinned hVaR",
+      "pass": true
+    },
+    {
+      "name": "Escape clear hVaR",
+      "pass": true
+    },
+    {
+      "name": "actual marker hover hES",
+      "pass": true
+    },
+    {
+      "name": "actual marker leave hES",
+      "pass": true
+    },
+    {
+      "name": "only click pins hES",
+      "pass": true
+    },
+    {
+      "name": "close pinned hES",
+      "pass": true
+    },
+    {
+      "name": "Escape clear hES",
+      "pass": true
+    },
+    {
+      "name": "actual marker hover nVaR",
+      "pass": true
+    },
+    {
+      "name": "actual marker leave nVaR",
+      "pass": true
+    },
+    {
+      "name": "only click pins nVaR",
+      "pass": true
+    },
+    {
+      "name": "close pinned nVaR",
+      "pass": true
+    },
+    {
+      "name": "Escape clear nVaR",
+      "pass": true
+    },
+    {
+      "name": "actual marker hover nES",
+      "pass": true
+    },
+    {
+      "name": "actual marker leave nES",
+      "pass": true
+    },
+    {
+      "name": "only click pins nES",
+      "pass": true
+    },
+    {
+      "name": "close pinned nES",
+      "pass": true
+    },
+    {
+      "name": "Escape clear nES",
+      "pass": true
+    },
+    {
+      "name": "parameter clears old pin",
+      "pass": true
+    },
+    {
+      "name": "alpha leaves returns fixed",
+      "pass": true
+    },
+    {
+      "name": "tail instability actual mass",
+      "pass": true
+    },
+    {
+      "name": "capital scale basic",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs basic-99-double",
+      "pass": true
+    },
+    {
+      "name": "R length basic-99-double",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths basic-99-double",
+      "pass": true
+    },
+    {
+      "name": "view change clears pin",
+      "pass": true
+    },
+    {
+      "name": "dynamic full default",
+      "pass": true
+    },
+    {
+      "name": "lambda .94 default",
+      "pass": true
+    },
+    {
+      "name": "init no forecasts",
+      "pass": true
+    },
+    {
+      "name": "first forecast training only",
+      "pass": true
+    },
+    {
+      "name": "latest future day251",
+      "pass": true
+    },
+    {
+      "name": "last point has no realized loss",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs ewma-94",
+      "pass": true
+    },
+    {
+      "name": "R length ewma-94",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths ewma-94",
+      "pass": true
+    },
+    {
+      "name": "lambda preserves sample 0.9",
+      "pass": true
+    },
+    {
+      "name": "lambda recomputes h 0.9",
+      "pass": true
+    },
+    {
+      "name": "different lambda actual path 0.9",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs lambda-0.9",
+      "pass": true
+    },
+    {
+      "name": "R length lambda-0.9",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths lambda-0.9",
+      "pass": true
+    },
+    {
+      "name": "lambda preserves sample 0.94",
+      "pass": true
+    },
+    {
+      "name": "lambda recomputes h 0.94",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs lambda-0.94",
+      "pass": true
+    },
+    {
+      "name": "R length lambda-0.94",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths lambda-0.94",
+      "pass": true
+    },
+    {
+      "name": "lambda preserves sample 0.98",
+      "pass": true
+    },
+    {
+      "name": "lambda recomputes h 0.98",
+      "pass": true
+    },
+    {
+      "name": "different lambda actual path 0.98",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs lambda-0.98",
+      "pass": true
+    },
+    {
+      "name": "R length lambda-0.98",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths lambda-0.98",
+      "pass": true
+    },
+    {
+      "name": "alpha does not change h",
+      "pass": true
+    },
+    {
+      "name": "alpha changes VaR",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs ewma-99",
+      "pass": true
+    },
+    {
+      "name": "R length ewma-99",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths ewma-99",
+      "pass": true
+    },
+    {
+      "name": "capital does not change returns",
+      "pass": true
+    },
+    {
+      "name": "capital does not change sigma",
+      "pass": true
+    },
+    {
+      "name": "capital doubles VaR",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs ewma-99-double",
+      "pass": true
+    },
+    {
+      "name": "R length ewma-99-double",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths ewma-99-double",
+      "pass": true
+    },
+    {
+      "name": "single chart es",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs chart-es",
+      "pass": true
+    },
+    {
+      "name": "R length chart-es",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths chart-es",
+      "pass": true
+    },
+    {
+      "name": "single chart volatility",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs chart-volatility",
+      "pass": true
+    },
+    {
+      "name": "R length chart-volatility",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths chart-volatility",
+      "pass": true
+    },
+    {
+      "name": "single chart var",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs chart-var",
+      "pass": true
+    },
+    {
+      "name": "R length chart-var",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths chart-var",
+      "pass": true
+    },
+    {
+      "name": "shock exploration domain",
+      "pass": true
+    },
+    {
+      "name": "numerical recurrence explanation",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs before-nav",
+      "pass": true
+    },
+    {
+      "name": "R length before-nav",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths before-nav",
+      "pass": true
+    },
+    {
+      "name": "one highlighted exact line data",
+      "pass": true
+    },
+    {
+      "name": "page not scrolled data",
+      "pass": true
+    },
+    {
+      "name": "line inside scroll area data",
+      "pass": true
+    },
+    {
+      "name": "true line number data",
+      "pass": true
+    },
+    {
+      "name": "one highlighted exact line loss",
+      "pass": true
+    },
+    {
+      "name": "page not scrolled loss",
+      "pass": true
+    },
+    {
+      "name": "line inside scroll area loss",
+      "pass": true
+    },
+    {
+      "name": "true line number loss",
+      "pass": true
+    },
+    {
+      "name": "one highlighted exact line lambda",
+      "pass": true
+    },
+    {
+      "name": "page not scrolled lambda",
+      "pass": true
+    },
+    {
+      "name": "line inside scroll area lambda",
+      "pass": true
+    },
+    {
+      "name": "true line number lambda",
+      "pass": true
+    },
+    {
+      "name": "one highlighted exact line ewma",
+      "pass": true
+    },
+    {
+      "name": "page not scrolled ewma",
+      "pass": true
+    },
+    {
+      "name": "line inside scroll area ewma",
+      "pass": true
+    },
+    {
+      "name": "true line number ewma",
+      "pass": true
+    },
+    {
+      "name": "actual recurrence line",
+      "pass": true
+    },
+    {
+      "name": "one highlighted exact line var",
+      "pass": true
+    },
+    {
+      "name": "page not scrolled var",
+      "pass": true
+    },
+    {
+      "name": "line inside scroll area var",
+      "pass": true
+    },
+    {
+      "name": "true line number var",
+      "pass": true
+    },
+    {
+      "name": "math linked values var",
+      "pass": true
+    },
+    {
+      "name": "one highlighted exact line es",
+      "pass": true
+    },
+    {
+      "name": "page not scrolled es",
+      "pass": true
+    },
+    {
+      "name": "line inside scroll area es",
+      "pass": true
+    },
+    {
+      "name": "true line number es",
+      "pass": true
+    },
+    {
+      "name": "math linked values es",
+      "pass": true
+    },
+    {
+      "name": "one highlighted exact line output",
+      "pass": true
+    },
+    {
+      "name": "page not scrolled output",
+      "pass": true
+    },
+    {
+      "name": "line inside scroll area output",
+      "pass": true
+    },
+    {
+      "name": "true line number output",
+      "pass": true
+    },
+    {
+      "name": "one highlighted exact line plot",
+      "pass": true
+    },
+    {
+      "name": "page not scrolled plot",
+      "pass": true
+    },
+    {
+      "name": "line inside scroll area plot",
+      "pass": true
+    },
+    {
+      "name": "true line number plot",
+      "pass": true
+    },
+    {
+      "name": "navigation unchanged full R",
+      "pass": true
+    },
+    {
+      "name": "no nonexistent plot nav",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs key-view-copies-full",
+      "pass": true
+    },
+    {
+      "name": "R length key-view-copies-full",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths key-view-copies-full",
+      "pass": true
+    },
+    {
+      "name": "switch resets full",
+      "pass": true
+    },
+    {
+      "name": "constant volatility finite",
+      "pass": true
+    },
+    {
+      "name": "data change invalidates sample",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs constant-data",
+      "pass": true
+    },
+    {
+      "name": "R length constant-data",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths constant-data",
+      "pass": true
+    },
+    {
+      "name": "clipboard R runs constant-static",
+      "pass": true
+    },
+    {
+      "name": "R length constant-static",
+      "pass": true
+    },
+    {
+      "name": "R numeric data and all paths constant-static",
+      "pass": true
+    },
+    {
+      "name": "invalid stops copy lambda",
+      "pass": true
+    },
+    {
+      "name": "no NaN Infinity lambda",
+      "pass": true
+    },
+    {
+      "name": "invalid stops copy alpha",
+      "pass": true
+    },
+    {
+      "name": "no NaN Infinity alpha",
+      "pass": true
+    },
+    {
+      "name": "invalid stops copy N",
+      "pass": true
+    },
+    {
+      "name": "no NaN Infinity N",
+      "pass": true
+    },
+    {
+      "name": "invalid stops copy window",
+      "pass": true
+    },
+    {
+      "name": "no NaN Infinity window",
+      "pass": true
+    },
+    {
+      "name": "invalid stops copy n",
+      "pass": true
+    },
+    {
+      "name": "no NaN Infinity n",
+      "pass": true
+    },
+    {
+      "name": "catalog01-12",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920basicfalse",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1920basicfalse",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1920basicfalse",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1920basicfalse",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1920basicfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920basictrue",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1920basictrue",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1920basictrue",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1920basictrue",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1920basictrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1920dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1920dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1920dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1920dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1920dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1920dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1920dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1920dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440basicfalse",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1440basicfalse",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1440basicfalse",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1440basicfalse",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1440basicfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440basictrue",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1440basictrue",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1440basictrue",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1440basictrue",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1440basictrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1440dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1440dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1440dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1440dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1440dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1440dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1440dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1440dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366basicfalse",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1366basicfalse",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1366basicfalse",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1366basicfalse",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1366basicfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366basictrue",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1366basictrue",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1366basictrue",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1366basictrue",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1366basictrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1366dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1366dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1366dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1366dynamicfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "one screen body 1366dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "copy accessible 1366dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "code independent height 1366dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "plot above legend 1366dynamictrue",
+      "pass": true
+    },
+    {
+      "name": "real125",
+      "pass": true
+    },
+    {
+      "name": "125 no overflow basic",
+      "pass": true
+    },
+    {
+      "name": "125 full chart inside panel basic",
+      "pass": true
+    },
+    {
+      "name": "125 copy accessible basic",
+      "pass": true
+    },
+    {
+      "name": "125 no overflow dynamic",
+      "pass": true
+    },
+    {
+      "name": "125 full chart inside panel dynamic",
+      "pass": true
+    },
+    {
+      "name": "125 copy accessible dynamic",
+      "pass": true
+    },
+    {
+      "name": "final five model load garch",
+      "pass": true
+    },
+    {
+      "name": "final full default garch",
+      "pass": true
+    },
+    {
+      "name": "final five model load var",
+      "pass": true
+    },
+    {
+      "name": "final full default var",
+      "pass": true
+    },
+    {
+      "name": "final five model load portfolio",
+      "pass": true
+    },
+    {
+      "name": "final full default portfolio",
+      "pass": true
+    },
+    {
+      "name": "portfolio default preserved",
+      "pass": true
+    },
+    {
+      "name": "final five model load capm",
+      "pass": true
+    },
+    {
+      "name": "final full default capm",
+      "pass": true
+    },
+    {
+      "name": "CAPM default preserved",
+      "pass": true
+    },
+    {
+      "name": "final five model load bs",
+      "pass": true
+    },
+    {
+      "name": "final full default bs",
+      "pass": true
+    },
+    {
+      "name": "no runtime exceptions",
+      "pass": true
+    }
+  ]
+}

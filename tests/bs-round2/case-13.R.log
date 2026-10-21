@@ -1,0 +1,32 @@
+
+ bisection 
+$status
+[1] "arbitrage_bounds"
+
+$sigma
+[1] NA
+
+$error
+[1] NA
+
+$expansions
+[1] 0
+
+data frame with 0 columns and 0 rows
+
+ newton 
+$status
+[1] "arbitrage_bounds"
+
+$sigma
+[1] NA
+
+$error
+[1] NA
+
+$expansions
+[1] 0
+
+data frame with 0 columns and 0 rows
+RESULT bisection arbitrage_bounds NA NA 0 
+RESULT newton arbitrage_bounds NA NA 0 

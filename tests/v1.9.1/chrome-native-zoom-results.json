@@ -1,0 +1,7 @@
+{
+  "status": "incomplete; excluded from passed zoom coverage",
+  "intendedZoom": "125%",
+  "observed": "125% browser control reached, but native window subsequently returned a blank screenshot and no page AX content; earlier spot checks were at 100%.",
+  "coverage": "Chrome automated 100% and actual Safari native 125% are the accepted results.",
+  "passedAssertions": 0
+}

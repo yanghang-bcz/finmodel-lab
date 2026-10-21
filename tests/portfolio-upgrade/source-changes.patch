@@ -1,0 +1,234 @@
+--- before/index.html
++++ dist/index.html
+@@ -4,7 +4,7 @@
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="description" content="通过 R 代码、实时计算和风险收益图，理解两资产均值—方差投资组合。">
+ <title>FinModel Lab</title><link rel="preload" href="assets/fonts/glow-normal-400-core.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/argon-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v=ab186d5e6d5ee4a4"><link rel="stylesheet" href="vendor/katex/katex.min.css?v=144d9ea8097c553f"><link rel="stylesheet" href="assets/fonts/glow-faces.css?v=0896e62cf0b74955"><link rel="stylesheet" href="typography.css?v=834fb038f8229297"><link rel="stylesheet" href="workbench.css?v=ed933704c9693b3b">
+-<link rel="stylesheet" href="workbench-system.css?v=34b1937a2ae140a9"><meta name="finmodel-build" content="2.2.1-code-ux.3fcc8ca14b0b3b0f"></head>
++<link rel="stylesheet" href="workbench-system.css?v=34b1937a2ae140a9"><link rel="stylesheet" href="portfolio-multi.css?v=7d9c321d43949879"><meta name="finmodel-build" content="2.3.0-portfolio.1973647664e77e3b"></head>
+ <body>
+ <aside class="sidebar">
+   <a class="brand" href="#workbench" aria-label="FinModel Lab 实验工作台"><b class="logo" aria-hidden="true">f<span>m</span></b><strong>FinModel</strong></a>
+@@ -69,6 +69,6 @@
+ <section data-class-pane="feedback" hidden><p>仅用于经教师同意的课堂试用。不记录鼠标行为，不自动上传或保存个人信息。</p><label><input type="checkbox" id="feedbackConsent"> 经教师同意，在本设备填写匿名反馈</label><fieldset id="feedbackFields" disabled><label>指定任务完成情况<select id="feedbackCompletion"><option value="">请选择</option><option>完成</option><option>部分完成</option><option>未完成</option></select></label><label>最难理解的 R 知识点<select id="feedbackCode"><option>无</option><option>向量与下标</option><option>权重与加权求和</option><option>方差与开平方</option><option>最小方差与有效前沿</option></select></label><label>仍困惑的金融概念<textarea id="feedbackConcept" rows="2" maxlength="500" placeholder="仅写知识点，请勿填写姓名或学号"></textarea></label><label>最有帮助的可视化<select id="feedbackHelpful"><option>风险收益曲线</option><option>方差分项</option><option>代码联动</option><option>有效性比较</option><option>尚不明确</option></select></label><label>愿意课后使用吗<select id="feedbackWilling"><option>愿意</option><option>不确定</option><option>暂不愿意</option></select></label><button id="exportFeedback">导出匿名反馈 JSON（不上传）</button></fieldset><p id="feedbackStatus" role="status"></p><p>尚无真实使用人数或学习效果数据。教师可用导出的匿名反馈配合前后测评价。</p></section>
+ </dialog>
+ <dialog id="portfolioRDialog"><div class="dialog-head"><h2>RStudio 实践</h2><button data-close="portfolioRDialog" aria-label="关闭R实践">×</button></div><p id="portfolioRTask"></p></dialog>
+-<div id="toast" role="status"></div><script src="build-info.js?v=5240173e4f0075a5"></script><script src="portfolio-bundle.js?v=99684c2919f0cc47"></script>
++<div id="toast" role="status"></div><script src="build-info.js?v=cc3a40f84ab200d9"></script><script src="portfolio-bundle.js?v=1a41441733256603"></script>
+ <script>if(new URLSearchParams(location.search).has("audit")){const s=document.createElement("script");s.src="font-audit.js?v=a68b70a23cd54127";document.body.append(s);}</script>
+ </body></html>
+--- /dev/null
++++ dist/portfolio-multi-math.js
+@@ -0,0 +1,19 @@
++/* Experiment 08: small convex QP, exhaustive active faces (n <= 5).
++   No sampled envelope, package, network, or silent regularization. */
++(function(root){'use strict';
++const sum=a=>a.reduce((x,y)=>x+y,0),dot=(a,b)=>sum(a.map((x,i)=>x*b[i]));
++function solve(A,b){const n=b.length,a=A.map((r,i)=>[...r,b[i]]);for(let k=0;k<n;k++){let p=k;for(let i=k+1;i<n;i++)if(Math.abs(a[i][k])>Math.abs(a[p][k]))p=i;if(Math.abs(a[p][k])<1e-12)return null;[a[p],a[k]]=[a[k],a[p]];const d=a[k][k];for(let j=k;j<=n;j++)a[k][j]/=d;for(let i=0;i<n;i++)if(i!==k){const f=a[i][k];for(let j=k;j<=n;j++)a[i][j]-=f*a[k][j];}}return a.map(r=>r[n]);}
++function eigen(A){const a=A.map(r=>r.slice()),n=a.length;for(let k=0;k<100*n*n;k++){let p=0,q=1;for(let i=0;i<n;i++)for(let j=i+1;j<n;j++)if(Math.abs(a[i][j])>Math.abs(a[p][q])){p=i;q=j;}if(Math.abs(a[p][q])<1e-14)break;const t=.5*Math.atan2(2*a[p][q],a[q][q]-a[p][p]),c=Math.cos(t),s=Math.sin(t),ap=a[p][p],aq=a[q][q],v=a[p][q];for(let i=0;i<n;i++)if(i!==p&&i!==q){const x=a[i][p],y=a[i][q];a[i][p]=a[p][i]=c*x-s*y;a[i][q]=a[q][i]=s*x+c*y;}a[p][p]=c*c*ap-2*s*c*v+s*s*aq;a[q][q]=s*s*ap+2*s*c*v+c*c*aq;a[p][q]=a[q][p]=0;}return a.map((r,i)=>r[i]).sort((x,y)=>x-y);}
++function checkMatrix(S,n){if(!Array.isArray(S)||S.length!==n||S.some(r=>!Array.isArray(r)||r.length!==n||r.some(x=>!Number.isFinite(x))))throw Error('矩阵必须为完整的有限数值方阵。');const scale=Math.max(...S.map((r,i)=>Math.abs(r[i])),1e-30);for(let i=0;i<n;i++)for(let j=0;j<n;j++)if(Math.abs(S[i][j]-S[j][i])>scale*1e-10)throw Error('矩阵必须对称；请同时填写上下三角。');const ev=eigen(S.map(r=>r.map(x=>x/scale)));if(ev[0]<-1e-10)throw Error('相关或协方差矩阵非半正定（PSD），请检查成对相关性。未自动修复。');return {scale,eigen:ev};}
++function prepare(mu,S,ridge=false){const n=mu.length;if(n<2||n>5||mu.some(x=>!Number.isFinite(x)))throw Error('需要2至5项有限收益率。');const info=checkMatrix(S,n);if(info.eigen[0]<=1e-10&&!ridge)throw Error('协方差奇异或近奇异；请增加独立样本、修改假设，或主动勾选岭正则后重新计算。');if(info.scale===1e-30)throw Error('所有资产波动为零，无法使用此优化器。');const lambda=ridge?info.scale*1e-6:0;return {mu:mu.slice(),raw:S.map(r=>r.slice()),S:S.map((r,i)=>r.map((x,j)=>x+(i===j?lambda:0))),lambda,info};}
++function covariance(s,rho){const n=s.length;if(s.some(x=>!Number.isFinite(x)||x<0))throw Error('波动率必须非负且有限。');checkMatrix(rho,n);for(let i=0;i<n;i++){if(Math.abs(rho[i][i]-1)>1e-12)throw Error('相关矩阵对角线必须为1。');if(rho[i].some(x=>Math.abs(x)>1))throw Error('相关系数必须位于[-1,1]。');}return rho.map((r,i)=>r.map((x,j)=>s[i]*x*s[j]));}
++function weights(w){if(w.some(x=>!Number.isFinite(x)||x<0)||Math.abs(sum(w)-1)>1e-8)throw Error('禁止卖空：权重需非负且合计为100%。请使用“按比例归一”或手动补足。');}
++function point(model,w){weights(w);if(w.length!==model.mu.length)throw Error('权重数量与资产数不一致。');const variance=dot(w,model.S.map(r=>dot(r,w)));return {w:w.slice(),mean:dot(w,model.mu),variance,sd:Math.sqrt(Math.max(0,variance))};}
++function optimize(model,target=null){const {mu,S}=model,n=mu.length,lo=Math.min(...mu),hi=Math.max(...mu),span=hi-lo,scale=Math.max(...S.map((r,i)=>r[i]));if(target!==null&&(!Number.isFinite(target)||target<lo-1e-11||target>hi+1e-11))throw Error('目标收益不可行：禁止卖空时须位于资产收益的最小值与最大值之间。');const targetRow=target!==null&&span>1e-12;let best=null;
++for(let mask=1;mask<(1<<n);mask++){const ids=Array.from({length:n},(_,i)=>i).filter(i=>mask&(1<<i)),k=ids.length,A=[ids.map(()=>1)],b=[1];if(targetRow){A.push(ids.map(i=>(mu[i]-lo)/span));b.push((target-lo)/span);}const c=A.length;if(k<c) {if(k===1&&target!==null&&Math.abs(mu[ids[0]]-target)<1e-10){const w=Array(n).fill(0);w[ids[0]]=1;const q=point(model,w);if(!best||q.variance<best.variance-1e-14*scale)best=q;}continue;}
++const K=Array.from({length:k+c},()=>Array(k+c).fill(0));for(let i=0;i<k;i++){for(let j=0;j<k;j++)K[i][j]=S[ids[i]][ids[j]]/scale;for(let j=0;j<c;j++)K[i][k+j]=K[k+j][i]=A[j][i];}const x=solve(K,[...Array(k).fill(0),...b]);if(!x||x.slice(0,k).some(v=>v< -1e-9))continue;const w=Array(n).fill(0);ids.forEach((id,i)=>w[id]=Math.max(0,x[i]));const total=sum(w);for(let i=0;i<n;i++)w[i]/=total;const q=point(model,w);if(target!==null&&Math.abs(q.mean-target)>1e-8)continue;if(!best||q.variance<best.variance-1e-14*scale)best=q;}
++if(!best)throw Error('未获得可行解：请检查目标与矩阵条件。');return best;}
++function frontier(model,count=61){const gmv=optimize(model),hi=Math.max(...model.mu);const length=hi-gmv.mean<1e-12?1:count;return {gmv,points:Array.from({length},(_,i)=>optimize(model,gmv.mean+(hi-gmv.mean)*(length===1?0:i/(length-1))))};}
++function samples(model,count=360){let seed=8128;const random=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};return [...model.mu.map((_,i)=>point(model,model.mu.map((_,j)=>+(i===j)))),...Array.from({length:count},()=>{let w=model.mu.map(()=>-Math.log(random()));const s=sum(w);return point(model,w.map(v=>v/s));})];}
++root.PortfolioMulti={sum,dot,solve,eigen,checkMatrix,prepare,covariance,weights,point,optimize,frontier,samples};if(typeof module!=='undefined')module.exports=root.PortfolioMulti;
++})(typeof window!=='undefined'?window:globalThis);
+--- /dev/null
++++ dist/portfolio-csv.js
+@@ -0,0 +1,12 @@
++/* Local-only CSV ingestion. Explicit errors and complete-case policy. */
++(function(root){'use strict';
++function parse(text){text=text.replace(/^\uFEFF/,'');const rows=[];let row=[],cell='',quoted=false,ended=false;for(let i=0;i<text.length;i++){const c=text[i];if(quoted){if(c==='"'&&text[i+1]==='"'){cell+='"';i++;}else if(c==='"'){quoted=false;ended=true;}else cell+=c;}else if(c==='"'){if(cell.trim()||ended)throw Error('CSV引号位置非法。');quoted=true;}else if(c===','||c==='\n'||c==='\r'){row.push(cell.trim());cell='';ended=false;if(c!==','){if(c==='\r'&&text[i+1]==='\n')i++;if(row.some(x=>x!==''))rows.push(row);row=[];}}else {if(ended&&!/\s/.test(c))throw Error('引号结束后存在非法字符。');cell+=c;}}if(quoted)throw Error('CSV引号没有闭合。');if(cell||row.length){row.push(cell.trim());if(row.some(x=>x!==''))rows.push(row);}if(rows.length<3)throw Error('CSV至少需要表头和两行数据。');const headers=rows.shift();if(headers.some(x=>!x)||new Set(headers).size!==headers.length)throw Error('列名为空或重复；请使用唯一列名。');if(rows.some(r=>r.length!==headers.length))throw Error('CSV列数不一致。只支持逗号分隔、首行列名。');return {headers,rows};}
++function dateValue(s){if(!/^\d{4}-\d{2}-\d{2}$/.test(s))throw Error('日期必须为YYYY-MM-DD，且不能为空。');const t=Date.parse(s+'T00:00:00Z');if(!Number.isFinite(t)||new Date(t).toISOString().slice(0,10)!==s)throw Error('日期不存在：'+s);return t;}
++function ingest(table,{date,assets,kind='price',method='simple',missing='reject',sort=false,factor=252}={}){if(assets.length<3||assets.length>5)throw Error('请选择3至5个不同资产列。');if(new Set(assets).size!==assets.length||assets.includes(date))throw Error('日期列不能兼作资产，资产列不能重复。');if(!Number.isFinite(factor)||factor<=0||factor>10000)throw Error('年化因子必须在(0,10000]。');const di=table.headers.indexOf(date),ai=assets.map(x=>table.headers.indexOf(x));if(di<0||ai.includes(-1))throw Error('所选列不存在。');let rows=table.rows.map(r=>({date:r[di],time:dateValue(r[di]),values:ai.map(i=>r[i])}));const seen=new Set();for(const r of rows){if(seen.has(r.date))throw Error('重复日期：'+r.date+'。不会自动合并。');seen.add(r.date);}const unsorted=rows.some((r,i)=>i&&r.time<rows[i-1].time);if(unsorted&&!sort)throw Error('日期未单调递增；勾选“按日期排序”后可显式排序。');if(sort)rows.sort((a,b)=>a.time-b.time);let dropped=0;rows=rows.filter(r=>{if(r.values.some(x=>x===''||/^(NA|N\/A|null)$/i.test(x))){if(missing!=='complete')throw Error('存在缺失值；可选择按整行删除并显示删除数量。');dropped++;return false;}return true;});for(const r of rows){r.values=r.values.map(x=>{if(!/^[+-]?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?$/i.test(x)||!Number.isFinite(+x))throw Error('非数值资产值：'+x+'。收益率请用小数，不要含%符号。');return +x;});if(kind==='price'&&r.values.some(x=>x<=0))throw Error('价格必须严格为正，不能包含0或负值。');if(kind==='return'&&r.values.some(x=>x< -1))throw Error('简单收益率不能小于-1。');}
++if(kind==='return'&&method==='log'&&rows.some(r=>r.values.some(x=>x<=-1)))throw Error('简单收益率为-1时不能转换为对数收益率。');
++const returns=kind==='price'?rows.slice(1).map((r,i)=>r.values.map((x,j)=>method==='log'?Math.log(x/rows[i].values[j]):x/rows[i].values[j]-1)):rows.map(r=>r.values.map(x=>method==='log'?Math.log1p(x):x));if(returns.length<assets.length+2)throw Error('有效收益样本不足：至少需要资产数+2行收益；建议更长历史。');
++const gaps=rows.slice(1).map((r,i)=>(r.time-rows[i].time)/86400000),sorted=gaps.slice().sort((a,b)=>a-b),median=sorted[Math.floor(sorted.length/2)];return {names:assets.slice(),returns,dates:kind==='price'?rows.slice(1).map(r=>r.date):rows.map(r=>r.date),sourceRows:rows.length,dropped,sorted:unsorted&&sort,kind,method,factor,from:rows[0].date,to:rows.at(-1).date,medianGap:median,maxGap:Math.max(...gaps)};}
++function estimate(data,factor=data.factor,rows=data.returns){const n=data.names.length,T=rows.length;if(T<n+2)throw Error('本次窗口样本不足，需要至少资产数+2行。');const mean=Array.from({length:n},(_,j)=>rows.reduce((s,r)=>s+r[j],0)/T),cov=mean.map((_,i)=>mean.map((_,j)=>rows.reduce((s,r)=>s+(r[i]-mean[i])*(r[j]-mean[j]),0)/(T-1)*factor));return {mu:mean.map(x=>x*factor),S:cov,se:cov.map((r,i)=>Math.sqrt(r[i]/T*factor)),T,factor};}
++function template(){let text='date,示例A,示例B,示例C,示例D,示例E\n';let prices=[100,100,100,100,100];for(let i=0;i<65;i++){const date=new Date(Date.UTC(2025,0,1+i)).toISOString().slice(0,10);prices=prices.map((x,j)=>x*(1+.0003*(j+1)+.008*Math.sin(i*(j+1)*.53+j)+.003*Math.cos(i*.91+j*2)));text+=date+','+prices.map(x=>x.toFixed(8)).join(',')+'\n';}return text;}
++root.PortfolioCSV={parse,dateValue,ingest,estimate,template};if(typeof module!=='undefined')module.exports=root.PortfolioCSV;
++})(typeof window!=='undefined'?window:globalThis);
+--- /dev/null
++++ dist/portfolio-multi-code.js
+@@ -0,0 +1,94 @@
++/* Self-contained base R. Uploaded observations are embedded, never file paths. */
++(function(root){'use strict';
++const vector=a=>'c('+a.map(x=>Number(x).toString()).join(', ')+')',matrix=a=>'matrix('+vector(a.flat())+', nrow='+a.length+', byrow=TRUE)';
++function build(model,w,names,context={}){const {data,factor=1,scenario='full'}=context;const s=context.manual?.s||model.raw.map((r,i)=>Math.sqrt(r[i]));const rho=context.manual?.rho||model.raw.map((r,i)=>r.map((x,j)=>s[i]*s[j]>0?x/(s[i]*s[j]):+(i===j)));let input=data?`# 用户本地CSV的清洗后收益样本；不依赖外部文件或网络\n# 已按日期对齐；${data.method==='log'?'对数':'简单'}收益；原输入${data.kind==='price'?'价格':'简单收益率'}\n# 样本范围 ${data.from} 至 ${data.to}；删除缺失行 ${data.dropped}\nobservations <- ${matrix(data.returns)}\nfactor <- ${factor}\nscenario <- "${scenario}"\nif (scenario == "first") observations <- observations[seq_len(floor(nrow(observations)/2)), , drop=FALSE]\nif (scenario == "second") observations <- observations[(floor(nrow(observations)/2)+1):nrow(observations), , drop=FALSE]\nmu <- colMeans(observations) * factor\nSigma_raw <- cov(observations) * factor\nse <- sqrt(diag(Sigma_raw) / nrow(observations) * factor)\nif (scenario == "up") mu[1] <- mu[1] + se[1]\nif (scenario == "down") mu[1] <- mu[1] - se[1]`:`# 教学假设，非真实市场数据；同一期限的小数单位\nmu <- ${vector(model.mu)}\ns <- ${vector(s)}\nrho <- ${matrix(rho)}\nSigma_raw <- diag(s) %*% rho %*% diag(s)`;
++return `# 实验08：Markowitz 均值-方差决策；基础R，无额外包
++# 约束：sum(w)=1, w>=0；不支持卖空、杠杆、无风险资产或交易成本
++# 1. 当前参数与可复现数据
++${input}
++asset_names <- ${JSON.stringify(names).replace(/^\[/,'c(').replace(/\]$/,')')}
++w <- ${vector(w)}
++lambda <- ${model.lambda}
++# 主动选择岭正则时加 lambda*I，优化目标随之改变
++Sigma <- Sigma_raw + diag(lambda, length(mu))
++stopifnot(length(mu) >= 2, length(mu) <= 5,
++          all(w >= 0), abs(sum(w)-1) < 1e-8,
++          min(eigen(Sigma, symmetric=TRUE)$values) > 0)
++# 2. 收益 w^T mu；方差 w^T Sigma w；风险为方差开根号
++portfolio <- function(w) {
++  v <- as.numeric(t(w) %*% Sigma %*% w)
++  list(w=w, mean=sum(w*mu), variance=v, sd=sqrt(max(0,v)))
++}
++current <- portfolio(w)
++# 3. 枚举非空活跃面，求解各面的拉格朗日方程，比较全局最小值
++# n<=5最多31个面；凸正定目标保证最优；采样不参与优化
++optimize_portfolio <- function(target=NULL) {
++  n <- length(mu); low <- min(mu); high <- max(mu)
++  span <- high-low; scale <- max(diag(Sigma)); best <- NULL
++  if (!is.null(target) && (target < low-1e-11 || target > high+1e-11))
++    stop("Target return infeasible under long-only constraints")
++  for (mask in seq_len(2^n-1)) {
++    ids <- which(as.logical(intToBits(mask)[seq_len(n)]))
++    k <- length(ids); A <- matrix(1, nrow=1, ncol=k); b <- 1
++    if (!is.null(target) && span > 1e-12) {
++      A <- rbind(A, (mu[ids]-low)/span); b <- c(1,(target-low)/span)
++    }
++    nc <- nrow(A)
++    if (k < nc) {
++      if (k == 1 && !is.null(target) && abs(mu[ids]-target) < 1e-10) {
++        ww <- numeric(n); ww[ids] <- 1; q <- portfolio(ww)
++        if (is.null(best) || q$variance < best$variance-1e-14*scale) best <- q
++      }
++      next
++    }
++    K <- rbind(cbind(Sigma[ids,ids,drop=FALSE]/scale,t(A)),
++               cbind(A,matrix(0,nc,nc)))
++    x <- tryCatch(solve(K,c(rep(0,k),b),tol=1e-12), error=function(e) NULL)
++    if (is.null(x) || any(x[seq_len(k)] < -1e-9)) next
++    ww <- numeric(n); ww[ids] <- pmax(0,x[seq_len(k)]); ww <- ww/sum(ww)
++    q <- portfolio(ww)
++    if (!is.null(target) && abs(q$mean-target)>1e-8) next
++    if (is.null(best) || q$variance < best$variance-1e-14*scale) best <- q
++  }
++  if (is.null(best)) stop("No feasible solution")
++  best
++}
++gmv <- optimize_portfolio()
++# 4. 从GMV到最高收益端点，逐个目标收益进行真正的约束优化
++n_frontier <- if (max(mu)-gmv$mean < 1e-12) 1 else 61
++targets <- seq(gmv$mean,max(mu),length.out=n_frontier)
++frontier <- lapply(targets, optimize_portfolio)
++frontier_risk <- vapply(frontier,function(q) q$sd,numeric(1))
++# 5. 仅用于展示可行集的确定性采样；不是精确边界
++seed <- 8128
++uniform <- function() { seed <<- (seed*16807) %% 2147483647; seed/2147483647 }
++sample_w <- diag(length(mu))
++for (i in seq_len(360)) {
++  ww <- -log(vapply(seq_along(mu),function(j) uniform(),numeric(1)))
++  sample_w <- rbind(sample_w,ww/sum(ww))
++}
++cloud <- lapply(seq_len(nrow(sample_w)),function(i) portfolio(sample_w[i,]))
++cloud_risk <- vapply(cloud,function(q) q$sd,numeric(1))
++cloud_return <- vapply(cloud,function(q) q$mean,numeric(1))
++plot(cloud_risk,cloud_return,col="grey75",pch=16,cex=.45,
++     xlab="Risk (SD, decimal)",ylab="Expected return (decimal)",
++     xlim=range(c(cloud_risk,frontier_risk,current$sd)),
++     ylim=range(c(cloud_return,targets,current$mean)))
++lines(frontier_risk,targets,col="seagreen",lwd=3)
++points(frontier_risk,targets,col="seagreen",pch=16,cex=.4)
++points(gmv$sd,gmv$mean,col="seagreen",pch=18,cex=1.5)
++points(current$sd,current$mean,col="steelblue",pch=19,cex=1.3)
++legend("topleft",c("Sampled feasible points","Optimized frontier","GMV","Current"),
++       col=c("grey75","seagreen","seagreen","steelblue"),pch=c(16,16,18,19),bty="n")
++# 6. 核对网页；方差为小数平方，标准差使用小数
++print(data.frame(asset=asset_names,current=w,gmv=gmv$w))
++print(unlist(current[c("mean","variance","sd")]))
++print(unlist(gmv[c("mean","variance","sd")]))
++print(Sigma_raw)
++# RStudio实践：改一个收益假设或权重后重跑，对比GMV与前沿。
++# CSV原始价格可用 read.csv(file.choose(), check.names=FALSE) 读取；
++# 确保按日期排序、完整行对齐，再按本文口径计算收益与cov()。
++`;
++}
++root.PortfolioMultiCode={build};if(typeof module!=='undefined')module.exports=root.PortfolioMultiCode;
++})(typeof window!=='undefined'?window:globalThis);
+--- /dev/null
++++ dist/portfolio-multi-ui.js
+@@ -0,0 +1,70 @@
++/* Experiment08 extension mounted beside, not replacing, the mature two-asset lab. */
++(()=>{'use strict';
++const M=PortfolioMulti,C=PortfolioCSV,Code=PortfolioMultiCode,el=id=>document.getElementById(id),pct=x=>(100*x).toFixed(2)+'%',safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
++const nav=document.createElement('nav');nav.className='portfolio-modes';nav.setAttribute('aria-label','投资组合工作台模式');nav.innerHTML='<button id="dualMode" aria-pressed="true">双资产直觉</button><button id="multiMode" aria-pressed="false">多资产组合</button><span>从共同波动，到约束优化</span>';el('workspace').before(nav);
++const panel=document.createElement('section');panel.id='multiWorkspace';panel.className='workspace multi-workspace';panel.hidden=true;
++panel.innerHTML=`<article class="panel code-panel multi-code"><div class="panel-head"><h2>R Code</h2><button id="multiCopy">复制完整 R 代码</button></div><div class="portfolio-code-toolbar"><button id="multiFull" aria-pressed="true">完整代码</button><button id="multiBasic" aria-pressed="false">关键逻辑</button><button id="multiPractice">RStudio 实践</button></div><div id="multiCode" aria-label="点击代码行查看解释"></div><section id="multiExplanation" class="explanation" aria-live="polite"></section></article>
++<article class="panel model-panel"><div class="panel-head"><h2>Model Visualization</h2><span id="multiUnit">年化</span></div><p class="multi-question">相同的收益目标，怎样承担更少风险？</p><div class="multi-result"><span>预期收益 μ <b id="multiReturn">—</b></span><span>组合风险 σ <b id="multiRisk">—</b></span></div><p id="multiStatus" class="multi-status" aria-live="polite"></p><div class="plot-area multi-plot"><svg id="multiChart" viewBox="0 0 600 440" role="group" aria-label="多资产风险收益平面"></svg><div id="multiTip" class="point-details" hidden></div></div><div class="legend"><span><i class="point cloud-key"></i>采样可行点 ≠ 精确边界</span><span><i class="line efficient"></i>精确优化前沿</span><button id="multiShowCurrent">● 当前组合</button><button id="multiShowGMV">◇ GMV</button><button id="multiShowTarget"><span style="color:#b18844">●</span> 目标收益解</button></div><div class="multi-actions"><button id="multiApplyGMV">应用 GMV 权重</button><button id="multiApplyTarget">应用目标收益组合</button></div><p id="multiChange" class="multi-change" aria-live="polite">“应用”只改变模型权重，不执行市场交易。</p><details class="multi-detail"><summary>看懂有效性与约束</summary><p>有效组合不存在风险不更高、收益不更低且至少一项严格改善的可行配置。绿色前沿只取GMV到最高收益的一段；低于GMV收益的最小方差解仍可能非有效。</p><p>标准模型：min wᵀΣw，约束 1ᵀw=1，w≥0；目标收益解另加 μᵀw=r。最多5资产，枚举所有非空活跃面求精确凸二次优化；曲线连接61个优化解，点间显示是插值。灰点仅为采样展示。</p><p>本版禁止卖空、不含无风险资产、不含交易成本。样本期望与协方差不等于未来真值；简单收益均值线性年化不等于复利预测，对数收益也不等于简单收益。</p></details></article>
++<section class="panel parameters multi-parameters"><div class="panel-head"><h2>Parameters</h2><button id="multiReset">恢复默认</button></div><div class="multi-controls"><label>资产数量 <select id="multiN"><option>3</option><option>4</option><option>5</option></select></label><p class="period-label">禁止卖空 · 全额投资 · 无无风险资产</p><div id="multiAssumptions"></div><details id="multiMatrixDetails"><summary>完整相关矩阵 ρ 与协方差 Σ</summary><p>ρ上下三角需一致；Σ=diag(σ)ρdiag(σ)。输入只在合法且PSD时生效。</p><div id="multiRho"></div><pre id="multiSigma"></pre></details><label class="multi-check"><input id="multiRidge" type="checkbox">主动使用岭正则 λ=max(diag Σ)×10⁻⁶</label><p id="multiRidgeNote" class="period-label"></p><h3>当前权重（%）</h3><p class="period-label">修改一项只改该项；其余不动。合计不是100%时停止计算。</p><div id="multiWeights"></div><div class="multi-weight-actions"><b id="multiSum"></b><button id="multiNormalize">按比例归一全部权重</button></div><label>目标收益（%）<input id="multiTarget" type="number" step="any" value="12"></label><p id="multiTargetNote" class="period-label"></p><p id="multiError" class="multi-error" role="alert"></p>
++<details id="multiData"><summary>本地 CSV 数据实践</summary><p>只在浏览器内读取，不上传服务器或第三方；刷新即清空。复制脚本会包含清洗后收益数据，请按需保存。</p><input id="multiFile" type="file" accept=".csv,text/csv" aria-label="上传本地CSV"><button id="multiTemplate">下载合成价格示例</button><p class="period-label">示例由确定性公式生成，非真实市场数据。未内置来源与再分发许可均已核实的历史行情。</p><div id="multiImportOptions" hidden><label>日期列 <select id="multiDateColumn"></select></label><fieldset><legend>选择3至5个资产列</legend><div id="multiAssetColumns"></div></fieldset><label>输入类型 <select id="multiKind"><option value="price">价格（须自行确认复权口径）</option><option value="return">简单收益率（小数）</option></select></label><label>收益口径 <select id="multiMethod"><option value="simple">简单收益</option><option value="log">对数收益 / log1p转换</option></select></label><label>缺失处理 <select id="multiMissing"><option value="reject">拒绝并提示</option><option value="complete">删除任一资产缺失的整行</option></select></label><label class="multi-check"><input id="multiSort" type="checkbox">显式按日期升序排列</label><label>数据频率 <select id="multiFrequency"><option value="252">日度（252）</option><option value="12">月度（12）</option><option value="1">年度（1）</option><option value="365">每日含周末（365）</option></select></label><label>年化因子 <input id="multiFactor" type="number" step="any" value="252"></label><button id="multiImport">使用所选数据</button></div><p id="multiDataInfo" aria-live="polite"></p><div id="multiDataAnalysis" hidden><label>显示单位 <select id="multiDisplayUnit"><option value="annual">年化</option><option value="period">每期</option></select></label><label>估计不确定性实验 <select id="multiScenario"><option value="full">完整样本</option><option value="first">前半段估计 μ 与 Σ</option><option value="second">后半段估计 μ 与 Σ</option><option value="up">资产A均值 +1标准误</option><option value="down">资产A均值 −1标准误</option></select></label><p id="multiUncertainty"></p><button id="multiExportData">导出清洗后收益CSV</button><button id="multiManual">返回教学假设</button></div></details>
++<details class="multi-challenge"><summary>可选课堂挑战</summary><p>双资产：固定σ与权重降低ρ，风险一定严格下降吗？尝试零权重，解释2w₁w₂σ₁σ₂Δρ的符号。多资产：只改一对相关性时仍须整体PSD，不能任意拼接。</p><p>数据实践：导入自己的CSV，切换前/后半段，记录GMV与前沿变化；再对A收益加减1标准误，观察权重敏感性。标准误使用独立同分布近似，忽略自相关与结构变化，不能作为收益保证。</p></details></div></section>`;
++el('workspace').after(panel);
++let active=false,n=3,names=[],data=null,table=null,model=null,result=null,current=null,targetPoint=null,code='',valid=false,full=true,lastApplied=null,manualInputs=null;
++const initialMu=[8,14,11,6,17],initialSd=[12,22,17,9,28];
++function download(text,name){const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
++function controls(count,reset=true){n=count;names=data?data.names.slice():Array.from({length:n},(_,i)=>'资产'+String.fromCharCode(65+i));el('multiN').value=String(n);el('multiN').disabled=!!data;
++el('multiAssumptions').innerHTML='<table class="assumptions multi-table"><thead><tr><th>资产</th><th>μ (%)</th><th>σ (%)</th></tr></thead><tbody>'+names.map((x,i)=>`<tr><th>${safe(x)}</th><td><input id="multiMu${i}" type="number" step="any" value="${initialMu[i]}" aria-label="${safe(x)}预期收益率" ${data?'disabled':''}></td><td><input id="multiSd${i}" type="number" step="any" value="${initialSd[i]}" aria-label="${safe(x)}波动率" ${data?'disabled':''}></td></tr>`).join('')+'</tbody></table>';
++el('multiRho').innerHTML='<table class="multi-rho"><thead><tr><th>ρ</th>'+names.map((_,i)=>'<th>'+String.fromCharCode(65+i)+'</th>').join('')+'</tr></thead><tbody>'+names.map((_,i)=>'<tr><th>'+String.fromCharCode(65+i)+'</th>'+names.map((_,j)=>`<td><input id="multiRho${i}_${j}" type="number" step="any" value="${i===j?1:.2}" aria-label="相关系数${i+1},${j+1}" ${data?'disabled':''}></td>`).join('')+'</tr>').join('')+'</tbody></table>';
++el('multiWeights').innerHTML=names.map((x,i)=>`<label class="multi-weight"><span>${safe(x)}</span><input id="multiW${i}" type="number" step="any" value="${Math.floor(100/n)+(i===0?100%n:0)}" aria-label="${safe(x)}权重百分比"></label>`).join('');
++for(const input of [...el('multiAssumptions').querySelectorAll('input'),...el('multiRho').querySelectorAll('input'),...el('multiWeights').querySelectorAll('input')])input.addEventListener('input',recalculate);
++if(reset)el('multiChange').textContent='修改一项权重不会悄悄改动其他权重。';}
++const num=id=>{const s=el(id).value;if(!s.trim()||!Number.isFinite(+s))throw Error('输入不能为空，且必须为有限数值。');return +s;};
++const getWeights=()=>Array.from({length:n},(_,i)=>num('multiW'+i)/100);
++function context(){return {data,manual:data?null:manualInputs,factor:data?(el('multiDisplayUnit').value==='annual'?data.factor:1):1,scenario:el('multiScenario').value,target:targetPoint?.mean};}
++function recalculate(){tip.clear();valid=false;targetPoint=null;el('multiError').textContent='';el('multiTargetNote').textContent='';try{let mu,S,estimate;
++if(data){const c=context(),rows=c.scenario==='first'?data.returns.slice(0,Math.floor(data.returns.length/2)):c.scenario==='second'?data.returns.slice(Math.floor(data.returns.length/2)):data.returns;estimate=C.estimate(data,c.factor,rows);mu=estimate.mu.slice();S=estimate.S;if(c.scenario==='up')mu[0]+=estimate.se[0];if(c.scenario==='down')mu[0]-=estimate.se[0];const sd=S.map((r,i)=>Math.sqrt(r[i]));mu.forEach((x,i)=>{el('multiMu'+i).value=x*100;el('multiSd'+i).value=sd[i]*100;});S.forEach((r,i)=>r.forEach((x,j)=>el('multiRho'+i+'_'+j).value=sd[i]*sd[j]>0?x/(sd[i]*sd[j]):+(i===j)));el('multiUncertainty').textContent=`本窗口${estimate.T}个收益样本；A的均值标准误≈${pct(estimate.se[0])}（${c.factor===1?'每期':'年化'}）。前后半段同时改变均值与协方差；±标准误只改A均值，Σ保持完整样本。短样本、非平稳与异常值可使优化权重显著改变。`;
++}else{mu=Array.from({length:n},(_,i)=>num('multiMu'+i)/100);const sd=Array.from({length:n},(_,i)=>num('multiSd'+i)/100),rho=Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>num('multiRho'+i+'_'+j)));S=M.covariance(sd,rho);manualInputs={s:sd,rho};}
++const w=getWeights(),total=M.sum(w);el('multiSum').textContent='合计 '+pct(total);M.weights(w);model=M.prepare(mu,S,el('multiRidge').checked);current=M.point(model,w);result=M.frontier(model);valid=true;
++el('multiReturn').textContent=pct(current.mean);el('multiRisk').textContent=pct(current.sd);const unit=data?(context().factor===1?'每期':'年化'):'年化假设';el('multiUnit').textContent=unit+(data&&data.method==='log'?' · 对数收益':' · 简单收益');
++el('multiRidgeNote').textContent=model.lambda?`已主动使用λ=${model.lambda.toPrecision(5)}，对每项资产方差加λ；图表与R均基于正则后的Σ。`:'未使用正则；原始协方差进入优化。';
++el('multiSigma').textContent='Σ 原始（小数平方）\n'+model.raw.map(r=>r.map(x=>x.toPrecision(5)).join('  ')).join('\n');
++const lo=Math.min(...mu),hi=Math.max(...mu);let target;
++try{target=num('multiTarget')/100;targetPoint=M.optimize(model,target);el('multiTargetNote').textContent=`可行目标 ${pct(lo)}～${pct(hi)}；${target<result.gmv.mean-1e-10?'低于GMV收益：等收益最小风险解可能被GMV支配。':'目标点位于有效部分。'}`;}catch(e){el('multiTargetNote').textContent=e.message;}
++const witness=M.optimize(model,Math.max(current.mean,result.gmv.mean)),dominated=witness.variance<current.variance-1e-10||witness.mean>current.mean+1e-9;
++el('multiStatus').textContent=`${dominated?'当前组合非有效：存在风险不更高且收益不更低的改进。':'当前组合位于有效前沿（数值容差内）。'} GMV：μ ${pct(result.gmv.mean)} / σ ${pct(result.gmv.sd)}。`;
++code=Code.build(model,w,names,context());if(!targetPoint)code+='\n# 当前目标输入未通过可行性校验，未生成该目标的解。\n# 当前组合、GMV与有效前沿仍按上述有效资产参数独立计算。\n';if(targetPoint)code+=`\n# 当前目标收益组合（可能低于GMV收益）\ntarget_return <- ${target}\ntarget_portfolio <- optimize_portfolio(target_return)\nprint(target_portfolio)\n`;
++renderCode();draw();
++}catch(e){el('multiError').textContent=e.message+' 当前输入尚未生效；图与代码若仍显示，为上次有效结果。';el('multiStatus').textContent='输入待修正，暂停新计算。';try{el('multiSum').textContent='合计 '+pct(M.sum(getWeights()));}catch{} }
++el('multiCopy').disabled=!valid;el('multiApplyGMV').disabled=!valid;el('multiApplyTarget').disabled=!valid||!targetPoint;el('multiShowTarget').disabled=!valid||!targetPoint;el('multiChart').classList.toggle('multi-stale',!valid);}
++function renderCode(){el('multiFull').setAttribute('aria-pressed',String(full));el('multiBasic').setAttribute('aria-pressed',String(!full));el('multiCode').innerHTML=code.split('\n').map((line,i)=>({line,i})).filter(x=>full||/^(mu <-|Sigma_raw <-|Sigma <-|w <-|current <-|gmv <-|targets <-|frontier <-|target_return <-)|w\*mu|t\(w\)|optimize_portfolio <-/.test(x.line)).map(({line,i})=>`<button class="code-line" data-line="${i}"><span class="num">${String(i+1).padStart(2,'0')}</span><code>${typeof window.colorCode==='function'?window.colorCode(line):safe(line)}</code></button>`).join('');if(!el('multiExplanation').textContent)explain('');}
++function explain(line){let text='完整脚本包含当前参数或本地样本、收益与协方差计算、约束优化、可行点与有效前沿图；基础R可独立运行。点击语句查看其金融含义。';if(/Sigma|cov\(|lambda/.test(line))text='Σ的对角线是方差，非对角线是协方差。假设模式用diag(σ)ρdiag(σ)，数据模式用样本cov()；岭正则只有主动选择才加到对角线。';else if(/observations/.test(line))text='上传文件清洗后的收益矩阵直接嵌入脚本，离线且无需寻找原CSV。价格的简单或对数收益转换已在浏览器完成。';else if(/sqrt|variance|t\(w\)/.test(line))text='方差wᵀΣw包含自身风险与所有交叉协方差；开平方才得到与收益率同量纲的标准差。';else if(/mu|mean|target/.test(line))text='收益μp=wᵀμ；目标收益约束是等式μᵀw=r。禁止卖空时目标必须在资产预期收益最小与最大值之间；有效前沿只取GMV以上的收益。';else if(/optimize|mask|ids|solve|K <-|best|gmv|A <-/.test(line))text='这是约束二次优化：逐一枚举最多31个非空活跃面，解预算与目标收益的拉格朗日方程，剔除负权重，再比较方差。可行采样不参与求解GMV或有效前沿。';else if(/sample|cloud|uniform/.test(line))text='这些确定性可行样本只帮助看见可行区域，不能代表精确有效边界。绿色线来自目标收益下独立优化的解。';else if(/w <-|sum\(w\)/.test(line))text='权重非负且合计1，代表全额投入且禁止卖空。本工作台修改一项权重时不会自动更改其余项；按比例归一会明确作用于全部资产。';el('multiExplanation').innerHTML='<h3>代码与当前模型</h3><p>'+text+'</p>'+(line?'<code>'+safe(line)+'</code>':'');}
++el('multiCode').onclick=e=>{const b=e.target.closest('[data-line]');if(!b)return;el('multiCode').querySelectorAll('.selected').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');explain(code.split('\n')[+b.dataset.line]);};
++const tip=ChartInteraction.create((key,mode)=>{const box=el('multiTip');box.hidden=!key;box.dataset.mode=mode;if(!key)return;const q=key==='gmv'?result.gmv:key==='current'?current:key==='target'?targetPoint:result.points[Number(key.split('-')[1])];if(!q){box.hidden=true;return;}box.innerHTML='<div class="popover-head"><strong>'+({gmv:'全局最小方差 GMV',current:'当前组合',target:'目标收益最小方差解'}[key]||'精确优化前沿点')+'</strong>'+(mode==='pinned'?'<button id="multiCloseTip" aria-label="关闭组合详情">×</button>':'')+'</div><p>μ '+pct(q.mean)+' · σ '+pct(q.sd)+'<br>方差 '+q.variance.toPrecision(7)+'</p>'+q.w.map((x,i)=>'<div class="multi-tip-weight"><span>'+safe(names[i])+'</span><b>'+pct(x)+'</b></div>').join('');if(el('multiCloseTip'))el('multiCloseTip').onclick=()=>tip.clear();});
++function draw(){if(!active||!valid)return;tip.redraw();const cloud=M.samples(model),all=[...cloud,...result.points,current,...(targetPoint?[targetPoint]:[])],xmin=Math.max(0,Math.min(...all.map(q=>q.sd))*.85),xmax=Math.max(...all.map(q=>q.sd))*1.1||.01,ylo=Math.min(...all.map(q=>q.mean)),yhi=Math.max(...all.map(q=>q.mean)),ypad=Math.max((yhi-ylo)*.12,.005),ymin=ylo-ypad,ymax=yhi+ypad;const box=el('multiChart').parentElement.getBoundingClientRect(),H=Math.max(290,box.height/Math.max(1,box.width)*600),bottom=H-50,X=x=>65+(x-xmin)/(xmax-xmin)*505,Y=y=>bottom-(y-ymin)/(ymax-ymin)*(bottom-32);const svg=el('multiChart');svg.setAttribute('viewBox',`0 0 600 ${H}`);let html='';for(let i=0;i<5;i++){const x=xmin+(xmax-xmin)*i/4,y=ymin+(ymax-ymin)*i/4;html+=`<path d="M${X(x)} 30 V${bottom} M65 ${Y(y)} H570" stroke="#e2e9ee" fill="none"/><text x="${X(x)}" y="${bottom+24}" text-anchor="middle">${pct(x)}</text><text x="56" y="${Y(y)+4}" text-anchor="end">${pct(y)}</text>`;}html+=`<text x="65" y="20">μ 预期收益（${safe(el('multiUnit').textContent)}）</text><text x="570" y="${H-5}" text-anchor="end">σ 风险（标准差） →</text>`;html+=cloud.map(q=>`<circle cx="${X(q.sd)}" cy="${Y(q.mean)}" r="2.3" fill="#b8c4cb" opacity=".65"/>`).join('');html+='<path d="'+result.points.map((q,i)=>(i?'L':'M')+X(q.sd)+','+Y(q.mean)).join(' ')+'" stroke="#39856b" stroke-width="3" fill="none"/>';
++for(const [key,q,color,r]of [...result.points.map((q,i)=>['frontier-'+i,q,'#39856b',3]),['gmv',result.gmv,'#39856b',8],...(targetPoint?[['target',targetPoint,'#b18844',6]]:[]),['current',current,'#497aa0',7]])html+=`<g data-multi-point="${key}" tabindex="0" role="button" aria-label="${key}组合详情"><circle cx="${X(q.sd)}" cy="${Y(q.mean)}" r="${r+5}" fill="transparent"/><circle cx="${X(q.sd)}" cy="${Y(q.mean)}" r="${r}" fill="${color}" stroke="white" stroke-width="1.5"/></g>`;
++svg.innerHTML=html;svg.querySelectorAll('[data-multi-point]').forEach(x=>tip.bind(x,x.dataset.multiPoint));svg.onpointerleave=()=>{if(tip.state.hoveredItem)tip.leave(tip.state.hoveredItem);};svg.onclick=e=>{if(!e.target.closest('[data-multi-point]'))tip.clear();};}
++function apply(q,label){if(!valid||!q)return;const before=getWeights();q.w.forEach((x,i)=>el('multiW'+i).value=x*100);lastApplied={before,after:q.w.slice()};el('multiChange').textContent=label+'（模型配置）：'+names.map((x,i)=>x+' '+pct(before[i])+' → '+pct(q.w[i])).join('；')+'。未执行交易。';recalculate();}
++function mode(on){ChartInteraction.clear();active=on;el('workspace').hidden=on;panel.hidden=!on;el('multiMode').setAttribute('aria-pressed',String(on));el('dualMode').setAttribute('aria-pressed',String(!on));document.body.classList.toggle('portfolio-multi-active',on);if(on)recalculate();else {drawDual();} }
++const originalClassroom=el('classroomTools').onclick;el('classroomTools').onclick=()=>{if(!active){originalClassroom();return;}const challenge=panel.querySelector('.multi-challenge');challenge.open=true;challenge.scrollIntoView({block:'nearest'});};
++const drawDual=()=>{if(typeof window.draw==='function')window.draw();};
++el('dualMode').onclick=()=>mode(false);el('multiMode').onclick=()=>mode(true);
++el('multiN').onchange=()=>{controls(+el('multiN').value);recalculate();};
++el('multiRidge').onchange=recalculate;el('multiTarget').oninput=recalculate;
++el('multiFull').onclick=()=>{full=true;renderCode();};el('multiBasic').onclick=()=>{full=false;renderCode();};
++el('multiCopy').onclick=async()=>{if(!valid)return;try{await navigator.clipboard.writeText(code);toast('已复制包含当前数据的完整独立R脚本');}catch{download(code,'portfolio-multi.R');toast('剪贴板不可用，已下载完整脚本');}};
++el('multiApplyGMV').onclick=()=>apply(result.gmv,'应用GMV');el('multiApplyTarget').onclick=()=>apply(targetPoint,'应用目标收益最小方差组合');
++el('multiNormalize').onclick=()=>{try{const w=getWeights(),total=M.sum(w);if(total<=0||w.some(x=>x<0))throw Error('只可归一非负且合计大于0的权重。');const next=w.map(x=>x/total);el('multiChange').textContent='按比例归一全部权重：'+names.map((x,i)=>x+' '+pct(w[i])+' → '+pct(next[i])).join('；');next.forEach((x,i)=>el('multiW'+i).value=x*100);recalculate();}catch(e){el('multiError').textContent=e.message;}};
++for(const [id,key]of [['multiShowCurrent','current'],['multiShowGMV','gmv'],['multiShowTarget','target']])tip.bind(el(id),key);
++el('multiReset').onclick=()=>{data=null;table=null;el('multiFile').value='';el('multiImportOptions').hidden=true;el('multiDataAnalysis').hidden=true;el('multiDataInfo').textContent='';el('multiScenario').value='full';el('multiDisplayUnit').value='annual';el('multiRidge').checked=false;el('multiTarget').value='12';full=true;el('multiExplanation').textContent='';panel.querySelectorAll('details').forEach(x=>x.open=false);controls(3);el('multiControls')?.scrollTo(0,0);panel.querySelector('.multi-controls').scrollTop=0;el('multiCode').scrollTop=0;recalculate();};
++el('multiPractice').onclick=()=>{el('portfolioRTask').textContent='新建RStudio脚本，在全新R会话粘贴“复制完整R代码”的全部内容并运行。不需要额外包或联网。当前'+el('multiUnit').textContent+'：μ='+pct(current.mean)+'，σ='+pct(current.sd)+'；对照gmv$w、Sigma_raw与frontier。CSV样本已直接嵌入observations，亦可本地导出清洗后收益CSV。挑战：先手算wᵀΣw，再改A的均值或使用前/后半样本，解释最优权重变化。';ModalUI.open(el('portfolioRDialog'));};
++el('multiTemplate').onclick=()=>download(C.template(),'synthetic-prices-not-market.csv');
++el('multiFile').onchange=async()=>{el('multiImportOptions').hidden=true;table=null;const file=el('multiFile').files[0];if(!file)return;if(file.size>2*1024*1024){el('multiDataInfo').textContent='文件超过2MB，请先缩小数据范围。';return;}try{table=C.parse(await file.text());el('multiDateColumn').innerHTML=table.headers.map(h=>'<option>'+safe(h)+'</option>').join('');const likely=table.headers.findIndex(h=>/date|日期|时间/i.test(h));el('multiDateColumn').selectedIndex=Math.max(0,likely);el('multiAssetColumns').innerHTML=table.headers.map((h,i)=>`<label><input type="checkbox" value="${i}" ${i!==Math.max(0,likely)&&i<4?'checked':''}>${safe(h)}</label>`).join('');el('multiImportOptions').hidden=false;el('multiDataInfo').textContent='已在本地读取 '+table.rows.length+' 行。选择日期与资产列，确认频率/复权口径后应用；尚未改变模型。';}catch(e){el('multiDataInfo').textContent=e.message;}};
++el('multiFrequency').onchange=()=>el('multiFactor').value=el('multiFrequency').value;
++el('multiImport').onclick=()=>{try{const selected=[...el('multiAssetColumns').querySelectorAll('input:checked')].map(x=>table.headers[+x.value]);const candidate=C.ingest(table,{date:el('multiDateColumn').value,assets:selected,kind:el('multiKind').value,method:el('multiMethod').value,missing:el('multiMissing').value,sort:el('multiSort').checked,factor:num('multiFactor')});data=candidate;el('multiScenario').value='full';el('multiDisplayUnit').value='annual';controls(data.names.length);el('multiDataAnalysis').hidden=false;el('multiDataInfo').textContent=`${data.from}—${data.to}；${data.returns.length}行收益；删除${data.dropped}行，${data.sorted?'已显式排序':'原日期升序'}；日期间隔中位数${data.medianGap}天，最大${data.maxGap}天。选定年化因子${data.factor}。缺失后的价格跨期收益可能跨越多天，请核实频率；未自动补价、填补交易日或确认复权。来源与许可由导入者确认。`;el('multiTarget').value=String(C.estimate(data).mu.reduce((a,b)=>a+b,0)/data.names.length*100);recalculate();}catch(e){el('multiDataInfo').textContent='未应用：'+e.message;}};
++for(const id of ['multiDisplayUnit','multiScenario'])el(id).onchange=()=>{if(data){try{let rows=data.returns,scenario=el('multiScenario').value;if(scenario==='first')rows=rows.slice(0,Math.floor(rows.length/2));if(scenario==='second')rows=rows.slice(Math.floor(rows.length/2));const e=C.estimate(data,el('multiDisplayUnit').value==='annual'?data.factor:1,rows);el('multiTarget').value=M.sum(e.mu)/n*100;}catch{}recalculate();}};
++el('multiExportData').onclick=()=>{if(!data)return;const quote=s=>'"'+s.replace(/"/g,'""')+'"';download('date,'+data.names.map(quote).join(',')+'\n'+data.returns.map((r,i)=>data.dates[i]+','+r.join(',')).join('\n'),'cleaned-'+data.method+'-returns.csv');};
++el('multiManual').onclick=()=>{data=null;el('multiDataAnalysis').hidden=true;el('multiDataInfo').textContent='已返回教学假设；导入数据不再用于计算。';el('multiTarget').value='12';controls(n);recalculate();};
++window.addEventListener('resize',()=>{if(active)draw();});controls(3);
++// Read-only diagnostics for tests and transparent classroom inspection.
++window.PortfolioMultiLab={getState:()=>({active,valid,n,names,data,model,result,current,targetPoint,code,lastApplied}),recalculate};
++})();
+--- /dev/null
++++ dist/portfolio-multi.css
+@@ -0,0 +1,5 @@
++/* Scoped to experiment08. Existing five-model styling stays unchanged. */
++#workspace[hidden],#multiWorkspace[hidden]{display:none!important}.portfolio-modes{display:flex;align-items:center;gap:8px;margin:0 0 10px;padding:0 4px}.portfolio-modes button{padding:7px 14px;border:1px solid #cbd7dc;border-radius:7px;background:#eef3f4;color:#526b78;font:inherit;font-size:13px}.portfolio-modes button[aria-pressed=true]{background:#3b6578;color:#fff;border-color:#3b6578}.portfolio-modes span{font-size:12px;color:#798b94;margin-left:5px}.multi-workspace{height:calc(100dvh - 126px)}.multi-code{grid-template-rows:64px auto minmax(0,70fr) minmax(100px,30fr)!important}.multi-code .portfolio-code-toolbar{padding-bottom:8px}#multiCode{overflow:auto;min-height:0;padding:5px 0 12px;overscroll-behavior:contain}#multiCode code{white-space:pre-wrap;overflow-wrap:anywhere}#multiExplanation{border-top:1px solid #d9e2e7;padding:14px 18px;overflow:auto}#multiExplanation p{font-size:13px;line-height:1.8}#multiExplanation code{font:11px/1.6 var(--font-code);overflow-wrap:anywhere;white-space:pre-wrap}.multi-question{margin:0 18px 10px;font-size:17px;color:#364f5d}.multi-result{display:flex;gap:28px;margin:0 18px}.multi-result span{font-size:12px;color:#71858f}.multi-result b{display:block;font:26px/1.7 var(--font-number);color:#375c70}.multi-status{font-size:12px;line-height:1.7;margin:5px 18px;color:#6c7f89;min-height:40px}.multi-plot{flex:1;position:relative;min-height:230px}.multi-plot svg{width:100%;height:100%;font:11px var(--font-number);color:#6c7f89}.multi-plot svg text{fill:currentColor}.multi-plot [data-multi-point]{cursor:pointer}.multi-plot [data-multi-point]:focus{outline:none;filter:drop-shadow(0 0 3px #375c70)}.multi-actions{display:flex;gap:8px;padding:0 18px}.multi-actions button,.multi-controls button{font:12px var(--font-ui);padding:6px 9px;border-radius:5px;border:1px solid #bdcdd3;background:#f4f8f8;color:#3c6270}.multi-change{font-size:11px;line-height:1.7;margin:7px 18px;color:#647d87;max-height:66px;overflow:auto}.multi-detail{margin:3px 18px 12px;font-size:12px;line-height:1.8;max-height:180px;overflow:auto}.multi-detail summary{cursor:pointer;color:#426978}.multi-parameters{overflow:hidden;display:flex;flex-direction:column}.multi-controls{overflow:auto;padding:0 16px 18px;font-size:12px;line-height:1.7;overscroll-behavior:contain}.multi-controls label{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:8px 0}.multi-controls select{max-width:170px;font:inherit;color:#405d6c;padding:3px;border:1px solid #c2d0d7;border-radius:4px;background:#fff}.multi-controls input[type=number]{min-width:0;width:88px;padding:5px;border:1px solid #c1d1d8;border-radius:4px;background:#fff;font:12px var(--font-number);color:#365768}.multi-controls details{border-top:1px solid #d4dfe3;margin-top:12px;padding-top:10px}.multi-controls summary{cursor:pointer;color:#3b6578;font-size:13px}.multi-controls p{margin:7px 0}.multi-controls .multi-check{justify-content:flex-start}.multi-controls input[type=checkbox]{width:auto;flex:none}.multi-table{width:100%;table-layout:fixed;margin-top:8px}.multi-table input[type=number]{width:100%}.multi-table th{overflow-wrap:anywhere}.multi-rho{width:100%;table-layout:fixed;border-collapse:collapse}.multi-rho td{padding:2px}.multi-rho input[type=number]{width:100%;font-size:10px;padding:4px 1px}.multi-rho th{font-size:10px}.multi-controls pre{font:10px/1.8 var(--font-number);overflow:auto;max-width:100%}.multi-controls h3{font-size:13px;margin:14px 0 4px}.multi-weight span{overflow-wrap:anywhere;max-width:60%}.multi-weight-actions{display:flex;justify-content:space-between;align-items:center;gap:5px;font-size:11px}.multi-error{color:#a14545;line-height:1.8}.multi-stale{opacity:.35}.multi-plot .point-details{left:auto;right:8px;top:6px;max-width:280px;font-size:12px}.multi-tip-weight{display:flex;justify-content:space-between;gap:15px}.multi-tip-weight span{overflow-wrap:anywhere}.multi-plot .point-details[data-mode=preview]{pointer-events:none}.cloud-key{background:#b8c4cb!important}#multiAssetColumns label{justify-content:flex-start}.multi-controls fieldset{border:1px solid #ccd8de;margin:8px 0;padding:5px 10px}#multiFile{max-width:100%;font-size:11px;margin:8px 0}.multi-workspace button:disabled{opacity:.45;cursor:not-allowed}#multiUnit{font-size:11px;color:#6c818d}#multiDataInfo,#multiUncertainty{overflow-wrap:anywhere}body.portfolio-multi-active .workspace{min-height:0}body.portfolio-multi-active .multi-workspace .legend{padding-bottom:8px}.portfolio-modes~#workspace{height:calc(100dvh - 126px)}
++@media(max-width:1023px){.multi-workspace{height:auto!important}.multi-code{min-height:650px;height:75dvh}.multi-workspace .model-panel{height:760px}.multi-workspace .multi-parameters{max-height:900px}.portfolio-modes~#workspace{height:auto}.portfolio-modes span{display:none}}
++@media(min-width:1024px) and (max-height:780px){.multi-workspace,.portfolio-modes~#workspace{height:calc(100dvh - 112px)}.multi-result b{font-size:22px}.multi-question{font-size:15px}.multi-code{grid-template-rows:50px auto minmax(0,70fr) minmax(85px,30fr)!important}.multi-status{min-height:35px}.multi-detail{margin-bottom:7px}.multi-plot{min-height:180px}}
++#multiCode .code-line{min-width:0;width:100%;white-space:normal;align-items:baseline;font-size:15px}#multiCode .code-line code{min-width:0;flex:1;white-space:pre-wrap;overflow-wrap:anywhere}#multiCode .code-line .num{flex:none}#multiExplanation{min-height:0!important;max-height:none!important}

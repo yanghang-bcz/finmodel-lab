@@ -1,0 +1,5 @@
+Historical_VaR  Historical_ES     Normal_VaR      Normal_ES 
+      38766.67       48648.09       27929.59       31915.54 
+CHECK 38766.666666666672 48648.089591568016 27929.586198298832 31915.543070743468 
+null device 
+          1 

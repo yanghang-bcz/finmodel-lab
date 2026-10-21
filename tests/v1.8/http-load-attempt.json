@@ -1,0 +1,11 @@
+{
+  "status": "not_passed",
+  "scope": "local static HTTP smoke attempt; not classroom capacity",
+  "configuredWorkers": 8,
+  "configuredRequests": 32,
+  "observedError": "ConnectionResetError: [Errno 54] Connection reset by peer",
+  "attemptsWithEscalatedNetwork": 2,
+  "completedSuccessReport": false,
+  "cause": "unresolved; browser access succeeded, raw HTTP path reset",
+  "weakNetworkSimulation": "not performed; connected browser has no throttle capability"
+}

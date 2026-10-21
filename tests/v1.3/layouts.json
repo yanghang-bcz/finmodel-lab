@@ -1,0 +1,245 @@
+[
+  {
+    "chart": {
+      "bottom": 694.7734375,
+      "height": 339.8984375,
+      "right": 1096,
+      "width": 453.203125,
+      "x": 642.796875,
+      "y": 354.875
+    },
+    "code": {
+      "bottom": 654,
+      "height": 525,
+      "right": 616.796875,
+      "width": 413.796875,
+      "x": 203,
+      "y": 129
+    },
+    "codeFont": "15px",
+    "docHeight": 900,
+    "docWidth": 1440,
+    "height": 900,
+    "inputs": [
+      {
+        "bottom": 266.9921875,
+        "left": 1141,
+        "right": 1398,
+        "width": 257
+      },
+      {
+        "bottom": 436.6875,
+        "left": 1232.375,
+        "right": 1303.7421875,
+        "width": 71.3671875
+      },
+      {
+        "bottom": 436.6875,
+        "left": 1317.1875,
+        "right": 1388.5546875,
+        "width": 71.3671875
+      },
+      {
+        "bottom": 487.0859375,
+        "left": 1232.375,
+        "right": 1303.7421875,
+        "width": 71.3671875
+      },
+      {
+        "bottom": 487.0859375,
+        "left": 1317.1875,
+        "right": 1388.5546875,
+        "width": 71.3671875
+      },
+      {
+        "bottom": 565.484375,
+        "left": 1315,
+        "right": 1398,
+        "width": 83
+      },
+      {
+        "bottom": 603.484375,
+        "left": 1141,
+        "right": 1398,
+        "width": 257
+      }
+    ],
+    "ligatures": "none",
+    "numberFont": "\"Monaspace Neon\", \"Glow Sans SC\", monospace",
+    "paramScroll": [
+      814,
+      814
+    ],
+    "params": {
+      "bottom": 880,
+      "height": 816,
+      "right": 1418,
+      "width": 297,
+      "x": 1121,
+      "y": 64
+    },
+    "width": 1440
+  },
+  {
+    "chart": {
+      "bottom": 854.375,
+      "height": 479.1015625,
+      "right": 1452,
+      "width": 638.8046875,
+      "x": 813.1953125,
+      "y": 375.2734375
+    },
+    "code": {
+      "bottom": 834,
+      "height": 705,
+      "right": 787.1953125,
+      "width": 576.1953125,
+      "x": 211,
+      "y": 129
+    },
+    "codeFont": "15px",
+    "docHeight": 1080,
+    "docWidth": 1920,
+    "height": 1080,
+    "inputs": [
+      {
+        "bottom": 266.9921875,
+        "left": 1497,
+        "right": 1870,
+        "width": 373
+      },
+      {
+        "bottom": 436.6875,
+        "left": 1627.8125,
+        "right": 1737.4609375,
+        "width": 109.6484375
+      },
+      {
+        "bottom": 436.6875,
+        "left": 1750.90625,
+        "right": 1860.5546875,
+        "width": 109.6484375
+      },
+      {
+        "bottom": 487.0859375,
+        "left": 1627.8125,
+        "right": 1737.4609375,
+        "width": 109.6484375
+      },
+      {
+        "bottom": 487.0859375,
+        "left": 1750.90625,
+        "right": 1860.5546875,
+        "width": 109.6484375
+      },
+      {
+        "bottom": 565.484375,
+        "left": 1787,
+        "right": 1870,
+        "width": 83
+      },
+      {
+        "bottom": 603.484375,
+        "left": 1497,
+        "right": 1870,
+        "width": 373
+      }
+    ],
+    "ligatures": "none",
+    "numberFont": "\"Monaspace Neon\", \"Glow Sans SC\", monospace",
+    "paramScroll": [
+      994,
+      994
+    ],
+    "params": {
+      "bottom": 1060,
+      "height": 996,
+      "right": 1890,
+      "width": 413,
+      "x": 1477,
+      "y": 64
+    },
+    "width": 1920
+  },
+  {
+    "chart": {
+      "bottom": 617.671875,
+      "height": 317.6953125,
+      "right": 1040.5,
+      "width": 423.6015625,
+      "x": 616.8984375,
+      "y": 299.9765625
+    },
+    "code": {
+      "bottom": 522,
+      "height": 393,
+      "right": 590.8984375,
+      "width": 387.8984375,
+      "x": 203,
+      "y": 129
+    },
+    "codeFont": "15px",
+    "docHeight": 768,
+    "docWidth": 1366,
+    "height": 768,
+    "inputs": [
+      {
+        "bottom": 266.9921875,
+        "left": 1085.5,
+        "right": 1324,
+        "width": 238.5
+      },
+      {
+        "bottom": 436.6875,
+        "left": 1170.5859375,
+        "right": 1235.84375,
+        "width": 65.2578125
+      },
+      {
+        "bottom": 436.6875,
+        "left": 1249.2890625,
+        "right": 1314.5546875,
+        "width": 65.265625
+      },
+      {
+        "bottom": 487.0859375,
+        "left": 1170.5859375,
+        "right": 1235.84375,
+        "width": 65.2578125
+      },
+      {
+        "bottom": 487.0859375,
+        "left": 1249.2890625,
+        "right": 1314.5546875,
+        "width": 65.265625
+      },
+      {
+        "bottom": 565.484375,
+        "left": 1241,
+        "right": 1324,
+        "width": 83
+      },
+      {
+        "bottom": 603.484375,
+        "left": 1085.5,
+        "right": 1324,
+        "width": 238.5
+      }
+    ],
+    "ligatures": "none",
+    "numberFont": "\"Monaspace Neon\", \"Glow Sans SC\", monospace",
+    "paramScroll": [
+      682,
+      682
+    ],
+    "params": {
+      "bottom": 748,
+      "height": 684,
+      "right": 1344,
+      "width": 278.5,
+      "x": 1065.5,
+      "y": 64
+    },
+    "width": 1366
+  }
+]

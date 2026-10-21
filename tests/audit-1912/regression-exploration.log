@@ -1,0 +1,1 @@
+PASS strict Idle/Predict/Experiment/Explain transitions, immutable baseline, no early comparison, lower-only inputs, no-change guard, restart/exit and zero exposures.

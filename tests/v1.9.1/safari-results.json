@@ -1,0 +1,37 @@
+{
+  "browser": "actual macOS Safari",
+  "checks": [
+    {
+      "name": "Safari07点击固定ES",
+      "passed": true
+    },
+    {
+      "name": "Safari07 Escape关闭",
+      "passed": true
+    },
+    {
+      "name": "Safari07目录12项含当前实验",
+      "passed": true
+    },
+    {
+      "name": "Safari125%目录打开且12项可访问",
+      "passed": true
+    },
+    {
+      "name": "Safari11 S=K合并固定详情",
+      "passed": true
+    },
+    {
+      "name": "Safari11 Escape关闭合并详情",
+      "passed": true
+    },
+    {
+      "name": "Safari11目录高亮正确",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Native UI API has no mouse move/hover operation; mouse hover stress covered in Chrome, not claimed for Safari.",
+    "125% native zoom verified; narrow window uses existing stacked responsive layout."
+  ]
+}

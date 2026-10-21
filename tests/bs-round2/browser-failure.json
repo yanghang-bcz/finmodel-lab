@@ -1,0 +1,10 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: server DOM build agreement",
+  "checks": [
+    {
+      "label": "server DOM build agreement",
+      "passed": false
+    }
+  ],
+  "errors": []
+}

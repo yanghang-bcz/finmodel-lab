@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "name": "06 普通条件波动率点可预览",
+      "passed": true
+    },
+    {
+      "name": "06 普通波动率点移开关闭",
+      "passed": true
+    },
+    {
+      "name": "08 诊断长详情限制在图内",
+      "passed": true
+    },
+    {
+      "name": "08 应用改进配置保留",
+      "passed": true
+    },
+    {
+      "name": "08 撤销改进保留",
+      "passed": true
+    },
+    {
+      "name": "08 Escape关闭详情不退出实验",
+      "passed": true
+    },
+    {
+      "name": "08 课堂模态清除图表详情",
+      "passed": true
+    },
+    {
+      "name": "08 课堂模态归还焦点",
+      "passed": true
+    },
+    {
+      "name": "11 教师模态清除详情",
+      "passed": true
+    },
+    {
+      "name": "11 教师提示焦点恢复",
+      "passed": true
+    },
+    {
+      "name": "补充场景无未捕获异常",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

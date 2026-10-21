@@ -1,0 +1,67 @@
+Window: "FinModel Lab · 实验11 · Black-Scholes期权定价", App: Safari浏览器.
+0 标准窗口 FinModel Lab · 实验11 · Black-Scholes期权定价, ID: SafariWindow?IsSecure=false&UUID=029E9492-388C-436B-9D25-F1E71912D650, Secondary Actions: Raise
+	1 分离组
+		2 分离器 (disabled, settable, float) -1
+		3 标签页组
+			4 滚动区
+				5 HTML内容 Description: FinModel Lab · 实验11 · Black-Scholes期权定价, URL: 127.0.0.1:8765/experiments.html?model=bs
+					6 步进器 0
+						7 未知
+						8 未知
+					9 步进器 0
+						10 未知
+						11 未知
+					12 步进器 0
+						13 未知
+						14 未知
+					15 步进器 0
+						16 未知
+						17 未知
+					18 步进器 0
+						19 未知
+						20 未知
+					21 container 实验目录
+						22 标题 实验目录, Value: 2
+							23 文本 实验目录
+						24 按钮 关闭实验目录
+						25 container 课程实验列表
+							26 按钮 (disabled) 01 R软件基础实验 暂未上线
+							27 按钮 (disabled) 02 金融市场数据整理与预处理 暂未上线
+							28 按钮 (disabled) 03 资产收益率计算 暂未上线
+							29 按钮 (disabled) 04 多元回归与逐步回归分析 暂未上线
+							30 按钮 (disabled) 05 ARMA与VAR模型 暂未上线
+							31 link 06 GARCH类波动率模型 进入 →, Value: 127.0.0.1:8765/experiments.html?model=garch
+							32 link 07 VaR与ES投资风险计算 进入 →, Value: 127.0.0.1:8765/experiments.html?model=var
+							33 link 08 均值-方差投资组合决策分析 进入 →, Value: 127.0.0.1:8765/index.html
+							34 link 09 资本资产定价模型 进入 →, Value: 127.0.0.1:8765/experiments.html?model=capm
+							35 按钮 (disabled) 10 因子模型与APT模型 暂未上线
+							36 link 11 Black-Scholes期权定价 当前实验, Value: 127.0.0.1:8765/experiments.html?model=bs
+							37 按钮 (disabled) 12 证券投资基金绩效评价 暂未上线
+	38 工具栏
+		39 container Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+			40 按钮 Description: 显示边栏, ID: SidebarButton
+			41 菜单按钮 Description: 标签页组选择器, ID: TabGroupPickerButton?TabGroup=
+		42 container BackForwardSegmentedControl
+			43 按钮 Description: 返回, Help: 显示上一页, ID: BackButton
+			44 按钮 (disabled) Description: 前进, Help: 显示下一页, ID: ForwardButton
+		45 container Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+			46 按钮 页面菜单, ID: AssistantButton
+			47 按钮 将页面添加到阅读列表, ID: OneStepBookmarkingButton
+			48 文本栏 (settable) Description: 智能搜索栏, Value: 127.0.0.1:8765/experiments.html?model=bs, ID: WEB_BROWSER_ADDRESS_AND_SEARCH_FIELD
+			49 按钮 翻译可用, ID: TranslationButton
+			50 按钮 重新加载此页面, ID: ReloadButton
+		51 按钮 Description: 共享, ID: ShareButton, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		52 按钮 Description: 新建标签页, ID: NewTabButton, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		53 按钮 Description: 标签页概览, ID: TabOverviewButton, Secondary Actions: 移到上一项, 从工具栏移除
+54 menu bar
+	55 Safari浏览器
+	56 文件
+	57 编辑
+	58 显示, ID: SafariViewMenu
+	59 历史记录
+	60 书签, ID: SafariBookmarksMenu
+	61 开发
+	62 窗口, ID: SafariWindowMenu
+	63 帮助, ID: SafariHelpMenu
+
+The focused UI element is 24 按钮 关闭实验目录

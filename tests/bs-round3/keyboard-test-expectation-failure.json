@@ -1,0 +1,106 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: previous returns0",
+  "checks": [
+    {
+      "name": "exact project served",
+      "passed": true
+    },
+    {
+      "name": "build identity agreement",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash experiments.html",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash experiments-bundle.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash experiments.css",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash hedge-math.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash hedge-code.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash hedge-workbench.js",
+      "passed": true
+    },
+    {
+      "name": "HTTP hash chart-interaction.js",
+      "passed": true
+    },
+    {
+      "name": "fourth module in three columns",
+      "passed": true
+    },
+    {
+      "name": "initial neutrality and unit",
+      "passed": true
+    },
+    {
+      "name": "same R syntax colors",
+      "passed": true
+    },
+    {
+      "name": "prediction hides results and code",
+      "passed": true
+    },
+    {
+      "name": "predict copy disabled",
+      "passed": true
+    },
+    {
+      "name": "prediction locks input",
+      "passed": true
+    },
+    {
+      "name": "choice alone no experiment",
+      "passed": true
+    },
+    {
+      "name": "explanation requires experiment",
+      "passed": true
+    },
+    {
+      "name": "actual105 experiment",
+      "passed": true
+    },
+    {
+      "name": "explanation checks wrong choice",
+      "passed": true
+    },
+    {
+      "name": "restart hides answers",
+      "passed": true
+    },
+    {
+      "name": "exit restores unlocked inputs",
+      "passed": true
+    },
+    {
+      "name": "real SVG path rendered",
+      "passed": true
+    },
+    {
+      "name": "keyboard next step",
+      "passed": true
+    },
+    {
+      "name": "keyboard focus retained for repeated steps",
+      "passed": true
+    },
+    {
+      "name": "previous returns0",
+      "passed": false
+    }
+  ],
+  "errors": []
+}

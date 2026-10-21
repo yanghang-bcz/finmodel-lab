@@ -1,0 +1,11 @@
+$ARCH
+[1] "Near-constant returns"
+
+$GARCH
+[1] "Near-constant returns"
+
+$GJR
+[1] "Near-constant returns"
+
+CHECK  
+Near-constant returns

@@ -1,0 +1,13 @@
+{
+  "testOnly": true,
+  "exportedRecord": {
+    "schema": "finmodel-classroom-feedback-v1",
+    "collection": "explicit local export; no automatic upload",
+    "date": "2026-10-17",
+    "completion": "完成",
+    "difficultCode": "无",
+    "concept": "测试反馈：协方差的作用",
+    "helpful": "风险收益曲线",
+    "willing": "愿意"
+  }
+}

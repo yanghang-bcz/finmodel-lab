@@ -1,0 +1,212 @@
+{
+  "passed": 51,
+  "failed": 0,
+  "checks": [
+    {
+      "label": "server DOM build agreement",
+      "passed": true
+    },
+    {
+      "label": "HTTP hash experiments.html",
+      "passed": true
+    },
+    {
+      "label": "HTTP hash experiments-bundle.js",
+      "passed": true
+    },
+    {
+      "label": "HTTP hash iv-math.js",
+      "passed": true
+    },
+    {
+      "label": "HTTP hash iv-code.js",
+      "passed": true
+    },
+    {
+      "label": "HTTP hash iv-workbench.js",
+      "passed": true
+    },
+    {
+      "label": "HTTP hash experiments.css",
+      "passed": true
+    },
+    {
+      "label": "IV in existing 3-column layout",
+      "passed": true
+    },
+    {
+      "label": "default recovers 20%",
+      "passed": true
+    },
+    {
+      "label": "chart actually visible",
+      "passed": true
+    },
+    {
+      "label": "initial bracket shown",
+      "passed": true
+    },
+    {
+      "label": "keyboard next works",
+      "passed": true
+    },
+    {
+      "label": "next actual step",
+      "passed": true
+    },
+    {
+      "label": "prev",
+      "passed": true
+    },
+    {
+      "label": "click row",
+      "passed": true
+    },
+    {
+      "label": "reset",
+      "passed": true
+    },
+    {
+      "label": "Newton tangent visible",
+      "passed": true
+    },
+    {
+      "label": "R click substitution",
+      "passed": true
+    },
+    {
+      "label": "play advances",
+      "passed": true
+    },
+    {
+      "label": "pause cancels timer",
+      "passed": true
+    },
+    {
+      "label": "copied actual IV script",
+      "passed": true
+    },
+    {
+      "label": "copied R executed",
+      "passed": true
+    },
+    {
+      "label": "input clears trajectory",
+      "passed": true
+    },
+    {
+      "label": "low Vega honest",
+      "passed": true
+    },
+    {
+      "label": "dividend Put roundtrip",
+      "passed": true
+    },
+    {
+      "label": "T0 honest",
+      "passed": true
+    },
+    {
+      "label": "upper no finite solution",
+      "passed": true
+    },
+    {
+      "label": "invalid blocks copy",
+      "passed": true
+    },
+    {
+      "label": "prediction no answers",
+      "passed": true
+    },
+    {
+      "label": "prediction inputs locked",
+      "passed": true
+    },
+    {
+      "label": "observation hides final comparison",
+      "passed": true
+    },
+    {
+      "label": "explanation gated",
+      "passed": true
+    },
+    {
+      "label": "explanation and comparison",
+      "passed": true
+    },
+    {
+      "label": "no horizontal overflow 1440",
+      "passed": true
+    },
+    {
+      "label": "chart buttons accessible 1440",
+      "passed": true
+    },
+    {
+      "label": "chart has real area 1440",
+      "passed": true
+    },
+    {
+      "label": "no horizontal overflow 1366",
+      "passed": true
+    },
+    {
+      "label": "chart buttons accessible 1366",
+      "passed": true
+    },
+    {
+      "label": "chart has real area 1366",
+      "passed": true
+    },
+    {
+      "label": "no horizontal overflow 1920",
+      "passed": true
+    },
+    {
+      "label": "chart buttons accessible 1920",
+      "passed": true
+    },
+    {
+      "label": "chart has real area 1920",
+      "passed": true
+    },
+    {
+      "label": "no horizontal overflow 375",
+      "passed": true
+    },
+    {
+      "label": "chart buttons accessible 375",
+      "passed": true
+    },
+    {
+      "label": "chart has real area 375",
+      "passed": true
+    },
+    {
+      "label": "reduced motion respected",
+      "passed": true
+    },
+    {
+      "label": "pricing restored",
+      "passed": true
+    },
+    {
+      "label": "dividend retained",
+      "passed": true
+    },
+    {
+      "label": "reload fresh build",
+      "passed": true
+    },
+    {
+      "label": "touch next works",
+      "passed": true
+    },
+    {
+      "label": "no uncaught errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "browser": "155.0.8059.85"
+}

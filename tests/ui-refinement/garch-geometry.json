@@ -1,0 +1,50 @@
+{
+  "width": 1440,
+  "height": 900,
+  "pageW": 1440,
+  "pageH": 900,
+  "panels": [
+    {
+      "x": 202,
+      "y": 64,
+      "right": 605.90625,
+      "bottom": 880
+    },
+    {
+      "x": 619.90625,
+      "y": 64,
+      "right": 1095.109375,
+      "bottom": 880
+    },
+    {
+      "x": 1109.109375,
+      "y": 64,
+      "right": 1418,
+      "bottom": 880
+    }
+  ],
+  "charts": [
+    {
+      "width": 445,
+      "height": 292,
+      "plotHeight": 226.453125,
+      "badPath": false
+    },
+    {
+      "width": 445,
+      "height": 229,
+      "plotHeight": 163.1875,
+      "badPath": false
+    }
+  ],
+  "explore": {
+    "x": 1323.703125,
+    "y": 392.140625,
+    "width": 77.296875,
+    "height": 29.796875,
+    "top": 392.140625,
+    "right": 1401,
+    "bottom": 421.9375,
+    "left": 1323.703125
+  }
+}

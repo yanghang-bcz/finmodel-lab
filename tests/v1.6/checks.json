@@ -1,0 +1,262 @@
+[
+  {
+    "name": "默认代码无工程校验",
+    "pass": true
+  },
+  {
+    "name": "默认自动适配",
+    "pass": true
+  },
+  {
+    "name": "专注解析只改变左栏",
+    "pass": true
+  },
+  {
+    "name": "退出专注恢复60%",
+    "pass": true
+  },
+  {
+    "name": "真实拖动分隔条",
+    "pass": true
+  },
+  {
+    "name": "键盘最小40%",
+    "pass": true
+  },
+  {
+    "name": "键盘最大80%",
+    "pass": true
+  },
+  {
+    "name": "调整不增加主页面高度",
+    "pass": true
+  },
+  {
+    "name": "键盘逐步75%",
+    "pass": true
+  },
+  {
+    "name": "权重仅移动点，坐标曲线不变",
+    "pass": true
+  },
+  {
+    "name": "自动模式适配新假设",
+    "pass": true
+  },
+  {
+    "name": "固定比较保留共同刻度",
+    "pass": true
+  },
+  {
+    "name": "基准曲线显示",
+    "pass": true
+  },
+  {
+    "name": "超范围扩展状态明确",
+    "pass": true
+  },
+  {
+    "name": "预测阶段无提前答案",
+    "pass": true
+  },
+  {
+    "name": "实验仅开放rho",
+    "pass": true
+  },
+  {
+    "name": "实验切至固定比较",
+    "pass": true
+  },
+  {
+    "name": "实验高亮rho语句",
+    "pass": true
+  },
+  {
+    "name": "探索前后共同坐标真实刻度一致",
+    "pass": true
+  },
+  {
+    "name": "默认降低风险至9.54%",
+    "pass": true
+  },
+  {
+    "name": "方差解析含实验前后差异",
+    "pass": true
+  },
+  {
+    "name": "解释含实际预测与4个百分点",
+    "pass": true
+  },
+  {
+    "name": "解释复用同一教学代码",
+    "pass": true
+  },
+  {
+    "name": "重新开始清除旧答案与锁定",
+    "pass": true
+  },
+  {
+    "name": "重新开始以当前rho为基准",
+    "pass": true
+  },
+  {
+    "name": "退出恢复全部编辑及原自动模式",
+    "pass": true
+  },
+  {
+    "name": "rho下界阻止不可完成预测",
+    "pass": true
+  },
+  {
+    "name": "可设置有效起点继续",
+    "pass": true
+  },
+  {
+    "name": "专注后选中三行完整可见",
+    "pass": true
+  },
+  {
+    "name": "负项为-0.0066",
+    "pass": true
+  },
+  {
+    "name": "协方差零值且条宽为零",
+    "pass": true
+  },
+  {
+    "name": "边界代码有独立中文解析",
+    "pass": true
+  },
+  {
+    "name": "恢复参数删除边界旧行",
+    "pass": true
+  },
+  {
+    "name": "零敞口探索 weight",
+    "pass": true
+  },
+  {
+    "name": "零敞口探索 volatility",
+    "pass": true
+  },
+  {
+    "name": "原固定模式退出后恢复",
+    "pass": true
+  },
+  {
+    "name": "相同收益仅最小风险有效",
+    "pass": true
+  },
+  {
+    "name": "重合点双身份且非唯一说明",
+    "pass": true
+  },
+  {
+    "name": "首屏三栏参数全可见 1440",
+    "pass": true
+  },
+  {
+    "name": "专注解析主页面不滚动 1440",
+    "pass": true
+  },
+  {
+    "name": "首屏三栏参数全可见 1366",
+    "pass": true
+  },
+  {
+    "name": "专注解析主页面不滚动 1366",
+    "pass": true
+  },
+  {
+    "name": "首屏三栏参数全可见 1920",
+    "pass": true
+  },
+  {
+    "name": "专注解析主页面不滚动 1920",
+    "pass": true
+  },
+  {
+    "name": "投屏保留探索与锁定",
+    "pass": true
+  },
+  {
+    "name": "投屏代码19像素",
+    "pass": true
+  },
+  {
+    "name": "退出投屏解除探索锁定",
+    "pass": true
+  },
+  {
+    "name": "mu只高亮预期收益输入",
+    "pass": true
+  },
+  {
+    "name": "s只高亮标准差输入",
+    "pass": true
+  },
+  {
+    "name": "收益参数实时更新",
+    "pass": true
+  },
+  {
+    "name": "标准差参数实时更新",
+    "pass": true
+  },
+  {
+    "name": "非法输入保留上次有效结果",
+    "pass": true
+  },
+  {
+    "name": "零权重端点",
+    "pass": true
+  },
+  {
+    "name": "全权重端点",
+    "pass": true
+  },
+  {
+    "name": "复制完整精简R脚本",
+    "pass": true
+  },
+  {
+    "name": "未上线入口提示",
+    "pass": true
+  },
+  {
+    "name": "未上线入口提示",
+    "pass": true
+  },
+  {
+    "name": "未上线入口提示",
+    "pass": true
+  },
+  {
+    "name": "375窄屏无横向溢出",
+    "pass": true
+  },
+  {
+    "name": "手机探索完整解释",
+    "pass": true
+  },
+  {
+    "name": "手机专注解析可用",
+    "pass": true
+  },
+  {
+    "name": "320窄屏无横向溢出",
+    "pass": true
+  },
+  {
+    "name": "代码可单独滚动",
+    "pass": true
+  },
+  {
+    "name": "解析可单独滚动且不影响代码",
+    "pass": true
+  },
+  {
+    "name": "最终新标签页无JavaScript错误",
+    "pass": true
+  }
+]

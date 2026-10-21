@@ -1,0 +1,39 @@
+{
+  "status": {
+    "pid": 30121,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "2.3.0-portfolio.1973647664e77e3b",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "manifestBuild": "2.3.0-portfolio.1973647664e77e3b",
+  "buildMatches": true,
+  "hashMatches": {
+    "index.html": true,
+    "experiments.html": true,
+    "portfolio-bundle.js": true,
+    "experiments-bundle.js": true,
+    "build-info.js": true,
+    "build-manifest.json": true,
+    "portfolio-multi.css": true,
+    "portfolio-multi-math.js": true,
+    "portfolio-csv.js": true,
+    "portfolio-multi-code.js": true,
+    "portfolio-multi-ui.js": true,
+    "data/synthetic-prices.csv": true
+  },
+  "headerBuildMatches": {
+    "index.html": true,
+    "experiments.html": true,
+    "portfolio-bundle.js": true,
+    "experiments-bundle.js": true,
+    "build-info.js": true,
+    "build-manifest.json": true,
+    "portfolio-multi.css": true,
+    "portfolio-multi-math.js": true,
+    "portfolio-csv.js": true,
+    "portfolio-multi-code.js": true,
+    "portfolio-multi-ui.js": true,
+    "data/synthetic-prices.csv": true
+  }
+}

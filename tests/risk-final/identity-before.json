@@ -1,0 +1,22 @@
+{
+  "status": {
+    "pid": 76648,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "2.5.0-risk-round1.d04d5ac40d7bda72",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "htmlMatch": true,
+  "assets": {
+    "style.css?v=ab186d5e6d5ee4a4": true,
+    "assets/fonts/glow-faces.css?v=0896e62cf0b74955": true,
+    "typography.css?v=834fb038f8229297": true,
+    "vendor/katex/katex.min.css?v=144d9ea8097c553f": true,
+    "experiments.css?v=81b94df939ce9bbf": true,
+    "workbench-system.css?v=34b1937a2ae140a9": true,
+    "capm.css?v=5706ecadd997832c": true,
+    "risk.css?v=0f4e30b20069fb1d": true,
+    "build-info.js?v=91efe61e41fd5ec0": true,
+    "experiments-bundle.js?v=438d4d474ed3ce20": true
+  }
+}

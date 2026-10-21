@@ -1,0 +1,7056 @@
+{
+  "checks": 1762,
+  "rScripts": 19,
+  "errors": [],
+  "browser": "155.0.8059.85",
+  "results": [
+    {
+      "name": "absolute project root",
+      "pass": true
+    },
+    {
+      "name": "DOM manifest service same version",
+      "pass": true
+    },
+    {
+      "name": "resource hash app.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash bs-lesson.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash capm-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash capm-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash capm-teaching.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash capm-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash capm.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash chart-interaction.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash chart-scale.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash classroom-ui.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiment-lessons.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiment-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments-bundle.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments-config.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash exploration.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash financial-charts.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash font-audit.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash hedge-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash hedge-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash hedge-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash iv-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash iv-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash iv-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash lesson-presentation.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash lessons.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash modal-ui.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-bundle.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-csv.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-multi-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-multi-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-multi-ui.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-multi.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-ux.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash reg-charts.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash reg-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash reg-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash reg-r.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash reg-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash reg.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk-charts.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk-extended.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk-final-charts.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk-final-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk-garch-fit.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk-garch-r.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash risk.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash runtime-version.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash style.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash teaching-ux-charts.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash teaching-ux-data.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash teaching-ux.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash teaching.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash typography.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash typography.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash vol-charts.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash vol-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash vol-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash vol-r.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash vol-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash vol.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash workbench-system.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash workbench-ui.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash workbench.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash zero-friction-data.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash build-info.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash index.html",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments.html",
+      "pass": true
+    },
+    {
+      "name": "official title",
+      "pass": true
+    },
+    {
+      "name": "default complete",
+      "pass": true
+    },
+    {
+      "name": "one SVG only",
+      "pass": true
+    },
+    {
+      "name": "no unlock steps",
+      "pass": true
+    },
+    {
+      "name": "theory beta prominent",
+      "pass": true
+    },
+    {
+      "name": "optional beta comparison",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs default",
+      "pass": true
+    },
+    {
+      "name": "R output count default",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 71",
+      "pass": true
+    },
+    {
+      "name": "expanded beta result -3",
+      "pass": true
+    },
+    {
+      "name": "current beta point not clipped -3",
+      "pass": true
+    },
+    {
+      "name": "expanded beta result 0",
+      "pass": true
+    },
+    {
+      "name": "current beta point not clipped 0",
+      "pass": true
+    },
+    {
+      "name": "expanded beta result 5",
+      "pass": true
+    },
+    {
+      "name": "current beta point not clipped 5",
+      "pass": true
+    },
+    {
+      "name": "negative beta instant",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs negative-basic",
+      "pass": true
+    },
+    {
+      "name": "R output count negative-basic",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 71",
+      "pass": true
+    },
+    {
+      "name": "negative premium explanation",
+      "pass": true
+    },
+    {
+      "name": "zero premium explanation",
+      "pass": true
+    },
+    {
+      "name": "extreme numeric rejected",
+      "pass": true
+    },
+    {
+      "name": "no infinite numeric displayed",
+      "pass": true
+    },
+    {
+      "name": "CML only chart",
+      "pass": true
+    },
+    {
+      "name": "leverage disclosed",
+      "pass": true
+    },
+    {
+      "name": "leveraged result",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs cml-leverage",
+      "pass": true
+    },
+    {
+      "name": "R output count cml-leverage",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 71",
+      "pass": true
+    },
+    {
+      "name": "sigma zero rejected",
+      "pass": true
+    },
+    {
+      "name": "invalid cannot reenable copy",
+      "pass": true
+    },
+    {
+      "name": "negative premium not false CML",
+      "pass": true
+    },
+    {
+      "name": "regression statistics",
+      "pass": true
+    },
+    {
+      "name": "synthetic explicit",
+      "pass": true
+    },
+    {
+      "name": "hover tooltip shown",
+      "pass": true
+    },
+    {
+      "name": "hover exit hidden",
+      "pass": true
+    },
+    {
+      "name": "click pins",
+      "pass": true
+    },
+    {
+      "name": "close pinned tip",
+      "pass": true
+    },
+    {
+      "name": "escape clears",
+      "pass": true
+    },
+    {
+      "name": "residual one chart",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs residual",
+      "pass": true
+    },
+    {
+      "name": "R output count residual",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 71",
+      "pass": true
+    },
+    {
+      "name": "statement explanation",
+      "pass": true
+    },
+    {
+      "name": "sorted source local status",
+      "pass": true
+    },
+    {
+      "name": "small sample warning",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs uploaded",
+      "pass": true
+    },
+    {
+      "name": "R output count uploaded",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 29",
+      "pass": true
+    },
+    {
+      "name": "CSV never sent as a request body",
+      "pass": true
+    },
+    {
+      "name": "export current decimal sample",
+      "pass": true
+    },
+    {
+      "name": "downloaded template valid",
+      "pass": true
+    },
+    {
+      "name": "metadata change requires reimport",
+      "pass": true
+    },
+    {
+      "name": "bad import clear and copy paused",
+      "pass": true
+    },
+    {
+      "name": "synthetic restore",
+      "pass": true
+    },
+    {
+      "name": "restore period and scale match synthetic",
+      "pass": true
+    },
+    {
+      "name": "catalog01-12",
+      "pass": true
+    },
+    {
+      "name": "year inputs hidden in empirical",
+      "pass": true
+    },
+    {
+      "name": "monthly alpha named",
+      "pass": true
+    },
+    {
+      "name": "default interpretation",
+      "pass": true
+    },
+    {
+      "name": "upload accepted negative",
+      "pass": true
+    },
+    {
+      "name": "dynamic summary negative",
+      "pass": true
+    },
+    {
+      "name": "theory beta stays current negative",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs negative",
+      "pass": true
+    },
+    {
+      "name": "R output count negative",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative 71",
+      "pass": true
+    },
+    {
+      "name": "upload accepted near-zero",
+      "pass": true
+    },
+    {
+      "name": "dynamic summary near-zero",
+      "pass": true
+    },
+    {
+      "name": "theory beta stays current near-zero",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs near-zero",
+      "pass": true
+    },
+    {
+      "name": "R output count near-zero",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric near-zero 71",
+      "pass": true
+    },
+    {
+      "name": "upload accepted low",
+      "pass": true
+    },
+    {
+      "name": "dynamic summary low",
+      "pass": true
+    },
+    {
+      "name": "theory beta stays current low",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs low",
+      "pass": true
+    },
+    {
+      "name": "R output count low",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric low 71",
+      "pass": true
+    },
+    {
+      "name": "upload accepted alpha-significant",
+      "pass": true
+    },
+    {
+      "name": "dynamic summary alpha-significant",
+      "pass": true
+    },
+    {
+      "name": "theory beta stays current alpha-significant",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs alpha-significant",
+      "pass": true
+    },
+    {
+      "name": "R output count alpha-significant",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric alpha-significant 71",
+      "pass": true
+    },
+    {
+      "name": "upload accepted frequency-daily",
+      "pass": true
+    },
+    {
+      "name": "metric period daily",
+      "pass": true
+    },
+    {
+      "name": "axis period daily",
+      "pass": true
+    },
+    {
+      "name": "explanation period daily",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs daily",
+      "pass": true
+    },
+    {
+      "name": "R output count daily",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric daily 71",
+      "pass": true
+    },
+    {
+      "name": "R frequency daily",
+      "pass": true
+    },
+    {
+      "name": "upload accepted frequency-weekly",
+      "pass": true
+    },
+    {
+      "name": "metric period weekly",
+      "pass": true
+    },
+    {
+      "name": "axis period weekly",
+      "pass": true
+    },
+    {
+      "name": "explanation period weekly",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs weekly",
+      "pass": true
+    },
+    {
+      "name": "R output count weekly",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric weekly 71",
+      "pass": true
+    },
+    {
+      "name": "R frequency weekly",
+      "pass": true
+    },
+    {
+      "name": "upload accepted frequency-annual",
+      "pass": true
+    },
+    {
+      "name": "metric period annual",
+      "pass": true
+    },
+    {
+      "name": "axis period annual",
+      "pass": true
+    },
+    {
+      "name": "explanation period annual",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs annual",
+      "pass": true
+    },
+    {
+      "name": "R output count annual",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric annual 71",
+      "pass": true
+    },
+    {
+      "name": "R frequency annual",
+      "pass": true
+    },
+    {
+      "name": "upload accepted perfect-fit",
+      "pass": true
+    },
+    {
+      "name": "invalid inference has reason",
+      "pass": true
+    },
+    {
+      "name": "no NaN Infinity visible",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs perfect-fit",
+      "pass": true
+    },
+    {
+      "name": "R output count perfect-fit",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric perfect-fit 71",
+      "pass": true
+    },
+    {
+      "name": "w financial meaning 0",
+      "pass": true
+    },
+    {
+      "name": "w return 0",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs w-0",
+      "pass": true
+    },
+    {
+      "name": "R output count w-0",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0 71",
+      "pass": true
+    },
+    {
+      "name": "w financial meaning 0.5",
+      "pass": true
+    },
+    {
+      "name": "w return 0.5",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs w-0.5",
+      "pass": true
+    },
+    {
+      "name": "R output count w-0.5",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-0.5 71",
+      "pass": true
+    },
+    {
+      "name": "w financial meaning 1",
+      "pass": true
+    },
+    {
+      "name": "w return 1",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs w-1",
+      "pass": true
+    },
+    {
+      "name": "R output count w-1",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1 71",
+      "pass": true
+    },
+    {
+      "name": "w financial meaning 1.5",
+      "pass": true
+    },
+    {
+      "name": "w return 1.5",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs w-1.5",
+      "pass": true
+    },
+    {
+      "name": "R output count w-1.5",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-1.5 71",
+      "pass": true
+    },
+    {
+      "name": "w financial meaning 3",
+      "pass": true
+    },
+    {
+      "name": "w return 3",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs w-3",
+      "pass": true
+    },
+    {
+      "name": "R output count w-3",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric w-3 71",
+      "pass": true
+    },
+    {
+      "name": "direct SML beta axis",
+      "pass": true
+    },
+    {
+      "name": "direct SML theory result",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs compare-sml",
+      "pass": true
+    },
+    {
+      "name": "R output count compare-sml",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 11",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 12",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 13",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 14",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 15",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 16",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 17",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 18",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 19",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 20",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 21",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 22",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 23",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 24",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 25",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 26",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 27",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 28",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 29",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 30",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 31",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 32",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 33",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 34",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 35",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 36",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 37",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 38",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 39",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 40",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 41",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 42",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 43",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 44",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 45",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 46",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 47",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 48",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 49",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 50",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 51",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 52",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 53",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 54",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 55",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 56",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 57",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 58",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 59",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 60",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 61",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 62",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 63",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 64",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 65",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 66",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 67",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 68",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 69",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 70",
+      "pass": true
+    },
+    {
+      "name": "R numeric compare-sml 71",
+      "pass": true
+    },
+    {
+      "name": "comparison matrix",
+      "pass": true
+    },
+    {
+      "name": "no mixed axis overlay",
+      "pass": true
+    },
+    {
+      "name": "CML restored",
+      "pass": true
+    },
+    {
+      "name": "one code nav parameters",
+      "pass": true
+    },
+    {
+      "name": "page stationary parameters",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line parameters",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code parameters",
+      "pass": true
+    },
+    {
+      "name": "line number accurate parameters",
+      "pass": true
+    },
+    {
+      "name": "one code nav sml",
+      "pass": true
+    },
+    {
+      "name": "page stationary sml",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line sml",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code sml",
+      "pass": true
+    },
+    {
+      "name": "line number accurate sml",
+      "pass": true
+    },
+    {
+      "name": "one code nav cml",
+      "pass": true
+    },
+    {
+      "name": "page stationary cml",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line cml",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code cml",
+      "pass": true
+    },
+    {
+      "name": "line number accurate cml",
+      "pass": true
+    },
+    {
+      "name": "one code nav data",
+      "pass": true
+    },
+    {
+      "name": "page stationary data",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line data",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code data",
+      "pass": true
+    },
+    {
+      "name": "line number accurate data",
+      "pass": true
+    },
+    {
+      "name": "one code nav scl",
+      "pass": true
+    },
+    {
+      "name": "page stationary scl",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line scl",
+      "pass": true
+    },
+    {
+      "name": "OLS exact lm line",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code scl",
+      "pass": true
+    },
+    {
+      "name": "line number accurate scl",
+      "pass": true
+    },
+    {
+      "name": "one code nav inference",
+      "pass": true
+    },
+    {
+      "name": "page stationary inference",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line inference",
+      "pass": true
+    },
+    {
+      "name": "inference exact print line",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code inference",
+      "pass": true
+    },
+    {
+      "name": "line number accurate inference",
+      "pass": true
+    },
+    {
+      "name": "one code nav residual-code",
+      "pass": true
+    },
+    {
+      "name": "page stationary residual-code",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line residual-code",
+      "pass": true
+    },
+    {
+      "name": "residual exact calculation",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code residual-code",
+      "pass": true
+    },
+    {
+      "name": "line number accurate residual-code",
+      "pass": true
+    },
+    {
+      "name": "one code nav parameters",
+      "pass": true
+    },
+    {
+      "name": "page stationary parameters",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line parameters",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code parameters",
+      "pass": true
+    },
+    {
+      "name": "line number accurate parameters",
+      "pass": true
+    },
+    {
+      "name": "one code nav sml",
+      "pass": true
+    },
+    {
+      "name": "page stationary sml",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line sml",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code sml",
+      "pass": true
+    },
+    {
+      "name": "line number accurate sml",
+      "pass": true
+    },
+    {
+      "name": "one code nav cml",
+      "pass": true
+    },
+    {
+      "name": "page stationary cml",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line cml",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code cml",
+      "pass": true
+    },
+    {
+      "name": "line number accurate cml",
+      "pass": true
+    },
+    {
+      "name": "one code nav data",
+      "pass": true
+    },
+    {
+      "name": "page stationary data",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line data",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code data",
+      "pass": true
+    },
+    {
+      "name": "line number accurate data",
+      "pass": true
+    },
+    {
+      "name": "one code nav scl",
+      "pass": true
+    },
+    {
+      "name": "page stationary scl",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line scl",
+      "pass": true
+    },
+    {
+      "name": "OLS exact lm line",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code scl",
+      "pass": true
+    },
+    {
+      "name": "line number accurate scl",
+      "pass": true
+    },
+    {
+      "name": "one code nav inference",
+      "pass": true
+    },
+    {
+      "name": "page stationary inference",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line inference",
+      "pass": true
+    },
+    {
+      "name": "inference exact print line",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code inference",
+      "pass": true
+    },
+    {
+      "name": "line number accurate inference",
+      "pass": true
+    },
+    {
+      "name": "one code nav residual-code",
+      "pass": true
+    },
+    {
+      "name": "page stationary residual-code",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line residual-code",
+      "pass": true
+    },
+    {
+      "name": "residual exact calculation",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code residual-code",
+      "pass": true
+    },
+    {
+      "name": "line number accurate residual-code",
+      "pass": true
+    },
+    {
+      "name": "one code nav parameters",
+      "pass": true
+    },
+    {
+      "name": "page stationary parameters",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line parameters",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code parameters",
+      "pass": true
+    },
+    {
+      "name": "line number accurate parameters",
+      "pass": true
+    },
+    {
+      "name": "one code nav sml",
+      "pass": true
+    },
+    {
+      "name": "page stationary sml",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line sml",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code sml",
+      "pass": true
+    },
+    {
+      "name": "line number accurate sml",
+      "pass": true
+    },
+    {
+      "name": "one code nav cml",
+      "pass": true
+    },
+    {
+      "name": "page stationary cml",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line cml",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code cml",
+      "pass": true
+    },
+    {
+      "name": "line number accurate cml",
+      "pass": true
+    },
+    {
+      "name": "one code nav data",
+      "pass": true
+    },
+    {
+      "name": "page stationary data",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line data",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code data",
+      "pass": true
+    },
+    {
+      "name": "line number accurate data",
+      "pass": true
+    },
+    {
+      "name": "one code nav scl",
+      "pass": true
+    },
+    {
+      "name": "page stationary scl",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line scl",
+      "pass": true
+    },
+    {
+      "name": "OLS exact lm line",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code scl",
+      "pass": true
+    },
+    {
+      "name": "line number accurate scl",
+      "pass": true
+    },
+    {
+      "name": "one code nav inference",
+      "pass": true
+    },
+    {
+      "name": "page stationary inference",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line inference",
+      "pass": true
+    },
+    {
+      "name": "inference exact print line",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code inference",
+      "pass": true
+    },
+    {
+      "name": "line number accurate inference",
+      "pass": true
+    },
+    {
+      "name": "one code nav residual-code",
+      "pass": true
+    },
+    {
+      "name": "page stationary residual-code",
+      "pass": true
+    },
+    {
+      "name": "highlight one exact line residual-code",
+      "pass": true
+    },
+    {
+      "name": "residual exact calculation",
+      "pass": true
+    },
+    {
+      "name": "line visible inside code residual-code",
+      "pass": true
+    },
+    {
+      "name": "line number accurate residual-code",
+      "pass": true
+    },
+    {
+      "name": "navigation leaves copied source unchanged",
+      "pass": true
+    },
+    {
+      "name": "OLS teaching explanation",
+      "pass": true
+    },
+    {
+      "name": "no absent residual navigation",
+      "pass": true
+    },
+    {
+      "name": "residual meaning",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440smlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440smlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440smlfalse",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1440smlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440smlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440smltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440smltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440smltrue",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1440smltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440smltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1440cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440cmltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440cmltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440cmltrue",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1440cmltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440cmltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440sclfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440sclfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440sclfalse",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1440sclfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440sclfalse",
+      "pass": true
+    },
+    {
+      "name": "full statistics accessible 1440false",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440scltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440scltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440scltrue",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1440scltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440scltrue",
+      "pass": true
+    },
+    {
+      "name": "full statistics accessible 1440true",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366smlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366smlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366smlfalse",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1366smlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366smlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366smltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366smltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366smltrue",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1366smltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366smltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1366cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366cmltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366cmltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366cmltrue",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1366cmltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366cmltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366sclfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366sclfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366sclfalse",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1366sclfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366sclfalse",
+      "pass": true
+    },
+    {
+      "name": "full statistics accessible 1366false",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366scltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366scltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366scltrue",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1366scltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366scltrue",
+      "pass": true
+    },
+    {
+      "name": "full statistics accessible 1366true",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920smlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920smlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920smlfalse",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1920smlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920smlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920smltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920smltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920smltrue",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1920smltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920smltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1920cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920cmltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920cmltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920cmltrue",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1920cmltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920cmltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920sclfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920sclfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920sclfalse",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1920sclfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920sclfalse",
+      "pass": true
+    },
+    {
+      "name": "full statistics accessible 1920false",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920scltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920scltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920scltrue",
+      "pass": true
+    },
+    {
+      "name": "SVG stays above legend 1920scltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920scltrue",
+      "pass": true
+    },
+    {
+      "name": "full statistics accessible 1920true",
+      "pass": true
+    },
+    {
+      "name": "other page loads garch",
+      "pass": true
+    },
+    {
+      "name": "full default garch",
+      "pass": true
+    },
+    {
+      "name": "other page loads var",
+      "pass": true
+    },
+    {
+      "name": "full default var",
+      "pass": true
+    },
+    {
+      "name": "other page loads portfolio",
+      "pass": true
+    },
+    {
+      "name": "full default portfolio",
+      "pass": true
+    },
+    {
+      "name": "other page loads bs",
+      "pass": true
+    },
+    {
+      "name": "full default bs",
+      "pass": true
+    },
+    {
+      "name": "real browser125",
+      "pass": true
+    },
+    {
+      "name": "125 no horizontal overflow sml",
+      "pass": true
+    },
+    {
+      "name": "125 copy accessible sml",
+      "pass": true
+    },
+    {
+      "name": "125 code navigation visible sml",
+      "pass": true
+    },
+    {
+      "name": "125 no horizontal overflow cml",
+      "pass": true
+    },
+    {
+      "name": "125 copy accessible cml",
+      "pass": true
+    },
+    {
+      "name": "125 code navigation visible cml",
+      "pass": true
+    },
+    {
+      "name": "125 no horizontal overflow scl",
+      "pass": true
+    },
+    {
+      "name": "125 copy accessible scl",
+      "pass": true
+    },
+    {
+      "name": "125 code navigation visible scl",
+      "pass": true
+    },
+    {
+      "name": "no page errors",
+      "pass": true
+    }
+  ]
+}

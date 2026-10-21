@@ -1,0 +1,184 @@
+[
+  {
+    "file": "assets/fonts/bricolage-latin.woff2",
+    "bytes": 52752,
+    "sha256": "f17f8e94cec795d6d75234a8ba09e97e4149f667c214a4de972b2b807303d1dd",
+    "originalBytes": 204636,
+    "originalSha256": "b51a8ebd169637e47cb7db430431ab3e122d2f09b03ee2a03ea06f4cb46f1a8e",
+    "family": "Bricolage Grotesque 96pt ExtraBold",
+    "subfamily": "Regular",
+    "weight": 500,
+    "glyphCount": 305,
+    "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
+  },
+  {
+    "file": "assets/fonts/glow-normal-400-core.woff2",
+    "bytes": 172900,
+    "sha256": "32dee3b51cfba2fc845445d730503bbfc290321f2bf3a1a8e639b16e7377ce9b",
+    "originalBytes": 9119372,
+    "originalSha256": "ca7d34947401b2fa6dd4fd46676d970a8cc47a40ee60c022eb7dd5068bee67ff",
+    "family": "Glow Sans SC Normal",
+    "subfamily": "Regular",
+    "weight": 400,
+    "glyphCount": 496,
+    "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
+  },
+  {
+    "file": "assets/fonts/glow-normal-400-common.woff2",
+    "bytes": 1339092,
+    "sha256": "b242811d6a6df9c71a2141783d8fabf0e2daffaf962e9a994cc24f28dbd98a1f",
+    "originalBytes": 9119372,
+    "originalSha256": "ca7d34947401b2fa6dd4fd46676d970a8cc47a40ee60c022eb7dd5068bee67ff",
+    "family": "Glow Sans SC Normal",
+    "subfamily": "Regular",
+    "weight": 400,
+    "glyphCount": 6627,
+    "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
+  },
+  {
+    "file": "assets/fonts/glow-normal-600-core.woff2",
+    "bytes": 170568,
+    "sha256": "4805557e2e88aea856de5cace0026d55ce2fcc31f4910e2bb1873d92d3ef1eb2",
+    "originalBytes": 9176176,
+    "originalSha256": "56481618894253fb71427a097706f9a440806b4957a7381946dc6464b98aa192",
+    "family": "Glow Sans SC Normal Medium",
+    "subfamily": "Regular",
+    "weight": 600,
+    "glyphCount": 496,
+    "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
+  },
+  {
+    "file": "assets/fonts/glow-normal-600-common.woff2",
+    "bytes": 1352136,
+    "sha256": "90a2b74dc9a22412819406cfb3851b0057355bd6f71edca4f56ee32147155128",
+    "originalBytes": 9176176,
+    "originalSha256": "56481618894253fb71427a097706f9a440806b4957a7381946dc6464b98aa192",
+    "family": "Glow Sans SC Normal Medium",
+    "subfamily": "Regular",
+    "weight": 600,
+    "glyphCount": 6627,
+    "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
+  },
+  {
+    "file": "assets/fonts/argon-400.woff2",
+    "bytes": 199020,
+    "sha256": "7bdd5498df81ff002a52835b6974cbea7b9feda6f8afe0ba860075c4e74b0b3f",
+    "originalBytes": 199020,
+    "originalSha256": "7bdd5498df81ff002a52835b6974cbea7b9feda6f8afe0ba860075c4e74b0b3f",
+    "family": "Monaspace Argon",
+    "subfamily": "Regular",
+    "weight": 400,
+    "glyphCount": 2460,
+    "processing": "Official static WOFF2, unmodified; reserved font names preserved"
+  },
+  {
+    "file": "assets/fonts/neon-400.woff2",
+    "bytes": 199508,
+    "sha256": "6b6980f24d115e98e96b1a5d06a5a7fe6454de9b216d479a7e6923c0456a5f41",
+    "originalBytes": 199508,
+    "originalSha256": "6b6980f24d115e98e96b1a5d06a5a7fe6454de9b216d479a7e6923c0456a5f41",
+    "family": "Monaspace Neon",
+    "subfamily": "Regular",
+    "weight": 400,
+    "glyphCount": 2460,
+    "processing": "Official static WOFF2, unmodified; reserved font names preserved"
+  },
+  {
+    "file": "assets/fonts/neon-500.woff2",
+    "bytes": 196756,
+    "sha256": "8a146565b85eee0539c720a7986a80ddb3dc8d15432ec68b2e2bde6fd571620d",
+    "originalBytes": 196756,
+    "originalSha256": "8a146565b85eee0539c720a7986a80ddb3dc8d15432ec68b2e2bde6fd571620d",
+    "family": "Monaspace Neon Medium",
+    "subfamily": "Regular",
+    "weight": 500,
+    "glyphCount": 2460,
+    "processing": "Official static WOFF2, unmodified; reserved font names preserved"
+  },
+  {
+    "family": "KaTeX",
+    "version": "v0.19.0",
+    "files": [
+      {
+        "file": "vendor/katex/fonts/KaTeX_AMS-Regular.woff2",
+        "bytes": 28076
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff2",
+        "bytes": 6912
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff2",
+        "bytes": 6908
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Fraktur-Bold.woff2",
+        "bytes": 11348
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Fraktur-Regular.woff2",
+        "bytes": 11316
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Main-Bold.woff2",
+        "bytes": 25324
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Main-BoldItalic.woff2",
+        "bytes": 16780
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Main-Italic.woff2",
+        "bytes": 16988
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Main-Regular.woff2",
+        "bytes": 26272
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Math-BoldItalic.woff2",
+        "bytes": 16400
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Math-Italic.woff2",
+        "bytes": 16440
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_SansSerif-Bold.woff2",
+        "bytes": 12216
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_SansSerif-Italic.woff2",
+        "bytes": 12028
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_SansSerif-Regular.woff2",
+        "bytes": 10344
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Script-Regular.woff2",
+        "bytes": 9644
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Size1-Regular.woff2",
+        "bytes": 5468
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Size2-Regular.woff2",
+        "bytes": 5208
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Size3-Regular.woff2",
+        "bytes": 3624
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Size4-Regular.woff2",
+        "bytes": 4928
+      },
+      {
+        "file": "vendor/katex/fonts/KaTeX_Typewriter-Regular.woff2",
+        "bytes": 13568
+      }
+    ]
+  }
+]

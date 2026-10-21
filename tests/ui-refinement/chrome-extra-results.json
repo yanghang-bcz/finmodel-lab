@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "name": "07 极端合法n图形有效",
+      "passed": true
+    },
+    {
+      "name": "07 极端合法N图形有效",
+      "passed": true
+    },
+    {
+      "name": "07 极端合法mu图形有效",
+      "passed": true
+    },
+    {
+      "name": "07 极端合法scale图形有效",
+      "passed": true
+    },
+    {
+      "name": "07 极端合法alpha图形有效",
+      "passed": true
+    },
+    {
+      "name": "07 极小金额保留非零精度",
+      "passed": true
+    },
+    {
+      "name": "11 极端合法S图形与参考线",
+      "passed": true
+    },
+    {
+      "name": "11 曲线采样在允许现价区间",
+      "passed": true,
+      "detail": {
+        "lo": 0.01,
+        "hi": 160
+      }
+    },
+    {
+      "name": "11 极端合法S图形与参考线",
+      "passed": true
+    },
+    {
+      "name": "11 曲线采样在允许现价区间",
+      "passed": true,
+      "detail": {
+        "lo": 0.01,
+        "hi": 100000
+      }
+    },
+    {
+      "name": "06 极端合法b双图有效",
+      "passed": true
+    },
+    {
+      "name": "06 极端合法a双图有效",
+      "passed": true
+    },
+    {
+      "name": "06 极端合法omega双图有效",
+      "passed": true
+    },
+    {
+      "name": "06 极端合法shock双图有效",
+      "passed": true
+    },
+    {
+      "name": "09 极端合法rf双图有效",
+      "passed": true
+    },
+    {
+      "name": "09 极端合法rm双图有效",
+      "passed": true
+    },
+    {
+      "name": "09 极端合法beta双图有效",
+      "passed": true
+    },
+    {
+      "name": "额外压力页面无未捕获异常",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

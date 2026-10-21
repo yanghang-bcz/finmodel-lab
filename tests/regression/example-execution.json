@@ -1,0 +1,38 @@
+[
+  {
+    "file": "examples/experiment04-ols.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment04-step-forward.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment04-step-backward.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment04-step-both.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment04-ridge-manual.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment04-ridge-cv.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment04-lasso-manual.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment04-lasso-cv.R",
+    "exit": 0
+  },
+  {
+    "file": "examples/experiment04-comparison.R",
+    "exit": 0
+  }
+]

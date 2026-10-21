@@ -1,0 +1,7 @@
+{
+  passed: 4153,
+  failed: 0,
+  scripts: 22,
+  maxAbsoluteError: 6.83940015733242e-10,
+  tolerance: '1e-8 + abs(expected)*1e-10; all exported values, fixed arrays and account fields'
+}

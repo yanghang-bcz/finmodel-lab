@@ -1,0 +1,32 @@
+{
+  "passed": 1549,
+  "failed": 0,
+  "scripts": 17,
+  "errors": [],
+  "screens": [
+    "basic-comparison-1440.png",
+    "dynamic-comparison-1440.png",
+    "evt-1440.png",
+    "backtest-1440.png",
+    "csv-backtest-1440.png",
+    "evt-infinite-ES.png",
+    "basic-1440x900.png",
+    "dynamic-1440x900.png",
+    "evt-1440x900.png",
+    "backtest-1440x900.png",
+    "basic-1366x768.png",
+    "dynamic-1366x768.png",
+    "evt-1366x768.png",
+    "backtest-1366x768.png",
+    "basic-1920x1080.png",
+    "dynamic-1920x1080.png",
+    "evt-1920x1080.png",
+    "backtest-1920x1080.png",
+    "zoom125-basic.png",
+    "zoom125-dynamic.png",
+    "zoom125-evt.png",
+    "zoom125-backtest.png"
+  ],
+  "chrome": "155.0.8059.85",
+  "buildId": "2.9.0-regression.a8a2cd0a020ac777"
+}

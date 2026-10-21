@@ -1,0 +1,205 @@
+Window: "FinModel Lab · 实验11 · Black–Scholes 期权定价", App: Google Chrome.
+0 标准窗口 FinModel Lab · 实验11 · Black–Scholes 期权定价 - Google Chrome, URL: 127.0.0.1:8765/experiments.html?model=bs, Secondary Actions: Raise
+	1 container FinModel Lab · 实验11 · Black–Scholes 期权定价 - Google Chrome, URL: 127.0.0.1:8765/experiments.html?model=bs
+		2 container
+			3 container
+				4 滚动区
+					5 HTML 内容 FinModel Lab · 实验11 · Black–Scholes 期权定价, URL: 127.0.0.1:8765/experiments.html?model=bs
+						6 container
+							7 link f m FinModel, Value: 127.0.0.1:8765/index.html
+							8 container 主要导航
+								9 link 模型实验室, Value: 127.0.0.1:8765/experiments.html?model=bs
+								10 按钮 实验目录
+								11 按钮 帮助与资源
+						12 container
+							13 标题 实验11 · Black–Scholes 期权定价, Value: 1
+								14 文本 实验11 · Black–Scholes 期权定价
+							15 按钮 教师提示
+							16 切换按钮 投屏模式, Value: 0
+							17 container
+								18 标题 R Code, Value: 2
+									19 文本 R Code
+								20 按钮 复制代码
+								21 container 代码版本
+									22 切换按钮 基础代码, Value: 1
+									23 切换按钮 完整代码, Value: 0
+									24 文本 可独立运行 · 当前参数
+								25 container 点击 R 逻辑语句查看中文解析
+									26 切换按钮 第1行：模型与口径, Value: 1
+									27 切换按钮 第2行：模型与口径, Value: 1
+									28 切换按钮 第3行：参数 · S, Value: 0
+									29 切换按钮 第4行：参数 · K, Value: 0
+									30 切换按钮 第5行：参数 · T, Value: 0
+									31 切换按钮 第6行：参数 · r, Value: 0
+									32 切换按钮 第7行：参数 · sigma, Value: 0
+									33 切换按钮 第8行：行权价现值, Value: 0
+									34 切换按钮 第9行：标准化距离 d₁、d₂, Value: 0
+									35 切换按钮 第10行：标准化距离 d₁、d₂, Value: 0
+									36 切换按钮 第11行：标准化距离 d₁、d₂, Value: 0
+									37 切换按钮 第12行：标准化距离 d₁、d₂, Value: 0
+									38 切换按钮 第13行：看涨价格 Call, Value: 0
+									39 切换按钮 第14行：看跌价格 Put, Value: 0
+									40 切换按钮 第15行：Delta · 价格一阶敏感度, Value: 0
+									41 切换按钮 第16行：Delta · 价格一阶敏感度, Value: 0
+									42 切换按钮 第17行：Gamma · 价格二阶敏感度, Value: 0
+									43 切换按钮 第18行：Gamma · 价格二阶敏感度, Value: 0
+									44 切换按钮 第19行：Vega · 每1个百分点, Value: 0
+									45 切换按钮 第20行：Theta · 每日历天, Value: 0
+									46 切换按钮 第21行：Theta · 每日历天, Value: 0
+									47 切换按钮 第22行：Theta · 每日历天, Value: 0
+									48 切换按钮 第23行：Theta · 每日历天, Value: 0
+									49 切换按钮 第24行：Theta · 每日历天, Value: 0
+									50 切换按钮 第25行：Theta · 每日历天, Value: 0
+									51 切换按钮 第26行：输出价格与Greeks, Value: 0
+									52 切换按钮 第27行：输出价格与Greeks, Value: 0
+									53 切换按钮 第28行：输出价格与Greeks, Value: 0
+									54 切换按钮 第29行：输出价格与Greeks, Value: 0
+									55 切换按钮 第30行：输出价格与Greeks, Value: 0
+									56 切换按钮 第31行：绘制价格与S/K参考线, Value: 0
+									57 切换按钮 第32行：绘制价格与S/K参考线, Value: 0
+									58 切换按钮 第33行：绘制价格与S/K参考线, Value: 0
+									59 切换按钮 第34行：绘制价格与S/K参考线, Value: 0
+									60 切换按钮 第35行：绘制价格与S/K参考线, Value: 0
+									61 切换按钮 第36行：绘制价格与S/K参考线, Value: 0
+									62 切换按钮 第37行：绘制价格与S/K参考线, Value: 0
+									63 切换按钮 第38行：绘制价格与S/K参考线, Value: 0
+									64 切换按钮 第39行：绘制价格与S/K参考线, Value: 0
+									65 切换按钮 第40行：绘制价格与S/K参考线, Value: 0
+									66 切换按钮 第41行：绘制价格与S/K参考线, Value: 0
+								67 分离器 上下方向键调整代码区域, Value: 60
+								68 标题 模型与口径, Value: 3
+									69 文本 模型与口径
+								70 文本 输入现价、行权价、剩余期限、年利率与年化波动率。
+								71 container
+									72 text 𝐷 = 𝐾
+									73 文本 𝑒
+									74 container
+										75 text − 𝑟 𝑇
+								76 文本 行权价现值 D=95.122942 元
+								77 文本 金融含义：S与K单位相同，r与σ使用小数而非百分数。
+								78 文本 逻辑语句整体高亮 · 长行可在代码内横向滚动
+							79 container
+								80 标题 Model Visualization, Value: 2
+									81 文本 Model Visualization
+								82 text 欧式 · 无分红 Call · 元／股
+								83 文本 10.45
+								84 文本 Put · 元／股
+								85 文本 5.57
+								86 container
+									87 标题 期权理论价格（元／股）, Value: 3
+										88 文本 期权理论价格（元／股）
+									89 container 期权理论价格（元／股）
+										90 文本 0
+										91 文本 20
+										92 文本 40
+										93 文本 60
+										94 文本 50
+										95 文本 100
+										96 文本 150
+										97 文本 标的现价 S（元／股）
+										98 按钮 现价 S 与执行价 K 重合
+								99 container
+									100 按钮 关闭图表详情
+									101 text 现价 S 与执行价 K 重合 S = 100.00 元／股 K = 100.00 元／股 Call = 10.45 元 Put = 5.57 元
+								102 text Call Put
+								103 按钮 查看S = K
+								104 表格
+									105 row
+										106 列标题
+											107 文本 Greeks · 单位
+										108 列标题
+											109 文本 Call
+										110 列标题
+											111 文本 Put
+									112 row
+										113 行标题
+											114 文本 Delta · 元/元
+										115 单元格
+											116 文本 0.636831
+										117 单元格
+											118 文本 -0.363169
+									119 row
+										120 行标题
+											121 文本 Gamma · 1/元
+										122 单元格
+											123 文本 0.018762
+										124 单元格
+											125 文本 0.018762
+									126 row
+										127 行标题
+											128 文本 Vega · 元/1百分点
+										129 单元格
+											130 文本 0.375240
+										131 单元格
+											132 文本 0.375240
+									133 row
+										134 行标题
+											135 文本 Theta · 元/日历天
+										136 单元格
+											137 文本 -0.017573
+										138 单元格
+											139 文本 -0.004542
+								140 container
+									141 text d₁=0.35 · d₂=0.15 C−P=4.88 = S−Ke⁻ʳᵀ；Theta按365天换算。
+							142 container
+								143 标题 Parameters, Value: 2
+									144 文本 Parameters
+								145 按钮 恢复默认
+								146 container 参数与教学任务，可滚动
+									147 container
+										148 文本 标的现价 S（元／股）
+										149 步进器 (settable, float) 标的现价 S（元／股）, Value: 100
+										150 文本 行权价 K（元／股）
+										151 步进器 (settable, float) 行权价 K（元／股）, Value: 100
+										152 文本 剩余期限 T（年）
+										153 步进器 (settable, float) 剩余期限 T（年）, Value: 1
+										154 文本 无风险连续复利年利率 r（小数）
+										155 步进器 (settable, float) 无风险连续复利年利率 r（小数）, Value: 0.05
+										156 文本 年化波动率 σ（0.20 = 20%）
+										157 步进器 (settable, float) 年化波动率 σ（0.20 = 20%）, Value: 0.2
+									158 container
+										159 text 欧式 · 无分红 常数波动率 连续复利
+									160 开合三角标记 查看完整模型假设
+										161 文本 查看完整模型假设
+									162 container
+										163 标题 教学探索, Value: 3
+											164 文本 教学探索
+										165 按钮 开始探索 →
+		166 container
+			167 container
+				168 工具栏
+					169 按钮 返回
+					170 按钮 (disabled) 前进
+					171 按钮 重新加载
+					172 container
+						173 弹出式按钮 查看网站信息
+						174 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:8765/experiments.html?model=bs, Placeholder: 在 Google 中搜索，或输入网址
+						175 按钮 为此标签页添加书签
+					176 按钮 bcz
+					177 弹出式按钮 Chrome
+			178 container
+				179 弹出式按钮 标签页搜索
+				180 标签页组
+					181 标签 (selected, settable, boolean) FinModel Lab · 实验11 · Black–Scholes 期权定价, Value: on
+						182 按钮 关闭
+					183 标签 (settable, boolean) Item not available, Value: off
+						184 按钮 关闭
+					185 标签 (settable, boolean) FinModel Lab · 实验06 · GARCH类波动率模型, Value: off
+						186 按钮 关闭
+				187 按钮 新标签页
+	188 container
+		189 关闭按钮
+		190 缩放按钮
+191 menu bar
+	192 Chrome
+	193 文件
+	194 编辑
+	195 显示
+	196 历史记录
+	197 书签
+	198 个人资料
+	199 标签页
+	200 窗口
+	201 帮助
+
+The focused UI element is 5 HTML 内容 FinModel Lab · 实验11 · Black–Scholes 期权定价, URL: 127.0.0.1:8765/experiments.html?model=bs

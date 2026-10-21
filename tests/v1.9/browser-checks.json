@@ -1,0 +1,480 @@
+{
+  "checks": [
+    {
+      "name": "07 ES 中文公式解析",
+      "pass": true
+    },
+    {
+      "name": "07 复制实际参数与分位数定义",
+      "pass": true
+    },
+    {
+      "name": "07 非法输入提示",
+      "pass": true
+    },
+    {
+      "name": "07 预测锁定",
+      "pass": true
+    },
+    {
+      "name": "07 仅α开放",
+      "pass": true
+    },
+    {
+      "name": "07 解释包含前后数值",
+      "pass": true
+    },
+    {
+      "name": "07 退出恢复95%",
+      "pass": true
+    },
+    {
+      "name": "11 默认价格",
+      "pass": true
+    },
+    {
+      "name": "11 价格解析和参数高亮",
+      "pass": true
+    },
+    {
+      "name": "11 到期边界",
+      "pass": true
+    },
+    {
+      "name": "11 零波动边界",
+      "pass": true
+    },
+    {
+      "name": "11 非法现价提示",
+      "pass": true
+    },
+    {
+      "name": "11 仅波动率开放",
+      "pass": true
+    },
+    {
+      "name": "11 探索解释",
+      "pass": true
+    },
+    {
+      "name": "06 已从目录打开",
+      "pass": true
+    },
+    {
+      "name": "06 递推含当前代入",
+      "pass": true
+    },
+    {
+      "name": "06 平稳约束提示",
+      "pass": true
+    },
+    {
+      "name": "06 仅冲击开放",
+      "pass": true
+    },
+    {
+      "name": "06 探索实际结果",
+      "pass": true
+    },
+    {
+      "name": "09 已从目录打开",
+      "pass": true
+    },
+    {
+      "name": "09 探索解释",
+      "pass": true
+    },
+    {
+      "name": "09 理论调参保留样本αβ（固定β̂1.195046）",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "09 投屏与Escape退出",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "09 键盘分隔条",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "09 教师提示",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "08 单资源加载比较通过",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "08 预测参数锁定",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "08 探索至Explain",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "08 课堂工具保留",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "08 目录四个新入口",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "07 与08状态隔离",
+      "pass": true,
+      "method": "Verified in preceding browser calls; persisted after evidence array rebinding."
+    },
+    {
+      "name": "07 无公式错误",
+      "pass": true
+    },
+    {
+      "name": "11 无公式错误",
+      "pass": true
+    },
+    {
+      "name": "var 参数 n 实时有效",
+      "pass": true
+    },
+    {
+      "name": "var 参数 alpha 实时有效",
+      "pass": true
+    },
+    {
+      "name": "var 参数 N 实时有效",
+      "pass": true
+    },
+    {
+      "name": "var 参数 mu 实时有效",
+      "pass": true
+    },
+    {
+      "name": "var 参数 scale 实时有效",
+      "pass": true
+    },
+    {
+      "name": "var 1440×900三栏与有效路径",
+      "pass": true,
+      "detail": {
+        "height": 900,
+        "invalidPaths": false,
+        "pageHeight": 900,
+        "pageWidth": 1440,
+        "panels": [
+          {
+            "bottom": 880,
+            "right": 626.8203125,
+            "x": 202,
+            "y": 64
+          },
+          {
+            "bottom": 880,
+            "right": 1084.4375,
+            "x": 640.8203125,
+            "y": 64
+          },
+          {
+            "bottom": 880,
+            "right": 1418,
+            "x": 1098.4375,
+            "y": 64
+          }
+        ],
+        "width": 1440
+      }
+    },
+    {
+      "name": "bs 参数 S 实时有效",
+      "pass": true
+    },
+    {
+      "name": "bs 参数 K 实时有效",
+      "pass": true
+    },
+    {
+      "name": "bs 参数 T 实时有效",
+      "pass": true
+    },
+    {
+      "name": "bs 参数 r 实时有效",
+      "pass": true
+    },
+    {
+      "name": "bs 参数 sigma 实时有效",
+      "pass": true
+    },
+    {
+      "name": "bs 1440×900三栏与有效路径",
+      "pass": true,
+      "detail": {
+        "height": 900,
+        "invalidPaths": false,
+        "pageHeight": 900,
+        "pageWidth": 1440,
+        "panels": [
+          {
+            "bottom": 880,
+            "right": 626.8203125,
+            "x": 202,
+            "y": 64
+          },
+          {
+            "bottom": 880,
+            "right": 1084.4375,
+            "x": 640.8203125,
+            "y": 64
+          },
+          {
+            "bottom": 880,
+            "right": 1418,
+            "x": 1098.4375,
+            "y": 64
+          }
+        ],
+        "width": 1440
+      }
+    },
+    {
+      "name": "garch 参数 omega 实时有效",
+      "pass": true
+    },
+    {
+      "name": "garch 参数 a 实时有效",
+      "pass": true
+    },
+    {
+      "name": "garch 参数 b 实时有效",
+      "pass": true
+    },
+    {
+      "name": "garch 参数 shock 实时有效",
+      "pass": true
+    },
+    {
+      "name": "garch 1440×900三栏与有效路径",
+      "pass": true,
+      "detail": {
+        "height": 900,
+        "invalidPaths": false,
+        "pageHeight": 900,
+        "pageWidth": 1440,
+        "panels": [
+          {
+            "bottom": 880,
+            "right": 626.8203125,
+            "x": 202,
+            "y": 64
+          },
+          {
+            "bottom": 880,
+            "right": 1084.4375,
+            "x": 640.8203125,
+            "y": 64
+          },
+          {
+            "bottom": 880,
+            "right": 1418,
+            "x": 1098.4375,
+            "y": 64
+          }
+        ],
+        "width": 1440
+      }
+    },
+    {
+      "name": "capm 参数 rf 实时有效",
+      "pass": true
+    },
+    {
+      "name": "capm 参数 rm 实时有效",
+      "pass": true
+    },
+    {
+      "name": "capm 参数 beta 实时有效",
+      "pass": true
+    },
+    {
+      "name": "capm 1440×900三栏与有效路径",
+      "pass": true,
+      "detail": {
+        "height": 900,
+        "invalidPaths": false,
+        "pageHeight": 900,
+        "pageWidth": 1440,
+        "panels": [
+          {
+            "bottom": 880,
+            "right": 626.8203125,
+            "x": 202,
+            "y": 64
+          },
+          {
+            "bottom": 880,
+            "right": 1084.4375,
+            "x": 640.8203125,
+            "y": 64
+          },
+          {
+            "bottom": 880,
+            "right": 1418,
+            "x": 1098.4375,
+            "y": 64
+          }
+        ],
+        "width": 1440
+      }
+    },
+    {
+      "name": "09 空输入提示",
+      "pass": true
+    },
+    {
+      "name": "var 中文逻辑语句解析 1",
+      "pass": true
+    },
+    {
+      "name": "var 中文逻辑语句解析 2",
+      "pass": true
+    },
+    {
+      "name": "var 中文逻辑语句解析 3",
+      "pass": true
+    },
+    {
+      "name": "var 中文逻辑语句解析 4",
+      "pass": true
+    },
+    {
+      "name": "var 中文逻辑语句解析 5",
+      "pass": true
+    },
+    {
+      "name": "var 中文逻辑语句解析 6",
+      "pass": true
+    },
+    {
+      "name": "var 中文逻辑语句解析 7",
+      "pass": true
+    },
+    {
+      "name": "bs 中文逻辑语句解析 1",
+      "pass": true
+    },
+    {
+      "name": "bs 中文逻辑语句解析 2",
+      "pass": true
+    },
+    {
+      "name": "bs 中文逻辑语句解析 3",
+      "pass": true
+    },
+    {
+      "name": "bs 中文逻辑语句解析 4",
+      "pass": true
+    },
+    {
+      "name": "bs 中文逻辑语句解析 5",
+      "pass": true
+    },
+    {
+      "name": "bs 中文逻辑语句解析 6",
+      "pass": true
+    },
+    {
+      "name": "garch 中文逻辑语句解析 1",
+      "pass": true
+    },
+    {
+      "name": "garch 中文逻辑语句解析 2",
+      "pass": true
+    },
+    {
+      "name": "garch 中文逻辑语句解析 3",
+      "pass": true
+    },
+    {
+      "name": "garch 中文逻辑语句解析 4",
+      "pass": true
+    },
+    {
+      "name": "capm 中文逻辑语句解析 1",
+      "pass": true
+    },
+    {
+      "name": "capm 中文逻辑语句解析 2",
+      "pass": true
+    },
+    {
+      "name": "capm 中文逻辑语句解析 3",
+      "pass": true
+    },
+    {
+      "name": "capm 中文逻辑语句解析 4",
+      "pass": true
+    },
+    {
+      "name": "08 跨实验重新进入后比较正常",
+      "pass": true
+    },
+    {
+      "name": "08 最终案例诊断与图表正常",
+      "pass": true
+    },
+    {
+      "name": "var 375px无横向溢出",
+      "pass": true,
+      "detail": {
+        "vw": 375,
+        "width": 375
+      }
+    },
+    {
+      "name": "bs 375px无横向溢出",
+      "pass": true,
+      "detail": {
+        "vw": 375,
+        "width": 375
+      }
+    },
+    {
+      "name": "garch 375px无横向溢出",
+      "pass": true,
+      "detail": {
+        "vw": 375,
+        "width": 375
+      }
+    },
+    {
+      "name": "capm 375px无横向溢出",
+      "pass": true,
+      "detail": {
+        "vw": 375,
+        "width": 375
+      }
+    },
+    {
+      "name": "09 1366×768三栏容纳",
+      "pass": true,
+      "detail": {
+        "height": 768,
+        "width": 1366
+      }
+    }
+  ],
+  "initialFindings": [
+    {
+      "name": "08 first-load typography dependency missing",
+      "resolution": "Combined unchanged v1.8 scripts into one ordered resource; rerun passed."
+    }
+  ]
+}

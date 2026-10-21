@@ -1,0 +1,191 @@
+[
+  {
+    "area": "Logo字母",
+    "family": "Georgia",
+    "selector": ".logo",
+    "size": "39px",
+    "weight": "400"
+  },
+  {
+    "area": "品牌名称",
+    "family": "\"Avenir Next\", \"PingFang SC\", sans-serif",
+    "selector": ".brand strong",
+    "size": "16px",
+    "weight": "600"
+  },
+  {
+    "area": "品牌Lab",
+    "family": "\"Avenir Next\", \"PingFang SC\", sans-serif",
+    "selector": ".brand strong>span",
+    "size": "11px",
+    "weight": "400"
+  },
+  {
+    "area": "顶部实验标题",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": "header h1",
+    "size": "18px",
+    "weight": "550"
+  },
+  {
+    "area": "顶部品牌",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".header-brand",
+    "size": "15px",
+    "weight": "500"
+  },
+  {
+    "area": "侧栏导航",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".nav",
+    "size": "13px",
+    "weight": "400"
+  },
+  {
+    "area": "面板标题",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".panel-head h2",
+    "size": "16px",
+    "weight": "550"
+  },
+  {
+    "area": "R代码",
+    "family": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+    "selector": ".code-line code",
+    "size": "14px",
+    "weight": "400"
+  },
+  {
+    "area": "行号",
+    "family": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+    "selector": ".code-line .num",
+    "size": "10px",
+    "weight": "400"
+  },
+  {
+    "area": "解释标题",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".explanation h3",
+    "size": "14px",
+    "weight": "600"
+  },
+  {
+    "area": "解释正文",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".explanation p",
+    "size": "13px",
+    "weight": "400"
+  },
+  {
+    "area": "数学公式",
+    "family": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+    "selector": ".formula",
+    "size": "12px",
+    "weight": "400"
+  },
+  {
+    "area": "数值代入",
+    "family": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+    "selector": ".calculation",
+    "size": "12px",
+    "weight": "400"
+  },
+  {
+    "area": "结果",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".result",
+    "size": "13px",
+    "weight": "600"
+  },
+  {
+    "area": "指标标签",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".metrics span",
+    "size": "11px",
+    "weight": "400"
+  },
+  {
+    "area": "指标数值",
+    "family": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+    "selector": ".metrics b",
+    "size": "29px",
+    "weight": "500"
+  },
+  {
+    "area": "图表刻度",
+    "family": "-apple-system, \"PingFang SC\", sans-serif",
+    "selector": "#grid text",
+    "size": "14px",
+    "weight": "400"
+  },
+  {
+    "area": "图表轴名",
+    "family": "-apple-system, \"PingFang SC\", sans-serif",
+    "selector": "#chart .axis-title",
+    "size": "15px",
+    "weight": "400"
+  },
+  {
+    "area": "图内标签",
+    "family": "-apple-system, \"PingFang SC\", sans-serif",
+    "selector": "#currentLabel",
+    "size": "14px",
+    "weight": "400"
+  },
+  {
+    "area": "图例",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".legend",
+    "size": "11px",
+    "weight": "400"
+  },
+  {
+    "area": "参数组标题",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".param-group h3",
+    "size": "13px",
+    "weight": "550"
+  },
+  {
+    "area": "资产标签",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".allocation-values>span",
+    "size": "12px",
+    "weight": "400"
+  },
+  {
+    "area": "权重数值",
+    "family": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+    "selector": ".allocation-values b",
+    "size": "20px",
+    "weight": "500"
+  },
+  {
+    "area": "参数表",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".assumptions",
+    "size": "11px",
+    "weight": "400"
+  },
+  {
+    "area": "参数输入",
+    "family": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+    "selector": "input[type=number]",
+    "size": "13px",
+    "weight": "400"
+  },
+  {
+    "area": "滑块刻度",
+    "family": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+    "selector": ".ticks",
+    "size": "10px",
+    "weight": "400"
+  },
+  {
+    "area": "面板按钮",
+    "family": "-apple-system, \"system-ui\", \"Segoe UI\", \"PingFang SC\", sans-serif",
+    "selector": ".panel-head button",
+    "size": "11px",
+    "weight": "400"
+  }
+]

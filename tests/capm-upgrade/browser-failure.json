@@ -1,0 +1,910 @@
+{
+  "error": "Error: locator.isVisible: Error: strict mode violation: locator('.workspace') resolved to 2 elements:\n    1) <section id=\"workspace\" class=\"workspace\" aria-label=\"实验八工作台\">…</section> aka getByRole('region', { name: '实验八工作台' })\n    2) <section hidden=\"\" id=\"multiWorkspace\" class=\"workspace multi-workspace\">…</section> aka getByText('R Code复制完整 R 代码完整代码关键逻辑RStudio 实践参数协方差组合风险GMV有效前沿 Model Visualization')\n\nCall log:\n\u001b[2m    - checking visibility of locator('.workspace')\u001b[22m\n",
+  "checks": [
+    {
+      "name": "absolute project root",
+      "pass": true
+    },
+    {
+      "name": "DOM manifest service same version",
+      "pass": true
+    },
+    {
+      "name": "resource hash app.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash bs-lesson.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash capm-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash capm-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash capm-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash capm.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash chart-interaction.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash chart-scale.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash classroom-ui.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiment-lessons.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiment-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments-bundle.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments-config.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash exploration.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash financial-charts.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash font-audit.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash hedge-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash hedge-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash hedge-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash iv-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash iv-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash iv-workbench.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash lesson-presentation.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash lessons.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash modal-ui.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-bundle.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-csv.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-multi-code.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-multi-math.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-multi-ui.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-multi.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash portfolio-ux.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash runtime-version.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash style.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash teaching-ux-charts.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash teaching-ux-data.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash teaching-ux.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash teaching.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash typography.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash typography.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash workbench-system.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash workbench-ui.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash workbench.css",
+      "pass": true
+    },
+    {
+      "name": "resource hash zero-friction-data.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash build-info.js",
+      "pass": true
+    },
+    {
+      "name": "resource hash index.html",
+      "pass": true
+    },
+    {
+      "name": "resource hash experiments.html",
+      "pass": true
+    },
+    {
+      "name": "official title",
+      "pass": true
+    },
+    {
+      "name": "default complete",
+      "pass": true
+    },
+    {
+      "name": "one SVG only",
+      "pass": true
+    },
+    {
+      "name": "no unlock steps",
+      "pass": true
+    },
+    {
+      "name": "original beta distinction",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs default",
+      "pass": true
+    },
+    {
+      "name": "R output count default",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric default 11",
+      "pass": true
+    },
+    {
+      "name": "negative beta instant",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs negative-basic",
+      "pass": true
+    },
+    {
+      "name": "R output count negative-basic",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric negative-basic 11",
+      "pass": true
+    },
+    {
+      "name": "negative premium explanation",
+      "pass": true
+    },
+    {
+      "name": "zero premium explanation",
+      "pass": true
+    },
+    {
+      "name": "CML only chart",
+      "pass": true
+    },
+    {
+      "name": "leverage disclosed",
+      "pass": true
+    },
+    {
+      "name": "leveraged result",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs cml-leverage",
+      "pass": true
+    },
+    {
+      "name": "R output count cml-leverage",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric cml-leverage 11",
+      "pass": true
+    },
+    {
+      "name": "sigma zero rejected",
+      "pass": true
+    },
+    {
+      "name": "invalid cannot reenable copy",
+      "pass": true
+    },
+    {
+      "name": "negative premium not false CML",
+      "pass": true
+    },
+    {
+      "name": "regression statistics",
+      "pass": true
+    },
+    {
+      "name": "synthetic explicit",
+      "pass": true
+    },
+    {
+      "name": "hover tooltip shown",
+      "pass": true
+    },
+    {
+      "name": "hover exit hidden",
+      "pass": true
+    },
+    {
+      "name": "click pins",
+      "pass": true
+    },
+    {
+      "name": "escape clears",
+      "pass": true
+    },
+    {
+      "name": "residual one chart",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs residual",
+      "pass": true
+    },
+    {
+      "name": "R output count residual",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric residual 11",
+      "pass": true
+    },
+    {
+      "name": "statement explanation",
+      "pass": true
+    },
+    {
+      "name": "sorted source local status",
+      "pass": true
+    },
+    {
+      "name": "small sample warning",
+      "pass": true
+    },
+    {
+      "name": "actual clipboard R runs uploaded",
+      "pass": true
+    },
+    {
+      "name": "R output count uploaded",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 0",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 1",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 2",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 3",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 4",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 5",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 6",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 7",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 8",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 9",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 10",
+      "pass": true
+    },
+    {
+      "name": "R numeric uploaded 11",
+      "pass": true
+    },
+    {
+      "name": "metadata change requires reimport",
+      "pass": true
+    },
+    {
+      "name": "bad import clear and copy paused",
+      "pass": true
+    },
+    {
+      "name": "synthetic restore",
+      "pass": true
+    },
+    {
+      "name": "catalog01-12",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440smlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440smlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440smlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440smlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440smltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440smltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440smltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440smltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440cmltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440cmltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440cmltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440cmltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440sclfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440sclfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440sclfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440sclfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1440scltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1440scltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1440scltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1440scltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366smlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366smlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366smlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366smlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366smltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366smltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366smltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366smltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366cmltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366cmltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366cmltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366cmltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366sclfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366sclfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366sclfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366sclfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1366scltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1366scltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1366scltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1366scltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920smlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920smlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920smlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920smlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920smltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920smltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920smltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920smltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920cmlfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920cmltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920cmltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920cmltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920cmltrue",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920sclfalse",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920sclfalse",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920sclfalse",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920sclfalse",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow 1920scltrue",
+      "pass": true
+    },
+    {
+      "name": "single screen 1920scltrue",
+      "pass": true
+    },
+    {
+      "name": "code viewport usable 1920scltrue",
+      "pass": true
+    },
+    {
+      "name": "copy within screen 1920scltrue",
+      "pass": true
+    },
+    {
+      "name": "other page loads garch",
+      "pass": true
+    },
+    {
+      "name": "full default garch",
+      "pass": true
+    },
+    {
+      "name": "other page loads var",
+      "pass": true
+    },
+    {
+      "name": "full default var",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,46 @@
+Window: "FinModel Lab · 实验07 · VaR与ES投资风险计算", App: Google Chrome.
+0 标准窗口 FinModel Lab · 实验07 · VaR与ES投资风险计算 - Google Chrome, URL: 127.0.0.1:8765/experiments.html?model=var&v=191, Secondary Actions: Raise
+	1 container FinModel Lab · 实验07 · VaR与ES投资风险计算 - Google Chrome, URL: 127.0.0.1:8765/experiments.html?model=var&v=191
+		2 container
+			3 container
+				4 工具栏
+					5 按钮 返回
+					6 按钮 (disabled) 前进
+					7 按钮 重新加载
+					8 container
+						9 弹出式按钮 查看网站信息
+						10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:8765/experiments.html?model=var&v=191, Placeholder: 在 Google 中搜索，或输入网址。按向上键或向下键即可浏览自动补全建议。输入内容即可自动补全。。
+						11 按钮 缩放比例：125%
+						12 按钮 为此标签页添加书签
+					13 按钮 bcz
+					14 弹出式按钮 Chrome
+			15 container
+				16 弹出式按钮 标签页搜索
+				17 标签页组
+					18 标签 (settable, boolean) FinModel Lab · 实验09 · CAPM, Value: off
+						19 按钮 关闭
+					20 标签 (settable, boolean) FinModel Lab · 实验09 · CAPM, Value: off
+						21 按钮 关闭
+					22 标签 (selected, settable, boolean) FinModel Lab · 实验07 · VaR与ES投资风险计算, Value: on
+						23 按钮 关闭
+				24 按钮 新标签页
+	25 container
+		26 关闭按钮
+		27 缩放按钮
+28 menu bar
+	29 Chrome
+	30 文件
+	31 编辑
+	32 显示
+	33 历史记录
+	34 书签
+	35 个人资料
+	36 标签页
+	37 窗口
+	38 帮助
+
+Selected text: ```
+127.0.0.1:8765/experiments.html?model=var&v=191
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

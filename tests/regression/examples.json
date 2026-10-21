@@ -1,0 +1,11 @@
+[
+  "examples/experiment04-ols.R",
+  "examples/experiment04-step-forward.R",
+  "examples/experiment04-step-backward.R",
+  "examples/experiment04-step-both.R",
+  "examples/experiment04-ridge-manual.R",
+  "examples/experiment04-ridge-cv.R",
+  "examples/experiment04-lasso-manual.R",
+  "examples/experiment04-lasso-cv.R",
+  "examples/experiment04-comparison.R"
+]

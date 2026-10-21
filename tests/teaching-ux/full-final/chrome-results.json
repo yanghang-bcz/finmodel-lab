@@ -1,0 +1,4019 @@
+{
+  "browser": "155.0.8059.84",
+  "channel": "actual installed Chrome",
+  "checks": [
+    {
+      "name": "garch 初始化与正式标题",
+      "passed": true
+    },
+    {
+      "name": "garch A 悬停临时可见",
+      "passed": true
+    },
+    {
+      "name": "garch A 预览不拦截鼠标",
+      "passed": true
+    },
+    {
+      "name": "garch A 移出目标关闭",
+      "passed": true
+    },
+    {
+      "name": "garch B 快速划过15次无残留",
+      "passed": true
+    },
+    {
+      "name": "garch B 无重复浮层",
+      "passed": true
+    },
+    {
+      "name": "garch C 点击后离开保持固定",
+      "passed": true
+    },
+    {
+      "name": "garch C 固定可交互",
+      "passed": true
+    },
+    {
+      "name": "garch C 关闭按钮",
+      "passed": true
+    },
+    {
+      "name": "garch C 同指标再次点击取消",
+      "passed": true
+    },
+    {
+      "name": "garch C 固定优先于其他悬停",
+      "passed": true
+    },
+    {
+      "name": "garch C 点击另一个切换",
+      "passed": true
+    },
+    {
+      "name": "garch C Escape关闭",
+      "passed": true
+    },
+    {
+      "name": "garch C 图表空白关闭",
+      "passed": true
+    },
+    {
+      "name": "garch 键盘焦点预览",
+      "passed": true
+    },
+    {
+      "name": "garch 键盘Enter固定",
+      "passed": true
+    },
+    {
+      "name": "garch 参数变化清除旧详情",
+      "passed": true
+    },
+    {
+      "name": "garch 重绘清除临时预览",
+      "passed": true
+    },
+    {
+      "name": "garch 打开模态清除固定详情",
+      "passed": true
+    },
+    {
+      "name": "garch 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "garch 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "garch 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "garch 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "garch 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "garch 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "garch 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch G 焦点进入弹窗",
+      "passed": true
+    },
+    {
+      "name": "garch G 焦点困在弹窗",
+      "passed": true
+    },
+    {
+      "name": "garch G 未上线不可导航",
+      "passed": true
+    },
+    {
+      "name": "garch G 关闭回到触发按钮",
+      "passed": true
+    },
+    {
+      "name": "garch G 遮罩关闭与焦点恢复",
+      "passed": true
+    },
+    {
+      "name": "var 初始化与正式标题",
+      "passed": true
+    },
+    {
+      "name": "var A 悬停临时可见",
+      "passed": true
+    },
+    {
+      "name": "var A 预览不拦截鼠标",
+      "passed": true
+    },
+    {
+      "name": "var A 移出目标关闭",
+      "passed": true
+    },
+    {
+      "name": "var B 快速划过15次无残留",
+      "passed": true
+    },
+    {
+      "name": "var B 无重复浮层",
+      "passed": true
+    },
+    {
+      "name": "var C 点击后离开保持固定",
+      "passed": true
+    },
+    {
+      "name": "var C 固定可交互",
+      "passed": true
+    },
+    {
+      "name": "var C 关闭按钮",
+      "passed": true
+    },
+    {
+      "name": "var C 同指标再次点击取消",
+      "passed": true
+    },
+    {
+      "name": "var C 固定优先于其他悬停",
+      "passed": true
+    },
+    {
+      "name": "var C 点击另一个切换",
+      "passed": true
+    },
+    {
+      "name": "var C Escape关闭",
+      "passed": true
+    },
+    {
+      "name": "var C 图表空白关闭",
+      "passed": true
+    },
+    {
+      "name": "var 键盘焦点预览",
+      "passed": true
+    },
+    {
+      "name": "var 键盘Enter固定",
+      "passed": true
+    },
+    {
+      "name": "var 参数变化清除旧详情",
+      "passed": true
+    },
+    {
+      "name": "var 重绘清除临时预览",
+      "passed": true
+    },
+    {
+      "name": "var 打开模态清除固定详情",
+      "passed": true
+    },
+    {
+      "name": "var 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "var 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "var 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "var 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "var 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "var 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "var 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "var 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "var 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "var 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "var 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "var 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "var 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "var G 焦点进入弹窗",
+      "passed": true
+    },
+    {
+      "name": "var G 焦点困在弹窗",
+      "passed": true
+    },
+    {
+      "name": "var G 未上线不可导航",
+      "passed": true
+    },
+    {
+      "name": "var G 关闭回到触发按钮",
+      "passed": true
+    },
+    {
+      "name": "var G 遮罩关闭与焦点恢复",
+      "passed": true
+    },
+    {
+      "name": "portfolio 初始化与正式标题",
+      "passed": true
+    },
+    {
+      "name": "portfolio A 悬停临时可见",
+      "passed": true
+    },
+    {
+      "name": "portfolio A 预览不拦截鼠标",
+      "passed": true
+    },
+    {
+      "name": "portfolio A 移出目标关闭",
+      "passed": true
+    },
+    {
+      "name": "portfolio B 快速划过15次无残留",
+      "passed": true
+    },
+    {
+      "name": "portfolio B 无重复浮层",
+      "passed": true
+    },
+    {
+      "name": "portfolio C 点击后离开保持固定",
+      "passed": true
+    },
+    {
+      "name": "portfolio C 固定可交互",
+      "passed": true
+    },
+    {
+      "name": "portfolio C 关闭按钮",
+      "passed": true
+    },
+    {
+      "name": "portfolio C 同指标再次点击取消",
+      "passed": true
+    },
+    {
+      "name": "portfolio C 固定优先于其他悬停",
+      "passed": true
+    },
+    {
+      "name": "portfolio C 点击另一个切换",
+      "passed": true
+    },
+    {
+      "name": "portfolio C Escape关闭",
+      "passed": true
+    },
+    {
+      "name": "portfolio C 图表空白关闭",
+      "passed": true
+    },
+    {
+      "name": "portfolio 键盘焦点预览",
+      "passed": true
+    },
+    {
+      "name": "portfolio 键盘Enter固定",
+      "passed": true
+    },
+    {
+      "name": "portfolio 参数变化清除旧详情",
+      "passed": true
+    },
+    {
+      "name": "portfolio 重绘清除临时预览",
+      "passed": true
+    },
+    {
+      "name": "portfolio 打开模态清除固定详情",
+      "passed": true
+    },
+    {
+      "name": "portfolio 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "portfolio 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio G 焦点进入弹窗",
+      "passed": true
+    },
+    {
+      "name": "portfolio G 焦点困在弹窗",
+      "passed": true
+    },
+    {
+      "name": "portfolio G 未上线不可导航",
+      "passed": true
+    },
+    {
+      "name": "portfolio G 关闭回到触发按钮",
+      "passed": true
+    },
+    {
+      "name": "portfolio G 遮罩关闭与焦点恢复",
+      "passed": true
+    },
+    {
+      "name": "capm 初始化与正式标题",
+      "passed": true
+    },
+    {
+      "name": "capm A 悬停临时可见",
+      "passed": true
+    },
+    {
+      "name": "capm A 预览不拦截鼠标",
+      "passed": true
+    },
+    {
+      "name": "capm A 移出目标关闭",
+      "passed": true
+    },
+    {
+      "name": "capm B 快速划过15次无残留",
+      "passed": true
+    },
+    {
+      "name": "capm B 无重复浮层",
+      "passed": true
+    },
+    {
+      "name": "capm C 点击后离开保持固定",
+      "passed": true
+    },
+    {
+      "name": "capm C 固定可交互",
+      "passed": true
+    },
+    {
+      "name": "capm C 关闭按钮",
+      "passed": true
+    },
+    {
+      "name": "capm C 同指标再次点击取消",
+      "passed": true
+    },
+    {
+      "name": "capm C 固定优先于其他悬停",
+      "passed": true
+    },
+    {
+      "name": "capm C 点击另一个切换",
+      "passed": true
+    },
+    {
+      "name": "capm C Escape关闭",
+      "passed": true
+    },
+    {
+      "name": "capm C 图表空白关闭",
+      "passed": true
+    },
+    {
+      "name": "capm 键盘焦点预览",
+      "passed": true
+    },
+    {
+      "name": "capm 键盘Enter固定",
+      "passed": true
+    },
+    {
+      "name": "capm 参数变化清除旧详情",
+      "passed": true
+    },
+    {
+      "name": "capm 重绘清除临时预览",
+      "passed": true
+    },
+    {
+      "name": "capm 打开模态清除固定详情",
+      "passed": true
+    },
+    {
+      "name": "capm 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "capm 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "capm 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "capm 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "capm 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "capm 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "capm 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm G 焦点进入弹窗",
+      "passed": true
+    },
+    {
+      "name": "capm G 焦点困在弹窗",
+      "passed": true
+    },
+    {
+      "name": "capm G 未上线不可导航",
+      "passed": true
+    },
+    {
+      "name": "capm G 关闭回到触发按钮",
+      "passed": true
+    },
+    {
+      "name": "capm G 遮罩关闭与焦点恢复",
+      "passed": true
+    },
+    {
+      "name": "bs 初始化与正式标题",
+      "passed": true
+    },
+    {
+      "name": "bs A 悬停临时可见",
+      "passed": true
+    },
+    {
+      "name": "bs A 预览不拦截鼠标",
+      "passed": true
+    },
+    {
+      "name": "bs A 移出目标关闭",
+      "passed": true
+    },
+    {
+      "name": "bs B 快速划过15次无残留",
+      "passed": true
+    },
+    {
+      "name": "bs B 无重复浮层",
+      "passed": true
+    },
+    {
+      "name": "bs C 点击后离开保持固定",
+      "passed": true
+    },
+    {
+      "name": "bs C 固定可交互",
+      "passed": true
+    },
+    {
+      "name": "bs C 关闭按钮",
+      "passed": true
+    },
+    {
+      "name": "bs C 同指标再次点击取消",
+      "passed": true
+    },
+    {
+      "name": "bs C 固定优先于其他悬停",
+      "passed": true
+    },
+    {
+      "name": "bs C 点击另一个切换",
+      "passed": true
+    },
+    {
+      "name": "bs C Escape关闭",
+      "passed": true
+    },
+    {
+      "name": "bs C 图表空白关闭",
+      "passed": true
+    },
+    {
+      "name": "bs 键盘焦点预览",
+      "passed": true
+    },
+    {
+      "name": "bs 键盘Enter固定",
+      "passed": true
+    },
+    {
+      "name": "bs 参数变化清除旧详情",
+      "passed": true
+    },
+    {
+      "name": "bs 重绘清除临时预览",
+      "passed": true
+    },
+    {
+      "name": "bs 打开模态清除固定详情",
+      "passed": true
+    },
+    {
+      "name": "bs 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "bs 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "bs 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "bs 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "bs 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "bs 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "bs 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs G 焦点进入弹窗",
+      "passed": true
+    },
+    {
+      "name": "bs G 焦点困在弹窗",
+      "passed": true
+    },
+    {
+      "name": "bs G 未上线不可导航",
+      "passed": true
+    },
+    {
+      "name": "bs G 关闭回到触发按钮",
+      "passed": true
+    },
+    {
+      "name": "bs G 遮罩关闭与焦点恢复",
+      "passed": true
+    },
+    {
+      "name": "BS S=K 只一根合并标记",
+      "passed": true
+    },
+    {
+      "name": "BS 合并信息完整",
+      "passed": true,
+      "detail": "现价 S 与执行价 K 重合\n\nS = 100.00 元／股\nK = 100.00 元／股\nCall = 10.45 元\nPut = 5.57 元"
+    },
+    {
+      "name": "BS 合并标记预览移开消失",
+      "passed": true
+    },
+    {
+      "name": "BS call曲线可悬停",
+      "passed": true
+    },
+    {
+      "name": "BS call曲线移开关闭",
+      "passed": true
+    },
+    {
+      "name": "BS put曲线可悬停",
+      "passed": true
+    },
+    {
+      "name": "BS put曲线移开关闭",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时独立查看 hVaR",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时取消 hVaR",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时独立查看 hES",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时取消 hES",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时独立查看 nVaR",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时取消 nVaR",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时独立查看 nES",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时取消 nES",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时独立查看 tail",
+      "passed": true
+    },
+    {
+      "name": "VaR重合时取消 tail",
+      "passed": true
+    },
+    {
+      "name": "VaR尾部区域悬停",
+      "passed": true
+    },
+    {
+      "name": "VaR尾部区域离开关闭",
+      "passed": true
+    },
+    {
+      "name": "CAPM [data-series=scl]悬停",
+      "passed": true
+    },
+    {
+      "name": "CAPM [data-series=scl]移开",
+      "passed": true
+    },
+    {
+      "name": "CAPM circle[data-marker=\"obs-20\"]悬停",
+      "passed": true
+    },
+    {
+      "name": "CAPM circle[data-marker=\"obs-20\"]移开",
+      "passed": true
+    },
+    {
+      "name": "08 资产端点悬停 #assetA circle",
+      "passed": true
+    },
+    {
+      "name": "08 资产端点离开 #assetA circle",
+      "passed": true
+    },
+    {
+      "name": "08 资产端点悬停 #assetB circle",
+      "passed": true
+    },
+    {
+      "name": "08 资产端点离开 #assetB circle",
+      "passed": true
+    },
+    {
+      "name": "08 重合身份 current",
+      "passed": true
+    },
+    {
+      "name": "08 重合身份 minimum",
+      "passed": true
+    },
+    {
+      "name": "F 导航 bs",
+      "passed": true
+    },
+    {
+      "name": "F bs 初始参数",
+      "passed": true
+    },
+    {
+      "name": "bs 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "bs 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "bs 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "bs 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "bs 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "bs 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "bs 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "bs 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "F 刷新 bs",
+      "passed": true
+    },
+    {
+      "name": "F 导航 garch",
+      "passed": true
+    },
+    {
+      "name": "F garch 初始参数",
+      "passed": true
+    },
+    {
+      "name": "garch 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "garch 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "garch 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "garch 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "garch 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "garch 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "garch 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "garch 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "F 刷新 garch",
+      "passed": true
+    },
+    {
+      "name": "F 导航 capm",
+      "passed": true
+    },
+    {
+      "name": "F capm 初始参数",
+      "passed": true
+    },
+    {
+      "name": "capm 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "capm 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "capm 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "capm 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "capm 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "capm 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "capm 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "F 刷新 capm",
+      "passed": true
+    },
+    {
+      "name": "F 导航 portfolio",
+      "passed": true
+    },
+    {
+      "name": "F portfolio 初始参数",
+      "passed": true
+    },
+    {
+      "name": "portfolio 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "portfolio 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "portfolio 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "F 刷新 portfolio",
+      "passed": true
+    },
+    {
+      "name": "F 后退正确模型标题",
+      "passed": true
+    },
+    {
+      "name": "capm 目录12项",
+      "passed": true,
+      "detail": [
+        {
+          "n": "01",
+          "title": "R软件基础实验",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "02",
+          "title": "金融市场数据整理与预处理",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "03",
+          "title": "资产收益率计算",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "04",
+          "title": "多元回归与逐步回归分析",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "05",
+          "title": "ARMA与VAR模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "06",
+          "title": "GARCH类波动率模型",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=garch"
+        },
+        {
+          "n": "07",
+          "title": "VaR与ES投资风险计算",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=var"
+        },
+        {
+          "n": "08",
+          "title": "均值-方差投资组合决策分析",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "index.html"
+        },
+        {
+          "n": "09",
+          "title": "资本资产定价模型",
+          "status": "当前实验",
+          "online": "true",
+          "current": "page",
+          "href": "experiments.html?model=capm"
+        },
+        {
+          "n": "10",
+          "title": "因子模型与APT模型",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        },
+        {
+          "n": "11",
+          "title": "Black-Scholes期权定价",
+          "status": "进入 →",
+          "online": "true",
+          "current": null,
+          "href": "experiments.html?model=bs"
+        },
+        {
+          "n": "12",
+          "title": "证券投资基金绩效评价",
+          "status": "暂未上线",
+          "online": "false",
+          "current": null,
+          "href": null,
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "name": "capm 目录逐项 01",
+      "passed": true,
+      "detail": {
+        "n": "01",
+        "title": "R软件基础实验",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 02",
+      "passed": true,
+      "detail": {
+        "n": "02",
+        "title": "金融市场数据整理与预处理",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 03",
+      "passed": true,
+      "detail": {
+        "n": "03",
+        "title": "资产收益率计算",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 04",
+      "passed": true,
+      "detail": {
+        "n": "04",
+        "title": "多元回归与逐步回归分析",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 05",
+      "passed": true,
+      "detail": {
+        "n": "05",
+        "title": "ARMA与VAR模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 06",
+      "passed": true,
+      "detail": {
+        "n": "06",
+        "title": "GARCH类波动率模型",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=garch"
+      }
+    },
+    {
+      "name": "capm 目录逐项 07",
+      "passed": true,
+      "detail": {
+        "n": "07",
+        "title": "VaR与ES投资风险计算",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=var"
+      }
+    },
+    {
+      "name": "capm 目录逐项 08",
+      "passed": true,
+      "detail": {
+        "n": "08",
+        "title": "均值-方差投资组合决策分析",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "index.html"
+      }
+    },
+    {
+      "name": "capm 目录逐项 09",
+      "passed": true,
+      "detail": {
+        "n": "09",
+        "title": "资本资产定价模型",
+        "status": "当前实验",
+        "online": "true",
+        "current": "page",
+        "href": "experiments.html?model=capm"
+      }
+    },
+    {
+      "name": "capm 目录逐项 10",
+      "passed": true,
+      "detail": {
+        "n": "10",
+        "title": "因子模型与APT模型",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "capm 目录逐项 11",
+      "passed": true,
+      "detail": {
+        "n": "11",
+        "title": "Black-Scholes期权定价",
+        "status": "进入 →",
+        "online": "true",
+        "current": null,
+        "href": "experiments.html?model=bs"
+      }
+    },
+    {
+      "name": "capm 目录逐项 12",
+      "passed": true,
+      "detail": {
+        "n": "12",
+        "title": "证券投资基金绩效评价",
+        "status": "暂未上线",
+        "online": "false",
+        "current": null,
+        "href": null,
+        "disabled": true
+      }
+    },
+    {
+      "name": "F BS直接URL无陈旧详情",
+      "passed": true
+    },
+    {
+      "name": "H var 1920 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 350.796875,
+        "right": -10,
+        "top": 10,
+        "bottom": -565.078125
+      }
+    },
+    {
+      "name": "H var 1920 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H var 1920 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 362.796875,
+        "right": -10,
+        "top": 10,
+        "bottom": -523.28125
+      }
+    },
+    {
+      "name": "H var 1920 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H bs 1920 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 350.796875,
+        "right": -10,
+        "top": 10,
+        "bottom": -363.640625
+      }
+    },
+    {
+      "name": "H bs 1920 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H bs 1920 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 362.796875,
+        "right": -10,
+        "top": 10,
+        "bottom": -308.734375
+      }
+    },
+    {
+      "name": "H bs 1920 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H garch 1920 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 350.796875,
+        "right": -10,
+        "top": 10,
+        "bottom": -590.078125
+      }
+    },
+    {
+      "name": "H garch 1920 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H garch 1920 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 362.796875,
+        "right": -10,
+        "top": 10,
+        "bottom": -544.890625
+      }
+    },
+    {
+      "name": "H garch 1920 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H capm 1920 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 350.796875,
+        "right": -10,
+        "top": 10,
+        "bottom": -653.453125
+      }
+    },
+    {
+      "name": "H capm 1920 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H capm 1920 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 362.796875,
+        "right": -10,
+        "top": 620.0625,
+        "bottom": -10
+      }
+    },
+    {
+      "name": "H capm 1920 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H portfolio 1920 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 364.796875,
+        "right": -8,
+        "top": 8,
+        "bottom": -376.828125
+      }
+    },
+    {
+      "name": "H portfolio 1920 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H portfolio 1920 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 436.796875,
+        "right": -8,
+        "top": 8,
+        "bottom": -353.125
+      }
+    },
+    {
+      "name": "H portfolio 1920 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 660,
+        "right": 1260,
+        "top": 205.703125,
+        "bottom": 874.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H var 1440 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -365.890625
+      }
+    },
+    {
+      "name": "H var 1440 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H var 1440 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 177.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -322.484375
+      }
+    },
+    {
+      "name": "H var 1440 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H bs 1440 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -183.640625
+      }
+    },
+    {
+      "name": "H bs 1440 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H bs 1440 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 177.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -128.734375
+      }
+    },
+    {
+      "name": "H bs 1440 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H garch 1440 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -410.078125
+      }
+    },
+    {
+      "name": "H garch 1440 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H garch 1440 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 177.203125,
+        "right": -10,
+        "top": 10,
+        "bottom": -364.890625
+      }
+    },
+    {
+      "name": "H garch 1440 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H capm 1440 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 165.203125,
+        "right": -10,
+        "top": 454.265625,
+        "bottom": -10
+      }
+    },
+    {
+      "name": "H capm 1440 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H capm 1440 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 177.203125,
+        "right": -10,
+        "top": 419.265625,
+        "bottom": -10
+      }
+    },
+    {
+      "name": "H capm 1440 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H portfolio 1440 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 179.203125,
+        "right": -8,
+        "top": 8,
+        "bottom": -196.828125
+      }
+    },
+    {
+      "name": "H portfolio 1440 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H portfolio 1440 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 251.203125,
+        "right": -8,
+        "top": 8,
+        "bottom": -173.125
+      }
+    },
+    {
+      "name": "H portfolio 1440 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 420,
+        "right": 1020,
+        "top": 115.703125,
+        "bottom": 784.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H var 1366 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 135.609375,
+        "right": -10,
+        "top": 10,
+        "bottom": -233.890625
+      }
+    },
+    {
+      "name": "H var 1366 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H var 1366 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 147.59375,
+        "right": -10,
+        "top": 10,
+        "bottom": -190.484375
+      }
+    },
+    {
+      "name": "H var 1366 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H bs 1366 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 135.609375,
+        "right": -10,
+        "top": 10,
+        "bottom": -98.53125
+      }
+    },
+    {
+      "name": "H bs 1366 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H bs 1366 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 147.59375,
+        "right": -10,
+        "top": 10,
+        "bottom": -73.0625
+      }
+    },
+    {
+      "name": "H bs 1366 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H garch 1366 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 135.609375,
+        "right": -10,
+        "top": 10,
+        "bottom": -278.078125
+      }
+    },
+    {
+      "name": "H garch 1366 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H garch 1366 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 147.59375,
+        "right": -10,
+        "top": 10,
+        "bottom": -232.890625
+      }
+    },
+    {
+      "name": "H garch 1366 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H capm 1366 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 135.609375,
+        "right": -10,
+        "top": 322.265625,
+        "bottom": -10
+      }
+    },
+    {
+      "name": "H capm 1366 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H capm 1366 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 147.59375,
+        "right": -10,
+        "top": 287.265625,
+        "bottom": -10
+      }
+    },
+    {
+      "name": "H capm 1366 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H portfolio 1366 false 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 149.609375,
+        "right": -8,
+        "top": 8,
+        "bottom": -74.828125
+      }
+    },
+    {
+      "name": "H portfolio 1366 false 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "H portfolio 1366 true 浮层在图内",
+      "passed": true,
+      "detail": {
+        "left": 221.59375,
+        "right": -8,
+        "top": 8,
+        "bottom": -52
+      }
+    },
+    {
+      "name": "H portfolio 1366 true 目录完整可达",
+      "passed": true,
+      "detail": {
+        "left": 383,
+        "right": 983,
+        "top": 49.703125,
+        "bottom": 718.296875,
+        "width": 600,
+        "scrollable": false,
+        "lastVisible": true,
+        "overflow": false,
+        "close": true
+      }
+    },
+    {
+      "name": "G 短屏目录内部滚动且背景稳定",
+      "passed": true
+    },
+    {
+      "name": "所有页面无未捕获异常",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

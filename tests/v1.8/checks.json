@@ -1,0 +1,226 @@
+{
+  "browser": "Codex connected in-app browser",
+  "scope": "actual UI actions; same engine, not cross-engine/classroom load",
+  "checks": [
+    {
+      "name": "截图案例收益44.40与风险9.99",
+      "pass": true
+    },
+    {
+      "name": "极端合法假设仅提示且90未改写",
+      "pass": true
+    },
+    {
+      "name": "诊断显示支配组合64.49与5.24",
+      "pass": true
+    },
+    {
+      "name": "证据为真正支配关系",
+      "pass": true
+    },
+    {
+      "name": "应用解析权重且所有指标同步",
+      "pass": true
+    },
+    {
+      "name": "应用后判断有效",
+      "pass": true
+    },
+    {
+      "name": "撤销完整恢复截图参数",
+      "pass": true
+    },
+    {
+      "name": "基准明确显示rho前后",
+      "pass": true
+    },
+    {
+      "name": "多参数变化不作单因素归因",
+      "pass": true
+    },
+    {
+      "name": "完整快照含参数与结果",
+      "pass": true
+    },
+    {
+      "name": "结束比较清空基准入口和差异",
+      "pass": true
+    },
+    {
+      "name": "结束后不自动复活旧比较",
+      "pass": true
+    },
+    {
+      "name": "有效前沿任务预测阶段全锁且无诊断答案",
+      "pass": true
+    },
+    {
+      "name": "权重任务仅开放w",
+      "pass": true
+    },
+    {
+      "name": "有效前沿解释为数学存在性而非试配是否成功",
+      "pass": true
+    },
+    {
+      "name": "选择预测未直接进入实验",
+      "pass": true
+    },
+    {
+      "name": "原相关性任务保持收益11风险9.54",
+      "pass": true
+    },
+    {
+      "name": "原任务错误预测评估仍正确",
+      "pass": true
+    },
+    {
+      "name": "收益代码整合金融意义",
+      "pass": true
+    },
+    {
+      "name": "最小方差不冒充最高收益",
+      "pass": true
+    },
+    {
+      "name": "知识检验给出标准解释并可定位代码",
+      "pass": true
+    },
+    {
+      "name": "知识题返回已有代码解析",
+      "pass": true
+    },
+    {
+      "name": "反馈默认不收集且禁用",
+      "pass": true
+    },
+    {
+      "name": "显式导出反馈且没有上传提示",
+      "pass": true
+    },
+    {
+      "name": "独立页面参数不互相覆盖",
+      "pass": true
+    },
+    {
+      "name": "原工作台未被其他页面修改",
+      "pass": true
+    },
+    {
+      "name": "刷新回到明确默认状态",
+      "pass": true
+    },
+    {
+      "name": "desktop 1440×900 no page scroll and controls visible",
+      "pass": true
+    },
+    {
+      "name": "desktop 1366×768 no page scroll and controls visible",
+      "pass": true
+    },
+    {
+      "name": "desktop 1920×1080 no page scroll and controls visible",
+      "pass": true
+    },
+    {
+      "name": "projection keeps workbench and enlarged code",
+      "pass": true
+    },
+    {
+      "name": "preset B rho .8 and no comparison",
+      "pass": true
+    },
+    {
+      "name": "preset C reset all inputs from altered B",
+      "pass": true
+    },
+    {
+      "name": "invalid rho keeps valid result and identifies input",
+      "pass": true
+    },
+    {
+      "name": "invalid s1 keeps valid result and identifies input",
+      "pass": true
+    },
+    {
+      "name": "invalid mu1 keeps valid result and identifies input",
+      "pass": true
+    },
+    {
+      "name": "negative return accepted",
+      "pass": true
+    },
+    {
+      "name": "zero volatility accepted",
+      "pass": true
+    },
+    {
+      "name": "high volatility warning is nonblocking",
+      "pass": true
+    },
+    {
+      "name": "mobile 375 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "mobile 320 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "flat risk with unequal means is inefficient",
+      "pass": true
+    },
+    {
+      "name": "flat risk witness has same risk higher return",
+      "pass": true
+    },
+    {
+      "name": "flat risk equal means all efficient",
+      "pass": true
+    },
+    {
+      "name": "zero risk no NaN",
+      "pass": true
+    },
+    {
+      "name": "pure B efficient",
+      "pass": true
+    },
+    {
+      "name": "pure A inefficient",
+      "pass": true
+    },
+    {
+      "name": "unchanged saved baseline can be ended",
+      "pass": true
+    },
+    {
+      "name": "axis switch preserves numeric comparison",
+      "pass": true
+    },
+    {
+      "name": "fixed mode shows real baseline curve",
+      "pass": true
+    },
+    {
+      "name": "end clears numeric and chart baselines",
+      "pass": true
+    },
+    {
+      "name": "new comparison uses newly saved -.5 baseline",
+      "pass": true
+    },
+    {
+      "name": "both current and actual witness markers visible",
+      "pass": true
+    },
+    {
+      "name": "rounded diagnosis variance stays on one line",
+      "pass": true
+    },
+    {
+      "name": "constant variance exploration correctly says no strictly lower risk",
+      "pass": true
+    }
+  ]
+}

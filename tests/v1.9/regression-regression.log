@@ -1,0 +1,6 @@
+{
+  passed: 8247,
+  runs: 14,
+  glmnetChecks: 8,
+  maxDiff: 4.930324343233039e-8
+}

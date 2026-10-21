@@ -1,0 +1,49 @@
+{
+  "returns": [
+    0.01,
+    -0.01,
+    -0.04,
+    0.02,
+    -0.03
+  ],
+  "mu": 0,
+  "initial": 0.0002,
+  "rows": [
+    {
+      "day": 1,
+      "h": null,
+      "informationThrough": null,
+      "actualLoss": -10000
+    },
+    {
+      "day": 2,
+      "h": null,
+      "informationThrough": null,
+      "actualLoss": 10000
+    },
+    {
+      "day": 3,
+      "h": 0.0002,
+      "informationThrough": 2,
+      "actualLoss": 40000
+    },
+    {
+      "day": 4,
+      "h": 0.00028400000000000007,
+      "informationThrough": 3,
+      "actualLoss": -20000
+    },
+    {
+      "day": 5,
+      "h": 0.0002909600000000001,
+      "informationThrough": 4,
+      "actualLoss": 30000
+    },
+    {
+      "day": 6,
+      "h": 0.00032750240000000016,
+      "informationThrough": 5,
+      "actualLoss": null
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: import error duplicate-columns",
+  "checks": [
+    {
+      "name": "dual default free exploration",
+      "passed": true
+    },
+    {
+      "name": "dual full code default",
+      "passed": true
+    },
+    {
+      "name": "multi mode valid",
+      "passed": true
+    },
+    {
+      "name": "multi full default",
+      "passed": true
+    },
+    {
+      "name": "no forced exploration",
+      "passed": true
+    },
+    {
+      "name": "default 3 assets",
+      "passed": true
+    },
+    {
+      "name": "manual3 actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "manual3 R clean session",
+      "passed": true
+    },
+    {
+      "name": "manual3 R/JS values",
+      "passed": true
+    },
+    {
+      "name": "manual3 target R/JS",
+      "passed": true
+    },
+    {
+      "name": "one weight never silently normalizes",
+      "passed": true
+    },
+    {
+      "name": "bad sum blocks copy",
+      "passed": true
+    },
+    {
+      "name": "explicit normalization valid",
+      "passed": true
+    },
+    {
+      "name": "normalization describes all weights",
+      "passed": true
+    },
+    {
+      "name": "GMV applied",
+      "passed": true
+    },
+    {
+      "name": "before after explicit",
+      "passed": true
+    },
+    {
+      "name": "infeasible target blocks only application",
+      "passed": true
+    },
+    {
+      "name": "boundary target weights",
+      "passed": true
+    },
+    {
+      "name": "below GMV explanation",
+      "passed": true
+    },
+    {
+      "name": "target equality",
+      "passed": true
+    },
+    {
+      "name": "target-basic actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "target-basic R clean session",
+      "passed": true
+    },
+    {
+      "name": "target-basic R/JS values",
+      "passed": true
+    },
+    {
+      "name": "target-basic target R/JS",
+      "passed": true
+    },
+    {
+      "name": "copy preserves key reading mode",
+      "passed": true
+    },
+    {
+      "name": "line explanation",
+      "passed": true
+    },
+    {
+      "name": "hover preview",
+      "passed": true
+    },
+    {
+      "name": "hover leave hides",
+      "passed": true
+    },
+    {
+      "name": "only click pins",
+      "passed": true
+    },
+    {
+      "name": "Escape closes",
+      "passed": true
+    },
+    {
+      "name": "GMV weights tooltip",
+      "passed": true
+    },
+    {
+      "name": "frontier selectable",
+      "passed": true
+    },
+    {
+      "name": "recalculate clears tooltip",
+      "passed": true
+    },
+    {
+      "name": "5 assets",
+      "passed": true
+    },
+    {
+      "name": "manual5 actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "manual5 R clean session",
+      "passed": true
+    },
+    {
+      "name": "manual5 R/JS values",
+      "passed": true
+    },
+    {
+      "name": "manual5 target R/JS",
+      "passed": true
+    },
+    {
+      "name": "asymmetric rejected",
+      "passed": true
+    },
+    {
+      "name": "nonPSD rejected",
+      "passed": true
+    },
+    {
+      "name": "singular rejected",
+      "passed": true
+    },
+    {
+      "name": "explicit ridge valid",
+      "passed": true
+    },
+    {
+      "name": "ridge actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "ridge R clean session",
+      "passed": true
+    },
+    {
+      "name": "ridge R/JS values",
+      "passed": true
+    },
+    {
+      "name": "ridge target R/JS",
+      "passed": true
+    },
+    {
+      "name": "reset all including ridge",
+      "passed": true
+    },
+    {
+      "name": "CSV local import",
+      "passed": true
+    },
+    {
+      "name": "data input estimate read-only",
+      "passed": true
+    },
+    {
+      "name": "explicit frequency metadata",
+      "passed": true
+    },
+    {
+      "name": "csv-simple actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "csv-simple R clean session",
+      "passed": true
+    },
+    {
+      "name": "csv-simple R/JS values",
+      "passed": true
+    },
+    {
+      "name": "csv-simple target R/JS",
+      "passed": true
+    },
+    {
+      "name": "csv-up actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "csv-up R clean session",
+      "passed": true
+    },
+    {
+      "name": "csv-up R/JS values",
+      "passed": true
+    },
+    {
+      "name": "csv-up target R/JS",
+      "passed": true
+    },
+    {
+      "name": "csv-first actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "csv-first R clean session",
+      "passed": true
+    },
+    {
+      "name": "csv-first R/JS values",
+      "passed": true
+    },
+    {
+      "name": "csv-first target R/JS",
+      "passed": true
+    },
+    {
+      "name": "csv-second actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "csv-second R clean session",
+      "passed": true
+    },
+    {
+      "name": "csv-second R/JS values",
+      "passed": true
+    },
+    {
+      "name": "csv-second target R/JS",
+      "passed": true
+    },
+    {
+      "name": "annual SD sqrt conversion",
+      "passed": true
+    },
+    {
+      "name": "csv-period actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "csv-period R clean session",
+      "passed": true
+    },
+    {
+      "name": "csv-period R/JS values",
+      "passed": true
+    },
+    {
+      "name": "csv-period target R/JS",
+      "passed": true
+    },
+    {
+      "name": "log import",
+      "passed": true
+    },
+    {
+      "name": "csv-log actual clipboard independent",
+      "passed": true
+    },
+    {
+      "name": "csv-log R clean session",
+      "passed": true
+    },
+    {
+      "name": "csv-log R/JS values",
+      "passed": true
+    },
+    {
+      "name": "csv-log target R/JS",
+      "passed": true
+    },
+    {
+      "name": "export all observations",
+      "passed": true
+    },
+    {
+      "name": "import error duplicates",
+      "passed": true
+    },
+    {
+      "name": "import error missing-date",
+      "passed": true
+    },
+    {
+      "name": "import error duplicate-columns",
+      "passed": false
+    }
+  ],
+  "errors": [],
+  "url": "http://127.0.0.1:8765/index.html"
+}

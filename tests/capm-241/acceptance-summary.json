@@ -1,0 +1,10 @@
+{
+  "build": "2.4.1-capm-ux.ebdc1a4700f3cfd6",
+  "pid": 55872,
+  "resources": 51,
+  "browserChecks": 1740,
+  "actualClipboardRScripts": 19,
+  "regressionSuites": 19,
+  "frozenSources": 42,
+  "allPassed": true
+}

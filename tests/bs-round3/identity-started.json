@@ -1,0 +1,16 @@
+{
+  "status": {
+    "pid": 89367,
+    "projectRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab",
+    "documentRoot": "/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/dist",
+    "buildId": "1.9.1-audit.46e712b8e8450dd6",
+    "startCommand": "python3 \"/Users/emobcccz/.codex/.chatgpt-projects/g-p-69aed7ee2424819192fda2d3828aa78d/finmodel-lab/tools/serve.py\""
+  },
+  "hashes": {
+    "experiments.html": true,
+    "experiments-bundle.js": true,
+    "experiments.css": true,
+    "iv-workbench.js": true,
+    "chart-interaction.js": true
+  }
+}
