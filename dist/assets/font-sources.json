@@ -1,0 +1,36 @@
+{
+  "Bricolage Grotesque": {
+    "repository": "https://github.com/ateliertriay/bricolage",
+    "commit": "84745e5b96261ae5f8c6c856e262fe78d1d6efdd",
+    "variant": "opsz=24, wdth=100, wght=400..700; Latin subset"
+  },
+  "Glow Sans SC": {
+    "repository": "https://github.com/welai/glow-sans",
+    "release": "v0.93",
+    "files": [
+      "GlowSansSC-Normal-Regular.otf",
+      "GlowSansSC-Normal-Medium.otf"
+    ],
+    "actualWeights": [
+      400,
+      600
+    ],
+    "releaseRangeDownloads": true
+  },
+  "Monaspace": {
+    "repository": "https://github.com/githubnext/monaspace",
+    "commit": "f31794b6e9e65698a062262e2f826f679dcb7070",
+    "files": [
+      "MonaspaceArgon-Regular.woff2",
+      "MonaspaceNeon-Regular.woff2",
+      "MonaspaceNeon-Medium.woff2"
+    ],
+    "modified": false
+  },
+  "KaTeX": {
+    "repository": "https://github.com/KaTeX/KaTeX",
+    "version": "0.19.0",
+    "distribution": "https://registry.npmjs.org/katex/-/katex-0.19.0.tgz",
+    "sha256": "d8e49f2fea6eeed7cdae2cf4fd48e2f1d348758aa9e5740715e4533c2c96d1ee"
+  }
+}

@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+__MACOSX/
+._*
+
+# 打包产物：历史提交里已有 12 个 zip（约 140MB），不再新增
+FinModel-Lab-*.zip
+*.zip.tmp
+
+# Netlify 本地目录
+.netlify/
