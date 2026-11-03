@@ -84,3 +84,18 @@ body.projector .fml-lang {
     left: 12px;
   }
 }
+
+/* ---------- 英文版式补偿 ----------
+   英文标签比中文长，个别横向标签条原本靠 nowrap + 滚动条容纳，
+   换成英文后末项会被截在可视区外。英文下改为换行，避免任何裁切。 */
+html[data-lang="en"] .bs-modules {
+  flex-wrap: wrap !important;
+  overflow: visible;
+}
+
+/* 英文导航项更长，收紧字距避免侧栏换行挤压 */
+html[data-lang="en"] .sidebar .nav a,
+html[data-lang="en"] .sidebar nav a {
+  letter-spacing: -.005em;
+}
+

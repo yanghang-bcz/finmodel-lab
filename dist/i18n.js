@@ -398,6 +398,8 @@
     }],
     /* 问题1 / 问题2 */
     [/^问题\s*(\d+)$/, function (m, n) { return 'Question ' + n; }],
+    /* 精确前沿第3点（图表点位的 aria-label） */
+    [/^精确前沿第(\d+)点$/, function (m, n) { return 'Exact frontier point ' + n; }],
     /* 第N类 / 第N组 */
     [/^第(\d+)类$/, function (m, n) { return 'Category ' + n; }],
     /* 相关系数1,2 → ρ1,2 */
