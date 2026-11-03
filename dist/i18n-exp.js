@@ -824,7 +824,21 @@ window.FML_DICT_EXT = {
  "股息现金流": "Dividend cash flow",
  "现金利息": "Cash interest",
  "组合净价值": "Portfolio net value",
- "到期清算": "Settlement at expiry"
+ "到期清算": "Settlement at expiry",
+ "GARCH训练估计 事前VaR": "GARCH-trained ex-ante VaR",
+ "估计详情 · 数值收敛（边界警示）": "Estimation details · Numerical convergence (boundary warning)",
+ "# 用户本地CSV的清洗后收益样本；不依赖外部文件或网络": "# Cleaned return sample from the user's local CSV; no external file or network needed",
+ "# 已按日期对齐；简单收益；原输入简单收益率": "# Aligned by date; simple returns; the input was already simple returns",
+ "年化 · 简单收益": "Annualised · simple returns",
+ "每期 · 简单收益": "Per period · simple returns",
+ "μ 预期收益（年化）": "μ Expected return (annualised)",
+ "μ 预期收益（每期）": "μ Expected return (per period)",
+ "σ 标准差（年化） →": "σ Std. dev. (annualised) →",
+ "σ 标准差（每期） →": "σ Std. dev. (per period) →",
+ "权重草稿尚未应用；图表、收益、风险与R代码仍为上一次有效组合。失焦或Enter提交。": "The weight draft has not been applied; the chart, return, risk and R code still reflect the last valid portfolio. Commit by blurring the field or pressing Enter.",
+ "已放弃未应用草稿，恢复上一次有效组合的完整精度权重。": "Unapplied draft discarded; the full-precision weights of the last valid portfolio are restored.",
+ "已返回教学假设；导入数据不再用于计算。": "Returned to the teaching assumptions; the imported data is no longer used in the calculation.",
+ "CSV至少需要表头和两行数据。": "The CSV needs a header row and at least two data rows."
 };
 
 window.FML_DICT_NUM = {
@@ -996,5 +1010,18 @@ window.FML_DICT_NUM = {
  "网页不执行R。点击复制代码，在RStudio新建R Script，粘贴后全选运行；仅需基础R。默认 seed=\u0001、N=\u0001、interval=\u0001、Call、q=\u0001：终值不对冲 \u0001，静态 \u0001，动态 \u0001 元。\n保持seed与N不变，将interval改为\u0001、\u0001，整段重跑。比较errors、results$dynamic与settlement。路径保持相同，终值绝对误差未必单调。完整版同时执行对账并绘制策略图。": "The web page does not run R. Click to copy the code, create a new R Script in RStudio, paste it and run the whole thing; base R is enough. Defaults seed=\u0001, N=\u0001, interval=\u0001, Call, q=\u0001: terminal values unhedged \u0001, static \u0001, dynamic \u0001 CNY.\nKeep the seed and N fixed, change interval to \u0001 and \u0001, and rerun the whole script. Compare errors, results$dynamic and settlement. The path stays the same, and the absolute terminal error need not be monotone. The full version also runs the reconciliation and plots the strategies.",
  "股票的一阶价格敏感度为 h；期权空头为 −Δ。相加为\u0001只消除当前局部的一阶价格风险，不锁定未来收益。": "The share’s first-order price sensitivity is h and the option short’s is −Δ. Adding them to \u0001 removes only the current local first-order price risk; it does not lock in future returns.",
  "蓝线：BS 价格 · 虚线：假设报价 \u0001 元 · 淡绿色：当前 [a,b] 区间": "Blue line: BS price · dashed line: assumed quote \u0001 CNY · pale green: the current [a,b] bracket",
- "这是约束二次优化：逐一枚举最多\u0001个非空活跃面，解预算与目标收益的拉格朗日方程，剔除负权重，再比较方差。可行采样不参与求解GMV或有效前沿。": "This is a constrained quadratic optimisation: enumerate at most \u0001 non-empty active faces, solve the Lagrange equations for the budget and target return, drop negative weights, then compare variances. Feasible sampling does not take part in solving for the GMV or the efficient frontier."
+ "这是约束二次优化：逐一枚举最多\u0001个非空活跃面，解预算与目标收益的拉格朗日方程，剔除负权重，再比较方差。可行采样不参与求解GMV或有效前沿。": "This is a constrained quadratic optimisation: enumerate at most \u0001 non-empty active faces, solve the Lagrange equations for the budget and target return, drop negative weights, then compare variances. Feasible sampling does not take part in solving for the GMV or the efficient frontier.",
+ "已在本地读取 \u0001 行。选择日期与资产列，确认频率/复权口径后应用；尚未改变模型。": "Read \u0001 rows locally. Choose the date and asset columns, confirm the frequency and return convention, then apply; the model has not changed yet.",
+ "A权重\u0001%、B权重\u0001%；ρ为手动教学情景，不是估计结果。A下一期\u0001%，B下一期\u0001%。同样个体风险下，相关性会改变组合风险。": "A weight \u0001%, B weight \u0001%; ρ is a manual teaching scenario, not an estimate. Next period: A \u0001%, B \u0001%. With the same individual risks, correlation changes portfolio risk.",
+ "训练\u0001期；ω=\u0001e\u0001，a=\u0001e\u0001，b=\u0001。固定训练均值\u0001%，初始方差\u0001。对数似然\u0001；六起点中\u0001个通过收敛与局部扰动检查，选择负似然最小者。各起点负似然：\u0001、\u0001、\u0001、\u0001、\u0001、\u0001。估计接近参数边界，弱识别与局部最优仍需谨慎。": "Trained on \u0001 periods; ω=\u0001e\u0001; a=\u0001e\u0001; b=\u0001. Training mean fixed at \u0001%, initial variance \u0001. Log-likelihood \u0001; \u0001 of six starting points passed the convergence and local-perturbation checks and the smallest negative log-likelihood was kept. Negative log-likelihood by start: \u0001 · \u0001 · \u0001 · \u0001 · \u0001 · \u0001. The estimate sits near the parameter boundary, so weak identification and local optima still warrant caution.",
+ "全部训练观测进入条件高斯似然；收益按训练标准差缩放，ω已还原。参数用正值与softmax变换，数值搜索|θ|≤\u0001；近边界不代表强识别，不保证全局最优。": "All training observations enter the conditional Gaussian likelihood; returns are scaled by the training standard deviation and ω has been restored. Parameters use positivity and softmax transforms, with the numerical search bounded by |θ|≤\u0001; a value near the boundary does not imply strong identification and global optimality is not guaranteed.",
+ "历史／正态参数只从训练期计算并固定；均值与初始方差只用训练期。EWMA/GARCH先预测再观察，顺序更新；当前GARCH参数由训练期数据估计；初始训练期参数估计 + 检验期顺序方差更新，未每日重新估计。Kupiec不检验超限独立性，不是完整条件覆盖检验。严格L>VaR，等于不计。缺失预测不计入分母，当前排除\u0001期。": "Historical/normal parameters are computed from the training period only and then held fixed; the mean and initial variance use the training period only. EWMA/GARCH predicts before observing and updates sequentially; the current GARCH parameters are estimated from the training data; initial training-period estimates plus sequential variance updating over the test period, without daily re-estimation. Kupiec does not test exceedance independence and is not a full conditional-coverage test. Strictly L>VaR; equal values are not counted. Missing forecasts are excluded from the denominator; currently \u0001 periods are excluded.",
+ "训练观测数（GARCH估计至少\u0001）": "Training observations (at least \u0001 for the GARCH estimate)",
+ "# 样本范围 \u0001 至 \u0001；删除缺失行 \u0001": "# Sample range \u0001 to \u0001; missing rows dropped: \u0001",
+ "\u0001—\u0001；\u0001行收益；删除\u0001行，原日期升序；日期间隔中位数\u0001天，最大\u0001天。选定年化因子\u0001。缺失后的价格跨期收益可能跨越多天，请核实频率；未自动补价、填补交易日或确认复权。来源与许可由导入者确认。": "\u0001—\u0001; \u0001 return rows; \u0001 rows dropped, original dates ascending; median date gap \u0001 day, maximum \u0001 day. Annualisation factor set to \u0001. Returns spanning dropped prices can cover more than one day, so verify the frequency; prices were not back-filled, trading days were not imputed and adjustment was not confirmed. Provenance and licensing are the importer's responsibility.",
+ "本窗口\u0001个收益样本；A的均值标准误≈\u0001%（年化）。前后半段同时改变均值与协方差；±标准误只改A均值，Σ保持完整样本。短样本、非平稳与异常值可使优化权重显著改变。": "\u0001 return samples in this window; the standard error of A's mean is ≈\u0001% (annualised). The first and second halves change both the mean and the covariance; ± one standard error changes only A's mean while Σ keeps the full sample. Short samples, non-stationarity and outliers can materially change the optimised weights.",
+ "本窗口\u0001个收益样本；A的均值标准误≈\u0001%（每期）。前后半段同时改变均值与协方差；±标准误只改A均值，Σ保持完整样本。短样本、非平稳与异常值可使优化权重显著改变。": "\u0001 return samples in this window; the standard error of A's mean is ≈\u0001% (per period). The first and second halves change both the mean and the covariance; ± one standard error changes only A's mean while Σ keeps the full sample. Short samples, non-stationarity and outliers can materially change the optimised weights.",
+ "当前合计\u0001%，请调整权重或使用归一化。 草稿尚未应用。": "Current total \u0001%, adjust the weights or use normalisation. The draft has not been applied.",
+ "预算\u0001%，禁止卖空，无无风险资产；λ=\u0001；每期 · 简单收益。模拟配置调整，不是真实交易。": "Budget \u0001%, short selling not allowed, no risk-free asset; λ=\u0001; per period · simple returns. A simulated configuration change, not a real trade.",
+ "文件超过\u0001MB，请先缩小数据范围。": "The file exceeds \u0001 MB; narrow the data range first."
 };

@@ -13,7 +13,7 @@
   'use strict';
 
   var STORAGE_KEY = 'finmodel-lang';
-  var ATTRS = ['aria-label', 'title', 'placeholder', 'alt'];
+  var ATTRS = ['aria-label', 'title', 'placeholder', 'alt', 'aria-valuetext'];
   var zhRe = /[\u4e00-\u9fa5]/;
 
   /* ---------- 字典：中文 → English（整串精确匹配） ---------- */
@@ -408,10 +408,32 @@
     [/^结果[：:]\s*(.+)$/, function (m, v) { return 'Result: ' + v; }],
     /* 当前合计：100.00% */
     [/^当前合计[：:]\s*(.+)$/, function (m, v) { return 'Total now: ' + v; }],
+    /* 草稿合计：1065.00% */
+    [/^草稿合计[：:]\s*(.+)$/, function (m, v) { return 'Draft total: ' + v; }],
     /* 资产A权重：xx% */
     [/^(\S+?)[：:]\s*([-\d.,]+\s*%?)$/, function (m, k, v) {
       return (DICT[k] || k) + ': ' + v;
-    }]
+    }],
+    /* 代码 68%，解析 32%（分隔条 aria-valuetext） */
+    [/^代码\s*(\d+)\s*%，\s*解析\s*(\d+)\s*%$/, function (m, a, b) {
+      return 'Code ' + a + '%, explanation ' + b + '%';
+    }],
+    /* Δμ +0.019 个百分点；Δσ -0.029 个百分点 */
+    [/^Δμ\s*([+-]?[\d.,]+)\s*个百分点；\s*Δσ\s*([+-]?[\d.,]+)\s*个百分点$/, function (m, a, b) {
+      return 'Δμ ' + a + ' pp; Δσ ' + b + ' pp';
+    }],
+    /* Σ 原始（小数平方）\n<矩阵> */
+    [/^Σ 原始（小数平方）/, function () { return 'Σ raw (decimal squared)'; }],
+    /* 风险下降，预期收益提高；这是当前约束下的收益—风险权衡。 */
+    [/^风险(增加|下降|基本不变)，预期收益(提高|降低|基本不变)；这是当前约束下的收益—风险权衡。$/, function (m, a, b) {
+      var risk = { '增加': 'Risk increases', '下降': 'Risk decreases', '基本不变': 'Risk is essentially unchanged' }[a];
+      var ret = { '提高': 'expected return increases', '降低': 'expected return decreases', '基本不变': 'expected return is essentially unchanged' }[b];
+      return risk + ' and ' + ret + '; this is the return–risk trade-off under the current constraints.';
+    }],
+    /* A预期收益率 / A波动率 / A权重百分比（动态生成的 aria-label） */
+    [/^(.+?)预期收益率$/, function (m, k) { return k + ' expected return'; }],
+    [/^(.+?)权重百分比$/, function (m, k) { return k + ' weight (%)'; }],
+    [/^(.+?)波动率$/, function (m, k) { return k + ' volatility'; }]
   ];
 
   /* ---------- 翻译 ---------- */
@@ -443,6 +465,7 @@
   }
 
   var cache = new Map();
+  var numSkeleton = null;
 
   function translate(text) {
     if (!text || !zhRe.test(text)) return text;
@@ -463,6 +486,19 @@
     if (out === text && Object.keys(numDict).length) {
       var n = normNums(text);
       if (numDict[n.norm] !== undefined) out = fillNums(numDict[n.norm], n.nums);
+      else {
+        /* 兜底：把数字整体剥掉再比骨架。位数、正负号、指数写法变化时仍能命中。 */
+        if (!numSkeleton) {
+          numSkeleton = {};
+          for (var k in numDict) {
+            var sk = k.replace(/\u0001/g, '');
+            if (numSkeleton[sk] === undefined) numSkeleton[sk] = k;
+          }
+        }
+        var bare = text.replace(NUM_RE, '');
+        var hit = numSkeleton[bare];
+        if (hit !== undefined) out = fillNums(numDict[hit], n.nums);
+      }
     }
 
     cache.set(text, out);
@@ -518,6 +554,61 @@
     for (var c = node.firstChild; c; c = c.nextSibling) walk(c);
   }
 
+  /* ---------- head：文档标题与元信息（不在 body 内，walk 覆盖不到） ---------- */
+  var headStore = null;   /* [[meta, 原文], …] */
+  var titleSrc = null;    /* 中文原标题 */
+  var titleOut = null;    /* 上一次我们自己写进去的英文标题 */
+
+  function translateTitle(text) {
+    var m = /^(FinModel Lab)\s·\s(.+)$/.exec(text);
+    return m ? m[1] + ' · ' + translate(m[2]) : translate(text);
+  }
+
+  function snapshotHead() {
+    if (headStore) return;
+    headStore = [];
+    var list = document.querySelectorAll('meta[name="description"],meta[name="twitter:description"],meta[property]');
+    for (var i = 0; i < list.length; i++) {
+      var c = list[i].getAttribute('content');
+      if (c && zhRe.test(c)) headStore.push([list[i], c]);
+    }
+  }
+
+  function applyTitle() {
+    var cur = document.title;
+    if (cur === titleOut) return;          /* 是我们自己写的，不再处理 */
+    titleSrc = cur;
+    var out = translateTitle(cur);
+    if (out !== cur) { titleOut = out; document.title = out; }
+  }
+
+  function applyHead(toEn) {
+    snapshotHead();
+    if (toEn) applyTitle();
+    else if (titleSrc !== null && document.title !== titleSrc) {
+      document.title = titleSrc;
+      titleOut = null;
+    }
+    for (var i = 0; i < headStore.length; i++) {
+      headStore[i][0].setAttribute('content', toEn ? translate(headStore[i][1]) : headStore[i][1]);
+    }
+  }
+
+  var headObserver = null;
+
+  function startHeadObserver() {
+    if (headObserver || !document.head) return;
+    headObserver = new MutationObserver(function () {
+      if (lang !== 'en') return;
+      applyTitle();
+    });
+    headObserver.observe(document.head, { childList: true, subtree: true, characterData: true });
+  }
+
+  function stopHeadObserver() {
+    if (headObserver) { headObserver.disconnect(); headObserver = null; }
+  }
+
   function restoreAll() {
     textStore.forEach(function (raw, node) {
       if (node.isConnected) node.nodeValue = raw;
@@ -566,9 +657,13 @@
       lang = 'en';
       restoreAll();
       walk(document.body);
+      applyHead(true);
       startObserver();
+      startHeadObserver();
     } else {
+      stopHeadObserver();
       restoreAll();
+      applyHead(false);
       lang = 'zh';
     }
     document.documentElement.lang = desired === 'en' ? 'en' : 'zh-CN';
