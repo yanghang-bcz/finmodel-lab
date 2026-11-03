@@ -85,6 +85,60 @@ body.projector .fml-lang {
   }
 }
 
+/* ---------- 本地 CSV 文件选择 ----------
+   原生 <input type="file"> 的按钮文字由浏览器界面语言决定（中文浏览器显示
+   「选取文件 / 未选择文件」），页面 JS 改不了，切英文时会漏出中文。
+   这里把原生控件缩到 1px 不可见（保留可聚焦、可键盘操作、仍由 label 触发），
+   用同名样式的 label 当按钮，右侧 span 显示所选文件名。 */
+input[type="file"].file-input-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+/* 与同区域 <button> 的既有规则保持一致（字体/内距/圆角/边框/配色） */
+.file-picker {
+  display: inline-block;
+  font: 12px var(--font-ui, system-ui, sans-serif);
+  padding: 6px 9px;
+  border-radius: 5px;
+  border: 1px solid #bdcdd3;
+  background: #f4f8f8;
+  color: #3c6270;
+  cursor: pointer;
+}
+
+.file-picker:hover {
+  background: #e9f0f1;
+}
+
+.file-picker:focus-within {
+  outline: 2px solid #759bb8;
+  outline-offset: 2px;
+}
+
+.file-name {
+  margin-left: 8px;
+  font: 12px var(--font-ui, system-ui, sans-serif);
+  color: #6b8794;
+  vertical-align: middle;
+  max-width: 16em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* 类选择器会盖掉 UA 的 [hidden]{display:none}，需显式补回 */
+.file-name[hidden] {
+  display: none;
+}
+
 /* ---------- 英文版式补偿 ----------
    英文标签比中文长，个别横向标签条原本靠 nowrap + 滚动条容纳，
    换成英文后末项会被截在可视区外。英文下改为换行，避免任何裁切。 */
