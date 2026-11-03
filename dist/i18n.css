@@ -1,0 +1,86 @@
+/* ============================================================
+   FinModel Lab — 语言切换键 + 品牌标志调整
+   新增样式集中在此，不改动既有样式表，避免影响构建指纹链。
+   ============================================================ */
+
+/* ---------- 品牌：去掉 fm 字标后，FinModel 成为唯一标志 ---------- */
+/* 原样式为 19px/600，失去 32px 字标后需要自己承担视觉重量 */
+.brand strong {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.028em;
+}
+
+/* 原 55px 下边距是为垫开 32px 字标设置的，去标后收紧一点，导航更紧凑 */
+.brand {
+  margin-bottom: 42px;
+}
+
+/* ---------- 语言切换键 ---------- */
+.fml-lang {
+  position: fixed;
+  left: 16px;
+  bottom: 22px;
+  z-index: 16;
+  width: 112px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border, #dce5e9);
+  border-radius: 999px;
+  background: #ffffffd9;
+  box-shadow: 0 1px 3px #30495c12;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.fml-lang button {
+  flex: 1 1 0;
+  min-width: 0;
+  border: 0;
+  border-radius: 999px;
+  padding: 5px 0;
+  background: transparent;
+  color: var(--muted, #71828e);
+  font: 500 11px/1.2 var(--font-ui, system-ui, sans-serif);
+  letter-spacing: .01em;
+  cursor: pointer;
+  transition: background .16s ease-out, color .16s ease-out;
+}
+
+.fml-lang button:hover {
+  background: #e9eff3;
+  color: var(--ink, #293e4d);
+}
+
+.fml-lang button.is-active,
+.fml-lang button.is-active:hover {
+  background: var(--ink, #293e4d);
+  color: #fff;
+}
+
+.fml-lang button:focus-visible {
+  outline: 2px solid #759bb8;
+  outline-offset: 2px;
+}
+
+/* 投屏模式隐藏侧栏，切换键一并隐藏 */
+body.projector .fml-lang {
+  display: none;
+}
+
+/* ---------- 窄屏：侧栏消失，键改为左下浮动 ---------- */
+@media (max-width: 767px) {
+  .fml-lang {
+    left: 12px;
+    bottom: 14px;
+    width: 104px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fml-lang {
+    left: 12px;
+  }
+}
