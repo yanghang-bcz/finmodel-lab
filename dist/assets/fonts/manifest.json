@@ -12,54 +12,6 @@
     "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
   },
   {
-    "file": "assets/fonts/glow-normal-400-core.woff2",
-    "bytes": 172900,
-    "sha256": "32dee3b51cfba2fc845445d730503bbfc290321f2bf3a1a8e639b16e7377ce9b",
-    "originalBytes": 9119372,
-    "originalSha256": "ca7d34947401b2fa6dd4fd46676d970a8cc47a40ee60c022eb7dd5068bee67ff",
-    "family": "Glow Sans SC Normal",
-    "subfamily": "Regular",
-    "weight": 400,
-    "glyphCount": 496,
-    "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
-  },
-  {
-    "file": "assets/fonts/glow-normal-400-common.woff2",
-    "bytes": 1339092,
-    "sha256": "b242811d6a6df9c71a2141783d8fabf0e2daffaf962e9a994cc24f28dbd98a1f",
-    "originalBytes": 9119372,
-    "originalSha256": "ca7d34947401b2fa6dd4fd46676d970a8cc47a40ee60c022eb7dd5068bee67ff",
-    "family": "Glow Sans SC Normal",
-    "subfamily": "Regular",
-    "weight": 400,
-    "glyphCount": 6627,
-    "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
-  },
-  {
-    "file": "assets/fonts/glow-normal-600-core.woff2",
-    "bytes": 170568,
-    "sha256": "4805557e2e88aea856de5cace0026d55ce2fcc31f4910e2bb1873d92d3ef1eb2",
-    "originalBytes": 9176176,
-    "originalSha256": "56481618894253fb71427a097706f9a440806b4957a7381946dc6464b98aa192",
-    "family": "Glow Sans SC Normal Medium",
-    "subfamily": "Regular",
-    "weight": 600,
-    "glyphCount": 496,
-    "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
-  },
-  {
-    "file": "assets/fonts/glow-normal-600-common.woff2",
-    "bytes": 1352136,
-    "sha256": "90a2b74dc9a22412819406cfb3851b0057355bd6f71edca4f56ee32147155128",
-    "originalBytes": 9176176,
-    "originalSha256": "56481618894253fb71427a097706f9a440806b4957a7381946dc6464b98aa192",
-    "family": "Glow Sans SC Normal Medium",
-    "subfamily": "Regular",
-    "weight": 600,
-    "glyphCount": 6627,
-    "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
-  },
-  {
     "file": "assets/fonts/argon-400.woff2",
     "bytes": 199020,
     "sha256": "7bdd5498df81ff002a52835b6974cbea7b9feda6f8afe0ba860075c4e74b0b3f",

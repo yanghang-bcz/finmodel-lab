@@ -1713,7 +1713,7 @@ window.RegWorkbench={mount};})();
 ;
 
 /* Source: experiments.js */
-(()=>{'use strict';const $=s=>document.querySelector(s),M=ExperimentMath,L=ExperimentLessons,U=WorkbenchUI,{esc}=U;const requested=new URLSearchParams(location.search).get('model'),id=CourseExperiments.byModel(requested)&&requested!=='portfolio'?requested:'var',cfg=L.configs[id];let p={...(cfg?.defaults||{})},built,selected=0,codeMode='full',learning={phase:'Idle'},share=62,bsModule='pricing';
+(()=>{'use strict';const $=s=>document.querySelector(s),M=ExperimentMath,L=ExperimentLessons,U=WorkbenchUI,{esc}=U;const requested=new URLSearchParams(location.search).get('model'),id=requested&&CourseExperiments.byModel(requested)&&requested!=='portfolio'?requested:'var',cfg=L.configs[id];let p={...(cfg?.defaults||{})},built,selected=0,codeMode='full',learning={phase:'Idle'},share=62,bsModule='pricing';
 const money=x=>U.format('money',x),percent=x=>U.format('percent',x),precise=x=>U.format('variance',x),beta=x=>U.format('beta',x);
 function colorCode(s){const pattern=/(#.*$|"(?:[^"\\]|\\.)*"|(?:\b\d+(?:\.\d+)?|\.\d+)(?:e[+-]?\d+)?|\b[A-Za-z][\w.]*(?=\()|<-|<=|>=|!=|%\*%|==|[+*\/^=<>-])/g;let html='',last=0;for(const match of s.matchAll(pattern)){const token=match[0];html+=esc(s.slice(last,match.index));const cls=token.startsWith('#')?'comment':token.startsWith('"')?'string':/^(\d|\.\d)/.test(token)?'number':/^[A-Za-z]/.test(token)?'function':'operator';html+=`<span class="syntax-${cls}">${esc(token)}</span>`;last=match.index+token.length;}return html+esc(s.slice(last));}
 U.colorCode=colorCode;

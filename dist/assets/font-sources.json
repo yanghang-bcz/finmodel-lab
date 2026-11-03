@@ -4,18 +4,17 @@
     "commit": "84745e5b96261ae5f8c6c856e262fe78d1d6efdd",
     "variant": "opsz=24, wdth=100, wght=400..700; Latin subset"
   },
-  "Glow Sans SC": {
-    "repository": "https://github.com/welai/glow-sans",
-    "release": "v0.93",
-    "files": [
-      "GlowSansSC-Normal-Regular.otf",
-      "GlowSansSC-Normal-Medium.otf"
-    ],
-    "actualWeights": [
-      400,
-      600
-    ],
-    "releaseRangeDownloads": true
+  "Chinese (system)": {
+    "note": "Chinese UI text is not self-hosted. It resolves to the visitor's system sans face via the --font-ui stack: PingFang SC (macOS/iOS), Microsoft YaHei (Windows), Source Han Sans SC / Noto Sans CJK SC (Linux). No woff2 is downloaded for CJK.",
+    "stack": [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "PingFang SC",
+      "Hiragino Sans GB",
+      "Microsoft YaHei",
+      "Source Han Sans SC",
+      "sans-serif"
+    ]
   },
   "Monaspace": {
     "repository": "https://github.com/githubnext/monaspace",
