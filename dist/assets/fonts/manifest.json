@@ -12,42 +12,6 @@
     "processing": "WOFF2 character subset; full copyright/name/license metadata retained"
   },
   {
-    "file": "assets/fonts/argon-400.woff2",
-    "bytes": 199020,
-    "sha256": "7bdd5498df81ff002a52835b6974cbea7b9feda6f8afe0ba860075c4e74b0b3f",
-    "originalBytes": 199020,
-    "originalSha256": "7bdd5498df81ff002a52835b6974cbea7b9feda6f8afe0ba860075c4e74b0b3f",
-    "family": "Monaspace Argon",
-    "subfamily": "Regular",
-    "weight": 400,
-    "glyphCount": 2460,
-    "processing": "Official static WOFF2, unmodified; reserved font names preserved"
-  },
-  {
-    "file": "assets/fonts/neon-400.woff2",
-    "bytes": 199508,
-    "sha256": "6b6980f24d115e98e96b1a5d06a5a7fe6454de9b216d479a7e6923c0456a5f41",
-    "originalBytes": 199508,
-    "originalSha256": "6b6980f24d115e98e96b1a5d06a5a7fe6454de9b216d479a7e6923c0456a5f41",
-    "family": "Monaspace Neon",
-    "subfamily": "Regular",
-    "weight": 400,
-    "glyphCount": 2460,
-    "processing": "Official static WOFF2, unmodified; reserved font names preserved"
-  },
-  {
-    "file": "assets/fonts/neon-500.woff2",
-    "bytes": 196756,
-    "sha256": "8a146565b85eee0539c720a7986a80ddb3dc8d15432ec68b2e2bde6fd571620d",
-    "originalBytes": 196756,
-    "originalSha256": "8a146565b85eee0539c720a7986a80ddb3dc8d15432ec68b2e2bde6fd571620d",
-    "family": "Monaspace Neon Medium",
-    "subfamily": "Regular",
-    "weight": 500,
-    "glyphCount": 2460,
-    "processing": "Official static WOFF2, unmodified; reserved font names preserved"
-  },
-  {
     "family": "KaTeX",
     "version": "v0.19.0",
     "files": [
