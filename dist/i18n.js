@@ -14,12 +14,15 @@
 
   var STORAGE_KEY = 'finmodel-lang';
   var ATTRS = ['aria-label', 'title', 'placeholder', 'alt', 'aria-valuetext'];
-  var zhRe = /[\u4e00-\u9fa5]/;
+  var zhRe = /\p{Script=Han}/u;
 
   /* ---------- 字典：中文 → English（整串精确匹配） ---------- */
   var DICT = {
     /* —— 单字 / 短标签 —— */
     '无': 'None',
+    'R 代码': 'R Code',
+    '模型可视化': 'Model Visualization',
+    '参数': 'Parameters',
     '菜单': 'Menu',
     '预测': 'Predict',
     '实验': 'Experiment',
@@ -469,13 +472,16 @@
 
   function translate(text) {
     if (!text || !zhRe.test(text)) return text;
-    if (DICT[text] !== undefined) return DICT[text];
-    if (cache.has(text)) return cache.get(text);
+    var local = document.body?.dataset.model === 'timeseries' ? window.FML_TIMESERIES_I18N : null;
+    if (local && Object.hasOwn(local.dict,text)) return local.dict[text];
+    if (Object.hasOwn(DICT,text)) return DICT[text];
+    var cacheKey = local ? (document.body.dataset.tsSource || '') + '\u0000' + text : text;
+    if (cache.has(cacheKey)) return cache.get(cacheKey);
 
-    var out = text;
+    var out = local?.translate(text,translate) ?? text;
 
     /* 1. 拼接串模式 */
-    for (var i = 0; i < PATTERNS.length; i++) {
+    for (var i = 0; out === text && i < PATTERNS.length; i++) {
       if (PATTERNS[i][0].test(text)) {
         out = text.replace(PATTERNS[i][0], PATTERNS[i][1]);
         break;
@@ -501,7 +507,7 @@
       }
     }
 
-    cache.set(text, out);
+    cache.set(cacheKey, out);
     return out;
   }
 
@@ -520,6 +526,10 @@
 
   function translateTextNode(node) {
     var raw = node.nodeValue;
+    if (node.parentElement?.closest('[data-fml-skip]')) return;
+    var previous = textStore.get(node);
+    if (previous?.translated === raw) return;
+    textStore.delete(node);
     if (!raw || !zhRe.test(raw)) return;
     var lead = raw.match(/^\s*/)[0];
     var tail = raw.match(/\s*$/)[0];
@@ -527,21 +537,25 @@
     if (!core) return;
     var out = translate(core);
     if (out === core) return;
-    if (!textStore.has(node)) textStore.set(node, raw);
-    node.nodeValue = lead + out + tail;
+    var translated = lead + out + tail;
+    textStore.set(node, {raw:raw, translated:translated});
+    node.nodeValue = translated;
   }
 
   function translateAttrs(el) {
+    if (el.closest('[data-fml-skip]')) return;
     for (var i = 0; i < ATTRS.length; i++) {
       var name = ATTRS[i];
-      if (!el.hasAttribute(name)) continue;
       var val = el.getAttribute(name);
+      var previous = attrStore.get(el)?.[name];
+      if (previous?.translated === val) continue;
+      if (attrStore.has(el)) delete attrStore.get(el)[name];
       if (!val || !zhRe.test(val)) continue;
       var out = translate(val);
       if (out === val) continue;
       if (!attrStore.has(el)) attrStore.set(el, {});
       var bag = attrStore.get(el);
-      if (bag[name] === undefined) bag[name] = val;
+      bag[name] = {raw:val, translated:out};
       el.setAttribute(name, out);
     }
   }
@@ -610,12 +624,14 @@
   }
 
   function restoreAll() {
-    textStore.forEach(function (raw, node) {
-      if (node.isConnected) node.nodeValue = raw;
+    textStore.forEach(function (entry, node) {
+      if (node.isConnected && node.nodeValue === entry.translated) node.nodeValue = entry.raw;
     });
     attrStore.forEach(function (bag, el) {
       if (!el.isConnected) return;
-      for (var name in bag) el.setAttribute(name, bag[name]);
+      for (var name in bag) {
+        if (el.getAttribute(name) === bag[name].translated) el.setAttribute(name, bag[name].raw);
+      }
     });
     textStore.clear();
     attrStore.clear();

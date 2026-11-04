@@ -70,7 +70,7 @@
     $('#assumptionDetails').hidden=true;
     let gen={...M.defaults},data=M.generate(gen),datasetId=dataId(data),opt=structuredClone(defaults),view='station';
     let importedTable=null,fileText='',fileVersion=0,worker=null,learned=null,attempted=null,runInfo='',progress=null;
-    let cache=new Map(),built=null,activeBlock='data',activeLine=null,codeMode='full',last=null,share=62;
+    let cache=new Map(),built=null,activeBlock='adf',activeLine=null,codeMode='full',last=null,share=62;
     const seenComparisons=new Set();
     const tabs=document.createElement('nav');
     tabs.id='tsViews'; tabs.setAttribute('aria-label','实验05主视图');
@@ -105,14 +105,15 @@
       var:[['forecast','联合预测'],['criteria','定阶准则'],['granger','Granger 方向']],
       compare:[['rmse','RMSE'],['mae','MAE'],['prediction','实际与预测'],['errors','预测误差'],['loss','训练与验证损失']]
     };
-    const option=(v,l,selected)=>'<option value="'+esc(v)+'" '+(String(v)===String(selected)?'selected':'')+'>'+esc(l)+'</option>';
-    const select=(id,values,value)=>'<select id="ts-'+id+'" data-opt="'+id+'">'+values.map(([v,l])=>option(v,l,value)).join('')+'</select>';
+    const option=(v,l,selected,raw=false)=>'<option value="'+esc(v)+'" '+(raw?'data-fml-skip ':'')+(String(v)===String(selected)?'selected':'')+'>'+esc(l)+'</option>';
+    const select=(id,values,value)=>'<select id="ts-'+id+'" data-opt="'+id+'">'+values.map(([v,l])=>option(v,l,value,!data.synthetic && ['target','from','to','varPlot'].includes(id) && v!=='all')).join('')+'</select>';
     const field=(id,label,values)=>'<label>'+label+select(id,values,opt[id])+'</label>';
     const number=(id,label,value,min,max,step=1)=>'<label>'+label+'<input data-opt="'+id+'" id="ts-'+id+
       '" type="number" value="'+value+'" min="'+min+'" max="'+max+'" step="'+step+'" required></label>';
-    const checks=(key,caption,ids)=>'<fieldset><legend>'+caption+'</legend>'+data.names.map((name,i)=>
-      '<label class="ts-check"><input type="checkbox" data-list="'+key+'" value="'+i+'" '+(ids.includes(i)?'checked':'')+
-      '>'+esc(name)+'</label>').join('')+'</fieldset>';
+    const checks=(key,caption,ids)=>'<fieldset class="ts-choice"><legend>'+caption+
+      '</legend><div class="ts-chips">'+data.names.map((name,i)=>
+      '<label class="ts-chip"><input type="checkbox" data-list="'+key+'" value="'+i+'" '+(ids.includes(i)?'checked':'')+
+      '><span'+(data.synthetic?'':' data-fml-skip')+'>'+esc(name)+'</span></label>').join('')+'</div></fieldset>';
     const genFields=()=>$('#tsGenFields').innerHTML=number('seed','随机种子',gen.seed,1,2147483646)+
       number('n','收益样本量',gen.n,120,1600)+number('ar','市场 AR(1) 系数',gen.ar,-.75,.75,.01)+
       number('cross','市场 → 行业滞后系数',gen.cross,-.75,.75,.01)+number('noise','创新标准差',gen.noise,.001,.05,.001);
@@ -315,7 +316,7 @@
         $('#tsPlot').innerHTML='<div class="ts-directions">'+tests.map(({from,to,p})=>{
           const a=opt.vars[from],b=opt.vars[to],active=a===opt.from&&b===opt.to;
           return '<button type="button" data-direction="'+a+','+b+'" aria-pressed="'+active+'"><span>'+esc(names[from])+
-            ' → '+esc(names[to])+'</span><b class="'+(p<.05?'ts-significant':'')+'">'+(p<.05?'p < 0.05':'p ≥ 0.05')+'</b></button>';
+            ' → '+esc(names[to])+'</span><b class="'+(p<.05?'ts-significant':'')+'">'+'p = '+fmt(p)+'</b><small>'+(p<.05?'有额外预测信息':'证据不足')+'</small></button>';
         }).join('')+'</div>';
         $('#tsPlot').querySelectorAll('[data-direction]').forEach(btn=>btn.onclick=()=>{
           [opt.from,opt.to]=btn.dataset.direction.split(',').map(Number);settings();draw();
@@ -363,7 +364,7 @@
       const best=sorted[0], second=sorted[1];
       metricRow([measure.toUpperCase()+' 最低',best+' · '+fmt(models[best][measure])],['训练 / 验证 / 测试',
         q.nt+' / '+(q.nv-q.nt)+' / '+q.actual.length]);
-      if (kind==='rmse'||kind==='mae') plot('共同测试日期 · 一期 '+kind.toUpperCase(),{
+      if (kind==='rmse'||kind==='mae') plot('共同测试日期 · 一期 '+kind.toUpperCase()+' · '+valid.length+' 个可用模型',{
         series:[{name:kind.toUpperCase(),values:valid.map(k=>models[k][kind]),barColors:valid.map(k=>chart.colors[names.indexOf(k)+1])}],
         labels:valid,unit:unit(d),xLabel:'模型',bars:true});
       else if (kind==='loss') {
@@ -400,6 +401,11 @@
       return {...q,models,model};
     }
 
+    const coreBlock={station:'adf',arma:'arma',var:'var',compare:'split'};
+    function scrollToBlock(id) {
+      const pane=$('#code'), block=document.getElementById('ts-code-'+id);
+      if (block) pane.scrollTop+=block.getBoundingClientRect().top-pane.getBoundingClientRect().top;
+    }
     function renderCode() {
       $('#copy').disabled=!built;
       if (!built) { nav.innerHTML='';$('#code').innerHTML='';$('#explanation').textContent='当前模型没有可复现的有效输出。';return; }
@@ -411,8 +417,11 @@
         b.code.split('\n').map((line,i)=>{
           count++;
           const key=b.id+':'+i;
+          const original=WorkbenchUI.colorCode(line||' '), translated=FML_TIMESERIES_I18N.comment(line);
+          const source=translated===line ? original : '<span class="ts-comment-en">'+original+
+            '</span><span class="ts-comment-zh">'+WorkbenchUI.colorCode(translated)+'</span>';
           return '<button type="button" class="code-line" data-line="'+key+'" data-block="'+b.id+'"><span class="line-number">'+count+
-            '</span><code>'+WorkbenchUI.colorCode(line||' ')+'</code></button>';
+            '</span><code data-fml-skip>'+source+'</code></button>';
         }).join('')+'</section>').join('');
       explain(activeBlock,activeLine);
     }
@@ -429,17 +438,19 @@
       const button=line?$('#code [data-line="'+line+'"]'):null;
       if (button) button.classList.add('ts-selected');
     }
-    function draw() {
+    function draw(focusCore=false) {
       const d=readyData(), {form, target}=opt, scroll=$('#code').scrollTop;
       const key=view+'Chart';
       chart.clear();
       tabs.querySelectorAll('button').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.tsView===view)));
       question.textContent=views.find(([k])=>k===view)[2];
       controls.innerHTML='<label>主图 '+select(key,chartChoices[view],opt[key])+'</label>';
+      body.dataset.tsSource=data.synthetic?'synthetic':'csv';
       $('#graphKind').textContent=data.synthetic?'合成数据':'本地 CSV';
-      $('#tsSource').textContent=(data.synthetic?'合成金融时间序列，非真实市场行情。':'本地 CSV，仅在本机处理。')+
-        ' '+data.frequency+' · 当前有效 '+d.rows.length+' 期 · 清洗损失 '+data.lost+
-        ' 行'+(data.kind==='price'&&form!=='price'?' · 转换首期损失 1 行':'')+'。 '+data.warnings.join(' ');
+      const sourceNotes=[data.synthetic?'合成金融时间序列，非真实市场行情。':'本地 CSV，仅在本机处理。',
+        data.frequency+' · 当前有效 '+d.rows.length+' 期 · 清洗损失 '+data.lost+' 行',
+        ...(data.kind==='price'&&form!=='price'?['转换首期损失 1 行。']:[]),...data.warnings];
+      $('#tsSource').innerHTML=sourceNotes.map(note=>'<span>'+esc(note)+'</span>').join(' ');
       $('#assumptionSummary').innerHTML='<span>'+esc(unit(d))+'</span><span>'+esc(data.frequency)+' · '+d.rows.length+' 期</span>'+
         (data.synthetic?'<span>合成金融时间序列，非真实市场行情。</span>':'<span>清洗损失 '+data.lost+' 行</span>');
       $('#validation').textContent='';$('#legend').textContent='';
@@ -456,6 +467,7 @@
       }
       renderCode();
       $('#code').scrollTop=scroll;
+      if (focusCore) scrollToBlock(activeBlock);
     }
     function update(e) {
       const el=e.target, id=el.dataset.opt, list=el.dataset.list;
@@ -475,14 +487,16 @@
         if (id==='from'&&opt.from===opt.to) opt.to=opt.vars.find(j=>j!==opt.from);
       }
       if (old!==weightKey()) { stop('');attempted=null; }
+      const focused=list && document.activeElement===el;
       settings();draw();
+      if (focused) $('#inputs [data-list="'+list+'"][value="'+el.value+'"]')?.focus({preventScroll:true});
     }
     $('#inputs').onchange=controls.onchange=update;
     tabs.onclick=e=>{
       const id=e.target.dataset.tsView;
       if (!id||id===view) return;
-      view=id;activeBlock='data';activeLine=null;$('#code').scrollTop=0;
-      settings();draw();
+      view=id;activeBlock=coreBlock[id];activeLine=null;$('#code').scrollTop=0;
+      settings();draw(true);
     };
     nav.onclick=e=>{
       const id=e.target.dataset.block;
@@ -490,7 +504,7 @@
       if (codeMode==='basic') {activeBlock=id;activeLine=null;renderCode();}
       else {
         explain(id,null);
-        $('#code').scrollTop+=document.getElementById('ts-code-'+id).getBoundingClientRect().top-$('#code').getBoundingClientRect().top;
+        scrollToBlock(id);
       }
     };
     $('#code').onclick=e=>{
@@ -520,11 +534,11 @@
         if (v!==fileVersion) return;
         importedTable=RegMath.csvTable(text);
         fileText=text;
-        const choices=option('','请选择','')+importedTable.names.map(n=>option(n,n,'')).join('');
+        const choices=option('','请选择','')+importedTable.names.map(n=>option(n,n,'',true)).join('');
         $('#tsColumns').innerHTML='<label>日期列<select id="tsDate" required>'+choices+
           '</select></label><label>预测目标<select id="tsTarget" required>'+choices+
           '</select></label><fieldset><legend>额外数值列（最多两个）</legend>'+
-          importedTable.names.map((n,i)=>'<label class="ts-check"><input type="checkbox" data-csv-column="'+i+'">'+esc(n)+'</label>').join('')+'</fieldset>';
+          importedTable.names.map((n,i)=>'<label class="ts-check"><input type="checkbox" data-csv-column="'+i+'"><span data-fml-skip>'+esc(n)+'</span></label>').join('')+'</fieldset>';
         function syncColumns() {
           const reserved=[$('#tsDate').value,$('#tsTarget').value];
           $('#tsColumns').querySelectorAll('[data-csv-column]').forEach(x=>{
@@ -583,7 +597,7 @@
       activeBlock='data';activeLine=null;clearData(M.generate(gen));
     };
     window.TimeSeriesLab={snapshot:()=>structuredClone({view,opt,data,last,script:built?.script,status:runInfo})};
-    settings();draw();
+    settings();draw(true);
   }
   window.TimeSeriesWorkbench={mount};
 })();

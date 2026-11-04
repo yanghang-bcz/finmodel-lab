@@ -98,3 +98,50 @@
   .ts-workbench #chartHost { height: clamp(230px, 52vw, 400px); }
   .ts-workbench .model-panel { height: auto; min-height: 0; }
 }
+
+.ts-workbench fieldset.ts-choice {
+  border: 0;
+  margin: 12px 0;
+  min-inline-size: 0;
+  padding: 0;
+}
+.ts-choice legend { margin-bottom: 6px; padding: 0; }
+.ts-chips { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+.ts-workbench #inputs label.ts-chip {
+  display: inline-flex;
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+.ts-chip input {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.ts-chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 4px 9px;
+  border: 1px solid var(--control-border);
+  border-radius: 7px;
+  background: var(--control-bg);
+  overflow-wrap: anywhere;
+}
+.ts-chip span::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: none;
+  margin-right: 6px;
+  border: 1px solid var(--interaction);
+  border-radius: 50%;
+}
+.ts-chip input:checked + span { border-color: #b3a9c6; background: #eeebf4; }
+.ts-chip input:checked + span::before { background: var(--interaction); }
+.ts-chip input:focus-visible + span { outline: 2px solid var(--interaction); outline-offset: 2px; }
+html:not([data-lang="en"]) .ts-comment-en,
+html[data-lang="en"] .ts-comment-zh { display: none; }

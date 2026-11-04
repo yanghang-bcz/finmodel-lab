@@ -9,7 +9,7 @@ const bundles={
 };
 const generated={};for(const[name,files]of Object.entries(bundles)){const bundle=files.map(file=>`\n/* Source: ${file} */\n${fs.readFileSync(path.join(root,file),'utf8')}\n;`).join('\n');generated[name]=bundle;output(name,bundle);}
 const assets={};for(const name of fs.readdirSync(root).sort())if(/\.(js|css)$/.test(name)&&name!=='build-info.js')assets[name]=sha(generated[name]??fs.readFileSync(path.join(root,name)));
-const buildId='3.0.0-timeseries.'+sha(JSON.stringify(assets)).slice(0,16),info={version:'3.0.0-timeseries',buildId,assets};
+const buildId='3.0.1-ui-i18n.'+sha(JSON.stringify(assets)).slice(0,16),info={version:'3.0.1-ui-i18n',buildId,assets};
 const buildInfo='window.FINMODEL_BUILD=Object.freeze('+JSON.stringify(info)+');\n';output('build-info.js',buildInfo);assets['build-info.js']=sha(buildInfo);
 for(const name of ['index.html','experiments.html']){
  let html=fs.readFileSync(path.join(root,name),'utf8').replace(/<meta name="finmodel-build"[^>]*>/g,'').replace(/<script src="build-info\.js[^\"]*"><\/script>/g,'');

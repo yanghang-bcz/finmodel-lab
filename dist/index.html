@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="通过 R 代码、实时计算和风险收益图，理解两资产均值—方差投资组合。">
 <title>FinModel Lab</title><link rel="preload" href="assets/fonts/argon-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v=ab186d5e6d5ee4a4"><link rel="stylesheet" href="vendor/katex/katex.min.css?v=144d9ea8097c553f"><link rel="stylesheet" href="typography.css?v=bebc0b62806b93cf"><link rel="stylesheet" href="workbench.css?v=ed933704c9693b3b">
-<link rel="stylesheet" href="workbench-system.css?v=34b1937a2ae140a9"><link rel="stylesheet" href="portfolio-multi.css?v=bf352b20cbcf25f7"><link rel="stylesheet" href="i18n.css?v=86baed66ce9a5ce9"><meta name="finmodel-build" content="3.0.0-timeseries.4e0fceafb8f27c44"></head>
+<link rel="stylesheet" href="workbench-system.css?v=6cd4b09f00ecf11a"><link rel="stylesheet" href="portfolio-multi.css?v=bf352b20cbcf25f7"><link rel="stylesheet" href="i18n.css?v=86baed66ce9a5ce9"><meta name="finmodel-build" content="3.0.1-ui-i18n.188a70237d1ef349"></head>
 <body>
 <aside class="sidebar">
   <a class="brand" href="#workbench" aria-label="FinModel Lab 实验工作台"><strong>FinModel</strong></a>
@@ -14,14 +14,14 @@
   <header><h1 id="title"></h1><div class="header-actions"><button id="mobileMenu" aria-expanded="false" aria-controls="mobileNav">菜单</button><button id="classroomTools">课堂工具</button><button id="projector" aria-pressed="false">投屏模式</button></div><nav id="mobileNav" hidden aria-label="手机导航"><button data-mobile="workbench">实验工作台</button><button data-mobile="catalog">实验目录</button><button data-mobile="help">帮助与资源</button></nav></header>
   <section class="workspace" id="workspace" aria-label="实验八工作台">
     <article class="panel code-panel" aria-label="R 代码与步骤解析">
-      <div class="panel-head"><h2>R Code</h2><button id="copy">复制完整 R 代码</button></div>
+      <div class="panel-head"><h2>R 代码</h2><button id="copy">复制完整 R 代码</button></div>
       <div class="portfolio-code-toolbar"><button data-portfolio-code="full" aria-pressed="true">完整代码</button><button data-portfolio-code="basic" aria-pressed="false">关键逻辑</button><button id="portfolioPractice">RStudio 实践</button><span>基础R，无额外包；主复制始终包含完整脚本</span></div>
       <div id="code" role="group" aria-label="点击 R 代码查看逻辑语句解析"></div>
       <div id="splitter" role="separator" tabindex="0" aria-label="调整代码与解析比例，上下方向键调整，Home与End设为边界" aria-orientation="horizontal" aria-valuemin="40" aria-valuemax="80" aria-valuenow="68" aria-controls="code explanation" title="拖动调整代码与解析；也可使用上下方向键"><span></span></div>
       <section id="explanation" class="explanation" aria-label="当前步骤解析" aria-live="polite"></section>
     </article>
     <article class="panel model-panel" aria-label="投资组合风险收益模型">
-      <div class="panel-head"><h2>Model Visualization</h2><button id="axisMode" class="quiet" aria-describedby="axisStatus" aria-pressed="false" title="当前自动适配；点击切换固定比较">自动适配 ⇄</button></div>
+      <div class="panel-head"><h2>模型可视化</h2><button id="axisMode" class="quiet" aria-describedby="axisStatus" aria-pressed="false" title="当前自动适配；点击切换固定比较">自动适配 ⇄</button></div>
       <div class="explore-prompt"><span>试试看：降低相关系数，组合风险会如何变化？</span><select id="exploreTask" aria-label="选择探索任务"><option value="correlation">相关系数</option><option value="efficiency">有效前沿</option></select><button id="exploreToggle" class="text-button" aria-expanded="false" aria-controls="explorePanel">开始探索 →</button></div>
 
       <div class="metric-area"><div class="metrics"><div id="returnMetric"><span>Expected Return</span><b id="return">—</b></div><div id="riskMetric"><span>Portfolio Risk</span><b id="risk">—</b><div id="comparison" class="comparison" hidden><div id="comparisonText"></div></div><div class="baseline-actions"><button id="endComparison" class="text-button" hidden>结束比较</button><button id="saveBaseline" class="text-button">设为比较基准</button><button id="viewComparison" class="text-button" hidden>查看变化</button></div></div></div></div><span id="axisStatus" class="sr-only" aria-live="polite">自动适配当前可行集</span><p id="changeFeedback" class="change-feedback" aria-live="polite">调整参数，观察代码与曲线的对应关系。</p>
@@ -41,7 +41,7 @@
       <div class="diagnosis-entry"><button id="efficiencyStatus" class="text-button">查看组合有效性</button><button id="undoImprovement" class="text-button" hidden>撤销配置</button></div>
     </article>
     <section class="panel parameters" aria-label="参数调节">
-      <div class="panel-head"><h2>Parameters</h2><button id="reset" class="quiet">恢复默认</button></div>
+      <div class="panel-head"><h2>参数</h2><button id="reset" class="quiet">恢复默认</button></div>
       <section class="param-group" id="allocationGroup" aria-labelledby="allocationTitle"><h3 id="allocationTitle">组合权重</h3><div class="allocation-values"><span class="asset-a">Asset A <b id="weightA">50%</b></span><span class="asset-b">Asset B <b id="weightB">50%</b></span></div><input id="w" type="range" min="0" max="100" step="any" value="50" aria-label="资产 A 权重"><div class="ticks"><span>0%</span><span>100%</span></div></section>
       <section class="param-group" id="assumptionsGroup" aria-labelledby="assumptionsTitle"><h3 id="assumptionsTitle">资产假设</h3><p class="period-label">同一分析期的预期收益率与标准差</p><table class="assumptions"><thead><tr><th scope="col"></th><th scope="col" class="asset-a">Asset A</th><th scope="col" class="asset-b">Asset B</th></tr></thead><tbody><tr id="returnsRow"><th scope="row">预期收益率</th><td><div class="number-unit"><input id="mu1" aria-label="资产 A 预期收益率（%）" type="number" min="-100" max="100" step="any" value="8"><span>%</span></div></td><td><div class="number-unit"><input id="mu2" aria-label="资产 B 预期收益率（%）" type="number" min="-100" max="100" step="any" value="14"><span>%</span></div></td></tr><tr id="volatilityRow"><th scope="row">标准差</th><td><div class="number-unit"><input id="s1" aria-label="资产 A 标准差（%）" type="number" min="0" max="100" step="any" value="12"><span>%</span></div></td><td><div class="number-unit"><input id="s2" aria-label="资产 B 标准差（%）" type="number" min="0" max="100" step="any" value="22"><span>%</span></div></td></tr></tbody></table><details id="assumptionNotice" hidden><summary>教学假设提示（不阻断计算）</summary><p id="assumptionReasons"></p><p>当前参数偏离预设教学示例范围，仍可正常计算；结果是假设情景，不代表真实市场收益预测。</p><small id="assumptionBounds"></small></details></section>
       <section class="param-group" id="correlationGroup" aria-labelledby="correlationTitle"><div class="correlation-heading"><h3 id="correlationTitle">相关系数 ρ</h3><input id="rho" aria-label="相关系数精确数值" type="number" min="-1" max="1" step="any" value="0.2"></div><input id="rhoSlider" aria-label="相关系数滑块" type="range" min="-1" max="1" step="0.01" value="0.2"><div class="ticks"><span>−1</span><span id="rhoMid">0</span><span id="rhoMax">+1</span></div></section>
@@ -69,7 +69,7 @@
 <section data-class-pane="feedback" hidden><p>仅用于经教师同意的课堂试用。不记录鼠标行为，不自动上传或保存个人信息。</p><label><input type="checkbox" id="feedbackConsent"> 经教师同意，在本设备填写匿名反馈</label><fieldset id="feedbackFields" disabled><label>指定任务完成情况<select id="feedbackCompletion"><option value="">请选择</option><option>完成</option><option>部分完成</option><option>未完成</option></select></label><label>最难理解的 R 知识点<select id="feedbackCode"><option>无</option><option>向量与下标</option><option>权重与加权求和</option><option>方差与开平方</option><option>最小方差与有效前沿</option></select></label><label>仍困惑的金融概念<textarea id="feedbackConcept" rows="2" maxlength="500" placeholder="仅写知识点，请勿填写姓名或学号"></textarea></label><label>最有帮助的可视化<select id="feedbackHelpful"><option>风险收益曲线</option><option>方差分项</option><option>代码联动</option><option>有效性比较</option><option>尚不明确</option></select></label><label>愿意课后使用吗<select id="feedbackWilling"><option>愿意</option><option>不确定</option><option>暂不愿意</option></select></label><button id="exportFeedback">导出匿名反馈 JSON（不上传）</button></fieldset><p id="feedbackStatus" role="status"></p><p>尚无真实使用人数或学习效果数据。教师可用导出的匿名反馈配合前后测评价。</p></section>
 </dialog>
 <dialog id="portfolioRDialog"><div class="dialog-head"><h2>RStudio 实践</h2><button data-close="portfolioRDialog" aria-label="关闭R实践">×</button></div><p id="portfolioRTask"></p></dialog>
-<div id="toast" role="status"></div><script src="build-info.js?v=ef2bce0cbb27f478"></script><script src="portfolio-bundle.js?v=0a064049dec92166"></script>
-<script src="i18n-exp.js?v=808e98e35378f7f4"></script><script src="i18n.js?v=cd61e34481842fd2"></script>
+<div id="toast" role="status"></div><script src="build-info.js?v=85451ecda9205071"></script><script src="portfolio-bundle.js?v=0a064049dec92166"></script>
+<script src="i18n-exp.js?v=808e98e35378f7f4"></script><script src="i18n.js?v=324df64d59a9c180"></script>
 <script>if(new URLSearchParams(location.search).has("audit")){const s=document.createElement("script");s.src="font-audit.js?v=5861beb19edd3c3a";document.body.append(s);}</script>
 </body></html>
