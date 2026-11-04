@@ -1,6 +1,6 @@
 {
-  "version": "3.0.1-ui-i18n",
-  "buildId": "3.0.1-ui-i18n.188a70237d1ef349",
+  "version": "3.0.2-performance",
+  "buildId": "3.0.2-performance.c9e174eb04af2ed8",
   "assets": {
     "app.js": "3b48c0f9575f85fd98dad035e4afee81e1de692961ee93345066c85e89a1e942",
     "bs-lesson.js": "109d1705b8bbc9d6fba75fe6225d775dd59815a66addf30d62290fa39ebac12e",
@@ -14,7 +14,7 @@
     "classroom-ui.js": "cf07ab5be89b3349b9cc9cf890218ce9bd8d48f23133bc8f9ce272bb4be55b2e",
     "experiment-lessons.js": "f6ed056c98c249ae630c72a95610c92e1c66359e3a0761d3fa36b1e3f683db3c",
     "experiment-math.js": "685c09646d34f29f74b30eac5032e357c78068e7c234de931579f2b63238da5e",
-    "experiments-bundle.js": "6bdb7f44e9e53a57fa85dcd3c5265dd12d30ab43a8c983367645eadbe8f0f47b",
+    "experiments-bundle.js": "0715e3222f99f850eb0f746f946fc07baafc0689bed68340851e687c2c7aa3ea",
     "experiments-config.js": "30282dffb12e0789d066280c71e6683fc32d2fa854373a9be1b5c46cbaf18df4",
     "experiments.css": "efa896403694b7eec669e7824dccff584a35a6a54ac3a8def69340f28727b0e3",
     "experiments.js": "333c51b3d696d30ed51ea0be19a217bb50e4d24ddce78f987dd02bd545a2c918",
@@ -35,7 +35,7 @@
     "lessons.js": "1b34abd12f8ae5cded10c339b58d211ebde3f636bcaf8739c9b7bc931a6c4a69",
     "math.js": "c9777ed899c56782157830ee7144178a5ade8c4d5cd3c11d389d3311c983e091",
     "modal-ui.js": "a2d2426203079a9969a9638ffafe6e393e887ae4d50acf19ea77757b9d14c53b",
-    "portfolio-bundle.js": "0a064049dec92166b78a92e97209084a72ab27677ffe3596fd17b633b68fa35e",
+    "portfolio-bundle.js": "accb761330e1b57909a68c08c74d9b547213899d1d959f46254d237c949225c9",
     "portfolio-csv.js": "d7881075e5a1c935ff92f646eab0d04522eab7b0c17ed4bb979f3b978e6afb87",
     "portfolio-multi-code.js": "3f80648f51c352a86ef2728d6d20d5b9352834d5dc7fa99c4fd75b45cbea7ecc",
     "portfolio-multi-math.js": "b4e450dc20da18170ef33cda4cdd31fcb4b81eb03e6235d4e507c688a772040b",
@@ -72,7 +72,7 @@
     "timeseries-workbench.js": "7bfeaeb524b51406feb17e2e4b89958f8bd08a360db76182bbb755fb89c552f8",
     "timeseries-worker.js": "ba0220541bb59fee872ca44aff891d2ec4350e2ac58466dafc4dd58a2228686c",
     "timeseries.css": "a6ef945d22454b658fd17fe3bea76aa3b5a89709ad3f0ac8cea493afcb3620c7",
-    "typography.css": "bebc0b62806b93cfad906f780fff744c8ab45e1b335c027516415678ae3b3e7a",
+    "typography.css": "22feb29dc9f65e877234759fe953a5bcb1c63263be73dd0ab994c63e13ffbd3e",
     "typography.js": "26c8fde7808967a8e565ef3b375cf5a9aec781ddc877b103c4306734fd3e38dc",
     "vol-charts.js": "677996bad415cf2eb4e420790c1c4d8b7b9223f9a37276fff532eca123dfa10e",
     "vol-code.js": "39c7b2442d1be14fc1fb8b50282eb0c3789d0852385b6e7727c18186353e871b",
@@ -84,8 +84,8 @@
     "workbench-ui.js": "700ca09b1004ee4f8e7d97b5711e50ca39ddf5b5432e92dce49207bd01b23946",
     "workbench.css": "ed933704c9693b3b47a0c08a074a6c76604f738388e0923db7945e48cf352e36",
     "zero-friction-data.js": "f9771a418dfc1a4150792adf6aba8192ed6019e8c76532daa2350e45287bca0f",
-    "build-info.js": "85451ecda92050713a6324eac50345f6fe4947a58e73be413a292763087eca48",
-    "index.html": "66009df1cd070962cafbf8fde7ec02a6c238951e0c73a1786e88fdf3c0be4eca",
-    "experiments.html": "44e35273f1d295444d931bb59432748f90624003d832dc0ad1f263b8dbad358a"
+    "build-info.js": "ef392a504c3c158bb61995e47b4020ad08bab061d5abc9c2216669ead71bf2ad",
+    "index.html": "5a849e44e30d007725563e744ec067dedfb76cc0f455450c8ff95dac7ba92f4d",
+    "experiments.html": "a1f653739569643a0f8d3717794e51dfb1fb1fcba5e06718bc65b1f3479d3092"
   }
 }
