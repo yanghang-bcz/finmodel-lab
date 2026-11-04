@@ -51,7 +51,7 @@ window.ChartInteraction={create,clear};})();
 /* Source: experiments-config.js */
 /* The adopted twelve-experiment course. Order is numeric, never page-dependent. */
 (()=>{'use strict';const definitions=[
- ['R软件基础实验','R基础'],['金融市场数据整理与预处理','数据预处理'],['资产收益率计算','收益率'],['多元回归与逐步回归分析','多元回归','regression'],['ARMA与VAR模型','ARMA / VAR'],
+ ['R软件基础实验','R基础'],['金融市场数据整理与预处理','数据预处理'],['资产收益率计算','收益率'],['多元回归与逐步回归分析','多元回归','regression'],['ARMA与VAR模型','ARMA / VAR','timeseries'],
  ['GARCH类波动率模型','GARCH','garch'],['VaR与ES投资风险计算','VaR / ES','var'],['均值-方差投资组合决策分析','均值-方差','portfolio'],['资本资产定价模型的R语言实验','CAPM','capm'],['因子模型与APT模型','因子 / APT'],['Black-Scholes期权定价','Black-Scholes','bs'],['证券投资基金绩效评价','基金绩效']];
 const all=Object.freeze(definitions.map(([title,shortTitle,modelId],i)=>Object.freeze({number:i+1,title,shortTitle,modelId:modelId||null,id:modelId||'experiment-'+(i+1),url:modelId?(modelId==='portfolio'?'index.html':'experiments.html?model='+modelId):null,online:!!modelId,order:i+1,description:title})).sort((a,b)=>a.number-b.number));
 const byModel=id=>all.find(x=>x.modelId===id),label=x=>`实验${String(x.number).padStart(2,'0')} · ${x.title}`;
@@ -1712,11 +1712,1619 @@ window.RegWorkbench={mount};})();
 
 ;
 
+/* Source: timeseries-math.js */
+/* Experiment 05: shared samples, finite-sample tests and conditional forecasting. */
+(function(root, factory) {
+  const api = factory(typeof module === 'object' ? require('./reg-math') : root.RegMath);
+  if (typeof module === 'object') module.exports = api;
+  else root.TimeSeriesMath = api;
+})(this, Reg => {
+  'use strict';
+  const defaults = Object.freeze({seed: 52027, n: 720, ar: .42, cross: .32, noise: .012});
+  const sum = a => a.reduce((s, x) => s + x, 0);
+  const mean = a => sum(a) / a.length;
+  const dot = (a, b) => a.reduce((s, x, i) => s + x * b[i], 0);
+  const sd = a => { const m = mean(a); return Math.sqrt(mean(a.map(x => (x - m) ** 2))); };
+  function integer(x, lo, hi, label) {
+    if (!Number.isInteger(x) || x < lo || x > hi) throw Error(label + '范围为 ' + lo + '–' + hi + ' 的整数。');
+  }
+  function random(seed) {
+    return () => (seed = seed * 16807 % 2147483647) / 2147483647;
+  }
+  function generate({seed, n, ar, cross, noise} = defaults) {
+    integer(seed, 1, 2147483646, '种子');
+    integer(n, 120, 1600, '样本量');
+    if (!(Math.abs(ar) <= .75 && Math.abs(cross) <= .75 && noise >= .001 && noise <= .05)) {
+      throw Error('要求 |自回归|、|跨变量系数| ≤ 0.75，扰动标准差在 0.001–0.05 之间。');
+    }
+    const uniform = random(seed);
+    const normal = () => Math.sqrt(-2 * Math.log(uniform())) * Math.cos(2 * Math.PI * uniform());
+    let market = 0, sector = 0, macro = 0;
+    const prices = [100, 100, 100], rows = [], dates = [];
+    for (let i = -100; i <= n; i++) {
+      const next = [.0003 + ar * market, .0003 + .24 * sector + cross * market, .0002 + .55 * macro + .14 * sector];
+      [market, sector, macro] = next.map(x => x + noise * normal());
+      if (i < 0) continue;
+      [market, sector, macro].forEach((r, j) => { prices[j] *= Math.exp(r); });
+      rows.push(prices.slice());
+      dates.push('t=' + i);
+    }
+    return {rows, dates, names: ['市场', '行业', '金融因子'], kind: 'price', frequency: '模拟期', synthetic: true, warnings: [], lost: 0};
+  }
+  function validate(y, minimum = 30) {
+    if (y.length < minimum || y.some(x => !Number.isFinite(x))) throw Error('至少需要 ' + minimum + ' 期有效观测。');
+    const scale = sd(y);
+    if (!Number.isFinite(scale) || scale <= 1e-12 * Math.max(1, Math.abs(mean(y)))) throw Error('常数、近似常数或尺度异常，无法可靠估计。');
+  }
+  function importData(text, {date, columns, kind, unit, frequency, missing, acceptGaps}) {
+    if (text.length > 2e6) throw Error('CSV 限制为 2 MB。');
+    const table = Reg.csvTable(text);
+    const ids = [date, ...columns].map(name => table.names.indexOf(name));
+    if (!columns.length || columns.length > 3 || ids.includes(-1) || new Set(ids).size !== ids.length) {
+      throw Error('请明确选择日期和 1–3 个不同的数值列。');
+    }
+    if (!['price', 'simple', 'log', 'numeric'].includes(kind) || !['decimal', 'percent'].includes(unit) ||
+        (unit === 'percent' && !['simple', 'log'].includes(kind))) throw Error('百分数转换仅适用于收益率列。');
+    if (!['daily', 'weekly', 'monthly', 'annual', 'observed'].includes(frequency)) throw Error('请选择频率。');
+    integer(table.rows.length, 40, 2000, 'CSV 行数');
+    const seen = new Set(), warnings = [];
+    let lost = 0, outOfOrder = false, previous = '';
+    const parsed = [];
+    table.rows.forEach((r, i) => {
+      const day = r[ids[0]].trim(), instant = Date.parse(day);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !Number.isFinite(instant) ||
+          new Date(instant).toISOString().slice(0, 10) !== day) throw Error('第 ' + (i + 2) + ' 行日期无效，须用 YYYY-MM-DD。');
+      if (seen.has(day)) throw Error('重复日期 ' + day + '，请先核对。');
+      seen.add(day);
+      if (day < previous) outOfOrder = true;
+      previous = day;
+      const cells = ids.slice(1).map(j => r[j].trim());
+      if (cells.some(x => /^(?:NA|N\/A|null)?$/i.test(x))) {
+        if (missing !== 'drop') throw Error(day + ' 存在缺失值。可在检查对齐后明确选择删除整行。');
+        lost++;
+        return;
+      }
+      const values = cells.map(x => {
+        if (!/^[+-]?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?$/i.test(x)) throw Error(day + ' 存在非数值。');
+        const v = Number(x) / (unit === 'percent' ? 100 : 1);
+        if (!Number.isFinite(v) || (kind === 'price' && v <= 0) || (kind === 'simple' && v < -1)) {
+          throw Error(day + ' 数值越界。请核对单位、正价格及简单收益率下限。');
+        }
+        return v;
+      });
+      parsed.push({day, values});
+    });
+    parsed.sort((a, b) => a.day.localeCompare(b.day));
+    if (outOfOrder) warnings.push('整行已按日期排序，保留各列同期配对。');
+    if (lost) warnings.push('已按选择删除 ' + lost + ' 个缺失日期的整行。');
+    const periods = parsed.map(({day}) => ({
+      daily: Date.parse(day) / 86400000,
+      weekly: Math.floor((Date.parse(day) / 86400000 + 3) / 7),
+      monthly: Number(day.slice(0, 4)) * 12 + Number(day.slice(5, 7)),
+      annual: Number(day.slice(0, 4))
+    })[frequency]);
+    if (frequency !== 'observed' && new Set(periods).size !== periods.length) throw Error('同一声明周期有多行，请核对频率。');
+    const gaps = frequency === 'observed' || periods.some((x, i) => i && x - periods[i - 1] !== 1);
+    if (gaps && !acceptGaps) throw Error('日期间隔不规则或存在缺期。核对后可确认按相邻观测建模。');
+    if (gaps) warnings.push('按相邻观测计期，时间间隔可能不同。跨缺期的价格收益覆盖整个间隔。');
+    const rows = parsed.map(x => x.values);
+    for (let j = 0; j < columns.length; j++) {
+      const y = rows.map(r => r[j]);
+      validate(y, 40);
+      const m = mean(y), s = sd(y);
+      if (y.some(x => Math.abs(x - m) > 8 * s || (['simple', 'log'].includes(kind) && Math.abs(x) > .5))) {
+        warnings.push(columns[j] + ' 有极端观测，请核对单位和原数据。观测保留。');
+      }
+    }
+    return {rows, dates: parsed.map(x => x.day), names: columns, kind, frequency, warnings, lost};
+  }
+  function transform(data, form) {
+    if (data.kind !== 'price' || form === 'price') return {...data, form: data.kind};
+    if (!['simple', 'log'].includes(form)) throw Error('收益率口径无效。');
+    const rows = data.rows.slice(1).map((r, i) => r.map((p, j) => {
+      const prev = data.rows[i][j];
+      return form === 'simple' ? p / prev - 1 : Math.log(p) - Math.log(prev);
+    }));
+    return {...data, form, rows, dates: data.dates.slice(1)};
+  }
+
+  function regression(X, y) {
+    const scales = X[0].map((_, j) => Math.sqrt(mean(X.map(r => r[j] ** 2))));
+    if (scales.some(s => !Number.isFinite(s) || s <= 0)) throw Error('设计矩阵退化。');
+    const fit = Reg.qr(X.map(r => r.map((v, j) => v / scales[j])), y);
+    if (fit.rank !== scales.length || y.length <= fit.rank) throw Error('共线或自由度不足。');
+    const coef = fit.coef.map((v, j) => v / scales[j]);
+    const fitted = X.map(r => dot(r, coef)), residual = y.map((v, i) => v - fitted[i]);
+    const rss = dot(residual, residual), df = y.length - fit.rank;
+    // Diagonal of (X'X)^-1 via R^-1 and the QR pivot permutation.
+    const inverse = scales.map((_, j) => fit.back(scales.map((_, i) => +(i === j))));
+    const se = scales.map((s, j) => {
+      const k = fit.perm.indexOf(j);
+      return Math.sqrt(rss / df * sum(inverse.map(c => c[k] ** 2))) / s;
+    });
+    return {coef, residual, fitted, rss, df, se};
+  }
+  function correlogram(y, lag = 24) {
+    validate(y, 10);
+    lag = Math.min(lag, y.length - 1);
+    const m = mean(y), a = y.map(v => v - m), den = dot(a, a);
+    const acf = Array.from({length: lag + 1}, (_, k) => dot(a.slice(k), a) / den);
+    const pacf = [1];
+    let phi = [], variance = 1;
+    for (let k = 1; k <= lag; k++) {
+      const v = (acf[k] - dot(phi, acf.slice(1, k).reverse())) / variance;
+      phi = phi.map((x, i) => x - v * phi[k - 2 - i]).concat(v);
+      variance *= 1 - v * v;
+      pacf.push(v);
+    }
+    return {acf, pacf, band: 1.96 / Math.sqrt(y.length)};
+  }
+  // urca::ur.df tau critical values, indexed by length of the first difference.
+  const adfCritical = {
+    none: [-1.95, -1.95, -1.95, -1.95, -1.95],
+    drift: [-2.93, -2.89, -2.88, -2.87, -2.86],
+    trend: [-3.50, -3.45, -3.43, -3.42, -3.41]
+  };
+  function stationarity(y, type, lag, trend) {
+    validate(y);
+    integer(lag, 0, 12, 'ADF 滞后');
+    if (!Object.hasOwn(adfCritical, type)) throw Error('ADF 设定无效。');
+    const d = y.slice(1).map((v, i) => v - y[i]), Y = d.slice(lag);
+    const X = Y.map((_, i) => {
+      const t = i + lag;
+      return [y[t], ...(type === 'none' ? [] : [1]), ...(type === 'trend' ? [t + 1] : []),
+        ...Array.from({length: lag}, (_, j) => d[t - j - 1])];
+    });
+    const fit = regression(X, Y);
+    if (!(fit.se[0] > 0)) throw Error('ADF 回归残差方差退化。');
+    const tau = fit.coef[0] / fit.se[0];
+    const critical = adfCritical[type][[50, 100, 250, 500].filter(n => d.length >= n).length];
+    const n = y.length, bw = Math.floor(4 * (n / 100) ** .25);
+    const e = regression(y.map((_, i) => trend ? [1, i + 1] : [1]), y).residual;
+    let lrv = dot(e, e) / n, partial = 0, numerator = 0;
+    for (let k = 1; k <= bw; k++) lrv += 2 * (1 - k / (bw + 1)) * dot(e.slice(k), e) / n;
+    for (const v of e) { partial += v; numerator += partial ** 2; }
+    if (!(lrv > dot(y, y) / n * Number.EPSILON ** 2)) throw Error('KPSS 长期方差退化。');
+    const kpss = numerator / n ** 2 / lrv, kCritical = trend ? .146 : .463;
+    return {tau, critical, kpss, kCritical, bw, adfReject: tau < critical, kpssReject: kpss > kCritical};
+  }
+
+  function reflection(raw) {
+    let a = [];
+    for (const z of raw) {
+      const k = .995 * Math.tanh(z);
+      a = a.map((v, j) => v - k * a[a.length - 1 - j]).concat(k);
+    }
+    return a;
+  }
+  function residuals(y, mu, ar, ma, burn) {
+    const e = Array(y.length).fill(0);
+    for (let t = burn; t < y.length; t++) {
+      let v = y[t] - mu;
+      for (let j = 0; j < ar.length; j++) v -= ar[j] * (y[t - j - 1] - mu);
+      for (let j = 0; j < ma.length && t - j - 1 >= burn; j++) v -= ma[j] * e[t - j - 1];
+      e[t] = v;
+    }
+    return e;
+  }
+  function optimize(fn, start) {
+    let x = start.slice(), f = fn(x), H = x.map((_, i) => x.map((__, j) => +(i === j)));
+    const gradient = v => v.map((z, i) => {
+      const d = 1e-5 * Math.max(1, Math.abs(z)), a = v.slice(), b = v.slice();
+      a[i] += d; b[i] -= d;
+      return (fn(a) - fn(b)) / (2 * d);
+    });
+    let g = gradient(x);
+    for (let it = 0; it < 220; it++) {
+      if (Math.max(...g.map(Math.abs)) < 2e-7) return {x, f, it};
+      let d = H.map(r => -dot(r, g)), slope = dot(d, g);
+      if (!(slope < 0)) { d = g.map(v => -v); slope = -dot(g, g); }
+      let step = 1, next, value;
+      while (step > 1e-11) {
+        next = x.map((v, j) => v + step * d[j]);
+        value = fn(next);
+        if (Number.isFinite(value) && value <= f + 1e-4 * step * slope) break;
+        step /= 2;
+      }
+      if (step <= 1e-11) return null;
+      const ng = gradient(next), s = next.map((v, j) => v - x[j]), y = ng.map((v, j) => v - g[j]);
+      const sy = dot(s, y), Hy = H.map(r => dot(r, y));
+      if (sy > 1e-16) {
+        const factor = (1 + dot(y, Hy) / sy) / sy;
+        H = H.map((r, i) => r.map((v, j) => v + factor * s[i] * s[j] - (Hy[i] * s[j] + s[i] * Hy[j]) / sy));
+      }
+      x = next; g = ng; f = value;
+    }
+    return null;
+  }
+  function arma(y, p, q, burn = 5) {
+    integer(p, 0, 5, 'AR 阶数'); integer(q, 0, 5, 'MA 阶数');
+    validate(y, Math.max(30, burn + 5 * (p + q + 2)));
+    const m = mean(y), s = sd(y), z = y.map(v => (v - m) / s), n = y.length - burn;
+    function profile(x) {
+      const ar = reflection(x.slice(0, p)), ma = reflection(x.slice(p)).map(v => -v);
+      const e = residuals(z, 0, ar, ma, burn);
+      // e(mu) = e(0) - mu * sensitivity, so the conditional mean has an exact least-squares solution.
+      const sensitivity = Array(z.length).fill(0);
+      const constant = 1 - sum(ar);
+      for (let t = burn; t < z.length; t++) {
+        let v = constant;
+        for (let j = 0; j < q && t - j - 1 >= burn; j++) v -= ma[j] * sensitivity[t - j - 1];
+        sensitivity[t] = v;
+      }
+      const center = dot(e,sensitivity) / dot(sensitivity,sensitivity);
+      const f = sum(e.map((v,i) => (v - center * sensitivity[i]) ** 2)) / n;
+      return {center, ar, ma, f};
+    }
+    const start = Array(p + q).fill(0);
+    const second = start.map((_, i) => i === 0 ? .4 : 0);
+    let attempts;
+    if (p === 1 && q === 0) {
+      // With no MA recursion this is the bounded intercept-and-slope least-squares solution.
+      const lagged = z.slice(burn-1,-1), response = z.slice(burn);
+      const a = mean(lagged), b = mean(response), centered = lagged.map(v=>v-a);
+      const slope = dot(centered,response.map(v=>v-b)) / dot(centered,centered);
+      const x = [Math.atanh(Math.max(-1+1e-12,Math.min(1-1e-12,slope/.995)))];
+      attempts = [{x,f:profile(x).f,it:0}];
+    } else {
+      attempts = start.length
+        ? [start, second].map(x => optimize(v => profile(v).f, x)).filter(Boolean).sort((a,b) => a.f-b.f)
+        : [{x:start, f:profile(start).f, it:0}];
+    }
+    if (!attempts.length || !Number.isFinite(attempts[0].f) || attempts[0].f <= 1e-14) {
+      throw Error('ARMA 未收敛或创新方差退化。可降低阶数。');
+    }
+    const {x, f, it} = attempts[0], {center, ar, ma} = profile(x);
+    const mu = m + s * center, sigma2 = f * s ** 2, logLik = -n / 2 * (Math.log(2 * Math.PI * sigma2) + 1);
+    const k = p + q + 2;
+    return {p, q, burn, mu, ar, ma, sigma2, logLik, it, boundary: x.some(v => Math.abs(v) > 3),
+      residual: residuals(y, mu, ar, ma, burn), AIC: -2 * logLik + 2 * k,
+      AICc: -2 * logLik + 2 * k + 2 * k * (k + 1) / (n - k - 1), BIC: -2 * logLik + Math.log(n) * k};
+  }
+  function selectARMA(y, options, grid) {
+    const {p, q, armaMode, armaIC} = options;
+    if (!grid && armaMode === 'manual') return {fit: arma(y, p, q), candidates: []};
+    const candidates = [];
+    let best = null, manual = null;
+    for (let i = 0; i <= 3; i++) for (let j = 0; j <= 3; j++) {
+      try {
+        const f = arma(y, i, j);
+        const {AIC, AICc, BIC} = f;
+        candidates.push({p: i, q: j, AIC, AICc, BIC});
+        if (!best || f[armaIC] < best[armaIC]) best = f;
+        if (i === p && j === q) manual = f;
+      } catch (e) { candidates.push({p: i, q: j, error: e.message}); }
+    }
+    const fit = armaMode === 'auto' ? best : manual || arma(y, p, q);
+    if (!fit) throw Error('没有有效的 ARMA 候选模型。');
+    return {fit, candidates};
+  }
+  function armaNext(y, e, t, fit) {
+    let v = fit.mu;
+    for (let j = 0; j < fit.ar.length; j++) v += fit.ar[j] * (y[t - j - 1] - fit.mu);
+    for (let j = 0; j < fit.ma.length; j++) v += fit.ma[j] * e[t - j - 1];
+    return v;
+  }
+  function forecastARMA(y, fit, horizon) {
+    const history = y.slice(), e = fit.residual.slice(), psi = [1];
+    let variance = 0;
+    return Array.from({length: horizon}, (_, i) => {
+      const value = armaNext(history, e, history.length, fit);
+      history.push(value); e.push(0);
+      if (i) psi.push((fit.ma[i - 1] || 0) + sum(fit.ar.map((v, j) => v * (psi[i - j - 1] || 0))));
+      variance += fit.sigma2 * psi[i] ** 2;
+      const s = Math.sqrt(variance);
+      return {value, lo80: value - 1.281551565545 * s, hi80: value + 1.281551565545 * s,
+        lo95: value - 1.95996398454 * s, hi95: value + 1.95996398454 * s};
+    });
+  }
+  function chiTail(stat, df) {
+    const x = stat / 2;
+    if (x === 0) return 1;
+    let p = Math.exp(-x), a = 1;
+    if (df % 2) {
+      // Chi-square(1) survival: regularized gamma(1/2, x).
+      const z = Math.sqrt(x), t = 1 / (1 + .3275911 * z);
+      p = (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - .284496736) * t + .254829592) * t * Math.exp(-x);
+      a = .5;
+    }
+    let term = a === .5 ? 2 * Math.sqrt(x / Math.PI) * Math.exp(-x) : x * Math.exp(-x);
+    for (; a < df / 2; a++) { p += term; term *= x / (a + 1); }
+    return Math.min(1, p);
+  }
+  function ljung(fit, lag) {
+    const e = fit.residual.slice(fit.burn), df = lag - fit.p - fit.q;
+    if (df <= 0 || lag >= e.length) return {df, p: null, Q: null};
+    const {acf} = correlogram(e, lag), n = e.length;
+    const Q = n * (n + 2) * sum(acf.slice(1).map((r, j) => r ** 2 / (n - j - 1)));
+    return {df, Q, p: chiTail(Q, df)};
+  }
+
+  const varDesign = (rows, t, p) => [1, ...rows.slice(t - p, t).reverse().flat()];
+  function logDet(cov) {
+    const L = cov.map(r => r.map(() => 0));
+    for (let i = 0; i < cov.length; i++) for (let j = 0; j <= i; j++) {
+      const v = cov[i][j] - dot(L[i].slice(0,j), L[j].slice(0,j));
+      if (i === j && !(v > cov[i][i] * 1e-10 && v > 0)) throw Error('VAR 残差协方差退化。');
+      L[i][j] = i === j ? Math.sqrt(v) : v / L[j][j];
+    }
+    return 2 * sum(L.map((r, j) => Math.log(r[j])));
+  }
+  function varFit(rows, p, start = p) {
+    integer(p, 1, 5, 'VAR 滞后');
+    const m = rows[0].length, n = rows.length - start, k = 1 + m * p;
+    if (m < 2 || m > 3 || n < Math.max(30, 3 * k)) throw Error('VAR 需要 2–3 个变量及充足观测。');
+    rows[0].forEach((_, j) => validate(rows.map(r => r[j])));
+    const X = rows.slice(start).map((_, i) => varDesign(rows, i + start, p));
+    const fits = rows[0].map((_, j) => regression(X, rows.slice(start).map(r => r[j])));
+    const cov = fits.map(a => fits.map(b => dot(a.residual, b.residual) / n));
+    const ld = logDet(cov);
+    return {p, m, n, X, start, fits, cov, coef: fits.map(f => f.coef),
+      AIC: ld + 2 * m * k / n, BIC: ld + Math.log(n) * m * k / n, HQ: ld + 2 * Math.log(Math.log(n)) * m * k / n};
+  }
+  function selectVAR(rows, {varMode, varLag, varIC}, grid = false) {
+    if (!grid && varMode === 'manual') return {fit: varFit(rows, varLag), candidates: []};
+    const candidates = [];
+    let best;
+    for (let p = 1; p <= 5; p++) {
+      try {
+        const {AIC, BIC, HQ} = varFit(rows, p, 5), c = {p, AIC, BIC, HQ};
+        candidates.push(c);
+        if (!best || c[varIC] < best[varIC]) best = c;
+      } catch (e) { candidates.push({p, error: e.message}); }
+    }
+    if (varMode === 'auto' && !best) throw Error('没有有效的 VAR 候选模型。');
+    return {fit: varFit(rows, varMode === 'auto' ? best.p : varLag), candidates};
+  }
+  function varNext(rows, t, fit) {
+    const X = varDesign(rows, t, fit.p);
+    return fit.coef.map(c => dot(X, c));
+  }
+  function forecastVAR(rows, fit, horizon) {
+    const history = rows.slice();
+    return Array.from({length: horizon}, () => {
+      const next = varNext(history, history.length, fit);
+      history.push(next);
+      return next;
+    });
+  }
+  function roots(fit) {
+    const {coef, m, p} = fit, d = m * p;
+    const A = coef.map(c => c.slice(1));
+    for (let i = m; i < d; i++) A.push(Array.from({length:d}, (_, j) => +(j === i-m)));
+    // Faddeev–LeVerrier characteristic coefficients of the companion matrix.
+    const I = A.map((r,i) => r.map((_,j) => +(i === j)));
+    let B = I, poly = [1];
+    for (let k = 1; k <= d; k++) {
+      const C = A.map(r => r.map((_, j) => r.reduce((s,v,i) => s+v*B[i][j],0)));
+      const c = -sum(C.map((r,i) => r[i])) / k;
+      poly.push(c);
+      B = C.map((r,i) => r.map((v,j) => v + c*I[i][j]));
+    }
+    const zero = [];
+    while (poly.length > 1 && poly.at(-1) === 0) { poly.pop(); zero.push({re:0, im:0, abs:0}); }
+    const n = poly.length - 1, radius = Math.max(1, ...poly.slice(1).map((x,i) => 2 * Math.abs(x) ** (1/(i+1))));
+    let z = Array.from({length:n}, (_, i) => [radius * Math.cos((i+.3)*2*Math.PI/n), radius * Math.sin((i+.3)*2*Math.PI/n)]);
+    for (let step = 0; step < 350 && n; step++) {
+      let delta = 0;
+      z = z.map(([x,y], i) => {
+        let u = 1, v = 0, a = 1, b = 0;
+        for (const c of poly.slice(1)) [u,v] = [u*x-v*y+c,u*y+v*x];
+        z.forEach(([r,s],j) => { if (i !== j) [a,b] = [a*(x-r)-b*(y-s), a*(y-s)+b*(x-r)]; });
+        const den = a*a+b*b, dx = (u*a+v*b)/den, dy = (v*a-u*b)/den;
+        delta = Math.max(delta, Math.hypot(dx,dy));
+        return [x-dx,y-dy];
+      });
+      if (delta < 1e-9) return zero.concat(z.map(([re,im]) => ({re,im,abs:Math.hypot(re,im)})));
+    }
+    if (!n) return zero;
+    throw Error('伴随矩阵特征根求解未收敛。');
+  }
+  function granger(rows, fit, from, to) {
+    if (from === to || !fit.fits[to] || from < 0 || from >= fit.m) throw Error('请选择不同的检验方向。');
+    const {p,m,X,start} = fit, full = fit.fits[to];
+    const reduced = regression(X.map(r => r.filter((_, j) => j === 0 || (j-1) % m !== from)),
+      rows.slice(start).map(r => r[to]));
+    const F = Math.max(0, (reduced.rss - full.rss) / p) / (full.rss / full.df);
+    return {F, df1:p, df2:full.df, p: fTail(F,p,full.df)};
+  }
+  function fTail(F, d1, d2) {
+    const z = d2 / (d2 + d1 * F), a = d2/2, b = d1/2;
+    // Lanczos log-gamma and modified Lentz incomplete beta continued fraction.
+    function lg(x) {
+      if (x < 1) return lg(x+1)-Math.log(x);
+      const coefficients = [676.5203681218851,-1259.1392167224028,771.3234287776531,-176.6150291621406,
+        12.507343278686905,-.13857109526572012,9.984369578019572e-6,1.5056327351493116e-7];
+      const t = x+6.5;
+      return .5*Math.log(2*Math.PI)+(x-.5)*Math.log(t)-t+Math.log(.9999999999998099+
+        sum(coefficients.map((v,i) => v/(x+i))));
+    }
+    function beta(x, p, q) {
+      if (x <= 0 || x >= 1) return x;
+      if (x > (p+1)/(p+q+2)) return 1-beta(1-x,q,p);
+      let c = 1, d = 1/(1-(p+q)*x/(p+1)), h = d;
+      const safe = y => Math.abs(y)<1e-300 ? 1e-300 : y;
+      for (let j=1; j<=300; j++) {
+        const k = p+2*j;
+        const coeffs = [j*(q-j)*x/((k-1)*k), -(p+j)*(p+q+j)*x/(k*(k+1))];
+        let delta;
+        for (const coeff of coeffs) {
+          d = 1/safe(1+coeff*d); c = safe(1+coeff/c); delta = c*d; h *= delta;
+        }
+        if (Math.abs(delta-1)<3e-14) break;
+      }
+      return h/p*Math.exp(lg(p+q)-lg(p)-lg(q)+p*Math.log(x)+q*Math.log1p(-x));
+    }
+    return Math.max(0, Math.min(1, beta(z,a,b)));
+  }
+  function split(n, train = .7, valid = .15) {
+    // Round away floating point error at exact percentage cut points.
+    const nt = Math.floor(n*train+1e-10), nv = Math.floor(n*(train+valid)+1e-10);
+    if (!(nt >= 30 && nv-nt >= 5 && n-nv >= 5)) throw Error('划分需至少 30 期训练、5 期验证、5 期测试。');
+    return {nt, nv};
+  }
+  function compare(rows, target, vars, options) {
+    const {nt,nv} = split(rows.length,options.train,options.valid);
+    const y = rows.map(r => r[target]), mult = rows.map(r => vars.map(j => r[j]));
+    const actual = y.slice(nv), models = {};
+    function model(name, fn) {
+      try {
+        const prediction = fn();
+        if (prediction.length !== actual.length || prediction.some(v => !Number.isFinite(v))) throw Error('预测日期未完整对齐。');
+        models[name] = {...Reg.metrics(actual,prediction), prediction};
+      } catch (e) { models[name] = {error:e.message}; }
+    }
+    let armaModel, varModel;
+    model('Naive', () => y.slice(nv-1,-1));
+    model('ARMA', () => {
+      armaModel = selectARMA(y.slice(0,nt),options).fit;
+      const e = residuals(y,armaModel.mu,armaModel.ar,armaModel.ma,armaModel.burn);
+      return actual.map((_,i) => armaNext(y,e,nv+i,armaModel));
+    });
+    model('VAR', () => {
+      const j = vars.indexOf(target);
+      if (j < 0 || vars.length < 2) throw Error('VAR 比较需要含目标列的 2–3 个变量。');
+      varModel = selectVAR(mult.slice(0,nt),options).fit;
+      return actual.map((_,i) => varNext(mult,nv+i,varModel)[j]);
+    });
+    return {nt,nv,actual,models,armaModel,varModel};
+  }
+  return {defaults, random, generate, validate, importData, transform, correlogram, stationarity,
+    arma, selectARMA, forecastARMA, ljung, varFit, selectVAR, forecastVAR, roots, granger, split, compare};
+});
+
+;
+
+/* Source: timeseries-lstm.js */
+/* One-layer LSTM, full backpropagation through each input window, linear readout. */
+(function(root, factory) {
+  const api = factory(typeof module === 'object' ? require('./timeseries-math') : root.TimeSeriesMath);
+  if (typeof module === 'object') module.exports = api;
+  else root.TimeSeriesLSTM = api;
+})(this, M => {
+  'use strict';
+  const config = Object.freeze({window:12, hidden:8, epochs:40, patience:6, batch:32, rate:.008, seed:731});
+  function forward(weights, input, H) {
+    const D = input[0].length, stride = D+H+1, offset = 4*H*stride;
+    let h = Array(H).fill(0), c = h.slice();
+    const states = [];
+    const sigmoid = z => 1/(1+Math.exp(-z));
+    for (const x of input) {
+      const z = [1,...x,...h], gates = Array(4*H);
+      for (let i=0; i<gates.length; i++) {
+        let v = 0;
+        for (let j=0; j<stride; j++) v += weights[i*stride+j]*z[j];
+        gates[i] = i>=3*H ? Math.tanh(v) : sigmoid(v);
+      }
+      const previous = c;
+      c = c.map((v,i) => gates[H+i]*v+gates[i]*gates[3*H+i]);
+      h = c.map((v,i) => gates[2*H+i]*Math.tanh(v));
+      states.push({z,gates,previous,c});
+    }
+    return {value:h.reduce((s,v,i)=>s+v*weights[offset+i+1],weights[offset]),h,states};
+  }
+  function gradient(weights, input, H, actual, result = new Float64Array(weights.length)) {
+    const D = input[0].length, stride = D+H+1, offset = 4*H*stride;
+    const {value,h,states} = forward(weights,input,H);
+    const error = value-actual;
+    result[offset] += error;
+    let dh = h.map((v,i) => {
+      result[offset+i+1] += error*v;
+      return error*weights[offset+i+1];
+    });
+    let dc = Array(H).fill(0);
+    for (let t=states.length-1; t>=0; t--) {
+      const {z,gates:g,previous,c} = states[t], dg = Array(4*H), next = Array(H).fill(0);
+      for (let i=0; i<H; i++) {
+        const f=g[H+i], o=g[2*H+i], a=g[3*H+i], u=g[i], tc=Math.tanh(c[i]);
+        const memory = dc[i]+dh[i]*o*(1-tc*tc);
+        dg[i] = memory*a*u*(1-u);
+        dg[H+i] = memory*previous[i]*f*(1-f);
+        dg[2*H+i] = dh[i]*tc*o*(1-o);
+        dg[3*H+i] = memory*u*(1-a*a);
+        dc[i] = memory*f;
+      }
+      for (let i=0; i<dg.length; i++) {
+        for (let j=0; j<stride; j++) result[i*stride+j] += dg[i]*z[j];
+        for (let j=0; j<H; j++) next[j] += weights[i*stride+1+D+j]*dg[i];
+      }
+      dh = next;
+    }
+    return {loss:error*error/2, gradient:result};
+  }
+  function training(rows, {target, features, nt, nv, ...settings}, progress = () => {}) {
+    const opt = {...config,...settings};
+    const {hidden:H, window:W, epochs, patience, batch, rate, seed} = opt;
+    if (!Number.isInteger(W) || W < 4 || W > 32 || !Number.isInteger(H) || H < 4 || H > 16 ||
+        !Number.isInteger(epochs) || epochs < 1 || epochs > 80 || !features.length ||
+        new Set(features).size !== features.length || features.some(j => !rows[0].hasOwnProperty(j)) ||
+        nt-W < 20 || nv-nt < 5) throw Error('LSTM 需要有效输入列及至少 20 个训练窗口、5 个验证窗口。');
+    const columns = [...features,target];
+    const values = columns.map(j => rows.slice(0,nt).map(r=>r[j]));
+    const center = values.map(a => a.reduce((s,v)=>s+v,0)/nt);
+    const scale = values.map((a,j)=>Math.sqrt(a.reduce((s,v)=>s+(v-center[j])**2,0)/nt));
+    if (scale.some(s=>!Number.isFinite(s)||s<=1e-12)) throw Error('LSTM 训练列方差不足，无法标准化。');
+    const D = features.length, stride = D+H+1, offset = 4*H*stride, random = M.random(seed);
+    const input = rows.slice(0,nv).map(r=>features.map((j,i)=>(r[j]-center[i])/scale[i]));
+    const y = rows.slice(0,nv).map(r=>(r[target]-center[D])/scale[D]);
+    const w = Float64Array.from({length:offset+H+1}, (_, i) =>
+      i < offset && i%stride===0 ? +(i/stride>=H && i/stride<2*H) : (2*random()-1)*Math.sqrt(6/(D+2*H)));
+    const m = new Float64Array(w.length), v = new Float64Array(w.length), curve = [];
+    const ids = Array.from({length:nt-W}, (_,i)=>W+i);
+    const error = (start,end) => {
+      let mse = 0;
+      for (let t=start; t<end; t++) mse += (forward(w,input.slice(t-W,t),H).value-y[t])**2;
+      return mse/(end-start);
+    };
+    let best, bestLoss = Infinity, bestEpoch = 0, step = 0;
+    for (let epoch=1; epoch<=epochs; epoch++) {
+      // Shuffle only windows with targets strictly inside the training period.
+      for (let i=ids.length-1; i>0; i--) {
+        const j=Math.floor(random()*(i+1));
+        [ids[i],ids[j]]=[ids[j],ids[i]];
+      }
+      for (let start=0; start<ids.length; start+=batch) {
+        const g = new Float64Array(w.length), end=Math.min(start+batch,ids.length);
+        for (let i=start; i<end; i++) {
+          const t=ids[i];
+          gradient(w,input.slice(t-W,t),H,y[t],g);
+        }
+        step++;
+        for (let i=0; i<w.length; i++) {
+          const value=Math.max(-1,Math.min(1,g[i]/(end-start)));
+          m[i]=.9*m[i]+.1*value;
+          v[i]=.999*v[i]+.001*value*value;
+          w[i]-=rate*(m[i]/(1-.9**step))/(Math.sqrt(v[i]/(1-.999**step))+1e-8);
+        }
+      }
+      const validation=error(nt,nv), train=error(W,nt);
+      if (!Number.isFinite(validation) || !Number.isFinite(train)) throw Error('LSTM 优化产生非有限损失。');
+      const entry={epoch,train,validation};
+      curve.push(entry); progress(entry);
+      if (validation < bestLoss-1e-6) { best=Array.from(w); bestLoss=validation; bestEpoch=epoch; }
+      if (epoch-bestEpoch>=patience) break;
+    }
+    return {version:'exp05-lstm-1', optimizer:'Adam', target, features, nt, nv, ...opt, bestEpoch, curve, center, scale, weights:best};
+  }
+  function predict(rows, t, model) {
+    const {window:W,hidden:H,features,center,scale,weights} = model, D=features.length;
+    if (t<W || t>rows.length) throw Error('LSTM 输入窗口超界。');
+    const input=rows.slice(t-W,t).map(r=>features.map((j,i)=>(r[j]-center[i])/scale[i]));
+    return center[D]+scale[D]*forward(weights,input,H).value;
+  }
+  return {config, forward, gradient, training, predict};
+});
+
+;
+
+/* Source: timeseries-weights.js */
+/* Reproduce with tools/train-experiment05.cjs. Only training/validation rows used. */
+window.TimeSeriesWeights = {"version":"exp05-lstm-1","optimizer":"Adam","target":0,"features":[0,1],"nt":504,"nv":612,"window":12,"hidden":8,"epochs":40,"patience":6,"batch":32,"rate":0.008,"seed":731,"bestEpoch":10,"curve":[{"epoch":1,"train":0.8649060328459798,"validation":1.3254018668098237},{"epoch":2,"train":0.8195373345856072,"validation":1.2513108927829795},{"epoch":3,"train":0.7894468908444013,"validation":1.1811471047900641},{"epoch":4,"train":0.7689688599638549,"validation":1.1517393747368112},{"epoch":5,"train":0.7583302488322365,"validation":1.1146363293531245},{"epoch":6,"train":0.7479182479572763,"validation":1.1036295853014706},{"epoch":7,"train":0.7403178500516827,"validation":1.0810687718193825},{"epoch":8,"train":0.7329136567479647,"validation":1.1092646128205133},{"epoch":9,"train":0.7234146888238384,"validation":1.0811632111674545},{"epoch":10,"train":0.7137270238928505,"validation":1.0716748455984848},{"epoch":11,"train":0.7043172051455298,"validation":1.1054359190347764},{"epoch":12,"train":0.6977124407222313,"validation":1.1263398313758142},{"epoch":13,"train":0.689610304835897,"validation":1.149300999235749},{"epoch":14,"train":0.6840827880640734,"validation":1.1851136018893011},{"epoch":15,"train":0.6821876489133136,"validation":1.156108529050856},{"epoch":16,"train":0.6842065214259337,"validation":1.2781485180695764}],"center":[-0.00036932056142824886,-0.00041858548378822684,-0.00036932056142824886],"scale":[0.013848516515659673,0.01332857081541683,0.013848516515659673],"weights":[0.2755632258309048,-0.8257328101915932,-0.36462645530287136,-0.03254162490316104,-0.5924233361948041,-0.36095138542814686,-0.7128858357841409,-0.27867973993120587,-0.5269995760138245,0.3413196857418373,0.09860333388980458,0.04711426680333782,0.027274392518826227,0.14477039863357197,0.10046789558550648,-0.2941177662053294,-0.45259899266820347,-0.33668195822311625,0.1267249462067577,0.1249311735591985,-0.22155998626734638,0.3807760844390064,0.39497263798273713,-0.5456233426328218,-0.469189768614391,0.4520326469317426,-0.5572679766229788,-0.23823448839824216,-0.4905491350859351,-0.38951517403406266,-0.8675902778885827,-0.32244769908045173,0.1441333130357008,0.14417498851995075,-0.12721503484433386,-0.3458765401390411,0.5424079230287695,-0.05263646000493612,-0.20389678138845554,0.30198197685068034,-0.1203105910785418,0.589645382537422,0.2095381533735201,-0.484048054590486,-0.061196385221377235,0.09139684191936184,-0.4824553510363291,-0.0633864363339618,0.3035340313720796,-0.3036378878490044,0.07635626512402394,-0.04519638185927894,0.07660992020172072,-0.6986323891957564,-0.377167182220315,0.05120513196780019,-0.03827498631174121,-0.2249471548850125,0.4923208758602622,0.4869405797710215,0.14085394045330252,0.1745572395011689,0.26365882888382147,-0.13331701040701008,0.2092291537584015,-0.5307074009294477,0.2350734241330837,-0.016681452246582178,0.3387560862911425,0.10702814499558666,-0.4148915168524429,-0.5599515486526412,-0.2265974013114333,0.014348118434995588,-0.5574871210775623,0.2819841447106361,0.5980286366122147,0.24854098091360494,-0.35171743481471873,0.651257443136298,0.4051829557610137,-0.8188625604917351,0.05701888244863432,0.12243834187337942,0.1286247315421077,0.0610372783764163,0.25445816931642246,-0.12702490206759384,0.9576259600185895,-0.7858852168491884,0.0740339518165562,-0.1071674449382226,-0.3671398125370008,0.2061596010942621,-0.5174329946358344,-0.23576291385282652,-0.21564752274495846,0.2326281217755328,0.19251264663023934,1.0646850463151816,0.13894299808755967,0.6499617075558562,0.2162466721907909,-0.46328609418452105,-0.5158956194318871,-0.2792078390010519,-0.15962169323242636,-0.3459848712833941,0.6554850745651034,0.03263173954031721,0.7494322671551988,0.5579741950589432,-0.7931741153936713,0.2292110856799152,0.0373005449509629,-0.38799471415270687,0.3413719591383395,0.3364224984771323,-0.12907650474702048,0.14711611852463047,-0.7734946333559722,1.1412029093789893,0.07755535754250599,-0.6503012231900754,-0.005645941453223657,-0.7237938744666239,0.08089392454204479,-0.16579224541085738,0.479315773447917,0.2125025748255188,0.27499486624053704,-0.46578122128346117,1.1809220898916408,-0.28274143243235283,-0.018780060790554342,0.005534227565125028,0.2816657721274423,0.1738928766870554,0.7782020415985141,-0.15181987182220996,-0.4556307643580648,-0.7090124472774944,-0.2139194850293832,0.8660641290248124,0.25239200897653796,0.2694111960059471,0.2719664773494728,-0.3379134383603199,-0.5196961958731301,-0.2596808108727878,-0.048835060328795164,0.5162613028653076,-0.03904280026600633,-0.6318727306142528,0.9558164964034448,-0.25169425170150206,0.07900607920556144,-0.02059341599465319,-0.11815056127975555,0.5148355647409474,0.5405049601461388,0.04603970360040973,0.2515426009478428,-0.4089505060390333,-0.15145680502293057,1.0389611760345292,-0.44089616511260066,0.29145364958262826,-0.19541382073369598,-0.45802666067639436,0.4997846212186767,0.7255385685634802,-0.007194908002699558,-0.3973651383407757,-0.16888628583041174,-0.35885480784491003,0.09259004496484387,-1.0254858417603157,-0.38295676392744954,-0.023966494204927823,-0.25605782492029927,-0.08979788522814734,-0.9117295094059036,0.6516805980336446,0.49769178469746167,0.570284582353596,0.47953590208134134,-0.028478471248685203,0.7904420306311357,-0.04126380495533643,0.015583016269169933,0.20666051215880968,0.8035457077660451,-0.2613436123348037,0.6173775789880727,0.3193543100076447,-0.160323242929743,0.26943813184462556,0.3470521165082506,0.03772339826698875,0.4316983235163516,-0.2211427413373132,-0.6665043219769071,-0.23970745181750833,-0.12060017458336894,0.12155929986880872,-0.8407671534698172,0.46594119856823246,-0.10563103532738449,0.026738993705360484,0.002055070663006955,0.36085185164717637,0.6032453303644221,0.04827932001314142,0.2586806636215029,0.5211370037168382,-0.23677172247720607,0.1345149385566484,-0.393205843345571,0.6410990287422865,-0.05334284085186005,0.3297178638745363,-0.3097003276808512,0.2607336349901507,0.2486074127134517,-0.25919621936059223,0.296601953063544,0.1737387909595048,-0.8349512877948605,-0.34126783416049095,0.4178568816833586,-0.031482423243099716,0.6886463903921327,0.4026092747018216,0.3124804433927382,0.024709686088876984,-0.1338452811985272,-0.3488175356542015,-0.08147540006431521,0.1271130440776846,-0.3618035550419427,0.2913891911465374,0.2086344194481399,0.21534729513618034,0.2276654475975775,0.2953645198211156,0.1068429373070062,0.04747025174002757,-0.01210460654805966,-0.5030023743042398,-0.3740291777246303,0.4604689890988008,-0.2859789661488545,0.06208470853771656,1.0979450392255439,0.061123293770072036,0.42427929599638914,0.35409040880245035,0.15588634076623933,-0.09327836960237608,-0.0004422277149474267,-0.44532583155126043,0.1853228154818711,-0.2666622988784661,0.22728258921926822,-0.31682641596439953,-0.06585144977412787,0.40742224735901666,-0.11944571851927019,0.31640910414041246,-0.015074245822774432,-0.16911251632098234,-0.3309101620963704,0.6660729398218939,0.4111391153972872,-0.13510047483155546,-0.18660978321065683,0.09858583582307656,-0.309737968860566,0.26642361762679384,-0.17779653081980368,-0.058859395610047965,0.366893386171986,-0.13284841195749367,-0.6336958238778084,-0.008602058716663847,0.053561694412046626,-0.4836085311936204,0.48309903421057593,-0.5471367095928372,0.1120379376308208,-0.2411680165876798,-0.39149853957712805,-0.23118885910587073,-0.6834041542808837,-0.21394410608694914,-0.1207534308335842,-0.028863020401064643,-0.5924491964266834,0.24744916882384863,0.593902050138683,0.5345227866260821,0.7778057142485258,0.3120258434364905,0.4987065498101441,-0.3557426705424386,0.24512442374967222,-0.3112628640089845,-0.04952809569311889,0.2820809453082235,-0.34025648499405614,-0.3456114730582181,0.3894636795711498,-0.08331727188123803,-0.4744907081524335,0.49983704785509586,-0.28336327673320943,-0.16177213163360443,-0.27798228501417316,-0.06139656191046065,0.08096372658181648,-0.19990639940109156,-0.45859648767844946,0.3808588362599984,0.18923341464956886,-0.33042160708965657,-0.21736682779639957,0.42930398754128934,0.4608476318771726,0.635476849350172,0.08962723439606333,0.7873732271670462,-0.046151166460324876,-0.020704238242497616,-0.4201543527342874,0.0011745724807357405,-0.1893490353233112,0.5742883193833155,-0.338512411672741,0.09528982342716613,0.3676618319258981,0.0966895286378967,0.08472390158041561,0.21049973646126152,0.5895834110143986,0.5741783475155634,0.8708020214927493,0.6534891701911091,0.11733750480540422,-0.214823152445096,0.15893047240152286,0.32761484271799063,-0.027927292867905254,-0.8373801011937325,-0.4334954167373992,-0.8999087542002672,0.4536723159376932,-0.08372004257908436,-0.4739028163889462,0.5985135444604021,0.4449844804162212],"trainingHash":"9024ecbce5cdb9960d8148b49265dfe540318db8cbf22510519578de8281f27f"};
+
+;
+
+/* Source: timeseries-r.js */
+/* Base R implementations. Each section is included verbatim in copied scripts. */
+(function(root, factory) {
+  const api = factory();
+  if (typeof module === "object") module.exports = api;
+  else root.TimeSeriesR = api;
+})(this, () => {
+  const source = {
+    station: `# ADF: H0 is a unit root. The tau test has its own critical values.
+adf <- function(y, type, lag) {
+  d <- diff(y)
+  t <- seq.int(lag + 1L, length(d))
+  X <- matrix(y[t], ncol = 1)
+  if (type != "none") X <- cbind(X, 1)
+  if (type == "trend") X <- cbind(X, t)
+  for (j in seq_len(lag)) X <- cbind(X, d[t - j])
+  fit <- lm.fit(X, d[t])
+  stopifnot(fit$rank == ncol(X), fit$df.residual > 0)
+  vc <- chol2inv(qr.R(fit$qr)) * sum(fit$residuals^2) / fit$df.residual
+  tau <- fit$coefficients[1] / sqrt(vc[which(fit$qr$pivot == 1), which(fit$qr$pivot == 1)])
+  critical <- switch(type, none = rep(-1.95, 5),
+    drift = c(-2.93, -2.89, -2.88, -2.87, -2.86),
+    trend = c(-3.50, -3.45, -3.43, -3.42, -3.41))
+  critical <- critical[1 + sum(length(d) >= c(50, 100, 250, 500))]
+  c(tau = unname(tau), critical = critical, reject = unname(tau < critical))
+}
+
+# KPSS: H0 is level/trend stationarity. Bartlett/Newey-West long-run variance.
+kpss <- function(y, trend) {
+  n <- length(y)
+  e <- if (trend) residuals(lm(y ~ seq_along(y))) else y - mean(y)
+  bw <- floor(4 * (n / 100)^0.25)
+  lrv <- sum(e^2) / n
+  for (j in seq_len(bw)) {
+    lrv <- lrv + 2 * (1 - j / (bw + 1)) * sum(e[(j + 1):n] * e[1:(n-j)]) / n
+  }
+  statistic <- sum(cumsum(e)^2) / (n^2 * lrv)
+  critical <- if (trend) .146 else .463
+  c(statistic = statistic, critical = critical, bandwidth = bw, reject = statistic > critical)
+}`,
+    arma: `# Reflection coefficients with absolute values below one constrain AR and MA.
+reflection <- function(z) {
+  a <- numeric()
+  for (v in z) {
+    k <- .995 * tanh(v)
+    a <- c(a - k * rev(a), k)
+  }
+  a
+}
+arma_residuals <- function(y, mu, ar, ma, burn = 5L) {
+  e <- numeric(length(y))
+  for (t in seq.int(burn + 1L, length(y))) {
+    v <- y[t] - mu
+    for (j in seq_along(ar)) v <- v - ar[j] * (y[t-j] - mu)
+    for (j in seq_along(ma)) if (t-j > burn) v <- v - ma[j] * e[t-j]
+    e[t] <- v
+  }
+  e
+}
+# Conditional Gaussian likelihood with the first five innovations initialized at zero.
+fit_arma <- function(y, p, q) {
+  burn <- 5L
+  n <- length(y) - burn
+  stopifnot(length(y) >= max(30, burn + 5 * (p + q + 2)))
+  m <- mean(y)
+  s <- sqrt(mean((y-m)^2))
+  stopifnot(s > 1e-12 * max(1, abs(m)))
+  z <- (y-m)/s
+  ar_id <- seq_len(p)
+  ma_id <- p + seq_len(q)
+  profile <- function(w) {
+    ar <- reflection(w[ar_id]); ma <- -reflection(w[ma_id])
+    e <- arma_residuals(z,0,ar,ma,burn)
+    # The residual is affine in the mean. Filter its sensitivity with the same MA recursion.
+    sensitivity <- numeric(length(z))
+    constant <- 1-sum(ar)
+    for (t in seq.int(burn+1L,length(z))) {
+      v <- constant
+      for (j in seq_along(ma)) if (t-j>burn) v <- v-ma[j]*sensitivity[t-j]
+      sensitivity[t] <- v
+    }
+    center <- sum(e*sensitivity)/sum(sensitivity^2)
+    list(ar=ar,ma=ma,center=center,value=sum((e-center*sensitivity)^2)/n)
+  }
+  w <- rep(0,p+q)
+  if (p==1L && q==0L) {
+    lagged <- z[burn:(length(z)-1L)]
+    response <- z[(burn+1L):length(z)]
+    # For AR(1), use the exact least-squares slope within the stationarity bound.
+    slope <- sum((lagged-mean(lagged))*(response-mean(response)))/sum((lagged-mean(lagged))^2)
+    w <- atanh(max(-1+1e-12,min(1-1e-12,slope/.995)))
+  } else if (length(w)) {
+    second <- w
+    second[1] <- .4
+    loss <- function(x) profile(x)$value
+    attempts <- lapply(list(w,second), function(x) optim(x, loss, method="BFGS",
+      control=list(maxit=600, reltol=1e-13, ndeps=rep(1e-5, length(x)))))
+    good <- Filter(function(x) x$convergence == 0 && is.finite(x$value), attempts)
+    if (!length(good)) stop("ARMA optimization failed")
+    w <- good[[which.min(vapply(good, function(x) x$value, numeric(1)))]]$par
+  }
+  best <- profile(w)
+  stopifnot(is.finite(best$value),best$value>1e-14)
+  ar <- best$ar; ma <- best$ma; mu <- m+s*best$center
+  variance <- best$value*s^2
+  logLik <- -n/2 * (log(2*pi*variance)+1)
+  k <- p+q+2
+  AIC <- -2*logLik+2*k
+  list(p=p, q=q, mu=mu, ar=ar, ma=ma, burn=burn, sigma2=variance, logLik=logLik,
+    residual=arma_residuals(y,mu,ar,ma,burn), IC=c(AIC=AIC,
+      AICc=AIC+2*k*(k+1)/(n-k-1), BIC=-2*logLik+log(n)*k))
+}
+# Score each candidate on the same effective n, including the variance parameter.
+choose_arma <- function(y, mode, criterion, p, q, grid=FALSE) {
+  if (mode=="manual" && !grid) return(list(fit=fit_arma(y,p,q)))
+  orders <- expand.grid(q=0:3, p=0:3)
+  fits <- lapply(seq_len(nrow(orders)), function(i)
+    tryCatch(fit_arma(y, orders$p[i], orders$q[i]), error=function(e) NULL))
+  scores <- t(vapply(fits, function(f) if (is.null(f)) setNames(rep(NA_real_,3),c("AIC","AICc","BIC")) else f$IC, numeric(3)))
+  colnames(scores) <- c("AIC","AICc","BIC")
+  fit <- if (mode=="auto") fits[[which.min(scores[,criterion])]] else fit_arma(y,p,q)
+  list(fit=fit, candidates=cbind(orders,scores))
+}
+arma_next <- function(y, e, t, fit) {
+  fit$mu + sum(fit$ar*(y[t-seq_along(fit$ar)]-fit$mu)) +
+    sum(fit$ma*e[t-seq_along(fit$ma)])
+}
+# Recursive point forecasts and innovation-only 80% / 95% intervals.
+arma_forecast <- function(y, fit, horizon) {
+  e <- fit$residual
+  pred <- numeric(horizon)
+  psi <- c(1, rep(0, horizon-1))
+  for (h in seq_len(horizon)) {
+    pred[h] <- arma_next(y, e, length(y)+1L, fit)
+    y <- c(y,pred[h]); e <- c(e,0)
+    if (h>1) {
+      j <- seq_len(min(h-1,length(fit$ar)))
+      psi[h] <- sum(fit$ar[j]*psi[h-j]) + if (h-1<=length(fit$ma)) fit$ma[h-1] else 0
+    }
+  }
+  se <- sqrt(fit$sigma2*cumsum(psi^2))
+  cbind(value=pred, lo80=pred-qnorm(.9)*se, hi80=pred+qnorm(.9)*se,
+    lo95=pred-qnorm(.975)*se, hi95=pred+qnorm(.975)*se)
+}`,
+    var: `# y[t] = c + A1 y[t-1] + ... + Ap y[t-p] + u[t], estimated by equation-wise OLS.
+var_design <- function(Y,t,p) c(1, as.vector(t(Y[t-seq_len(p),,drop=FALSE])))
+fit_var <- function(Y,p,start=p) {
+  m <- ncol(Y); n <- nrow(Y)-start
+  k <- 1+m*p
+  stopifnot(m>=2, n>=max(30,3*k))
+  ts <- seq.int(start+1,nrow(Y))
+  X <- t(vapply(ts, function(t) var_design(Y,t,p), numeric(k)))
+  fit <- lm.fit(X,Y[ts,,drop=FALSE])
+  stopifnot(fit$rank==k)
+  U <- fit$residuals
+  Sigma <- crossprod(U)/n
+  ld <- 2*sum(log(diag(chol(Sigma))))
+  IC <- ld + c(AIC=2, BIC=log(n), HQ=2*log(log(n)))*m*k/n
+  list(p=p,m=m,start=start,X=X,coef=fit$coefficients,df=fit$df.residual,
+    residual=U,fitted=fit$fitted.values,cov=Sigma,IC=IC)
+}
+# Compare candidates using identical target dates, then refit the selected order.
+choose_var <- function(Y, mode, criterion, p, grid=FALSE) {
+  if (mode=="manual" && !grid) return(list(fit=fit_var(Y,p)))
+  scores <- t(vapply(1:5, function(j) tryCatch(fit_var(Y,j,5)$IC,
+    error=function(e) rep(NA_real_,3)), numeric(3)))
+  colnames(scores) <- c("AIC","BIC","HQ")
+  if (mode=="auto") p <- which.min(scores[,criterion])
+  list(fit=fit_var(Y,p),candidates=cbind(p=1:5,scores))
+}
+var_roots <- function(fit) {
+  m <- fit$m
+  d <- m*fit$p
+  A <- t(fit$coef[-1,,drop=FALSE])
+  if (d>m) A <- rbind(A, cbind(diag(d-m),matrix(0,d-m,m)))
+  eigen(A,only.values=TRUE)$values
+}
+# Conditional direction-specific F test. H0: all p coefficients are zero.
+granger <- function(Y, fit, from, to) {
+  X <- fit$X; p <- fit$p; m <- fit$m
+  restricted <- X[,-(1L+from+(0:(p-1L))*m),drop=FALSE]
+  e0 <- lm.fit(restricted,Y[(fit$start+1):nrow(Y),to])$residuals
+  rss <- sum(fit$residual[,to]^2)
+  F <- max(0,(sum(e0^2)-rss)/p)/(rss/fit$df)
+  c(F=F,df1=p,df2=fit$df,p=pf(F,p,fit$df,lower.tail=FALSE))
+}
+var_next <- function(Y,t,fit) drop(var_design(Y,t,fit$p) %*% fit$coef)
+var_forecast <- function(Y,fit,horizon) {
+  n <- nrow(Y)
+  for (h in seq_len(horizon)) Y <- rbind(Y,var_next(Y,nrow(Y)+1L,fit))
+  Y[n+seq_len(horizon),,drop=FALSE]
+}`,
+    lstm: `# Frozen LSTM inference. Gate order: input, forget, output, candidate.
+lstm_next <- function(Y,t,model) {
+  H <- model$hidden; D <- length(model$features)
+  W <- matrix(model$weights[seq_len(4*H*(D+H+1))], nrow=4*H, byrow=TRUE)
+  readout <- tail(model$weights,H+1)
+  h <- memory <- numeric(H)
+  J <- seq_len(H)
+  for (k in seq.int(t-model$window,t-1L)) {
+    x <- (Y[k,model$features]-model$center[seq_len(D)])/model$scale[seq_len(D)]
+    gates <- drop(W %*% c(1,x,h))
+    memory <- plogis(gates[H+J])*memory + plogis(gates[J])*tanh(gates[3*H+J])
+    h <- plogis(gates[2*H+J])*tanh(memory)
+  }
+  model$center[D+1L] + model$scale[D+1L]*sum(readout*c(1,h))
+}`
+  };
+  const quoted = s => JSON.stringify(s);
+  const vector = (values, f = String) => 'c(' + values.map(f).join(', ') + ')';
+  function wrapped(values, f = String) {
+    const lines = [];
+    for (let i = 0; i < values.length; i += 6) lines.push('  ' + values.slice(i,i+6).map(f).join(', '));
+    return 'c(\n' + lines.join(',\n') + '\n)';
+  }
+  const list = entries => 'list(' + Object.entries(entries).map(([k,v])=>k+'='+v).join(', ') + ')';
+  function lstmModelCode(model) {
+    return list({hidden:model.hidden,window:model.window,features:vector(model.features.map(j=>j+1)),
+      center:vector(model.center),scale:vector(model.scale),weights:wrapped(model.weights)});
+  }
+  function build(view, data, options, model, available) {
+    const o = options, blocks = [];
+    const add = (id, title, text, code) => blocks.push({id,title,text,code:code.trim()});
+    add('data','数据 / Data','网页与 R 使用同一份已确认数据和日期。价格转换是相邻观察的 Pₜ/Pₜ₋₁ − 1 或 log(Pₜ) − log(Pₜ₋₁)。',
+      '# FinModel Lab | Experiment 05 | Base R, no extra packages.\n' +
+      '# ' + (data.synthetic ? 'Synthetic financial series; t labels are simulated periods.' : 'Browser-confirmed aligned data; no external files required.') +
+      '\nlabels <- ' + vector(data.names,quoted) + '\ndates <- ' + wrapped(data.dates,quoted) +
+      '\nraw <- matrix(' + wrapped(data.rows.flat()) + ', ncol=length(labels), byrow=TRUE)\n' +
+      'colnames(raw) <- labels\nY <- raw\n' +
+      (data.kind === 'price' && o.form === 'simple' ? 'Y <- raw[-1,,drop=FALSE]/raw[-nrow(raw),,drop=FALSE]-1\ndates <- dates[-1]\n' : '') +
+      (data.kind === 'price' && o.form === 'log' ? 'Y <- log(raw[-1,,drop=FALSE])-log(raw[-nrow(raw),,drop=FALSE])\ndates <- dates[-1]\n' : '') +
+      'target <- ' + (o.target+1) + 'L\ny <- Y[,target]\n' +
+      'series_labels <- paste("Series", seq_along(labels))\nprint(setNames(labels,series_labels))\n' +
+      'if (nzchar(Sys.getenv("FINMODEL_R_PLOT"))) pdf(Sys.getenv("FINMODEL_R_PLOT"))');
+    const opts = 'arma_mode <- '+quoted(o.armaMode)+'\narma_ic <- '+quoted(o.armaIC)+'\np <- '+o.p+'L\nq <- '+o.q+'L\n';
+    const varOpts = 'var_mode <- '+quoted(o.varMode)+'\nvar_ic <- '+quoted(o.varIC)+'\nlag <- '+o.varLag+'L\ncolumns <- '+vector(o.vars.map(i=>i+1))+'\n';
+    if (view === 'station') {
+      const [adf,kpss] = source.station.split('\n\n# KPSS');
+      add('adf','ADF τ','将 Δyₜ 回归于 yₜ₋₁、可选确定性项及滞后差分。检验单位根时比较 τ 与专用左尾临界值。',adf);
+      add('kpss','KPSS','水平或趋势平稳是原假设。去除确定性部分后，使用 Bartlett 权重估计长期方差，统计量超过右尾临界值时拒绝。','# KPSS'+kpss);
+      add('acf','ACF / PACF','ACF 比较序列和其滞后值。PACF 控制中间滞后；白噪声点态参考线约为 ±1.96/√n。',
+        'adf_result <- adf(y, '+quoted(o.adf)+' , '+o.adfLag+'L)\nkpss_result <- kpss(y, '+(o.kpss==='trend'?'TRUE':'FALSE')+
+        ')\nprint(adf_result)\nprint(kpss_result)\ncorrelation <- acf(y, lag.max=24, plot=FALSE)\npartial <- pacf(y, lag.max=24, plot=FALSE)\nplot(y,type="l",xlab="Observation",ylab=series_labels[target]); acf(y); pacf(y)');
+    }
+    if (view === 'arma' || view === 'compare') {
+      const [estimation, rest] = source.arma.split('\n# Score each');
+      const [selection, forecast] = rest.split('\narma_next');
+      add('arma','ARMA 估计 / Fit','p 个 AR 系数作用于过去的 y−μ，q 个 MA 系数作用于过去创新。对给定 AR/MA 系数解析求 μ，再用 BFGS 优化条件平方损失。反射系数约束平稳与可逆。',estimation);
+      add('order','ARMA 定阶 / Order','条件对数似然使用同一有效样本。AIC、AICc 与 BIC 对复杂度的惩罚不同。','# Score each'+selection);
+      add('forecast','ARMA 预测 / Forecast','递推时未来创新期望为零，区间方差为 σ²Σψ²。区间基于高斯创新，条件于参数估计。','arma_next'+forecast);
+    }
+    if (view === 'var' || view === 'compare') {
+      const [estimation,rest] = source.var.split('\nvar_roots');
+      const [roots,rest2] = rest.split('\n# Conditional direction');
+      const [granger,forecast] = rest2.split('\nvar_next');
+      add('var','VAR 估计与定阶 / Fit','各方程共享含截距的滞后设计。自动定阶在相同日期用 log det(Σ̂) 与复杂度惩罚比较，随后用所选阶数重估。',estimation);
+      add('roots','VAR 稳定性 / Roots','伴随矩阵特征值模全部小于 1 时，估计的 VAR 满足稳定性条件。','var_roots'+roots);
+      add('granger','Granger 联合检验 / F test','检验给定其他变量的滞后后，来源变量的全部 p 个滞后系数是否为零。经典 F 参考分布需要相应误差假设。','# Conditional direction'+granger);
+      add('joint','VAR 联合预测 / Forecast','逐期把系统所有变量的点预测作为下一期滞后输入。','var_next'+forecast);
+    }
+    if (view === 'arma') add('result','诊断与图表 / Results','Ljung–Box 使用有效残差，参考自由度为 L−p−q。未拒绝表示证据不足以判定所选滞后仍有线性相关。',
+      opts+'out <- choose_arma(y, arma_mode, arma_ic, p, q, '+(o.chart==='criteria'?'TRUE':'FALSE')+
+      ')\nf <- out$fit\nprint(out$candidates)\nprint(c(mu=f$mu,f$ar,f$ma,variance=f$sigma2,logLik=f$logLik,f$IC))\n'+
+      'e <- tail(f$residual,-f$burn)\nL <- '+o.diagnostic+'L\nif (L>f$p+f$q && L<length(e)) print(Box.test(e,lag=L,type="Ljung-Box",fitdf=f$p+f$q))\n'+
+      'forecast <- arma_forecast(y,f,'+o.horizon+'L)\nprint(forecast)\n'+
+      'plot(e/sqrt(f$sigma2),type="l",ylab="Standardized residual"); acf(e)\n'+
+      'plot(seq_along(y),y,type="l",xlim=c(max(1,length(y)-75),length(y)+nrow(forecast)),\n'+
+      '  ylim=range(tail(y,75),forecast),xlab="Observation / forecast period",ylab=series_labels[target])\n'+
+      'h <- length(y)+seq_len(nrow(forecast)); abline(v=length(y),lty=3)\n'+
+      'matlines(h,forecast,type="l",lty=c(1,2,2,3,3),col=c(1,2,2,4,4)); points(h,forecast[,"value"])');
+    if (view === 'var') add('result','联合预测与检验 / Results','所有方向使用相同的模型和同期样本。F 检验反映条件预测增量，现实因果需要额外识别假设。',
+      varOpts+'V <- Y[,columns,drop=FALSE]\nout <- choose_var(V,var_mode,var_ic,lag,'+(o.chart==='criteria'?'TRUE':'FALSE')+')\nf <- out$fit\n'+
+      'print(out$candidates); print(f$coef); print(f$cov)\nroots <- var_roots(f)\nprint(roots); print(max(Mod(roots))<1)\n'+
+      'for (i in seq_len(ncol(V))) for (j in setdiff(seq_len(ncol(V)),i)) {\n'+
+      '  cat(colnames(V)[i],"->",colnames(V)[j],"\\n"); print(granger(V,f,i,j))\n}\n'+
+      'forecast <- var_forecast(V,f,'+o.horizon+'L)\nprint(forecast)\n'+
+      'matplot(seq_len(nrow(forecast)),forecast,type="b",pch=1,xlab="Future period",ylab="Forecast");\n'+
+      'legend("topright",legend=series_labels[columns],col=seq_len(ncol(V)),lty=seq_len(ncol(V)),bty="n")');
+    if (view === 'compare') {
+      add('split','时间划分 / Split','训练区决定 ARMA/VAR 参数及 LSTM 标准化。LSTM 用随后验证区早停。逐期测试只使用目标日前已观察到的数据。',
+        opts+varOpts+'nt <- floor(nrow(Y)*'+o.train+'+1e-10)\nnv <- floor(nrow(Y)*('+o.train+'+'+o.valid+')+1e-10)\n'+
+        'stopifnot(nt>=30,nv-nt>=5,nrow(Y)-nv>=5)\ntrain <- seq_len(nt)\ntest <- seq.int(nv+1,nrow(Y))\n'+
+        'actual <- y[test]\npredictions <- list(Naive=y[test-1])\n'+
+        'safe_model <- function(expr) tryCatch(expr,error=function(e) { message(conditionMessage(e)); NULL })\n'+
+        (available?.ARMA?.error ? '# Browser ARMA unavailable.\n' :
+          'a <- safe_model(choose_arma(y[train],arma_mode,arma_ic,p,q)$fit)\n'+
+          'if (!is.null(a)) {\n  e <- arma_residuals(y,a$mu,a$ar,a$ma,a$burn)\n'+
+          '  predictions$ARMA <- vapply(test,function(t) arma_next(y,e,t,a),numeric(1))\n}\n')+
+        (available?.VAR?.error ? '# Browser VAR unavailable.\n' :
+          'if (length(columns)>=2 && target %in% columns) {\n  V <- Y[,columns,drop=FALSE]\n'+
+          '  v <- safe_model(choose_var(V[train,,drop=FALSE],var_mode,var_ic,lag)$fit)\n'+
+          '  if (!is.null(v)) predictions$VAR <- vapply(test,function(t) var_next(V,t,v)[match(target,columns)],numeric(1))\n}'));
+      if (model) {
+        add('lstm','LSTM 推断 / Inference','每个窗口以零隐藏状态开始。输入门、遗忘门、输出门和候选状态更新记忆。R 用训练验证后冻结的权重，输出再恢复目标尺度。',
+          '# Adam; seed '+model.seed+'; batch '+model.batch+'; rate '+model.rate+'; max epochs '+model.epochs+
+          '; stopped '+model.curve.length+'; restored '+model.bestEpoch+'.\n'+source.lstm+'\nmodel <- '+lstmModelCode(model)+
+          '\npredictions$LSTM <- vapply(test,function(t) lstm_next(Y,t,model),numeric(1))');
+      }
+      add('scores','共同测试集 / Scores','所有参与模型在同一组日期上预测同一目标的一期值。RMSE 强调大误差，MAE 计算绝对误差的平均。',
+        (model ? '' : '# LSTM weights unavailable for these settings. Train on the browser to include LSTM.\n')+
+        'stopifnot(all(vapply(predictions,function(z) length(z)==length(actual) && all(is.finite(z)),logical(1))))\n'+
+        'scores <- vapply(predictions,function(z) c(RMSE=sqrt(mean((actual-z)^2)),MAE=mean(abs(actual-z))),numeric(2))\n'+
+        'print(scores)\nprint(head(data.frame(date=dates[test],actual=actual,as.data.frame(predictions))))\n'+
+        'barplot(scores["RMSE",],ylab="One-step test RMSE")\n'+
+        'matplot(cbind(actual,do.call(cbind,predictions)),type="l",xlab="Test observation",ylab=series_labels[target])');
+    }
+    if (view === 'lstm' && model) {
+      add('lstm','LSTM 推断 / Inference','使用冻结权重还原共同测试日期的一期预测。',
+        '# Adam; seed '+model.seed+'; batch '+model.batch+'; rate '+model.rate+'; max epochs '+model.epochs+
+        '; stopped '+model.curve.length+'; restored '+model.bestEpoch+'.\n'+source.lstm+'\nmodel <- '+lstmModelCode(model)+
+        '\ntest <- seq.int('+ (model.nv+1) +'L,nrow(Y))\nactual <- y[test]\n'+
+        'prediction <- vapply(test,function(t) lstm_next(Y,t,model),numeric(1))\n'+
+        'print(c(RMSE=sqrt(mean((actual-prediction)^2)),MAE=mean(abs(actual-prediction))))\n'+
+        'print(head(data.frame(date=dates[test],actual,prediction)))\n'+
+        'matplot(cbind(actual,prediction),type="l",xlab="Test observation",ylab=series_labels[target])\n'+
+        'legend("topright",c("Actual","LSTM"),col=1:2,lty=1:2,bty="n")');
+    }
+    return {blocks, script:blocks.map(b=>b.code).join('\n\n')+'\n'};
+  }
+  return {build, source};
+});
+
+;
+
+/* Source: timeseries-chart.js */
+/* One accessible SVG per view. The shared chart controller owns tooltip state. */
+window.TimeSeriesChart = (host, tip) => {
+  const {esc, ticks} = WorkbenchUI;
+  const colors = ['#6b818f','#896c9d','#4e8980','#a8784d','#587da4'];
+  const interaction = ChartInteraction.create((text,mode) => {
+    tip.hidden = !text;
+    tip.dataset.state = mode;
+    if (text) {
+      tip.innerHTML = '<button type="button" aria-label="关闭详情">×</button>' + esc(text);
+      tip.querySelector('button').onclick = () => interaction.clear();
+    }
+  });
+  const fmt = x => Number(x.toPrecision(4)).toString();
+  function draw({series, labels, unit, xLabel, bars = false, bands = [], references = [], origin, mark = []}) {
+    interaction.clear();
+    interaction.redraw(() => false);
+    const W=660,H=300,L=76,R=21,T=19,B=52;
+    const n = labels.length;
+    const values = series.flatMap(s => s.values.filter(Number.isFinite))
+      .concat(bands.flatMap(b => [...b.lower,...b.upper].filter(Number.isFinite)),references.map(r=>r.value),bars?[0]:[]);
+    if (!values.length) { host.textContent='当前没有可绘制结果。'; return; }
+    const min=Math.min(...values),max=Math.max(...values),pad=(max-min)*.08||Math.max(.001,Math.abs(max)*.05);
+    const lo=min-pad,hi=max+pad, y=v=>T+(hi-v)/(hi-lo)*(H-T-B);
+    const step=(W-L-R)/(bars?n:Math.max(1,n-1));
+    const x=i=>L+(bars?i+.5:n===1?.5:i)*step;
+    const guides=ticks(lo,hi,4).map(v=>'<path class="ts-grid" d="M'+L+','+y(v)+'H'+(W-R)+'"/>'+
+      '<text x="'+(L-9)+'" y="'+(y(v)+4)+'" text-anchor="end">'+fmt(v)+'</text>').join('');
+    const xTicks = bars && n<=8 ? labels.map((_,i)=>i) : [...new Set([0,Math.floor((n-1)/3),Math.floor(2*(n-1)/3),n-1])];
+    const dates=xTicks.map(i=>'<text x="'+x(i)+'" y="'+(H-B+19)+'" text-anchor="'+(!bars&&i===0?'start':!bars&&i===n-1?'end':'middle')+'">'+esc(labels[i])+'</text>').join('');
+    const coord=(i,v)=>x(i).toFixed(2)+','+y(v).toFixed(2);
+    const intervals=bands.map(b=>{
+      const ids=b.lower.map((v,i)=>Number.isFinite(v)?i:null).filter(i=>i!==null);
+      if (!ids.length) return '';
+      if (ids.length===1) {
+        const i=ids[0];
+        return '<path d="M'+coord(i,b.lower[i])+'L'+coord(i,b.upper[i])+'" stroke="#896c9d" stroke-width="'+(b.alpha>.2?7:13)+'" opacity="'+b.alpha+'"/>';
+      }
+      const points=ids.map(i=>coord(i,b.lower[i])).concat(ids.slice().reverse().map(i=>coord(i,b.upper[i])));
+      return '<polygon points="'+points.join(' ')+'" fill="#896c9d" opacity="'+b.alpha+'"/>';
+    }).join('');
+    const ref = references.map(r=>'<path d="M'+L+','+y(r.value)+'H'+(W-R)+'" stroke="#8e829e" stroke-dasharray="4 4" fill="none"/>').join('');
+    const boundary = origin === undefined ? '' : '<path d="M'+x(origin)+','+T+'V'+(H-B)+'" stroke="#7e7490" stroke-dasharray="4 5"/>'+
+      '<text x="'+(x(origin)-4)+'" y="'+(T+12)+'" text-anchor="end">预测起点</text>';
+    const lines=series.map((s,j)=>{
+      const color=s.color||colors[j%colors.length];
+      if (bars) return s.values.map((v,i)=>!Number.isFinite(v)?'':
+        '<rect x="'+(x(i)-Math.min(30,step*.29))+'" y="'+Math.min(y(v),y(0))+'" width="'+Math.min(60,step*.58)+'" height="'+Math.abs(y(v)-y(0))+'" rx="2" fill="'+(s.barColors?.[i]||color)+'"/>').join('');
+      let d='',continuation=false;
+      s.values.forEach((v,i)=>{
+        if (!Number.isFinite(v)) { continuation=false; return; }
+        d+=(continuation?'L':'M')+coord(i,v);
+        continuation=true;
+      });
+      return '<path d="'+d+'" stroke="'+color+'" fill="none" stroke-width="2.3" '+(s.dash?'stroke-dasharray="'+s.dash+'"':'')+'/>'+
+        (s.points||s.values.filter(Number.isFinite).length===1 ? s.values.map((v,i)=>Number.isFinite(v)?
+          '<circle cx="'+x(i)+'" cy="'+y(v)+'" r="3" fill="'+color+'"/>':'').join('') : '');
+    }).join('');
+    const points=labels.flatMap((label,i)=>{
+      const entries=series.filter(s=>Number.isFinite(s.values[i]));
+      if (!entries.length) return [];
+      const hint=label+' · '+entries.map(s=>s.name+' '+fmt(s.values[i])).concat(
+        bands.flatMap(b=>Number.isFinite(b.lower[i])?[b.name+' ['+fmt(b.lower[i])+', '+fmt(b.upper[i])+']']:[]),
+        mark[i] ? [mark[i]] : []).join(' · ')+' '+unit;
+      return [{i,hint}];
+    });
+    const hit=points.map(({i,hint},j)=>'<rect class="ts-hit" data-point="'+j+'" aria-label="'+esc(hint)+'" role="button" tabindex="'+
+      (points.length<=30 || j%Math.ceil(points.length/18)===0?'0':'-1')+'" x="'+Math.max(L-6,x(i)-Math.max(3,step/2))+
+      '" y="'+T+'" width="'+Math.max(6,step)+'" height="'+(H-T-B)+'"/>').join('');
+    host.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="group" aria-label="'+esc(unit+' / '+xLabel)+'">'+guides+
+      '<path class="ts-axis" d="M'+L+','+T+'V'+(H-B)+'H'+(W-R)+'"/>'+intervals+ref+boundary+lines+dates+
+      '<text x="'+L+'" y="13">'+esc(unit)+'</text><text x="'+((L+W-R)/2)+'" y="'+(H-6)+'" text-anchor="middle">'+esc(xLabel)+'</text>'+hit+'</svg>';
+    host.querySelectorAll('[data-point]').forEach(el=>interaction.bind(el,points[Number(el.dataset.point)].hint));
+  }
+  return {draw, clear:()=>interaction.clear(), colors};
+};
+
+;
+
+/* Source: timeseries-workbench.js */
+/* Experiment 05 uses the existing three-pane workbench and course navigation. */
+(() => {
+  'use strict';
+  const M=TimeSeriesMath,L=TimeSeriesLSTM,R=TimeSeriesR,$=s=>document.querySelector(s),{esc}=WorkbenchUI;
+  const defaults={form:'log',target:0,stationChart:'series',adf:'drift',adfLag:2,kpss:'level',
+    p:1,q:1,armaMode:'manual',armaIC:'BIC',armaChart:'forecast',diagnostic:15,horizon:10,
+    varLag:1,varMode:'manual',varIC:'BIC',varChart:'forecast',vars:[0,1],varPlot:'all',from:0,to:1,
+    compareChart:'rmse',train:.7,valid:.15,features:[0,1],window:12,hidden:8,epochs:40};
+  const views=[
+    ['station','01 平稳性与数据','为什么金融价格与收益率的平稳性表现可能不同？'],
+    ['arma','02 ARMA 建模','一个变量的历史信息能预测多少未来变化？'],
+    ['var','03 VAR 与 Granger','其他变量的过去能否改善对目标的预测？'],
+    ['compare','04 预测模型比较','LSTM 在同一段测试期比传统模型预测得更好吗？']
+  ];
+  const formulas={
+    data:String.raw`R_t=P_t/P_{t-1}-1,\quad r_t=\log P_t-\log P_{t-1}`,
+    adf:String.raw`\Delta y_t=a+bt+\gamma y_{t-1}+\sum_{j=1}^{k}\delta_j\Delta y_{t-j}+u_t`,
+    kpss:String.raw`\mathrm{KPSS}=\frac{\sum_{t=1}^n S_t^2}{n^2\hat{\sigma}_{LR}^2}`,
+    acf:String.raw`\hat{\rho}_k=\frac{\sum_{t=k+1}^n (y_t-\bar y)(y_{t-k}-\bar y)}{\sum_{t=1}^n (y_t-\bar y)^2}`,
+    arma:String.raw`y_t-\mu=\sum_i\phi_i(y_{t-i}-\mu)+\varepsilon_t+\sum_j\theta_j\varepsilon_{t-j}`,
+    order:String.raw`\mathrm{AIC}=-2\ell+2k,\quad \mathrm{BIC}=-2\ell+k\log n`,
+    forecast:String.raw`\operatorname{Var}(e_{T+h})=\hat\sigma^2\sum_{i=0}^{h-1}\psi_i^2`,
+    var:String.raw`y_t=c+\sum_{\ell=1}^p A_\ell y_{t-\ell}+u_t`,
+    roots:String.raw`\max_j |\lambda_j(A_{\mathrm{comp}})|<1`,
+    granger:String.raw`F=\frac{(RSS_R-RSS_U)/p}{RSS_U/(n-1-mp)}`,
+    joint:String.raw`\hat y_{T+h|T}=c+\sum_{\ell=1}^{p} A_\ell\hat y_{T+h-\ell|T}`,
+    split:String.raw`X_t=(y_{t-W},\ldots,y_{t-1})`,
+    lstm:String.raw`c_t=f_t\odot c_{t-1}+i_t\odot g_t,\quad h_t=o_t\odot\tanh(c_t)`,
+    scores:String.raw`\mathrm{RMSE}=\sqrt{\operatorname{mean}(e_t^2)},\quad \mathrm{MAE}=\operatorname{mean}(|e_t|)`
+  };
+  const lineNotes=[
+    [/raw\[-1.*\/raw/,'简单收益使用相邻价格的比率减 1。'],
+    [/Y <- log\(raw/,'对数收益等于相邻价格对数之差。'],
+    [/tau <-/,'用滞后水平项的估计系数除以其标准误，再和单位根专用临界值比较。'],
+    [/lrv <- lrv/,'Bartlett 权重随滞后阶数线性递减。'],
+    [/partial <- pacf/,'PACF 度量移除中间滞后的线性关系。'],
+    [/k <- \.995/,'反射系数由 tanh 映射至 (−.995, .995)。'],
+    [/v <- v - ar/,'AR 系数乘以过去偏离模型均值的观测。'],
+    [/v <- v - ma/,'回推创新时减去过去创新对条件均值的贡献。'],
+    [/logLik <-/,'条件高斯对数似然由最优创新均方与有效样本数得到。'],
+    [/se <- sqrt\(fit\$sigma2/,'预测误差方差累计各未来创新的响应平方。'],
+    [/fit <- lm.fit\(X,Y/,'每个内生变量作为一个方程的响应，共享同一滞后设计。'],
+    [/Sigma <- crossprod/,'残差叉积除以共同有效样本数，得到 ML 口径协方差。'],
+    [/eigen\(A/,'对伴随矩阵直接求特征值，复根也参与取模。'],
+    [/restricted <-/,'仅删除指定来源变量的全部滞后，保留其他解释变量与相同日期。'],
+    [/nt <- floor/,'按时间切分。此索引前的观测用于拟合。'],
+    [/model\$window,t-1L/,'窗口末期为目标前一期，隐藏状态和记忆在窗口开始置零。'],
+    [/x <- \(Y\[k,/,'仅使用训练区保存的中心与尺度来转换输入。'],
+    [/memory <- plogis/,'遗忘门保留旧记忆，输入门控制新增候选记忆。'],
+    [/model\$center\[D\+1L\]/,'线性输出反标准化，恢复原目标单位。']
+  ];
+  const fmt=(v,d=5)=>Number.isFinite(v)?Number(v.toPrecision(d)).toString():'—';
+  const metric=(label,value)=>'<div><span>'+esc(label)+'</span><b>'+esc(value)+'</b></div>';
+  const table=(headers,rows)=>'<div class="ts-table"><table><thead><tr>'+headers.map(x=>'<th scope="col">'+esc(x)+'</th>').join('')+
+    '</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+  const disclosure=(title,body)=>'<details><summary>'+esc(title)+'</summary>'+body+'</details>';
+  const bool=x=>x?'拒绝':'未拒绝';
+  function dataId({names,dates,rows,kind,frequency}) {
+    const source=JSON.stringify([names,dates,rows,kind,frequency]);
+    let hash=2166136261;
+    for (let i=0;i<source.length;i++) hash=Math.imul(hash^source.charCodeAt(i),16777619);
+    return (hash>>>0).toString(16).padStart(8,'0');
+  }
+
+  function mount() {
+    CourseExperiments.mount('timeseries');
+    const body=document.body;
+    body.classList.add('ts-workbench');
+    $('.learning').hidden=true;
+    $('#assumptionDetails').hidden=true;
+    let gen={...M.defaults},data=M.generate(gen),datasetId=dataId(data),opt=structuredClone(defaults),view='station';
+    let importedTable=null,fileText='',fileVersion=0,worker=null,learned=null,attempted=null,runInfo='',progress=null;
+    let cache=new Map(),built=null,activeBlock='data',activeLine=null,codeMode='full',last=null,share=62;
+    const seenComparisons=new Set();
+    const tabs=document.createElement('nav');
+    tabs.id='tsViews'; tabs.setAttribute('aria-label','实验05主视图');
+    tabs.innerHTML=views.map(([k,n])=>'<button type="button" data-ts-view="'+k+'">'+n+'</button>').join('');
+    $('.model-panel .panel-head').after(tabs);
+    const question=document.createElement('p');
+    question.id='tsQuestion'; tabs.after(question);
+    const controls=document.createElement('div');
+    controls.id='tsControls'; question.after(controls);
+    $('#chartHost').innerHTML='<h3 id="tsPlotTitle"></h3><div id="tsPlot"></div><div id="tsTip" class="chart-tooltip" hidden></div>';
+    const chart=TimeSeriesChart($('#tsPlot'),$('#tsTip'));
+    const nav=document.createElement('nav');
+    nav.id='tsCodeNav'; nav.setAttribute('aria-label','R 代码段'); $('.code-toolbar').after(nav);
+    const dataBox=document.createElement('details');
+    dataBox.id='tsData';
+    dataBox.innerHTML='<summary>合成数据与本地 CSV</summary><p id="tsSource"></p>'+
+      '<form id="tsGen"><div id="tsGenFields"></div><button>生成合成数据</button></form>'+
+      '<form id="tsCSV"><p>宽表中每行是同一日期。请选择同频数值列。不同来源须先按实际可用日期对齐。文件留在当前浏览器。</p>'+
+      '<label>CSV 文件<input id="tsFile" type="file" accept=".csv,text/csv"></label><div id="tsColumns"></div>'+
+      '<label>列类型<select id="tsKind"><option value="price">价格</option><option value="simple">简单收益率</option>'+
+      '<option value="log">对数收益率</option><option value="numeric">其他数值</option></select></label>'+
+      '<label>单位<select id="tsUnit"><option value="decimal">小数 / 原值</option><option value="percent">百分数数值 ÷100</option></select></label>'+
+      '<label>频率<select id="tsFrequency"><option value="daily">日历日</option><option value="weekly">自然周</option>'+
+      '<option value="monthly">自然月</option><option value="annual">年度</option><option value="observed">相邻观测 / 交易期</option></select></label>'+
+      '<label>缺失处理<select id="tsMissing"><option value="reject">拒绝缺失值</option><option value="drop">确认删除缺失整行</option></select></label>'+
+      '<label class="ts-check"><input type="checkbox" id="tsAccept">确认间隔不规则时按相邻观测建模</label>'+
+      '<button id="tsImport" disabled>确认导入</button></form><p id="tsDataError" role="status"></p>';
+    $('#inputs').after(dataBox);
+    const chartChoices={
+      station:[['series','时间序列'],['acf','ACF'],['pacf','PACF']],
+      arma:[['forecast','预测'],['criteria','定阶准则'],['residual','标准化残差'],['resacf','残差 ACF']],
+      var:[['forecast','联合预测'],['criteria','定阶准则'],['granger','Granger 方向']],
+      compare:[['rmse','RMSE'],['mae','MAE'],['prediction','实际与预测'],['errors','预测误差'],['loss','训练与验证损失']]
+    };
+    const option=(v,l,selected)=>'<option value="'+esc(v)+'" '+(String(v)===String(selected)?'selected':'')+'>'+esc(l)+'</option>';
+    const select=(id,values,value)=>'<select id="ts-'+id+'" data-opt="'+id+'">'+values.map(([v,l])=>option(v,l,value)).join('')+'</select>';
+    const field=(id,label,values)=>'<label>'+label+select(id,values,opt[id])+'</label>';
+    const number=(id,label,value,min,max,step=1)=>'<label>'+label+'<input data-opt="'+id+'" id="ts-'+id+
+      '" type="number" value="'+value+'" min="'+min+'" max="'+max+'" step="'+step+'" required></label>';
+    const checks=(key,caption,ids)=>'<fieldset><legend>'+caption+'</legend>'+data.names.map((name,i)=>
+      '<label class="ts-check"><input type="checkbox" data-list="'+key+'" value="'+i+'" '+(ids.includes(i)?'checked':'')+
+      '>'+esc(name)+'</label>').join('')+'</fieldset>';
+    const genFields=()=>$('#tsGenFields').innerHTML=number('seed','随机种子',gen.seed,1,2147483646)+
+      number('n','收益样本量',gen.n,120,1600)+number('ar','市场 AR(1) 系数',gen.ar,-.75,.75,.01)+
+      number('cross','市场 → 行业滞后系数',gen.cross,-.75,.75,.01)+number('noise','创新标准差',gen.noise,.001,.05,.001);
+    genFields();
+    function settings() {
+      const names=data.names.map((n,i)=>[i,n]), vars=opt.vars.map(i=>[i,data.names[i]]);
+      let html=field('target','目标序列',names);
+      if (data.kind==='price') html+=field('form','序列尺度',[['price','原始价格'],['simple','简单收益率'],['log','对数收益率']]);
+      if (view==='station') html+=field('adf','ADF 确定性项',[['none','无'],['drift','截距'],['trend','截距与趋势']])+
+        number('adfLag','ADF 滞后差分数',opt.adfLag,0,12)+field('kpss','KPSS 原假设',[['level','水平平稳'],['trend','趋势平稳']]);
+      if (view==='arma' || view==='compare') {
+        const armaFields=field('armaMode','ARMA 定阶',[['manual','手动'],['auto','自动']])+
+          (opt.armaMode==='manual'?number('p','AR 阶数 p',opt.p,0,5)+number('q','MA 阶数 q',opt.q,0,5):'')+
+          (opt.armaMode==='auto' || view==='arma'&&opt.armaChart==='criteria' ? field('armaIC','ARMA 准则',[['AIC','AIC'],['AICc','AICc'],['BIC','BIC']]):'');
+        html+=view==='arma'?armaFields:disclosure('ARMA 设置',armaFields);
+      }
+      if (view==='var' || view==='compare') {
+        const varFields=checks('vars','VAR 内生变量',opt.vars)+field('varMode','VAR 定阶',[['manual','手动'],['auto','自动']])+
+          (opt.varMode==='manual'?number('varLag','VAR 滞后阶数',opt.varLag,1,5):'')+
+          (opt.varMode==='auto' || view==='var'&&opt.varChart==='criteria'?field('varIC','VAR 准则',[['AIC','AIC'],['BIC','BIC'],['HQ','HQ']]):'');
+        html+=view==='var'?varFields:disclosure('VAR 设置',varFields);
+      }
+      if (view==='arma' || view==='var') html+=number('horizon','未来预测期数',opt.horizon,1,40);
+      if (view==='arma') html+=disclosure('ARMA 诊断与估计',number('diagnostic','Ljung–Box 滞后 L',opt.diagnostic,1,30)+
+        '<p>常均值 μ。条件高斯估计统一将前五期创新置零，不纳入似然。</p>');
+      if (view==='var' && vars.length>=2) html+=opt.varChart==='granger'?
+        field('from','来源变量',vars)+field('to','响应变量',vars.filter(([i])=>i!==opt.from)):
+        field('varPlot','预测展示',[['all','所有 VAR 变量'],...vars]);
+      if (view==='compare') html+='<p class="ts-muted">预测跨度：共同滚动一期</p>'+
+        number('train','训练比例',opt.train,.5,.85,.01)+number('valid','验证比例',opt.valid,.05,.3,.01)+
+        disclosure('LSTM 输入与训练',checks('features','输入变量',opt.features)+
+          number('window','输入窗口',opt.window,4,32)+number('hidden','隐藏单元',opt.hidden,4,16)+
+          number('epochs','最大训练轮数',opt.epochs,1,80)+
+          '<p>Adam · 学习率 0.008 · 批量 32 · 耐心 6 轮 · 种子 731</p>')+
+        '<div class="ts-train"><button type="button" id="tsTrain">训练 LSTM</button> <button type="button" id="tsCancel">取消训练</button>'+
+        '<p id="tsTrainStatus" role="status"></p></div>';
+      const open=[...$('#inputs').querySelectorAll('details')].map(d=>d.open);
+      $('#inputs').innerHTML=html;
+      $('#inputs').querySelectorAll('details').forEach((d,i)=>d.open=!!open[i]);
+      if (view==='compare') { $('#tsTrain').onclick=train; $('#tsCancel').onclick=()=>{stop('训练已取消。'); draw();}; }
+    }
+    function clearData(next, target=0) {
+      stop('');
+      data=next; datasetId=dataId(data);
+      opt.target=target; opt.form=data.kind==='price'?'log':data.kind;
+      opt.vars=[target,...data.names.map((_,i)=>i).filter(i=>i!==target).slice(0,1)].sort((a,b)=>a-b);
+      opt.features=opt.vars.slice(); opt.from=opt.vars[0];opt.to=opt.vars[1];opt.varPlot='all';
+      learned=null;attempted=null;cache=new Map();seenComparisons.clear();
+      settings(); draw();
+    }
+    function readyData() { return M.transform(data,opt.form); }
+    function cached(key, fn) {
+      const id=JSON.stringify(key);
+      if (!cache.has(id)) {
+        if (cache.size>=20) cache.delete(cache.keys().next().value);
+        cache.set(id,fn());
+      }
+      return cache.get(id);
+    }
+    const armaKey=()=>[opt.armaMode,opt.armaIC,opt.p,opt.q];
+    const varKey=()=>[opt.vars,opt.varMode,opt.varIC,opt.varLag];
+    function weightKey() { return JSON.stringify([opt.form,opt.target,opt.features,opt.train,opt.valid,opt.window,opt.hidden,opt.epochs]); }
+    function weights() {
+      if (learned?.key===weightKey()) return learned.model;
+      if (attempted!==weightKey() && data.synthetic && Object.keys(M.defaults).every(k=>gen[k]===M.defaults[k]) &&
+          weightKey()===JSON.stringify(['log',0,[0,1],.7,.15,12,8,40])) return TimeSeriesWeights;
+      return null;
+    }
+    function stop(message) {
+      if (worker) worker.terminate();
+      worker=null; progress=null; runInfo=message;
+    }
+    function trainStatus() {
+      if (view!=='compare') return;
+      const model=weights(), text=worker ? (progress?'训练第 '+progress.epoch+' 轮 · 验证 MSE '+fmt(progress.validation):'训练已启动…') :
+        runInfo || (model ? (model===TimeSeriesWeights?'已载入默认冻结权重':'已训练并冻结权重')+
+          ' · 采用第 '+model.bestEpoch+' 轮，共 '+model.curve.length+' 轮' : '当前设置需要训练权重');
+      $('#tsTrain').disabled=!!worker;
+      $('#tsCancel').hidden=!worker;
+      $('#tsTrainStatus').textContent=text;
+    }
+    function train() {
+      const d=readyData(), key=weightKey();
+      try {
+        attempted=key;learned=null;
+        const {nt,nv}=M.split(d.rows.length,opt.train,opt.valid);
+        if (!opt.features.length) throw Error('请至少选择一个 LSTM 输入变量。');
+        const hashes=window.FINMODEL_BUILD.assets;
+        const w=new Worker('timeseries-worker.js?v='+hashes['timeseries-worker.js'].slice(0,16));
+        worker=w; runInfo='';progress=null;draw();
+        const failed=message=>{stop('训练失败：'+message); draw();};
+        w.onerror=e=>{if(worker===w) failed(e.message||'无法加载训练程序。');};
+        w.onmessage=({data:message})=>{
+          if (worker!==w || key!==weightKey()) return;
+          if (message.entry) { progress=message.entry;trainStatus(); }
+          if (message.error) failed(message.error);
+          if (message.model) { learned={key,model:{...message.model,datasetId}};stop('');draw(); }
+        };
+        w.postMessage({hashes,rows:d.rows.slice(0,nv),options:{nt,nv,target:opt.target,features:opt.features,
+          window:opt.window,hidden:opt.hidden,epochs:opt.epochs}});
+      } catch(e) { stop('训练失败：'+e.message);draw(); }
+    }
+
+    const unit=d=>({price:'价格原值',log:'对数收益（小数）',simple:'简单收益（小数）',numeric:'原始单位'})[d.form];
+    const legend=labels=>$('#legend').innerHTML=labels.map(([text,color])=>
+      '<span class="ts-legend"><i style="background:'+color+'"></i>'+esc(text)+'</span>').join('');
+    const plot=(title,settings)=>{
+      $('#tsPlotTitle').textContent=title;
+      chart.draw(settings);
+    };
+    const metricRow=(...pairs)=>$('#metrics').innerHTML=pairs.map(([label,value])=>metric(label,value)).join('');
+    const detail=(html)=>$('#details').innerHTML=html;
+    const safeTxt=s=>'<p>'+esc(s)+'</p>';
+    const criterion=(rows,ic,format,d)=>{
+      const valid=rows.filter(c=>Number.isFinite(c[ic]));
+      if (valid.length) plot(ic+' · 相同估计日期', {series:[{name:ic,values:valid.map(c=>c[ic])}],
+        labels:valid.map(format),unit:ic,xLabel:'候选阶数',bars:true});
+      detail(safeTxt('准则越小越好。不同惩罚可能选出不同阶数，有限样本选择存在不确定性。')+
+        disclosure('全部候选与失败状态',table(['阶数','准则','状态'],
+          rows.map(c=>[format(c),fmt(c[ic]),c.error||'成功'])))+
+        safeTxt('当前样本：'+d.rows.length+' 期'));
+    };
+    function station(d,y) {
+      const q=cached([d.form,opt.target,opt.adf,opt.adfLag,opt.kpss],()=>M.stationarity(y,opt.adf,opt.adfLag,opt.kpss==='trend'));
+      const kind=opt.stationChart;
+      metricRow(['ADF τ · '+bool(q.adfReject),fmt(q.tau)],['KPSS · '+bool(q.kpssReject),fmt(q.kpss)]);
+      const interpretations={
+        'true,false':'当前结果与所选平稳性假设较为一致。',
+        'false,true':'当前证据提示需进一步检查单位根或其他非平稳形式。'
+      };
+      let extras='';
+      if (kind==='series') plot(data.names[opt.target]+' · '+unit(d),{series:[{name:data.names[opt.target],values:y}],
+        labels:d.dates,unit:unit(d),xLabel:data.synthetic?'模拟观测期':'观察日期'});
+      else {
+        const q=cached(['acf',d.form,opt.target],()=>M.correlogram(y));
+        plot(kind.toUpperCase()+' · '+data.names[opt.target],{series:[{name:kind.toUpperCase(),values:q[kind].slice(1)}],
+          labels:q[kind].slice(1).map((_,i)=>i+1),unit:'相关系数',xLabel:'滞后（观测期）',bars:true,references:[{value:q.band},{value:-q.band}]});
+        extras=safeTxt('虚线为白噪声近似下的点态 ±1.96/√n 参考线。截断与拖尾提供定阶线索，仍需比较估计与残差。');
+      }
+      detail(safeTxt(interpretations[[q.adfReject,q.kpssReject].join(',')]||
+        '两项检验给出不同信号。样本量、趋势设定、结构变化、检验功效及滞后／带宽选择都可能影响结果。')+
+        disclosure('检验口径与临界值',table(['检验','原假设','5% 临界值','滞后 / 带宽'],[
+          ['ADF','存在单位根',q.critical,opt.adfLag],['KPSS',opt.kpss==='trend'?'趋势平稳':'水平平稳',q.kCritical,q.bw]])+
+          safeTxt('ADF 使用 ur.df 的 τ 临界值口径，KPSS 使用 Bartlett 长期方差及短带宽。趋势和单位根描述不同机制，收益率也需要检验。'))+extras);
+      return q;
+    }
+    function arma(d,y) {
+      const kind=opt.armaChart, q=cached(['a',d.form,opt.target,...armaKey(),kind==='criteria'],
+        ()=>M.selectARMA(y,opt,kind==='criteria')), f=q.fit;
+      const h=M.forecastARMA(y,f,opt.horizon), test=M.ljung(f,opt.diagnostic);
+      metricRow(['当前模型','ARMA('+f.p+','+f.q+')'],['未来第 1 期',fmt(h[0].value)]);
+      if (kind==='criteria') criterion(q.candidates,opt.armaIC,c=>'('+c.p+','+c.q+')',d);
+      else if (kind==='residual' || kind==='resacf') {
+        const e=f.residual.slice(f.burn).map(x=>x/Math.sqrt(f.sigma2));
+        if (kind==='residual') plot('标准化残差',{series:[{name:'残差 / σ',values:e}],labels:d.dates.slice(f.burn),unit:'残差 / σ',xLabel:'观察期',references:[{value:0}]});
+        else {
+          const c=M.correlogram(e);
+          plot('残差 ACF',{series:[{name:'ACF',values:c.acf.slice(1)}],labels:c.acf.slice(1).map((_,i)=>i+1),unit:'相关系数',xLabel:'滞后（观测期）',bars:true,
+            references:[{value:c.band},{value:-c.band}]});
+        }
+        detail(safeTxt(test.p===null?'Ljung–Box 自由度不合法，请选 L > p+q。':
+          'Ljung–Box Q = '+fmt(test.Q)+'，df = '+test.df+'，p = '+fmt(test.p)+
+          '。残差是未解释的部分。未拒绝只能说明所选滞后的线性相关证据不足。'));
+      } else {
+        const history=y.slice(-64), n=history.length, blanks=Array(n).fill(null);
+        const labels=d.dates.slice(-n).concat(h.map((_,i)=>'未来 '+(i+1)));
+        const bounds=(key)=>blanks.concat(h.map(r=>r[key]));
+        plot('已观察序列与未来预测',{series:[{name:'历史观测',values:history},
+          {name:'ARMA 点预测',values:blanks.slice(1).concat(history.at(-1),h.map(r=>r.value)),points:true}],
+          labels,unit:unit(d),xLabel:'观测期与未来期',origin:n-1,bands:[
+            {name:'95% 区间',lower:bounds('lo95'),upper:bounds('hi95'),alpha:.15},
+            {name:'80% 区间',lower:bounds('lo80'),upper:bounds('hi80'),alpha:.26}]});
+        legend([['历史',chart.colors[0]],['点预测',chart.colors[1]],['80% / 95% 预测区间','#cbbbd5']]);
+        detail(safeTxt('区间基于条件高斯创新，随预测期数传播，条件于已估参数。以未来观测期标记时间。'));
+      }
+      $('#details').insertAdjacentHTML('beforeend',safeTxt('AR 使用过去观测偏离均值的信息。MA 使用过去的创新，与移动平均平滑含义不同。')+
+        (f.boundary?safeTxt('估计接近反射系数约束边界，参数解释与模型选择需谨慎。'):'')+
+        disclosure('系数、似然和预测表',table(['参数','估计'],[
+          ['μ',fmt(f.mu)],...f.ar.map((v,i)=>['φ'+(i+1),fmt(v)]),...f.ma.map((v,i)=>['θ'+(i+1),fmt(v)]),['σ²',fmt(f.sigma2)],
+          ...['logLik','AIC','AICc','BIC'].map(k=>[k,fmt(f[k])])])+
+          safeTxt('有效估计样本 '+(y.length-f.burn)+'。AR/MA 多项式由反射系数约束，近边界或阶数选择后不展示常规 Wald 显著性。')+
+          table(['未来期','点预测','80% 下 / 上','95% 下 / 上'],h.map((r,i)=>[i+1,fmt(r.value),fmt(r.lo80)+' / '+fmt(r.hi80),fmt(r.lo95)+' / '+fmt(r.hi95)]))));
+      return {q,forecast:h,test};
+    }
+    function varView(d) {
+      const kind=opt.varChart, v=d.rows.map(r=>opt.vars.map(i=>r[i]));
+      if (opt.vars.length<2) throw Error('VAR 需要至少两个同期变量。请选择额外变量或导入多变量 CSV。');
+      const result=cached(['v',d.form,...varKey(),kind==='criteria'],()=>{
+        const q=M.selectVAR(v,opt,kind==='criteria'), f=q.fit, names=opt.vars.map(i=>data.names[i]);
+        const roots=M.roots(f), max=Math.max(...roots.map(r=>r.abs));
+        const tests=names.flatMap((_,from)=>names.flatMap((__,to)=>from===to?[]:[{from,to,...M.granger(v,f,from,to)}]));
+        return {q,names,roots,max,tests};
+      });
+      const {q,names,roots,max,tests}=result,f=q.fit, h=M.forecastVAR(v,f,opt.horizon);
+      if (h.flat().some(x=>!Number.isFinite(x))) throw Error('联合预测超出有限数值范围，请检查稳定性或缩短跨度。');
+      metricRow(['当前模型','VAR('+f.p+')'],[max<1?'稳定 · 最大特征值模':'不稳定 · 最大特征值模',fmt(max)]);
+      if (kind==='criteria') criterion(q.candidates,opt.varIC,c=>String(c.p),d);
+      else if (kind==='granger') {
+        $('#tsPlotTitle').textContent='Granger 条件预测关系';
+        $('#tsPlot').innerHTML='<div class="ts-directions">'+tests.map(({from,to,p})=>{
+          const a=opt.vars[from],b=opt.vars[to],active=a===opt.from&&b===opt.to;
+          return '<button type="button" data-direction="'+a+','+b+'" aria-pressed="'+active+'"><span>'+esc(names[from])+
+            ' → '+esc(names[to])+'</span><b class="'+(p<.05?'ts-significant':'')+'">'+(p<.05?'p < 0.05':'p ≥ 0.05')+'</b></button>';
+        }).join('')+'</div>';
+        $('#tsPlot').querySelectorAll('[data-direction]').forEach(btn=>btn.onclick=()=>{
+          [opt.from,opt.to]=btn.dataset.direction.split(',').map(Number);settings();draw();
+        });
+        const t=tests.find(t=>opt.vars[t.from]===opt.from&&opt.vars[t.to]===opt.to)||tests[0];
+        detail(safeTxt(names[t.from]+' → '+names[t.to]+' · F('+t.df1+', '+t.df2+') = '+fmt(t.F)+'，p = '+fmt(t.p)+
+          '。'+(t.p<.05?'当前设定下，来源变量的滞后提供额外预测信息。':'当前设定下，额外预测信息的证据不足。'))+
+          safeTxt('检验原假设为来源变量的 p 个滞后系数联合为零。经典 F 参考依赖模型及误差假设，结构性因果需要额外识别。'));
+      } else {
+        const ids=opt.varPlot==='all'?names.map((_,i)=>i):[opt.vars.indexOf(opt.varPlot)];
+        const history=v.slice(-45),n=history.length, labels=d.dates.slice(-n).concat(h.map((_,i)=>'未来 '+(i+1)));
+        const series=ids.flatMap(i=>[{name:names[i]+' · 历史',values:history.map(r=>r[i]),color:chart.colors[i+1]},
+          {name:names[i]+' · 预测',values:Array(n-1).fill(null).concat(history.at(-1)[i],h.map(r=>r[i])),color:chart.colors[i+1],dash:'6 3',points:true}]);
+        plot('VAR 联合多期点预测',{series,labels,unit:unit(d),xLabel:'观测期与未来期',origin:n-1});
+        legend(ids.map(i=>[names[i],chart.colors[i+1]]).concat([['虚线为未来预测','#7e7490']]));
+        detail(safeTxt('每个方程同时使用自身与系统中其他变量的滞后。未来各变量联合递推。'));
+      }
+      const terms=['截距',...Array.from({length:f.p},(_,i)=>names.map(name=>name+' L'+(i+1))).flat()];
+      $('#details').insertAdjacentHTML('beforeend',
+        (max>=1?safeTxt('伴随矩阵存在模 ≥1 的特征值。长期预测和常规平稳 VAR 推断需谨慎。'):'')+
+        disclosure('系数、协方差、稳定性与预测表',safeTxt('逐方程 OLS，共同有效样本 '+f.n+'，残差协方差按 UᵀU/n。')+
+          table(['解释变量',...names],terms.map((term,j)=>[term,...f.coef.map(a=>fmt(a[j]))]))+
+          table(['协方差',...names],f.cov.map((r,j)=>[names[j],...r.map(x=>fmt(x))]))+
+          table(['实部','虚部','模'],roots.map(r=>[fmt(r.re),fmt(r.im),fmt(r.abs)]))+
+          table(['未来期',...names],h.map((r,i)=>[i+1,...r.map(x=>fmt(x))]))+
+          disclosure('拟合值与残差 · 最后 5 期',table(['日期',...names.map(n=>n+' 拟合'),...names.map(n=>n+' 残差')],
+            f.fits[0].residual.slice(-5).map((_,i)=>[d.dates.at(i-5),...f.fits.map(a=>fmt(a.fitted.at(i-5))),...f.fits.map(a=>fmt(a.residual.at(i-5)))])))));
+      return {...result,forecast:h};
+    }
+    function compare(d) {
+      const key=['c',d.form,opt.target,opt.train,opt.valid,...armaKey(),...varKey()];
+      seenComparisons.add(JSON.stringify([...key,weightKey()]));
+      const q=cached(key,()=>M.compare(d.rows,opt.target,opt.vars,opt)), model=weights();
+      const models={...q.models};
+      if (model) {
+        try {
+          const prediction=q.actual.map((_,i)=>L.predict(d.rows,q.nv+i,model));
+          if (prediction.some(v=>!Number.isFinite(v))) throw Error('LSTM 预测包含无效值。');
+          const errors=prediction.map((v,i)=>v-q.actual[i]), n=errors.length;
+          models.LSTM={prediction,rmse:Math.sqrt(errors.reduce((s,v)=>s+v*v,0)/n),mae:errors.reduce((s,v)=>s+Math.abs(v),0)/n};
+        } catch(e) { models.LSTM={error:e.message}; }
+      } else models.LSTM={error:worker?'训练中':runInfo||'当前数据与设置没有匹配权重'};
+      const names=Object.keys(models), valid=names.filter(k=>!models[k].error), kind=opt.compareChart;
+      const measure=kind==='mae'?'mae':'rmse', sorted=valid.slice().sort((a,b)=>models[a][measure]-models[b][measure]);
+      const best=sorted[0], second=sorted[1];
+      metricRow([measure.toUpperCase()+' 最低',best+' · '+fmt(models[best][measure])],['训练 / 验证 / 测试',
+        q.nt+' / '+(q.nv-q.nt)+' / '+q.actual.length]);
+      if (kind==='rmse'||kind==='mae') plot('共同测试日期 · 一期 '+kind.toUpperCase(),{
+        series:[{name:kind.toUpperCase(),values:valid.map(k=>models[k][kind]),barColors:valid.map(k=>chart.colors[names.indexOf(k)+1])}],
+        labels:valid,unit:unit(d),xLabel:'模型',bars:true});
+      else if (kind==='loss') {
+        if (model) {
+          plot('LSTM · 训练与验证 MSE',{series:[{name:'训练',values:model.curve.map(x=>x.train)},
+            {name:'验证',values:model.curve.map(x=>x.validation)}],labels:model.curve.map(x=>x.epoch),
+            unit:'标准化 MSE',xLabel:'训练轮次',mark:model.curve.map(x=>x.epoch===model.bestEpoch?'恢复此轮权重':'')});
+          legend([['训练',chart.colors[0]],['验证',chart.colors[1]]]);
+        } else { $('#tsPlotTitle').textContent='LSTM 训练记录';$('#tsPlot').textContent=models.LSTM.error; }
+      } else {
+        const series=valid.map(k=>({name:k,color:chart.colors[names.indexOf(k)+1],
+          values:models[k].prediction.map((v,i)=>kind==='errors'?q.actual[i]-v:v),
+          dash:['Naive','VAR'].includes(k)?'5 3':''}));
+        if (kind==='prediction') series.unshift({name:'实际值',values:q.actual,color:chart.colors[0]});
+        plot(kind==='errors'?'一期预测误差（实际 − 预测）':'共同测试日期 · 实际与一期预测',{
+          series,labels:d.dates.slice(q.nv),unit:unit(d),xLabel:'测试观测期',references:kind==='errors'?[{value:0}]:[]});
+        legend(series.map(s=>[s.name,s.color]));
+      }
+      detail(safeTxt((second?'当前 '+measure.toUpperCase()+' 最低的是 '+best+'，与次低 '+second+' 相差 '+
+        fmt(models[second][measure]-models[best][measure])+'。':'当前仅 '+best+' 有可比较结果。')+
+        ' 结论只描述本样本。ARMA 使用目标历史，VAR 和 LSTM 可使用不同的多变量信息。')+
+        safeTxt('参数只用训练期拟合，LSTM 用随后验证期早停。测试期每个目标日前只使用已观测历史。'+
+          (seenComparisons.size>1?' 已在本次会话重复查看不同设定的留出结果，适合作为探索性比较。':''))+
+        disclosure('指标、模型状态与日期',table(['模型','RMSE','MAE','状态'],names.map(k=>
+          [k,fmt(models[k].rmse),fmt(models[k].mae),models[k].error||'日期完整对齐']))+
+          safeTxt('目标 '+data.names[opt.target]+'，测试 '+d.dates[q.nv]+' 至 '+d.dates.at(-1)+'，共 '+q.actual.length+' 期。方向命中也需交易成本与执行假设才能讨论经济表现。')+
+          (model?safeTxt('LSTM '+model.version+' · '+model.window+' 期窗口 · '+model.hidden+' 个隐藏单元 · 输入 '+
+            model.features.map(i=>data.names[i]).join('、')+' · 最佳轮 '+model.bestEpoch+' / 实跑 '+model.curve.length+'。')+
+            safeTxt('数据版本 '+datasetId+' · '+unit(d)+' · 训练 '+d.dates[0]+' 至 '+d.dates[q.nt-1]+
+              ' · 验证 '+d.dates[q.nt]+' 至 '+d.dates[q.nv-1]+'。'):'')+
+          (q.armaModel?safeTxt('训练期 ARMA('+q.armaModel.p+','+q.armaModel.q+')'):'')+
+          (q.varModel?safeTxt('训练期 VAR('+q.varModel.p+') · '+opt.vars.map(i=>data.names[i]).join('、')):'')));
+      trainStatus();
+      return {...q,models,model};
+    }
+
+    function renderCode() {
+      $('#copy').disabled=!built;
+      if (!built) { nav.innerHTML='';$('#code').innerHTML='';$('#explanation').textContent='当前模型没有可复现的有效输出。';return; }
+      if (!built.blocks.some(b=>b.id===activeBlock)) {activeBlock=built.blocks[0].id;activeLine=null;}
+      nav.innerHTML=built.blocks.map(b=>'<button type="button" data-block="'+b.id+'">'+esc(b.title)+'</button>').join('');
+      const shown=codeMode==='full'?built.blocks:built.blocks.filter(b=>b.id===activeBlock);
+      let count=0;
+      $('#code').innerHTML=shown.map(b=>'<section class="logic-block" id="ts-code-'+b.id+'">'+
+        b.code.split('\n').map((line,i)=>{
+          count++;
+          const key=b.id+':'+i;
+          return '<button type="button" class="code-line" data-line="'+key+'" data-block="'+b.id+'"><span class="line-number">'+count+
+            '</span><code>'+WorkbenchUI.colorCode(line||' ')+'</code></button>';
+        }).join('')+'</section>').join('');
+      explain(activeBlock,activeLine);
+    }
+    function explain(id,line) {
+      if (!built) return;
+      activeBlock=id;activeLine=line;
+      const b=built.blocks.find(x=>x.id===id), source=line?b.code.split('\n')[Number(line.split(':')[1])]:'';
+      const note=lineNotes.find(([pattern])=>pattern.test(source||''))?.[1];
+      $('#explanation').innerHTML='<h3>'+esc(b.title)+'</h3><p>'+esc(note||b.text)+'</p>'+
+        (formulas[id]?'<div id="tsFormula"></div>':'');
+      if (formulas[id]) katex.render(formulas[id],$('#tsFormula'),{throwOnError:false});
+      nav.querySelectorAll('button').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.block===id)));
+      $('#code').querySelector('.ts-selected')?.classList.remove('ts-selected');
+      const button=line?$('#code [data-line="'+line+'"]'):null;
+      if (button) button.classList.add('ts-selected');
+    }
+    function draw() {
+      const d=readyData(), {form, target}=opt, scroll=$('#code').scrollTop;
+      const key=view+'Chart';
+      chart.clear();
+      tabs.querySelectorAll('button').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.tsView===view)));
+      question.textContent=views.find(([k])=>k===view)[2];
+      controls.innerHTML='<label>主图 '+select(key,chartChoices[view],opt[key])+'</label>';
+      $('#graphKind').textContent=data.synthetic?'合成数据':'本地 CSV';
+      $('#tsSource').textContent=(data.synthetic?'合成金融时间序列，非真实市场行情。':'本地 CSV，仅在本机处理。')+
+        ' '+data.frequency+' · 当前有效 '+d.rows.length+' 期 · 清洗损失 '+data.lost+
+        ' 行'+(data.kind==='price'&&form!=='price'?' · 转换首期损失 1 行':'')+'。 '+data.warnings.join(' ');
+      $('#assumptionSummary').innerHTML='<span>'+esc(unit(d))+'</span><span>'+esc(data.frequency)+' · '+d.rows.length+' 期</span>'+
+        (data.synthetic?'<span>合成金融时间序列，非真实市场行情。</span>':'<span>清洗损失 '+data.lost+' 行</span>');
+      $('#validation').textContent='';$('#legend').textContent='';
+      $('#tsPlotTitle').textContent='';$('#tsPlot').textContent='';detail('');
+      try {
+        const y=d.rows.map(r=>r[target]);
+        M.validate(y);
+        last=view==='station'?station(d,y):view==='arma'?arma(d,y):view==='var'?varView(d):compare(d);
+        built=R.build(view,data,{...opt,chart:opt[key]},last.model,last.models);
+      } catch(e) {
+        last=built=null;$('#validation').textContent=e.message;metricRow(['当前设定','结果不可用']);
+        $('#tsPlotTitle').textContent='当前设定无法计算';$('#tsPlot').textContent=e.message;
+        detail('');$('#legend').textContent='';trainStatus();
+      }
+      renderCode();
+      $('#code').scrollTop=scroll;
+    }
+    function update(e) {
+      const el=e.target, id=el.dataset.opt, list=el.dataset.list;
+      if (!id&&!list) return;
+      const old=weightKey();
+      if (list) {
+        opt[list]=[...$('#inputs').querySelectorAll('[data-list="'+list+'"]:checked')].map(x=>Number(x.value));
+        if (list==='vars') {
+          opt.from=opt.vars[0];opt.to=opt.vars[1];opt.varPlot='all';
+        }
+      } else {
+        const number=el.type==='number'||['target','from','to'].includes(id)||id==='varPlot'&&el.value!=='all';
+        if (el.type==='number' && !el.checkValidity()) {
+          el.value=opt[id]; $('#validation').textContent='请输入 '+el.min+'–'+el.max+' 范围内的值。'; return;
+        }
+        opt[id]=number?Number(el.value):el.value;
+        if (id==='from'&&opt.from===opt.to) opt.to=opt.vars.find(j=>j!==opt.from);
+      }
+      if (old!==weightKey()) { stop('');attempted=null; }
+      settings();draw();
+    }
+    $('#inputs').onchange=controls.onchange=update;
+    tabs.onclick=e=>{
+      const id=e.target.dataset.tsView;
+      if (!id||id===view) return;
+      view=id;activeBlock='data';activeLine=null;$('#code').scrollTop=0;
+      settings();draw();
+    };
+    nav.onclick=e=>{
+      const id=e.target.dataset.block;
+      if (!id) return;
+      if (codeMode==='basic') {activeBlock=id;activeLine=null;renderCode();}
+      else {
+        explain(id,null);
+        $('#code').scrollTop+=document.getElementById('ts-code-'+id).getBoundingClientRect().top-$('#code').getBoundingClientRect().top;
+      }
+    };
+    $('#code').onclick=e=>{
+      const el=e.target.closest('[data-line]');
+      if (el) explain(el.dataset.block,el.dataset.line);
+    };
+    $('.code-toolbar').addEventListener('click',e=>{
+      if (!e.target.dataset.codeMode) return;
+      codeMode=e.target.dataset.codeMode;
+      $('.code-toolbar').querySelectorAll('[data-code-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.codeMode===codeMode)));
+      renderCode();$('#code').scrollTop=0;
+    });
+    $('#tsGen').onsubmit=e=>{
+      e.preventDefault();
+      try {
+        const next=Object.fromEntries(Object.keys(gen).map(k=>[k,Number($('#ts-'+k).value)])), d=M.generate(next);
+        gen=next;$('#tsDataError').textContent='';clearData(d);
+      } catch(error) { $('#tsDataError').textContent=error.message; }
+    };
+    $('#tsFile').onchange=async e=>{
+      const file=e.target.files[0], v=++fileVersion;
+      importedTable=null;fileText='';$('#tsImport').disabled=true;$('#tsColumns').textContent='';$('#tsDataError').textContent='';
+      if (!file) return;
+      try {
+        if (file.size>2e6) throw Error('CSV 限制为 2 MB。');
+        const text=await file.text();
+        if (v!==fileVersion) return;
+        importedTable=RegMath.csvTable(text);
+        fileText=text;
+        const choices=option('','请选择','')+importedTable.names.map(n=>option(n,n,'')).join('');
+        $('#tsColumns').innerHTML='<label>日期列<select id="tsDate" required>'+choices+
+          '</select></label><label>预测目标<select id="tsTarget" required>'+choices+
+          '</select></label><fieldset><legend>额外数值列（最多两个）</legend>'+
+          importedTable.names.map((n,i)=>'<label class="ts-check"><input type="checkbox" data-csv-column="'+i+'">'+esc(n)+'</label>').join('')+'</fieldset>';
+        function syncColumns() {
+          const reserved=[$('#tsDate').value,$('#tsTarget').value];
+          $('#tsColumns').querySelectorAll('[data-csv-column]').forEach(x=>{
+            x.disabled=reserved.includes(importedTable.names[Number(x.dataset.csvColumn)]);
+            if (x.disabled) x.checked=false;
+          });
+        }
+        $('#tsDate').onchange=$('#tsTarget').onchange=syncColumns;
+        $('#tsImport').disabled=false;
+      } catch(error) { if (v===fileVersion) $('#tsDataError').textContent=error.message; }
+    };
+    $('#tsCSV').onsubmit=e=>{
+      e.preventDefault();
+      if (!importedTable) return;
+      try {
+        const additional=[...$('#tsColumns').querySelectorAll('[data-csv-column]:checked')]
+          .map(x=>importedTable.names[Number(x.dataset.csvColumn)]);
+        const columns=[$('#tsTarget').value,...additional];
+        const next=M.importData(fileText,{date:$('#tsDate').value,columns,kind:$('#tsKind').value,unit:$('#tsUnit').value,
+          frequency:$('#tsFrequency').value,missing:$('#tsMissing').value,acceptGaps:$('#tsAccept').checked});
+        $('#tsDataError').textContent='已确认 '+next.rows.length+' 个同期日期。'; clearData(next);
+      } catch(error) { $('#tsDataError').textContent=error.message; }
+    };
+    function info(title,text) { $('#infoTitle').textContent=title;$('#infoBody').textContent=text;ModalUI.open($('#infoDialog')); }
+    for (const id of ['#catalog','#catalogMobile']) $(id).onclick=()=>ModalUI.open($('#catalogDialog'));
+    document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+    $('#help').onclick=()=>info('实验 05 · 自由探索','任意切换四个视图。先对照价格与收益率，再观察定阶、残差、联合预测与测试误差。CSV 宽表只在浏览器内处理。');
+    $('#teacher').onclick=()=>info('约 12 分钟课堂演示','3 分钟比较价格和收益率的 ADF/KPSS，3 分钟 ARMA 诊断与预测区间，3 分钟比较双向 Granger，3 分钟在共同留出期比较模型并复制 R。');
+    const practice=document.createElement('button');
+    practice.id='rStudioPractice';practice.textContent='RStudio 实践';$('.code-toolbar').append(practice);
+    practice.onclick=()=>info('RStudio · 运行当前完整脚本','复制代码并粘贴到新的 R Script，全选运行。脚本只依赖 Base R，内含当前数据和设定。已有 LSTM 模型时含冻结权重推断。');
+    $('#copy').onclick=async()=>{
+      if (!built) return;
+      try { await navigator.clipboard.writeText(built.script);$('#toast').textContent='已复制完整 R 代码'; }
+      catch { $('#toast').textContent='复制权限不可用，请在完整代码视图中选择所需内容。'; }
+      const toast=$('#toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800);
+    };
+    $('#projector').onclick=()=>{
+      const on=body.classList.toggle('projector');
+      $('#projector').setAttribute('aria-pressed',String(on));chart.clear();
+    };
+    const resize=v=>{
+      share=Math.max(40,Math.min(75,v));$('#splitter').setAttribute('aria-valuenow',String(Math.round(share)));
+      $('.code-regions').style.setProperty('--code-fr',share+'fr');$('.code-regions').style.setProperty('--explain-fr',100-share+'fr');
+    };
+    $('#splitter').onkeydown=e=>{if (['ArrowDown','ArrowUp'].includes(e.key)) {e.preventDefault();resize(share+(e.key==='ArrowDown'?2:-2));}};
+    $('#splitter').onpointerdown=e=>{
+      const el=e.currentTarget,y=e.clientY,start=share,h=$('.code-regions').clientHeight;
+      el.setPointerCapture(e.pointerId);el.onpointermove=event=>resize(start+100*(event.clientY-y)/h);
+      el.onlostpointercapture=()=>el.onpointermove=null;
+    };
+    $('#reset').onclick=()=>{
+      gen={...M.defaults};opt=structuredClone(defaults);genFields();
+      fileVersion++;importedTable=null;fileText='';$('#tsCSV').reset();$('#tsColumns').textContent='';
+      $('#tsImport').disabled=true;$('#tsDataError').textContent='';
+      activeBlock='data';activeLine=null;clearData(M.generate(gen));
+    };
+    window.TimeSeriesLab={snapshot:()=>structuredClone({view,opt,data,last,script:built?.script,status:runInfo})};
+    settings();draw();
+  }
+  window.TimeSeriesWorkbench={mount};
+})();
+
+;
+
 /* Source: experiments.js */
 (()=>{'use strict';const $=s=>document.querySelector(s),M=ExperimentMath,L=ExperimentLessons,U=WorkbenchUI,{esc}=U;const requested=new URLSearchParams(location.search).get('model'),id=requested&&CourseExperiments.byModel(requested)&&requested!=='portfolio'?requested:'var',cfg=L.configs[id];let p={...(cfg?.defaults||{})},built,selected=0,codeMode='full',learning={phase:'Idle'},share=62,bsModule='pricing';
 const money=x=>U.format('money',x),percent=x=>U.format('percent',x),precise=x=>U.format('variance',x),beta=x=>U.format('beta',x);
 function colorCode(s){const pattern=/(#.*$|"(?:[^"\\]|\\.)*"|(?:\b\d+(?:\.\d+)?|\.\d+)(?:e[+-]?\d+)?|\b[A-Za-z][\w.]*(?=\()|<-|<=|>=|!=|%\*%|==|[+*\/^=<>-])/g;let html='',last=0;for(const match of s.matchAll(pattern)){const token=match[0];html+=esc(s.slice(last,match.index));const cls=token.startsWith('#')?'comment':token.startsWith('"')?'string':/^(\d|\.\d)/.test(token)?'number':/^[A-Za-z]/.test(token)?'function':'operator';html+=`<span class="syntax-${cls}">${esc(token)}</span>`;last=match.index+token.length;}return html+esc(s.slice(last));}
 U.colorCode=colorCode;
+if(id==='timeseries'){TimeSeriesWorkbench.mount();return;}
 if(id==='regression'){RegWorkbench.mount();return;}
 if(id==='capm'){CAPMWorkbench.mount();return;}
 if(id==='var'){RiskWorkbench.mount();return;}

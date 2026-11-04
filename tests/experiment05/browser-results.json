@@ -1,0 +1,50 @@
+{
+  "chrome": "156.0.8078.80",
+  "builds": [
+    "3.0.0-timeseries.4e0fceafb8f27c44"
+  ],
+  "checks": [
+    "价格、简单和对数收益、ADF、KPSS、ACF/PACF、R 脚本",
+    "悬停消失、点击固定、Esc、关闭键、切换清除",
+    "ARMA 手动与自动定阶、候选、Ljung–Box、一与十期预测和区间",
+    "VAR 一阶、二阶、三变量、共同定阶样本、稳定性、双向 Granger、联合预测",
+    "四模型共同 108 期、两误差指标、默认真实权重、图表、独立代码滚动与公式",
+    "CSV 明确目标与日期对齐、训练 Worker、坏文件保留确认样本、新数据失效、单列与训练失败、取消、复位",
+    "目录顺序、可用性、CAPM 导航、前进后退、刷新",
+    "1920×1080、1440×900、1366×768 和投屏布局，浏览器全程无上传和失败资源",
+    "Chrome 原生浏览器 125% 缩放下四视图"
+  ],
+  "errors": [],
+  "screenshots": [
+    "01-station-1440.png",
+    "02-arma-1440.png",
+    "03-var-granger-1440.png",
+    "03-var-forecast-1440.png",
+    "04-compare-1440.png",
+    "05-csv-data.png",
+    "station-1920x1080.png",
+    "arma-1920x1080.png",
+    "var-1920x1080.png",
+    "compare-1920x1080.png",
+    "station-1440x900.png",
+    "arma-1440x900.png",
+    "var-1440x900.png",
+    "compare-1440x900.png",
+    "station-1366x768.png",
+    "arma-1366x768.png",
+    "var-1366x768.png",
+    "compare-1366x768.png",
+    "projector-1366x768.png",
+    "zoom125-station.png",
+    "zoom125-arma.png",
+    "zoom125-var.png",
+    "zoom125-compare.png"
+  ],
+  "rFiles": [
+    "copied-station.R",
+    "copied-arma.R",
+    "copied-var.R",
+    "copied-four-models.R",
+    "copied-csv-trained.R"
+  ]
+}

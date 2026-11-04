@@ -33,11 +33,12 @@ FinModel Lab尝试通过统一的交互式工作台连接这三个环节：
 
 ## 02. Core Experiments
 
-目前已完成六个核心金融建模实验，对应课程中的不同教学主题。
+当前构建包含七个核心金融建模实验，对应课程中的不同教学主题。
 
 | 实验 | 主题 | 主要功能 |
 |---|---|---|
 | 04 | Multiple Regression | OLS、逐步回归、Ridge、Lasso与样本外比较 |
+| 05 | Financial Time Series | ADF、KPSS、ARMA、VAR、Granger 与 LSTM 样本外比较 |
 | 06 | Volatility Modeling | ARCH-LM、GARCH、GJR-GARCH、GARCH-M、CCC-GARCH |
 | 07 | Financial Risk Measurement | VaR、ES、RiskMetrics、EVT与风险回测 |
 | 08 | Portfolio Optimization | 均值-方差模型、全局最小方差组合、有效前沿 |
@@ -190,6 +191,8 @@ finmodel-lab/
 
 详细实验验证及设计决策参见：
 
+- [Experiment 05 · 金融时间序列验收](EXPERIMENT05-FINAL.md)
+- [Experiment 05 · 课堂指南](CLASSROOM-EXPERIMENT05.md)
 - [Experiment 04 · 回归与正则化](EXPERIMENT04-FINAL.md)
 - [Experiment 06 · 波动率模型](EXPERIMENT06-FINAL.md)
 - [Experiment 07 · 风险计量](EXPERIMENT07-V2.7.2-FINAL-VALIDATION.md)
@@ -205,7 +208,7 @@ FinModel Lab的核心金融计算经过多轮自动化测试，包括数学边�
 
 **Current limitations**
 
-- 平台目前覆盖六个核心实验，并非完整覆盖课程全部12个实验。
+- 平台当前构建覆盖七个核心实验，并非完整覆盖课程全部12个实验。
 - 默认示例主要使用合成教学数据，不代表真实市场行情。
 - 模型输出用于教学与分析，不构成投资建议。
 - 数学与软件验收不等于模型具有真实市场预测能力。
@@ -215,7 +218,7 @@ FinModel Lab的核心金融计算经过多轮自动化测试，包括数学边�
 
 当前阶段不再优先增加金融模型，而是集中于实际教学场景验证。
 
-- [x] 六个核心金融建模实验
+- [x] 七个核心金融建模实验
 - [x] 统一交互式工作台
 - [x] 完整R代码生成与复现
 - [x] 数学和浏览器自动化验证

@@ -2,6 +2,7 @@
 const money=x=>U.format('money',x),percent=x=>U.format('percent',x),precise=x=>U.format('variance',x),beta=x=>U.format('beta',x);
 function colorCode(s){const pattern=/(#.*$|"(?:[^"\\]|\\.)*"|(?:\b\d+(?:\.\d+)?|\.\d+)(?:e[+-]?\d+)?|\b[A-Za-z][\w.]*(?=\()|<-|<=|>=|!=|%\*%|==|[+*\/^=<>-])/g;let html='',last=0;for(const match of s.matchAll(pattern)){const token=match[0];html+=esc(s.slice(last,match.index));const cls=token.startsWith('#')?'comment':token.startsWith('"')?'string':/^(\d|\.\d)/.test(token)?'number':/^[A-Za-z]/.test(token)?'function':'operator';html+=`<span class="syntax-${cls}">${esc(token)}</span>`;last=match.index+token.length;}return html+esc(s.slice(last));}
 U.colorCode=colorCode;
+if(id==='timeseries'){TimeSeriesWorkbench.mount();return;}
 if(id==='regression'){RegWorkbench.mount();return;}
 if(id==='capm'){CAPMWorkbench.mount();return;}
 if(id==='var'){RiskWorkbench.mount();return;}
