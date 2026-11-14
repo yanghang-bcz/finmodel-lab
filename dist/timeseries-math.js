@@ -405,6 +405,62 @@
     if (!n) return zero;
     throw Error('伴随矩阵特征根求解未收敛。');
   }
+  /* Orthogonalised IRF/FEVD: Cholesky order is the column order of the VAR.
+     Theta_h = sum_l A_l Theta_{h-l}, response to shock j = Theta_h P e_j. */
+  function chol(cov) {
+    const m = cov.length, L = Array.from({length:m}, () => Array(m).fill(0));
+    for (let i = 0; i < m; i++) for (let j = 0; j <= i; j++) {
+      let s = cov[i][j];
+      for (let k = 0; k < j; k++) s -= L[i][k] * L[j][k];
+      if (i === j) { if (!(s > 0)) throw Error('VAR 残差协方差不是正定矩阵，无法作 Cholesky 正交化。'); L[i][j] = Math.sqrt(s); }
+      else L[i][j] = s / L[j][j];
+    }
+    return L;
+  }
+  function theta(fit, horizon) {
+    integer(horizon, 1, 40, 'IRF 期数');
+    const {p, m} = fit;
+    const A = Array.from({length:p}, (_, l) => Array.from({length:m}, (_, i) => Array.from({length:m}, (_, k) => fit.coef[i][1 + l*m + k])));
+    const out = [Array.from({length:m}, (_, i) => Array.from({length:m}, (_, j) => +(i === j)))];
+    for (let h = 1; h <= horizon; h++) {
+      const M = Array.from({length:m}, () => Array(m).fill(0));
+      for (let l = 1; l <= Math.min(p, h); l++) {
+        const Al = A[l-1], Th = out[h-l];
+        for (let i = 0; i < m; i++) for (let j = 0; j < m; j++) {
+          let s = 0;
+          for (let k = 0; k < m; k++) s += Al[i][k] * Th[k][j];
+          M[i][j] += s;
+        }
+      }
+      out.push(M);
+    }
+    return out;
+  }
+  function irf(fit, {horizon = 12} = {}) {
+    const T = theta(fit, horizon), L = chol(fit.cov), m = fit.m;
+    const response = Array.from({length:m}, (_, j) => T.map(Th => Array.from({length:m}, (_, i) => {
+      let s = 0;
+      for (let k = 0; k <= j; k++) s += Th[i][k] * L[k][j];
+      return s;
+    })));
+    return {horizon, m, chol:L, response, theta:T};
+  }
+  function fevd(fit, {horizon = 12} = {}) {
+    const {response, m} = irf(fit, {horizon});
+    const series = Array.from({length:m}, (_, i) => Array.from({length:m}, (_, j) => {
+      const out = [];
+      for (let h = 0; h <= horizon; h++) {
+        let num = 0, den = 0;
+        for (let l = 0; l <= h; l++) {
+          num += response[j][l][i] ** 2;
+          for (let k = 0; k < m; k++) den += response[k][l][i] ** 2;
+        }
+        out.push(den > 0 ? num / den : NaN);
+      }
+      return out;
+    }));
+    return {horizon, m, series, share:series.map(row => row.map(s => s[horizon]))};
+  }
   function granger(rows, fit, from, to) {
     if (from === to || !fit.fits[to] || from < 0 || from >= fit.m) throw Error('请选择不同的检验方向。');
     const {p,m,X,start} = fit, full = fit.fits[to];
@@ -475,5 +531,5 @@
     return {nt,nv,actual,models,armaModel,varModel};
   }
   return {defaults, random, generate, validate, importData, transform, correlogram, stationarity,
-    arma, selectARMA, forecastARMA, ljung, varFit, selectVAR, forecastVAR, roots, granger, split, compare};
+    arma, selectARMA, forecastARMA, ljung, varFit, selectVAR, forecastVAR, roots, granger, chol, theta, irf, fevd, split, compare};
 });

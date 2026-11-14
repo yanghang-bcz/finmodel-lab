@@ -5,6 +5,82 @@
   else root.TimeSeriesR = api;
 })(this, () => {
   const source = {
+    lstmTrain: `# Teaching-scale LSTM trained in base R: full BPTT, per-sample SGD, fixed seed.
+lstm_rng <- function(seed) {
+  s <- as.numeric(seed) %% 2147483647
+  function() { s <<- (s * 1103515245 + 12345) %% 2147483648; s / 2147483648 }
+}
+lstm_sig <- function(z) 1 / (1 + exp(-z))
+lstm_init <- function(D, H, seed) {
+  rng <- lstm_rng(seed); stride <- D + H + 1L
+  u <- function(n, a, b) vapply(seq_len(n), function(i) a + (b - a) * rng(), numeric(1))
+  lim <- sqrt(6 / (D + 2 * H))
+  c(u(4L * H * stride, -lim, lim), u(H + 1L, -0.1, 0.1))
+}
+# One forward pass over the window. Gate order: input, forget, output, candidate.
+lstm_forward <- function(W, X, H) {
+  D <- ncol(X); stride <- D + H + 1L; offset <- 4L * H * stride
+  h <- numeric(H); cell <- numeric(H); states <- vector("list", nrow(X))
+  for (t in seq_len(nrow(X))) {
+    z <- c(1, X[t, ], h)
+    g <- numeric(4L * H)
+    for (i in seq_len(4L * H)) g[i] <- sum(W[((i - 1L) * stride + 1L):(i * stride)] * z)
+    g <- ifelse(seq_len(4L * H) > 3L * H, tanh(g), lstm_sig(g))
+    previous <- cell
+    cell <- g[(H + 1L):(2L * H)] * previous + g[seq_len(H)] * g[(3L * H + 1L):(4L * H)]
+    h <- g[(2L * H + 1L):(3L * H)] * tanh(cell)
+    states[[t]] <- list(z = z, g = g, previous = previous, cell = cell)
+  }
+  list(value = W[offset + 1L] + sum(W[(offset + 2L):(offset + H + 1L)] * h), h = h, states = states)
+}
+# Backpropagation through every step of the window.
+lstm_gradient <- function(W, X, H, actual) {
+  D <- ncol(X); stride <- D + H + 1L; offset <- 4L * H * stride
+  fw <- lstm_forward(W, X, H); error <- fw$value - actual
+  grad <- numeric(length(W)); grad[offset + 1L] <- error
+  dh <- numeric(H)
+  for (i in seq_len(H)) { grad[offset + 1L + i] <- error * fw$h[i]; dh[i] <- error * W[offset + 1L + i] }
+  dc <- numeric(H)
+  for (t in rev(seq_along(fw$states))) {
+    s <- fw$states[[t]]; g <- s$g
+    dg <- numeric(4L * H); dn <- numeric(H); dc_next <- numeric(H)
+    for (i in seq_len(H)) {
+      fe <- g[H + i]; ou <- g[2L * H + i]; ca <- g[3L * H + i]; gate <- g[i]; tc <- tanh(s$cell[i])
+      memory <- dc[i] + dh[i] * ou * (1 - tc * tc)
+      dg[i] <- memory * ca * gate * (1 - gate)
+      dg[H + i] <- memory * s$previous[i] * fe * (1 - fe)
+      dg[2L * H + i] <- dh[i] * tc * ou * (1 - ou)
+      dg[3L * H + i] <- memory * gate * (1 - ca * ca)
+      dc_next[i] <- memory * fe
+    }
+    for (i in seq_len(4L * H)) {
+      idx <- ((i - 1L) * stride + 1L):(i * stride)
+      grad[idx] <- grad[idx] + dg[i] * s$z
+      bias <- (i - 1L) * stride + 1L + D
+      dn <- dn + W[bias + seq_len(H)] * dg[i]
+    }
+    dh <- dn; dc <- dc_next
+  }
+  list(gradient = grad, error = error)
+}
+# Per-sample SGD with gradient clipping; the best epoch is kept.
+lstm_train <- function(input, target, H, epochs, rate, seed) {
+  W <- lstm_init(ncol(input[[1]]), H, seed); best <- W; best_loss <- Inf
+  curve <- numeric(epochs)
+  for (epoch in seq_len(epochs)) {
+    loss <- 0
+    for (t in seq_along(input)) {
+      g <- lstm_gradient(W, input[[t]], H, target[t])
+      loss <- loss + g$error^2
+      nrm <- sqrt(sum(g$gradient^2)); step <- if (nrm > 1) g$gradient / nrm else g$gradient
+      W <- W - rate * step
+    }
+    curve[epoch] <- loss / length(input)
+    if (curve[epoch] < best_loss) { best <- W; best_loss <- curve[epoch] }
+  }
+  list(weights = best, curve = curve, loss = best_loss)
+}
+`,
     station: `# ADF: H0 is a unit root. The tau test has its own critical values.
 adf <- function(y, type, lag) {
   d <- diff(y)
@@ -275,6 +351,31 @@ lstm_next <- function(Y,t,model) {
       'forecast <- var_forecast(V,f,'+o.horizon+'L)\nprint(forecast)\n'+
       'matplot(seq_len(nrow(forecast)),forecast,type="b",pch=1,xlab="Future period",ylab="Forecast");\n'+
       'legend("topright",legend=series_labels[columns],col=seq_len(ncol(V)),lty=seq_len(ncol(V)),bty="n")');
+    if (view === 'var') add('irf','脉冲响应与方差分解 / IRF and FEVD','Cholesky 正交化按列顺序识别冲击；脉冲响应是结构冲击后各变量路径，方差分解是各冲击对预测误差方差的份额。',
+      'H <- '+Math.max(1,Math.min(40,o.horizon||12))+'L\n'+
+      'shock <- '+((o.shock|0)+1)+'L\n'+
+      '# Lower-triangular Cholesky factor of the residual covariance.\n'+
+      'B <- t(chol(f$cov))\n'+
+      '# Lag coefficient matrices A_l, one per lag order.\n'+
+      'A_l <- function(l) t(f$coef[-1,,drop=FALSE])[, (l-1)*f$m + seq_len(f$m), drop=FALSE]\n'+
+      '# Theta_0 = I; Theta_h = sum_{l=1..min(p,h)} A_l Theta_{h-l}.\n'+
+      'Theta <- vector("list", H+1L)\nTheta[[1]] <- diag(f$m)\n'+
+      'for (h in seq_len(H)) {\n  M <- matrix(0, f$m, f$m)\n'+
+      '  for (l in seq_len(min(h, f$p))) M <- M + A_l(l) %*% Theta[[h-l+1L]]\n'+
+      '  Theta[[h+1L]] <- M\n}\n'+
+      '# Response of every variable to a one-standard-deviation shock in column j.\n'+
+      'resp <- function(j) t(vapply(Theta, function(T_) T_ %*% B[, j], numeric(f$m)))\n'+
+      '# Share of the h-step forecast-error variance of variable i explained by shock j.\n'+
+      'share <- function(i) {\n'+
+      '  sq <- vapply(seq_len(f$m), function(j) resp(j)[, i]^2, numeric(H+1L))\n'+
+      '  cums <- apply(sq, 2, cumsum)\n  sweep(cums, 1, rowSums(cums), "/")\n}\n'+
+      'h <- 0:H\n'+
+      'matplot(h, resp(shock), type="l", lty=1, xlab="Horizon", ylab="Response",\n'+
+      '  main="Orthogonalised IRF"); legend("topright", legend=series_labels[columns], lty=1, bty="n")\n'+
+      'print(round(resp(shock), 6))\n'+
+      'matplot(h, share('+((o.target|0)+1)+'L), type="l", lty=1, ylim=c(0,1), xlab="Horizon",\n'+
+      '  ylab="Share of variance", main="FEVD"); legend("right", legend=series_labels[columns], lty=1, bty="n")\n'+
+      'print(round(share('+((o.target|0)+1)+'L)[H+1L, ], 4))');
     if (view === 'compare') {
       add('split','时间划分 / Split','训练区决定 ARMA/VAR 参数及 LSTM 标准化。LSTM 用随后验证区早停。逐期测试只使用目标日前已观察到的数据。',
         opts+varOpts+'nt <- floor(nrow(Y)*'+o.train+'+1e-10)\nnv <- floor(nrow(Y)*('+o.train+'+'+o.valid+')+1e-10)\n'+
@@ -303,6 +404,30 @@ lstm_next <- function(Y,t,model) {
         'barplot(scores["RMSE",],ylab="One-step test RMSE")\n'+
         'matplot(cbind(actual,do.call(cbind,predictions)),type="l",xlab="Test observation",ylab=series_labels[target])');
     }
+    if (view === 'compare') add('lstmtrain','R 端 LSTM 训练 / LSTM training in R','浏览器用 Adam 与早停训练；这里用 base R 逐样本 SGD 直接训练同一类窗口，属于教学规模（隐藏单元、轮数、窗口数均有上限），数值不会与浏览器逐位相同。',
+      '# Cap the teaching run: base R is slow, so windows, units and epochs are bounded.\n'+
+      'window <- '+Math.max(4,Math.min(12,o.window||12))+'L\nhidden <- '+Math.max(2,Math.min(8,o.hidden||8))+'L\n'+
+      'epochs <- '+Math.max(1,Math.min(20,o.epochs||20))+'L\nrate <- 0.02\nseed <- 731L\n'+
+      source.lstmTrain+'\n'+
+      'cols <- c('+((Array.isArray(o.features)&&o.features.length?o.features:[o.target]).map(i=>i+1).join(', '))+')\ntarget_col <- '+(o.target+1)+'L\n'+
+      'tr <- seq_len(nt)\n'+
+      'center <- colMeans(Y[tr,,drop=FALSE]); scale <- apply(Y[tr,,drop=FALSE],2,sd)\n'+
+      'stopifnot(all(scale > 1e-12))\n'+
+      'Z <- sweep(sweep(Y,2,center,"-"),2,scale,"/")\n'+
+      'input_at <- function(t) Z[(t-window):(t-1L), cols, drop=FALSE]\n'+
+      'train_t <- seq.int(window+1L, nt)\n'+
+      'if (length(train_t) > 200L) train_t <- round(seq(window+1L, nt, length.out=200L))\n'+
+      'fit <- lstm_train(lapply(train_t, input_at), Z[train_t, target_col], hidden, epochs, rate, seed)\n'+
+      'test_t <- seq.int(nv+1L, nrow(Y))\n'+
+      'pred <- vapply(test_t, function(t) lstm_forward(fit$weights, input_at(t), hidden)$value, numeric(1))\n'+
+      'pred <- center[target_col] + scale[target_col]*pred\n'+
+      'actual <- Y[test_t, target_col]\n'+
+      'rmse <- sqrt(mean((actual-pred)^2)); naive <- sqrt(mean((actual-Y[test_t-1L,target_col])^2))\n'+
+      'print(c(epochs=length(fit$curve),loss=fit$loss,RMSE=rmse,NaiveRMSE=naive))\n'+
+      'print(round(fit$curve,5))\n'+
+      'plot(test_t, actual, type="l", xlab="Test observation", ylab="target", main="LSTM trained in R")\n'+
+      'lines(test_t, pred, col=2)\n'+
+      'legend("topright", c("Actual","LSTM (R)"), col=1:2, lty=1, bty="n")');
     if (view === 'lstm' && model) {
       add('lstm','LSTM 推断 / Inference','使用冻结权重还原共同测试日期的一期预测。',
         '# Adam; seed '+model.seed+'; batch '+model.batch+'; rate '+model.rate+'; max epochs '+model.epochs+

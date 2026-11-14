@@ -770,3 +770,106 @@ print(scores)
 print(head(data.frame(date=dates[test],actual=actual,as.data.frame(predictions))))
 barplot(scores["RMSE",],ylab="One-step test RMSE")
 matplot(cbind(actual,do.call(cbind,predictions)),type="l",xlab="Test observation",ylab=series_labels[target])
+
+# Cap the teaching run: base R is slow, so windows, units and epochs are bounded.
+window <- 12L
+hidden <- 8L
+epochs <- 20L
+rate <- 0.02
+seed <- 731L
+# Teaching-scale LSTM trained in base R: full BPTT, per-sample SGD, fixed seed.
+lstm_rng <- function(seed) {
+  s <- as.numeric(seed) %% 2147483647
+  function() { s <<- (s * 1103515245 + 12345) %% 2147483648; s / 2147483648 }
+}
+lstm_sig <- function(z) 1 / (1 + exp(-z))
+lstm_init <- function(D, H, seed) {
+  rng <- lstm_rng(seed); stride <- D + H + 1L
+  u <- function(n, a, b) vapply(seq_len(n), function(i) a + (b - a) * rng(), numeric(1))
+  lim <- sqrt(6 / (D + 2 * H))
+  c(u(4L * H * stride, -lim, lim), u(H + 1L, -0.1, 0.1))
+}
+# One forward pass over the window. Gate order: input, forget, output, candidate.
+lstm_forward <- function(W, X, H) {
+  D <- ncol(X); stride <- D + H + 1L; offset <- 4L * H * stride
+  h <- numeric(H); cell <- numeric(H); states <- vector("list", nrow(X))
+  for (t in seq_len(nrow(X))) {
+    z <- c(1, X[t, ], h)
+    g <- numeric(4L * H)
+    for (i in seq_len(4L * H)) g[i] <- sum(W[((i - 1L) * stride + 1L):(i * stride)] * z)
+    g <- ifelse(seq_len(4L * H) > 3L * H, tanh(g), lstm_sig(g))
+    previous <- cell
+    cell <- g[(H + 1L):(2L * H)] * previous + g[seq_len(H)] * g[(3L * H + 1L):(4L * H)]
+    h <- g[(2L * H + 1L):(3L * H)] * tanh(cell)
+    states[[t]] <- list(z = z, g = g, previous = previous, cell = cell)
+  }
+  list(value = W[offset + 1L] + sum(W[(offset + 2L):(offset + H + 1L)] * h), h = h, states = states)
+}
+# Backpropagation through every step of the window.
+lstm_gradient <- function(W, X, H, actual) {
+  D <- ncol(X); stride <- D + H + 1L; offset <- 4L * H * stride
+  fw <- lstm_forward(W, X, H); error <- fw$value - actual
+  grad <- numeric(length(W)); grad[offset + 1L] <- error
+  dh <- numeric(H)
+  for (i in seq_len(H)) { grad[offset + 1L + i] <- error * fw$h[i]; dh[i] <- error * W[offset + 1L + i] }
+  dc <- numeric(H)
+  for (t in rev(seq_along(fw$states))) {
+    s <- fw$states[[t]]; g <- s$g
+    dg <- numeric(4L * H); dn <- numeric(H); dc_next <- numeric(H)
+    for (i in seq_len(H)) {
+      fe <- g[H + i]; ou <- g[2L * H + i]; ca <- g[3L * H + i]; gate <- g[i]; tc <- tanh(s$cell[i])
+      memory <- dc[i] + dh[i] * ou * (1 - tc * tc)
+      dg[i] <- memory * ca * gate * (1 - gate)
+      dg[H + i] <- memory * s$previous[i] * fe * (1 - fe)
+      dg[2L * H + i] <- dh[i] * tc * ou * (1 - ou)
+      dg[3L * H + i] <- memory * gate * (1 - ca * ca)
+      dc_next[i] <- memory * fe
+    }
+    for (i in seq_len(4L * H)) {
+      idx <- ((i - 1L) * stride + 1L):(i * stride)
+      grad[idx] <- grad[idx] + dg[i] * s$z
+      bias <- (i - 1L) * stride + 1L + D
+      dn <- dn + W[bias + seq_len(H)] * dg[i]
+    }
+    dh <- dn; dc <- dc_next
+  }
+  list(gradient = grad, error = error)
+}
+# Per-sample SGD with gradient clipping; the best epoch is kept.
+lstm_train <- function(input, target, H, epochs, rate, seed) {
+  W <- lstm_init(ncol(input[[1]]), H, seed); best <- W; best_loss <- Inf
+  curve <- numeric(epochs)
+  for (epoch in seq_len(epochs)) {
+    loss <- 0
+    for (t in seq_along(input)) {
+      g <- lstm_gradient(W, input[[t]], H, target[t])
+      loss <- loss + g$error^2
+      nrm <- sqrt(sum(g$gradient^2)); step <- if (nrm > 1) g$gradient / nrm else g$gradient
+      W <- W - rate * step
+    }
+    curve[epoch] <- loss / length(input)
+    if (curve[epoch] < best_loss) { best <- W; best_loss <- curve[epoch] }
+  }
+  list(weights = best, curve = curve, loss = best_loss)
+}
+
+cols <- c(1)
+target_col <- 1L
+tr <- seq_len(nt)
+center <- colMeans(Y[tr,,drop=FALSE]); scale <- apply(Y[tr,,drop=FALSE],2,sd)
+stopifnot(all(scale > 1e-12))
+Z <- sweep(sweep(Y,2,center,"-"),2,scale,"/")
+input_at <- function(t) Z[(t-window):(t-1L), cols, drop=FALSE]
+train_t <- seq.int(window+1L, nt)
+if (length(train_t) > 200L) train_t <- round(seq(window+1L, nt, length.out=200L))
+fit <- lstm_train(lapply(train_t, input_at), Z[train_t, target_col], hidden, epochs, rate, seed)
+test_t <- seq.int(nv+1L, nrow(Y))
+pred <- vapply(test_t, function(t) lstm_forward(fit$weights, input_at(t), hidden)$value, numeric(1))
+pred <- center[target_col] + scale[target_col]*pred
+actual <- Y[test_t, target_col]
+rmse <- sqrt(mean((actual-pred)^2)); naive <- sqrt(mean((actual-Y[test_t-1L,target_col])^2))
+print(c(epochs=length(fit$curve),loss=fit$loss,RMSE=rmse,NaiveRMSE=naive))
+print(round(fit$curve,5))
+plot(test_t, actual, type="l", xlab="Test observation", ylab="target", main="LSTM trained in R")
+lines(test_t, pred, col=2)
+legend("topright", c("Actual","LSTM (R)"), col=1:2, lty=1, bty="n")

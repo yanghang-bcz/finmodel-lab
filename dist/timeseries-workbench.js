@@ -4,13 +4,14 @@
   const M=TimeSeriesMath,L=TimeSeriesLSTM,R=TimeSeriesR,$=s=>document.querySelector(s),{esc}=WorkbenchUI;
   const defaults={form:'log',target:0,stationChart:'series',adf:'drift',adfLag:2,kpss:'level',
     p:1,q:1,armaMode:'manual',armaIC:'BIC',armaChart:'forecast',diagnostic:15,horizon:10,
-    varLag:1,varMode:'manual',varIC:'BIC',varChart:'forecast',vars:[0,1],varPlot:'all',from:0,to:1,
+    varLag:1,varMode:'manual',varIC:'BIC',varChart:'forecast',vars:[0,1],varPlot:'all',from:0,to:1,shock:0,
     compareChart:'rmse',train:.7,valid:.15,features:[0,1],window:12,hidden:8,epochs:40};
   const views=[
     ['station','01 平稳性与数据','为什么金融价格与收益率的平稳性表现可能不同？'],
     ['arma','02 ARMA 建模','一个变量的历史信息能预测多少未来变化？'],
     ['var','03 VAR 与 Granger','其他变量的过去能否改善对目标的预测？'],
-    ['compare','04 预测模型比较','LSTM 在同一段测试期比传统模型预测得更好吗？']
+    ['compare','04 预测模型比较','LSTM 在同一段测试期比传统模型预测得更好吗？'],
+    ['coint','05 协整与 ECM','两条非平稳序列之间，是否存在长期稳定的关系？']
   ];
   const formulas={
     data:String.raw`R_t=P_t/P_{t-1}-1,\quad r_t=\log P_t-\log P_{t-1}`,
@@ -23,6 +24,8 @@
     var:String.raw`y_t=c+\sum_{\ell=1}^p A_\ell y_{t-\ell}+u_t`,
     roots:String.raw`\max_j |\lambda_j(A_{\mathrm{comp}})|<1`,
     granger:String.raw`F=\frac{(RSS_R-RSS_U)/p}{RSS_U/(n-1-mp)}`,
+    irf:String.raw`\Theta_h=\sum_{l=1}^{\min(p,h)}A_l\Theta_{h-l},\quad \Psi_h=\Theta_h P`,
+    fevd:String.raw`\omega_{ij}(h)=\frac{\sum_{l=0}^{h}(\Theta_lP)_{ij}^2}{\sum_{k}\sum_{l=0}^{h}(\Theta_lP)_{ik}^2}`,
     joint:String.raw`\hat y_{T+h|T}=c+\sum_{\ell=1}^{p} A_\ell\hat y_{T+h-\ell|T}`,
     split:String.raw`X_t=(y_{t-W},\ldots,y_{t-1})`,
     lstm:String.raw`c_t=f_t\odot c_{t-1}+i_t\odot g_t,\quad h_t=o_t\odot\tanh(c_t)`,
@@ -47,7 +50,11 @@
     [/model\$window,t-1L/,'窗口末期为目标前一期，隐藏状态和记忆在窗口开始置零。'],
     [/x <- \(Y\[k,/,'仅使用训练区保存的中心与尺度来转换输入。'],
     [/memory <- plogis/,'遗忘门保留旧记忆，输入门控制新增候选记忆。'],
-    [/model\$center\[D\+1L\]/,'线性输出反标准化，恢复原目标单位。']
+    [/model\$center\[D\+1L\]/,'线性输出反标准化，恢复原目标单位。'],
+    [/B <- t\(chol/,'Cholesky 下三角把同期相关的残差转成互不相关的结构冲击。'],
+    [/Theta\[\[1\]\] <- diag/,'脉冲响应用 Θ_h 递推：每阶自回归系数乘以过去响应后累加。'],
+    [/resp <- function/,'第 j 个结构冲击对各变量的响应，按 Cholesky 顺序缩放。'],
+    [/share <- function/,'把各冲击的累积平方响应除以总方差，得到份额。']
   ];
   const fmt=(v,d=5)=>Number.isFinite(v)?Number(v.toPrecision(d)).toString():'—';
   const metric=(label,value)=>'<div><span>'+esc(label)+'</span><b>'+esc(value)+'</b></div>';
@@ -102,7 +109,7 @@
     const chartChoices={
       station:[['series','时间序列'],['acf','ACF'],['pacf','PACF']],
       arma:[['forecast','预测'],['criteria','定阶准则'],['residual','标准化残差'],['resacf','残差 ACF']],
-      var:[['forecast','联合预测'],['criteria','定阶准则'],['granger','Granger 方向']],
+      var:[['forecast','联合预测'],['criteria','定阶准则'],['granger','Granger 方向'],['irf','脉冲响应 IRF'],['fevd','方差分解 FEVD']],
       compare:[['rmse','RMSE'],['mae','MAE'],['prediction','实际与预测'],['errors','预测误差'],['loss','训练与验证损失']]
     };
     const option=(v,l,selected,raw=false)=>'<option value="'+esc(v)+'" '+(raw?'data-fml-skip ':'')+(String(v)===String(selected)?'selected':'')+'>'+esc(l)+'</option>';
@@ -141,6 +148,8 @@
         '<p>常均值 μ。条件高斯估计统一将前五期创新置零，不纳入似然。</p>');
       if (view==='var' && vars.length>=2) html+=opt.varChart==='granger'?
         field('from','来源变量',vars)+field('to','响应变量',vars.filter(([i])=>i!==opt.from)):
+        opt.varChart==='irf'?field('shock','冲击来源变量',vars):
+        opt.varChart==='fevd'?field('shock','方差分解对象',vars):
         field('varPlot','预测展示',[['all','所有 VAR 变量'],...vars]);
       if (view==='compare') html+='<p class="ts-muted">预测跨度：共同滚动一期</p>'+
         number('train','训练比例',opt.train,.5,.85,.01)+number('valid','验证比例',opt.valid,.05,.3,.01)+
@@ -325,6 +334,29 @@
         detail(safeTxt(names[t.from]+' → '+names[t.to]+' · F('+t.df1+', '+t.df2+') = '+fmt(t.F)+'，p = '+fmt(t.p)+
           '。'+(t.p<.05?'当前设定下，来源变量的滞后提供额外预测信息。':'当前设定下，额外预测信息的证据不足。'))+
           safeTxt('检验原假设为来源变量的 p 个滞后系数联合为零。经典 F 参考依赖模型及误差假设，结构性因果需要额外识别。'));
+      } else if (kind==='irf'||kind==='fevd') {
+        const slot=opt.vars.includes(Number(opt.shock))?opt.vars.indexOf(Number(opt.shock)):0;
+        if (kind==='irf') {
+          const r=M.irf(f,{horizon:opt.horizon});
+          const rows=r.response[slot], peak=Math.max(...rows.map(v=>Math.max(...v.map(x=>Math.abs(x)))));
+          plot('正交化脉冲响应 · '+names[slot],{series:names.map((n,i)=>({name:n,values:rows.map(v=>v[i]),color:chart.colors[i+1]})),
+            labels:rows.map((_,i)=>String(i)),unit:'响应（1 个标准差冲击）',xLabel:'期数 h',references:[{value:0}]});
+          legend(names.map((n,i)=>[n,chart.colors[i+1]]));
+          metricRow(['冲击来源',names[slot]],['h = 0 · 自身响应',fmt(rows[0][slot])],['最大绝对响应',fmt(peak)]);
+          detail(safeTxt('脉冲响应是一个结构冲击后各变量随期数的路径。Cholesky 分解按列顺序识别冲击，排在前面的变量同期不受后面变量影响；换顺序曲线会变，这不是估计误差。')+
+            (max>=1?safeTxt('伴随矩阵存在模 ≥1 的特征值，脉冲响应不会收敛，长期解读无效。'):'')+
+            table(['h',...names],rows.map((v,i)=>[String(i),...v.map(x=>fmt(x))]))+
+            disclosure('同期影响矩阵（Cholesky 下三角）',table(['变量',...names],r.chol.map((row,i)=>[names[i],...row.map(x=>fmt(x))]))));
+        } else {
+          const r=M.fevd(f,{horizon:opt.horizon});
+          plot('方差分解 · '+names[slot],{series:names.map((n,j)=>({name:n,values:r.series[slot][j],color:chart.colors[j+1]})),
+            labels:r.series[slot][0].map((_,i)=>String(i)),unit:'份额（0–1）',xLabel:'期数 h',references:[{value:1}]});
+          legend(names.map((n,j)=>[n,chart.colors[j+1]]));
+          metricRow(['分解对象',names[slot]],['h = '+opt.horizon+' · 自身份额',fmt(r.share[slot][slot])],['总计',fmt(r.share[slot].reduce((a,b)=>a+b,0))]);
+          detail(safeTxt('方差分解把某个变量的预测误差方差按冲击来源拆分，同一期各行份额合计为 1。它依赖识别顺序，不能单独证明某个冲击在结构上更重要。')+
+            table(['冲击来源','h = 0','h = '+opt.horizon],names.map((n,j)=>[n,fmt(r.series[slot][j][0]),fmt(r.series[slot][j][opt.horizon])]))+
+            disclosure('全部期数份额',table(['h',...names],r.series[slot][0].map((_,i)=>[String(i),...names.map((__,j)=>fmt(r.series[slot][j][i]))]))));
+        }
       } else {
         const ids=opt.varPlot==='all'?names.map((_,i)=>i):[opt.vars.indexOf(opt.varPlot)];
         const history=v.slice(-45),n=history.length, labels=d.dates.slice(-n).concat(h.map((_,i)=>'未来 '+(i+1)));
@@ -442,6 +474,19 @@
       const d=readyData(), {form, target}=opt, scroll=$('#code').scrollTop;
       const key=view+'Chart';
       chart.clear();
+      if(view==='coint'){
+        if(!window.CointView)throw Error('协整视图未加载。');
+        const out=window.CointView.render({data:d,onBuilt:c=>{built={blocks:c.blocks,script:c.script};activeBlock=c.blocks[0].id;activeLine=null;renderCode();}});
+        tabs.querySelectorAll('button').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.tsView===view)));
+        question.textContent=window.LabKit.t('两条非平稳序列之间，是否存在长期稳定的关系？','Do two non-stationary series share a stable long-run relation?');
+        controls.innerHTML='';
+        $('#graphKind').textContent=window.LabKit.t(data.synthetic?'合成数据':'本地 CSV',data.synthetic?'Synthetic data':'Local CSV');
+        if($('#tsPlotTitle'))$('#tsPlotTitle').textContent='';
+        $('#assumptionSummary').innerHTML='<span>'+esc(window.LabKit.t('对数价格','Log prices'))+'</span><span>'+esc(window.LabKit.t(data.synthetic?'合成数据':'本地 CSV',data.synthetic?'Synthetic data':'Local CSV'))+'</span>';
+        return;
+      }
+      const cv=$('#tsCointControls');if(cv)cv.hidden=true;
+      for(const el of $('#inputs').children)el.hidden=false;
       tabs.querySelectorAll('button').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.tsView===view)));
       question.textContent=views.find(([k])=>k===view)[2];
       controls.innerHTML='<label>主图 '+select(key,chartChoices[view],opt[key])+'</label>';
@@ -491,6 +536,7 @@
       settings();draw();
       if (focused) $('#inputs [data-list="'+list+'"][value="'+el.value+'"]')?.focus({preventScroll:true});
     }
+    if(window.LabKit)window.LabKit.onLang(()=>{if(view==='coint')draw();});
     $('#inputs').onchange=controls.onchange=update;
     tabs.onclick=e=>{
       const id=e.target.dataset.tsView;

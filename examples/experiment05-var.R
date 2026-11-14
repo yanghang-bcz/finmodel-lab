@@ -566,3 +566,33 @@ forecast <- var_forecast(V,f,10L)
 print(forecast)
 matplot(seq_len(nrow(forecast)),forecast,type="b",pch=1,xlab="Future period",ylab="Forecast");
 legend("topright",legend=series_labels[columns],col=seq_len(ncol(V)),lty=seq_len(ncol(V)),bty="n")
+
+H <- 10L
+shock <- 1L
+# Lower-triangular Cholesky factor of the residual covariance.
+B <- t(chol(f$cov))
+# Lag coefficient matrices A_l, one per lag order.
+A_l <- function(l) t(f$coef[-1,,drop=FALSE])[, (l-1)*f$m + seq_len(f$m), drop=FALSE]
+# Theta_0 = I; Theta_h = sum_{l=1..min(p,h)} A_l Theta_{h-l}.
+Theta <- vector("list", H+1L)
+Theta[[1]] <- diag(f$m)
+for (h in seq_len(H)) {
+  M <- matrix(0, f$m, f$m)
+  for (l in seq_len(min(h, f$p))) M <- M + A_l(l) %*% Theta[[h-l+1L]]
+  Theta[[h+1L]] <- M
+}
+# Response of every variable to a one-standard-deviation shock in column j.
+resp <- function(j) t(vapply(Theta, function(T_) T_ %*% B[, j], numeric(f$m)))
+# Share of the h-step forecast-error variance of variable i explained by shock j.
+share <- function(i) {
+  sq <- vapply(seq_len(f$m), function(j) resp(j)[, i]^2, numeric(H+1L))
+  cums <- apply(sq, 2, cumsum)
+  sweep(cums, 1, rowSums(cums), "/")
+}
+h <- 0:H
+matplot(h, resp(shock), type="l", lty=1, xlab="Horizon", ylab="Response",
+  main="Orthogonalised IRF"); legend("topright", legend=series_labels[columns], lty=1, bty="n")
+print(round(resp(shock), 6))
+matplot(h, share(1L), type="l", lty=1, ylim=c(0,1), xlab="Horizon",
+  ylab="Share of variance", main="FEVD"); legend("right", legend=series_labels[columns], lty=1, bty="n")
+print(round(share(1L)[H+1L, ], 4))

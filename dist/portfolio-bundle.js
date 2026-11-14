@@ -51,8 +51,8 @@ window.ChartInteraction={create,clear};})();
 /* Source: experiments-config.js */
 /* The adopted twelve-experiment course. Order is numeric, never page-dependent. */
 (()=>{'use strict';const definitions=[
- ['R软件基础实验','R基础'],['金融市场数据整理与预处理','数据预处理'],['资产收益率计算','收益率'],['多元回归与逐步回归分析','多元回归','regression'],['ARMA与VAR模型','ARMA / VAR','timeseries'],
- ['GARCH类波动率模型','GARCH','garch'],['VaR与ES投资风险计算','VaR / ES','var'],['均值-方差投资组合决策分析','均值-方差','portfolio'],['资本资产定价模型的R语言实验','CAPM','capm'],['因子模型与APT模型','因子 / APT'],['Black-Scholes期权定价','Black-Scholes','bs'],['证券投资基金绩效评价','基金绩效']];
+ ['R软件基础实验','R基础','rbasic'],['金融市场数据整理与预处理','数据预处理','dataprep'],['资产收益率计算','收益率','returns'],['多元回归与逐步回归分析','多元回归','regression'],['ARMA与VAR模型','ARMA / VAR','timeseries'],
+ ['GARCH类波动率模型','GARCH','garch'],['VaR与ES投资风险计算','VaR / ES','var'],['均值-方差投资组合决策分析','均值-方差','portfolio'],['资本资产定价模型的R语言实验','CAPM','capm'],['因子模型与APT模型','因子 / APT','factor'],['Black-Scholes期权定价','Black-Scholes','bs'],['证券投资基金绩效评价','基金绩效','fund']];
 const all=Object.freeze(definitions.map(([title,shortTitle,modelId],i)=>Object.freeze({number:i+1,title,shortTitle,modelId:modelId||null,id:modelId||'experiment-'+(i+1),url:modelId?(modelId==='portfolio'?'index.html':'experiments.html?model='+modelId):null,online:!!modelId,order:i+1,description:title})).sort((a,b)=>a.number-b.number));
 const byModel=id=>all.find(x=>x.modelId===id),label=x=>`实验${String(x.number).padStart(2,'0')} · ${x.title}`;
 function mount(id){const current=byModel(id);document.body.dataset.model=id;document.body.dataset.experiment=String(current.number).padStart(2,'0');document.title='FinModel Lab · '+label(current);document.querySelector('header h1').textContent=label(current);
@@ -622,6 +622,560 @@ el('multiManual').onclick=()=>{data=null;el('multiDataAnalysis').hidden=true;el(
 window.addEventListener('resize',()=>{if(active)draw();});let resizeFrame;new ResizeObserver(()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(()=>{if(active)draw();});}).observe(el('multiChart').parentElement);controls(3);
 // Read-only diagnostics for tests and transparent classroom inspection.
 window.PortfolioMultiLab={getState:()=>({active,valid,n,names,data,model,result,current,targetPoint,code,lastApplied,weightMode,committedWeights:committedWeights.slice(),weightDrafts:weightDrafts.slice(),pending:dirtyWeights.size>0}),recalculate};
+})();
+
+;
+
+/* Source: lab-stats.js */
+/* Shared statistics core for the five course-foundation labs (01/02/03/10/12).
+   Base-R-compatible conventions: sample variance (n-1), type-7 quantiles,
+   adjusted sample skewness/kurtosis (e1071 type 2), classical OLS inference. */
+(function(root,factory){const api=factory();if(typeof module==='object')module.exports=api;else root.LabStats=api;})(this,()=>{
+'use strict';
+const sum=a=>a.reduce((s,v)=>s+v,0);
+const mean=a=>sum(a)/a.length;
+function variance(a,ddof=1){if(a.length-ddof<=0)return NaN;const m=mean(a);return sum(a.map(v=>(v-m)**2))/(a.length-ddof);}
+const sd=(a,ddof=1)=>Math.sqrt(variance(a,ddof));
+function sorted(a){return [...a].sort((x,y)=>x-y);}
+/* R quantile(type=7): h=(n-1)p+1, linear interpolation. */
+function quantile(a,p){if(!a.length||!Number.isFinite(p))return NaN;if(p<0||p>1)throw Error('分位数概率须在0与1之间。');const x=sorted(a),h=(x.length-1)*p,lo=Math.floor(h),hi=Math.min(lo+1,x.length-1),w=h-lo;return x[lo]+(x[hi]-x[lo])*w;}
+/* e1071 type 2, equivalently G1 = n/((n-1)(n-2)) * sum(z^3). */
+function skew(a){const n=a.length;if(n<3)return NaN;const m=mean(a),s=sd(a);if(!(s>0))return NaN;return n/((n-1)*(n-2))*sum(a.map(v=>((v-m)/s)**3));}
+/* Unbiased excess kurtosis G2 = n(n+1)S4/((n-1)(n-2)(n-3)) - 3(n-1)/(n-2). */
+function kurtosis(a){const n=a.length;if(n<4)return NaN;const m=mean(a),s=sd(a);if(!(s>0))return NaN;return n*(n+1)/((n-1)*(n-2)*(n-3))*sum(a.map(v=>((v-m)/s)**4))-3*(n-1)/(n-2);}
+function corr(x,y){if(x.length!==y.length)throw Error('相关系数要求等长向量。');const mx=mean(x),my=mean(y);let sxy=0,sxx=0,syy=0;for(let i=0;i<x.length;i++){sxy+=(x[i]-mx)*(y[i]-my);sxx+=(x[i]-mx)**2;syy+=(y[i]-my)**2;}if(!(sxx>0)||!(syy>0))return NaN;return sxy/Math.sqrt(sxx*syy);}
+/* Average ranks with ties (1-based), the input to Spearman. */
+function rank(a){const idx=a.map((v,i)=>i).sort((i,j)=>a[i]-a[j]),r=Array(a.length);for(let k=0;k<idx.length;){let e=k;while(e+1<idx.length&&a[idx[e+1]]===a[idx[k]])e++;const v=(k+e)/2+1;for(let t=k;t<=e;t++)r[idx[t]]=v;k=e+1;}return r;}
+const spearman=(x,y)=>corr(rank(x),rank(y));
+/* Lanczos log-gamma + regularised incomplete beta: t and F tails. */
+function lg(z){const c=[676.5203681218851,-1259.1392167224028,771.3234287776531,-176.6150291621406,12.507343278686905,-.13857109526572012,9.984369578019572e-6,1.5056327351493116e-7];if(z<.5)return Math.log(Math.PI)-Math.log(Math.sin(Math.PI*z))-lg(1-z);z--;let x=.9999999999998099;for(let i=0;i<c.length;i++)x+=c[i]/(z+i+1);const t=z+7.5;return .5*Math.log(2*Math.PI)+(z+.5)*Math.log(t)-t+Math.log(x);}
+function cf(a,b,x){const tiny=1e-300;let c=1,d=1-(a+b)*x/(a+1);if(Math.abs(d)<tiny)d=tiny;d=1/d;let h=d;for(let m=1;m<300;m++){for(const aa of [m*(b-m)*x/((a+2*m-1)*(a+2*m)),-(a+m)*(a+b+m)*x/((a+2*m)*(a+2*m+1))]){d=1+aa*d;if(Math.abs(d)<tiny)d=tiny;c=1+aa/c;if(Math.abs(c)<tiny)c=tiny;d=1/d;const delta=d*c;h*=delta;if(aa<0&&Math.abs(delta-1)<3e-14)return h;}}return h;}
+function ibeta(x,a,b){if(x<=0)return 0;if(x>=1)return 1;const v=Math.exp(lg(a+b)-lg(a)-lg(b)+a*Math.log(x)+b*Math.log1p(-x));return x<(a+1)/(a+b+2)?v*cf(a,b,x)/a:1-v*cf(b,a,1-x)/b;}
+/* Two-sided p value for a t statistic. */
+function tPvalue(t,df){if(!Number.isFinite(t)||!(df>0))return NaN;return Math.max(0,Math.min(1,ibeta(df/(df+t*t),df/2,.5)));}
+function tCdf(t,df){const p=1-ibeta(df/(df+t*t),df/2,.5)/2;return t>=0?p:1-p;}
+const gammaFn=z=>Math.exp(lg(z));
+/* Regularised upper incomplete gamma Q(a,x) — chi-square tail for any df. */
+function gammaUpper(a,x){if(!(x>=0))return NaN;if(x===0)return 1;if(x<a+1){/* series for P(a,x) */let ap=a,del=1/a,s=del;for(let n=1;n<500;n++){ap++;del*=x/ap;s+=del;if(Math.abs(del)<Math.abs(s)*1e-15)break;}return Math.max(0,Math.min(1,1-s*Math.exp(-x+a*Math.log(x)-lg(a))));}/* continued fraction for Q(a,x) */const tiny=1e-300;let b=x+1-a,c=1/tiny,d=1/b,h=d;for(let i=1;i<500;i++){const an=-i*(i-a);b+=2;d=an*d+b;if(Math.abs(d)<tiny)d=tiny;c=b+an/c;if(Math.abs(c)<tiny)c=tiny;d=1/d;const del=d*c;h*=del;if(Math.abs(del-1)<1e-15)break;}return Math.max(0,Math.min(1,Math.exp(-x+a*Math.log(x)-lg(a))*h));}
+function chi2Pvalue(x,df){if(!(x>=0)||!(df>0))return NaN;return gammaUpper(df/2,x/2);}
+function normalCdf(z){if(!Number.isFinite(z))return z>0?1:z<0?0:NaN;const t=1/(1+.2316419*Math.abs(z)),d=.3989422804014327*Math.exp(-z*z/2),p=d*t*(.319381530+t*(-.356563782+t*(1.781477937+t*(-1.821255978+t*1.330274429))));return z>=0?1-p:p;}
+function normalPdf(z){return Math.exp(-z*z/2)/Math.sqrt(2*Math.PI);}
+/* Acklam's inverse normal CDF, |relative error| < 1.15e-9. */
+function normalInv(p){if(!(p>0&&p<1))throw Error('正态分位数概率须严格位于0与1之间。');const a=[-3.969683028665376e1,2.209460984245205e2,-2.759285104469687e2,1.383577518672690e2,-3.066479806614716e1,2.506628277459239],b=[-5.447609879822406e1,1.615858368580409e2,-1.556989798598866e2,6.680131188771972e1,-1.328068155288572e1],c=[-7.784894002430293e-3,-3.223964580411365e-1,-2.400758277161838,-2.549732539343734,4.374664141464968,2.938163982698783],d=[7.784695709041462e-3,3.224671290700398e-1,2.445134137142996,3.754408661907416],pl=.02425;let q,r;if(p<pl){q=Math.sqrt(-2*Math.log(p));return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5])/((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1);}if(p<=1-pl){q=p-.5;r=q*q;return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q/(((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1);}q=Math.sqrt(-2*Math.log(1-p));return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5])/((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1);}
+/* Jarque-Bera: chi-square with two degrees of freedom. */
+function jarqueBera(a){const n=a.length,jb=n/6*(skew(a)**2+kurtosis(a)**2/4);return{jb,p:chi2Pvalue(jb,2),skew:skew(a),kurt:kurtosis(a)};}
+/* Classical OLS: columns are regressors, intercept added unless disabled. */
+function solve(A,b){const n=A.length,M=A.map((r,i)=>[...r,b[i]]);for(let i=0;i<n;i++){let piv=i;for(let j=i+1;j<n;j++)if(Math.abs(M[j][i])>Math.abs(M[piv][i]))piv=j;if(Math.abs(M[piv][i])<1e-12)throw Error('设计矩阵奇异：存在完全共线的解释变量，请删除其中一列。');[M[i],M[piv]]=[M[piv],M[i]];const p=M[i][i];for(let j=i;j<=n;j++)M[i][j]/=p;for(let r=0;r<n;r++)if(r!==i){const f=M[r][i];if(f)for(let j=i;j<=n;j++)M[r][j]-=f*M[i][j];}}return M.map(r=>r[n]);}
+function inverse(A){return A.map((_,i)=>solve(A,A.map((__,j)=>j===i?1:0)));}
+function ols(y,cols,{intercept=true,names=null}={}){const n=y.length,k=cols.length;if(!n||cols.some(c=>c.length!==n))throw Error('回归要求所有变量等长。');if(n<=k+(intercept?1:0))throw Error(`样本数 ${n} 不足以估计 ${k+(intercept?1:0)} 个参数。`);const X=cols.map(c=>c.slice());const nm=(names||cols.map((_,i)=>'x'+(i+1))).slice();if(intercept){X.unshift(Array(n).fill(1));nm.unshift('(Intercept)');}const npar=X.length,T=Array.from({length:npar},(_,i)=>Array.from({length:npar},(_,j)=>sum(X[i].map((v,t)=>v*X[j][t])))),b=Array(npar).fill(0),yy=y.map(v=>v);for(let i=0;i<npar;i++)b[i]=sum(X[i].map((v,t)=>v*yy[t]));const beta=solve(T,b),fitted=Array(n).fill(0);for(let i=0;i<npar;i++)for(let t=0;t<n;t++)fitted[t]+=beta[i]*X[i][t];const resid=y.map((v,i)=>v-fitted[i]),sse=sum(resid.map(v=>v*v)),my=mean(y),sst=sum(y.map(v=>(v-my)**2)),df=n-npar,sigma2=sse/df,inv=inverse(T),se=inv.map((row,i)=>Math.sqrt(Math.max(0,row[i]*sigma2))),tval=beta.map((v,i)=>se[i]>0?v/se[i]:NaN),pv=tval.map(t=>tPvalue(t,df));return{beta,se,t:tval,p:pv,fitted,resid,sse,sst,df,n,npar,r2:sst>0?1-sse/sst:NaN,adjR2:sst>0?1-(1-sse/sst)*(n-1)/df:NaN,sigma:Math.sqrt(sigma2),names:nm,X};}
+/* Regress y on one x with intercept; returns the slope's t test too. */
+const ols1=(y,x)=>ols(y,[x],{names:['x']});
+/* Maximum drawdown of a simple-return series, on the cumulative NAV path. */
+function maxDrawdown(r,rf=0){let nav=1,peak=1,worst=0,start=0,end=0,peakAt=0;const path=[1];for(let i=0;i<r.length;i++){nav*=1+r[i];path.push(nav);if(nav>peak){peak=nav;peakAt=i+1;}const dd=nav/peak-1;if(dd<worst){worst=dd;start=peakAt;end=i+1;}}return{nav:path,mdd:worst,start,end,peak,terminal:nav,annualised:r.length?(nav**(1/r.length)-1):NaN};}
+/* Deterministic PRNG (mulberry32) so every lab and its R twin agree. */
+function prng(seed=1){let a=seed>>>0;const next=()=>{a=(a+0x6D2B79F5)>>>0;let t=a;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};next.range=(lo,hi)=>lo+(hi-lo)*next();next.normal=(m=0,s=1)=>{let u=0,v=0;while(u<=1e-12)u=next();while(v<=1e-12)v=next();return m+s*Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);};return next;}
+const clamp=(v,lo,hi)=>Math.min(hi,Math.max(lo,v));
+/* Round to a fixed number of significant digits for reporting. */
+const sig=(v,d=6)=>Number.isFinite(v)?Number(v.toPrecision(d)):NaN;
+/* 100*(1+r) style growth index used by every performance table. */
+const growth=rs=>{let v=1;return rs.map(r=>v*=1+r);};
+return{sum,mean,variance,sd,quantile,sorted,skew,kurtosis,corr,rank,spearman,lg,ibeta,tPvalue,tCdf,chi2Pvalue,gammaUpper,gammaFn,normalCdf,normalPdf,normalInv,jarqueBera,ols,ols1,inverse,solve,maxDrawdown,prng,clamp,sig,growth};});
+
+;
+
+/* Source: workbench-ui.js */
+(function(root,factory){const api=factory();if(typeof module==='object')module.exports=api;else root.WorkbenchUI=api;})(this,()=>{
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function format(kind,x){if(x===null||!Number.isFinite(x))return '—';const digits={money:2,percent:2,beta:3,correlation:3,greek:6,integer:0}[kind],v=kind==='percent'?x*100:x,threshold=digits===undefined?.0001:.5*10**(-digits),small=v!==0&&Math.abs(v)<threshold;const s=small?v.toExponential(kind==='variance'?4:2):digits===undefined?Number(v.toPrecision(5)).toString():v.toLocaleString('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits});return s+(kind==='percent'?'%':'');}
+
+function ticks(lo,hi,count=4){if(lo===hi)hi=lo+1;const raw=(hi-lo)/count,base=10**Math.floor(Math.log10(raw)),step=[1,2,2.5,5,10].map(x=>x*base).find(x=>x>=raw)||base*10;let values=[];for(let x=Math.ceil(lo/step)*step;x<=hi+step*1e-9;x+=step)values.push(Math.abs(x)<step*1e-8?0:x);return values;}
+return{esc,format,ticks};});
+
+;
+
+/* Source: lab-kit.js */
+/* Shared three-pane shell for the five course-foundation labs.
+   Language contract: every user-visible string goes through t(zh,en) and the
+   whole pane is re-rendered on `finmodel:langchange`, so Chinese and English
+   are both first-class and neither leaves residue in the other. */
+(()=>{'use strict';
+const W=()=>window.WorkbenchUI;
+const esc=s=>W().esc(String(s));
+const lang=()=>document.documentElement.getAttribute('data-lang')==='en'?'en':'zh';
+const t=(zh,en)=>lang()==='en'&&en!=null?en:zh;
+const listeners=[];
+document.addEventListener('finmodel:langchange',()=>{for(const fn of listeners){try{fn();}catch(e){console.error(e);}}});
+function onLang(fn){listeners.push(fn);return fn;}
+const $=s=>document.querySelector(s);
+const fmt=(v,d=4)=>Number.isFinite(v)?Number(v.toPrecision(d)).toString():'—';
+const pct=(v,d=2)=>Number.isFinite(v)?(v*100).toFixed(d)+'%':'—';
+const num=(v,d=4)=>Number.isFinite(v)?Number(v).toFixed(d):'—';
+const money=(v,d=2)=>Number.isFinite(v)?Number(v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}):'—';
+const sign=v=>Number.isFinite(v)?(v>=0?'+':'−'):'—';
+const pad=n=>String(n).padStart(2,'0');
+
+/* ---------- top tabs, question line and view-level controls ---------- */
+function views(host,list,active,onPick){
+  const nav=document.createElement('nav');
+  let current=active;
+  nav.className='lab-tabs';nav.setAttribute('aria-label',t('实验主视图','Experiment views'));
+  nav.innerHTML=list.map(([k,zh,en])=>`<button type="button" data-view="${esc(k)}" aria-pressed="${k===active}">${esc(t(zh,en))}</button>`).join('');
+  host.after(nav);
+  nav.onclick=e=>{const b=e.target.closest('[data-view]');if(b&&b.dataset.view!==current){current=b.dataset.view;onPick(b.dataset.view);}};
+  const question=document.createElement('p');question.className='lab-question';nav.after(question);
+  const controls=document.createElement('div');controls.className='lab-view-controls';question.after(controls);
+  const api={nav,question,controls,setQuestion:(zh,en)=>{question.textContent=t(zh,en);},setActive:k=>nav.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===k))),
+    refresh:(list,active)=>{current=active;nav.setAttribute('aria-label',t('实验主视图','Experiment views'));nav.innerHTML=list.map(([k,zh,en])=>`<button type="button" data-view="${esc(k)}" aria-pressed="${k===active}">${esc(t(zh,en))}</button>`).join('');}};
+  return api;
+}
+/* ---------- parameter pane primitives ---------- */
+function field({id,zh,en,value,min,max,step,type='number',unit}){
+  if(type==='range')return `<label for="lab-${id}"><span>${esc(t(zh,en))}</span><input id="lab-${id}" type="range" min="${min}" max="${max}" step="${step||'any'}" value="${value}"></label>`;
+  return `<label for="lab-${id}"><span>${esc(t(zh,en))}${unit?` <small class="lab-unit">${esc(t(...unit))}</small>`:''}</span><input id="lab-${id}" type="number" min="${min??''}" max="${max??''}" step="${step||'any'}" value="${value}"></label>`;
+}
+function select({id,zh,en,value,options}){
+  return `<label for="lab-${id}"><span>${esc(t(zh,en))}</span><select id="lab-${id}">${options.map(([v,z,e])=>`<option value="${esc(v)}"${String(v)===String(value)?' selected':''}>${esc(t(z,e))}</option>`).join('')}</select></label>`;
+}
+function check({id,zh,en,value}){
+  return `<label class="lab-check" for="lab-${id}"><input id="lab-${id}" type="checkbox"${value?' checked':''}><span>${esc(t(zh,en))}</span></label>`;
+}
+const prose=(zh,en)=>`<p class="lab-prose">${esc(t(zh,en))}</p>`;
+const note=(zh,en)=>`<p class="lab-note">${esc(t(zh,en))}</p>`;
+const badge=(zh,en,kind='ai')=>`<span class="lab-badge lab-badge-${kind}">${esc(t(zh,en))}</span>`;
+function block(titleZh,titleEn,body){return `<section class="lab-block"><h3>${esc(t(titleZh,titleEn))}</h3>${body}</section>`;}
+function tasks(items){return `<details class="lab-tasks"><summary>${esc(t('教学任务','Teaching tasks'))}</summary><ol>${items.map(([z,e])=>`<li>${esc(t(z,e))}</li>`).join('')}</ol></details>`;}
+function assumptions(summary,detail){
+  const box=$('#assumptionSummary');if(box)box.innerHTML=summary.map(s=>`<span>${esc(t(...s))}</span>`).join('');
+  const text=$('#assumptions');if(text)text.textContent=t(...detail);
+  const det=$('#assumptionDetails');if(det)det.querySelector('summary').textContent=t('查看完整模型假设','Full modelling assumptions');
+}
+
+/* ---------- R code pane ---------- */
+function blocksHTML(blocks,active,onPick){
+  let n=0;
+  const html=blocks.map(b=>`<div class="logic-block" data-logic="${esc(b.key)}">${b.lines.map((line,i)=>`<button class="code-line${b.key===active?' selected':''}" data-semantic="${esc(b.key)}" data-line="${i}"><span class="num">${++n}</span><code>${W().colorCode(line)}</code></button>`).join('')}</div>`).join('');
+  return html;
+}
+function code(blocks,active,onChange){
+  const host=$('#code');const scroll=host.scrollTop;
+  host.innerHTML=blocksHTML(blocks,active);
+  host.scrollTop=scroll;
+  host.querySelectorAll('[data-semantic]').forEach(btn=>{btn.onclick=()=>{const key=btn.dataset.semantic;if(key===active)return;if(onChange)onChange(key);else{code(blocks,key);}};});
+  explain(blocks.find(b=>b.key===active)||blocks[0]);
+  return active;
+}
+function explain(b){
+  if(!b)return;
+  const host=$('#explanation');
+  const pair=v=>Array.isArray(v)?t(v[0],v[1]):(v==null?'':String(v));
+  const title=pair(b.title),action=pair(b.action),value=pair(b.value),econ=pair(b.economic||b.explain);
+  host.innerHTML=`<h3>${esc(title)}</h3><p>${esc(action||econ)}</p><div class="formula"></div>${value?`<p class="current-value">${esc(value)}</p>`:''}${b.economic?`<p class="economic">${esc(t('金融含义：','Finance meaning: '))}${esc(econ)}</p>`:''}`;
+  if(b.formula&&window.katex){try{window.katex.render(b.formula,host.querySelector('.formula'),{throwOnError:false,displayMode:false});}catch{host.querySelector('.formula').textContent=b.formula;}}
+  return host;
+}
+
+/* ---------- model pane pieces ---------- */
+const metrics=items=>{const host=$('#metrics');host.innerHTML=items.map(([z,e,v])=>`<div><span>${esc(t(z,e))}</span><b>${esc(v)}</b></div>`).join('');return host;};
+function table(headers,rows,{classes={},caption}={}){
+  return `<table>${caption?`<caption>${esc(t(...caption))}</caption>`:''}<thead><tr>${headers.map(h=>`<th scope="col">${esc(t(...h))}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr${r.cls?` class="${r.cls}"`:''}>${(Array.isArray(r)?r:r.cells).map((c,i)=>i===0?`<th scope="row">${c}</th>`:`<td${classes[i]?` class="${classes[i]}"`:''}>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+}
+function legend(items){const host=$('#legend');host.innerHTML=items.map(([z,e,color,dash])=>`<span><i style="--legend-color:${color};--legend-style:${dash?'dashed':'solid'}"></i>${esc(t(z,e))}</span>`).join('');return host;}
+const details=html=>{const host=$('#details');host.innerHTML=html;return host;};
+const graphKind=(zh,en)=>{const el=$('#graphKind');if(el)el.textContent=t(zh,en);};
+
+/* ---------- chart engine: one SVG contract for every new lab ---------- */
+let controller=null;
+function tip(){let el=document.querySelector('#labTip');if(el&&el.isConnected)return el;el=document.createElement('div');el.id='labTip';el.className='chart-tooltip';el.hidden=true;const host=document.querySelector('#chartHost')||document.querySelector('.model-panel')||document.body;host.append(el);return el;}
+function interaction(){
+  if(controller)return controller;
+  controller=window.ChartInteraction.create((key,mode)=>{
+    const el=tip();
+    if(!key){el.hidden=true;el.dataset.mode='closed';return;}
+    el.hidden=false;el.dataset.mode=mode;
+    el.innerHTML=(mode==='pinned'?`<button id="labTipClose" aria-label="${esc(t('关闭详情','Close details'))}">×</button>`:'')+key;
+    if(mode==='pinned')el.querySelector('#labTipClose').onclick=()=>controller.clear();
+  });
+  return controller;
+}
+const PALETTE=['#6689a8','#9b88ac','#659b8a','#4e718e','#b5816f','#7f9182'];
+/* ticks are computed on the padded domain, so labels always sit inside the plot */
+function niceTicks(lo,hi,count=5){
+  if(!Number.isFinite(lo)||!Number.isFinite(hi)||lo===hi)return [lo];
+  const raw=(hi-lo)/count,base=10**Math.floor(Math.log10(raw)),step=[1,2,2.5,5,10].map(x=>x*base).find(x=>x>=raw)||base*10;
+  const out=[];for(let x=Math.ceil(lo/step)*step;x<=hi+step*1e-9;x+=step)out.push(Math.abs(x)<step*1e-8?0:x);return out;
+}
+function chart(host,spec){
+  const W0=600,H=385,l=66,r=20,tp=18,b=52;
+  const series=(spec.series||[]).filter(s=>s.points&&s.points.length);
+  if(!series.length){host.innerHTML='';return null;}
+  const xs=series.flatMap(s=>s.points.map(p=>p[0])),ys=series.flatMap(s=>s.points.map(p=>p[1]));
+  const refs=spec.refs||[];
+  let xlo=Math.min(...xs),xhi=Math.max(...xs),ylo=Math.min(...ys),yhi=Math.max(...ys);
+  for(const rf of refs)if(rf.axis==='y'&&Number.isFinite(rf.value)){ylo=Math.min(ylo,rf.value);yhi=Math.max(yhi,rf.value);}
+  if(!Number.isFinite(xlo)||!Number.isFinite(ylo)){host.innerHTML='';return null;}
+  if(spec.xDomain){[xlo,xhi]=spec.xDomain;}else{const d=(xhi-xlo)||Math.abs(xlo)||1;xlo-=d*.04;xhi+=d*.04;}
+  if(spec.yDomain){[ylo,yhi]=spec.yDomain;}else{const d=(yhi-ylo)||Math.abs(ylo)||1;ylo-=d*.10;yhi+=d*.10;}
+  if(spec.yZero){ylo=Math.min(ylo,0);yhi=Math.max(yhi,0);}
+  const sx=x=>l+(x-xlo)/(xhi-xlo||1)*(W0-l-r),sy=y=>H-b-(y-ylo)/(yhi-ylo||1)*(H-b-tp);
+  const xf=spec.xTickFormat||(v=>fmt(v,4)),yf=spec.yTickFormat||(v=>fmt(v,3));
+  const xt=niceTicks(xlo,xhi,spec.xTicks||5),yt=niceTicks(ylo,yhi,spec.yTicks||5);
+  const marks=[];
+  let svg=`<svg viewBox="0 0 ${W0} ${H}" role="img" aria-label="${esc(t(...(spec.aria||[spec.title||'图表','Chart'])))}">`;
+  for(const bd of spec.bands||[]){const x0=sx(bd.from),x1=sx(bd.to);svg+=`<rect x="${Math.min(x0,x1)}" y="${tp}" width="${Math.abs(x1-x0)}" height="${H-b-tp}" fill="${bd.color||'#eef3f6'}" opacity=".75"/>`;}
+  for(const v of yt)svg+=`<path class="chart-grid" d="M${l},${sy(v)}H${W0-r}"/><text x="${l-8}" y="${sy(v)+4}" text-anchor="end">${esc(yf(v))}</text>`;
+  for(const v of xt)svg+=`<text x="${sx(v)}" y="${H-b+18}" text-anchor="middle">${esc(xf(v))}</text>`;
+  svg+=`<path d="M${l},${H-b}H${W0-r}" stroke="#b9c7cf" fill="none"/>`;
+  if(spec.yZero&&ylo<0&&yhi>0)svg+=`<path d="M${l},${sy(0)}H${W0-r}" stroke="#c3ced5" stroke-dasharray="3 3" fill="none"/>`;
+  for(const rf of refs){
+    if(rf.axis==='x')svg+=`<path d="M${sx(rf.value)},${tp}V${H-b}" stroke="${rf.color||'#9b88ac'}" stroke-dasharray="${rf.dash===false?'':'4 4'}" fill="none"/>`;
+    else svg+=`<path d="M${l},${sy(rf.value)}H${W0-r}" stroke="${rf.color||'#9b88ac'}" stroke-dasharray="${rf.dash===false?'':'4 4'}" fill="none"/>`;
+  }
+  series.forEach((s,si)=>{
+    const color=s.color||PALETTE[si%PALETTE.length];
+    if(s.type==='bar'){
+      const gapX=s.points.length>1?Math.abs(s.points[1][0]-s.points[0][0]):(xhi-xlo)/10;
+      const w=s.width||Math.max(1.2,Math.abs(sx(s.points[0][0]+gapX)-sx(s.points[0][0]))*(s.gap??.82));
+      s.points.forEach((p,i)=>{
+        svg+=`<rect class="lab-bar" data-series="${si}" x="${sx(p[0])-w/2}" y="${Math.min(sy(0),sy(p[1]))}" width="${w}" height="${Math.max(1,Math.abs(sy(p[1])-sy(0)))}" fill="${color}" opacity="${s.opacity??.9}" tabindex="0" role="button" aria-label="${esc(s.tip?t(...s.tip(p)):yf(p[1]))}"/>`;
+        if(s.tip)marks.push({sel:`rect.lab-bar[data-series="${si}"]`,i:marks.filter(m=>m.sel===`rect.lab-bar[data-series="${si}"]`).length,html:t(...s.tip(p))});
+      });
+    }else if(s.type==='scatter'||s.type==='points'){
+      s.points.forEach((p,i)=>{
+        svg+=`<circle class="lab-point" data-series="${si}" cx="${sx(p[0])}" cy="${sy(p[1])}" r="${s.radius||3.4}" fill="${color}" opacity="${s.opacity??.85}" tabindex="0" role="button" aria-label="${esc(s.tip?t(...s.tip(p)):fmt(p[1]))}"/>`;
+        if(s.tip)marks.push({sel:`circle.lab-point[data-series="${si}"]`,i:marks.filter(m=>m.sel===`circle.lab-point[data-series="${si}"]`).length,html:t(...s.tip(p))});
+      });
+
+    }else{
+      let d='';
+      s.points.forEach((p,i)=>{const X=sx(p[0]),Y=sy(p[1]);d+=i===0?`M${X},${Y}`:s.type==='step'?`H${X}V${Y}`:`L${X},${Y}`;});
+      if(s.type==='area'&&s.points.length)d+=`L${sx(s.points[s.points.length-1][0])},${sy(s.zero??0)}L${sx(s.points[0][0])},${sy(s.zero??0)}Z`;
+      svg+=`<path class="lab-line" d="${d}" fill="${s.type==='area'?(s.fill||'#e8eef2'):'none'}" stroke="${s.type==='area'?'none':color}" stroke-width="${s.width||2}" stroke-dasharray="${s.dash?'5 4':''}" stroke-linejoin="round" stroke-linecap="round"/>`;
+      if(s.tip){const stride=Math.max(1,Math.ceil(s.points.length/120));s.points.forEach((p,i)=>{if(i%stride)return;svg+=`<circle class="lab-hit" cx="${sx(p[0])}" cy="${sy(p[1])}" r="4.5" fill="${color}" opacity="0" tabindex="0" role="button" aria-label="${esc(t(...s.tip(p)))}"/>`;marks.push({sel:`circle.lab-hit[data-series="${si}"]`,i:marks.filter(m=>m.sel===`circle.lab-hit[data-series="${si}"]`).length,html:t(...s.tip(p))});});}
+    }
+  });
+  for(const rf of refs)if(rf.label)svg+=`<text x="${rf.axis==='y'?l+6:sx(rf.value)+4}" y="${rf.axis==='y'?sy(rf.value)-5:tp+10}" fill="${rf.color||'#9b88ac'}" font-size="11">${esc(t(rf.label[0],rf.label[1]))}</text>`;
+  if(spec.xLabel)svg+=`<text class="axis-caption" x="${(l+W0-r)/2}" y="${H-12}" text-anchor="middle">${esc(t(...spec.xLabel))}</text>`;
+  if(spec.yLabel)svg+=`<text class="axis-caption" transform="translate(16 ${(tp+H-b)/2}) rotate(-90)" text-anchor="middle">${esc(t(...spec.yLabel))}</text>`;
+  host.innerHTML=svg+'</svg>';
+  const ctrl=interaction();ctrl.clear();
+  if(marks.length){
+    const groups=new Map();
+    for(const m of marks){if(!groups.has(m.sel))groups.set(m.sel,[]);groups.get(m.sel).push(m);}
+    for(const [sel,list] of groups){host.querySelectorAll(sel).forEach((el,i)=>{const m=list[i];if(m)ctrl.bind(el,m.html);});}
+  }
+  return{sx,sy,xt,yt,host};
+}
+/* Dependency-free pipeline diagram used by 01 and 02. */
+function flow(host,steps,active){
+  const n=steps.length,w=600,h=Math.min(200,86+18*Math.ceil(n/3)),bw=(600-40-(n-1)*10)/n;
+  let svg=`<svg viewBox="0 0 600 ${h}" role="img" aria-label="${esc(t('处理流程','Pipeline'))}">`;
+  steps.forEach((st,i)=>{
+    const x=20+i*(bw+10),y=30,on=i===active;
+    svg+=`<rect x="${x}" y="${y}" width="${bw}" height="70" rx="10" fill="${on?'#e9e8f1':'#f4f7f9'}" stroke="${on?'#8c80a3':'#dce5e9'}"/>`;
+    svg+=`<text x="${x+bw/2}" y="${y+26}" text-anchor="middle" font-size="12" fill="${on?'#4b4166':'#596e7c'}">${esc(t(st[0],st[1]))}</text>`;
+    if(st[2])svg+=`<text x="${x+bw/2}" y="${y+48}" text-anchor="middle" font-size="11" fill="#7d8f9b">${esc(st[2])}</text>`;
+    if(i<n-1)svg+=`<path d="M${x+bw+1},${y+35}h8" stroke="#b9c7cf" stroke-width="1.5" marker-end="url(#labArrow)"/>`;
+  });
+  svg+=`<defs><marker id="labArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#b9c7cf"/></marker></defs>`;
+  svg+=`<text x="300" y="${h-14}" text-anchor="middle" font-size="11" fill="#7d8f9b">${esc(t('当前步骤高亮；每一步都在清洗日志中留痕','The current step is highlighted; every step is logged'))}</text></svg>`;
+  host.innerHTML=svg;return host;
+}
+
+/* ---------- page chrome: dialogs, copy, splitter, projector ---------- */
+const toast=text=>{const el=$('#toast');el.textContent=text;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2600);};
+function info(title,body){$('#infoTitle').textContent=title;$('#infoBody').textContent=body;window.ModalUI.open($('#infoDialog'));}
+function download(name,text){const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function chrome({getCode,onReset,onMode,teacher,help,practice,fileName}){
+  for(const id of ['#catalog','#catalogMobile']){const b=$(id);if(b)b.onclick=()=>window.ModalUI.open($('#catalogDialog'));}
+  document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+  $('#help').onclick=()=>info(t('帮助与资源','Help & resources'),t(...help));
+  $('#teacher').onclick=()=>info(t('教师提示','Teacher notes'),t(...teacher));
+  $('#copy').onclick=async()=>{
+    const text=getCode();
+    try{await navigator.clipboard.writeText(text);toast(t('已复制完整 R 代码，可在 RStudio 整段运行','Full R code copied — run it end to end in RStudio'));}
+    catch{download(fileName||'finmodel-lab.R',text);toast(t('剪贴板不可用，已下载 R 脚本','Clipboard unavailable — the R script was downloaded'));}
+  };
+  document.querySelectorAll('[data-code-mode]').forEach(b=>b.onclick=()=>{if(b.disabled)return;onMode(b.dataset.codeMode);});
+  let practiceBtn=$('#rStudioPractice');
+  if(!practiceBtn){practiceBtn=document.createElement('button');practiceBtn.id='rStudioPractice';practiceBtn.textContent=t('RStudio 实践','RStudio practice');$('.code-toolbar').append(practiceBtn);}
+  practiceBtn.onclick=()=>info(t('在 RStudio 实践','Practice in RStudio'),t(...practice));
+  $('#projector').onclick=()=>{const on=!document.body.classList.contains('projector');document.body.classList.toggle('projector',on);$('#projector').setAttribute('aria-pressed',String(on));};
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.querySelector('dialog[open]')){document.body.classList.remove('projector');$('#projector').setAttribute('aria-pressed','false');}});
+  const splitter=$('#splitter');let share=62;
+  const resize=v=>{share=Math.max(40,Math.min(75,v));$('.code-regions').style.setProperty('--code-fr',share+'fr');$('.code-regions').style.setProperty('--explain-fr',(100-share)+'fr');splitter.setAttribute('aria-valuenow',share);};
+  splitter.onkeydown=e=>{if(['ArrowUp','ArrowDown','Home','End'].includes(e.key)){e.preventDefault();resize(e.key==='Home'?40:e.key==='End'?75:share+(e.key==='ArrowDown'?2:-2));}};
+  splitter.onpointerdown=e=>{splitter.setPointerCapture(e.pointerId);const y=e.clientY,start=share,h=$('.code-regions').clientHeight;splitter.onpointermove=ev=>resize(start+(ev.clientY-y)/h*100);splitter.onpointerup=()=>{splitter.onpointermove=null;};};
+  $('#reset').onclick=()=>onReset();
+  if($('#assumptionDetails'))$('#assumptionDetails').ontoggle=()=>{const s=$('#assumptionDetails summary');s.textContent=$('#assumptionDetails').open?t('收起完整模型假设','Hide full assumptions'):t('查看完整模型假设','Full modelling assumptions');};
+}
+function modeButtons(mode,{basic=true}={}){
+  document.querySelectorAll('[data-code-mode]').forEach(b=>{b.setAttribute('aria-pressed',String(b.dataset.codeMode===mode));if(b.dataset.codeMode==='basic')b.disabled=!basic;});
+}
+const notice=text=>{$('#codeNotice').textContent=text;};
+const view=()=>({nav:0});
+/* The mount contract every lab honours: body flag, course chrome, hidden quiz. */
+function start(id,cls){
+  window.CourseExperiments.mount(id);
+  document.body.classList.add(cls);
+  const learning=document.querySelector('.learning');if(learning)learning.hidden=true;
+  document.querySelectorAll('[data-code-mode]').forEach(b=>{if(b.dataset.codeMode==='basic')b.disabled=true;});
+  window.ChartInteraction?.clear();
+}
+window.LabKit={t,lang,onLang,esc,fmt,pct,num,money,sign,pad,views,field,select,check,prose,note,badge,block,tasks,assumptions,code,explain,metrics,table,legend,details,graphKind,chart,flow,toast,info,download,chrome,modeButtons,notice,start,interaction};
+})();
+
+;
+
+/* Source: portfolio-adv-math.js */
+/* Experiment08 拓展 · 切点组合、均值-CVaR 与高阶矩（教材 8.1 fPortfolio 案例 / 8.2 / 8.3）。
+   三资产、固定种子的月度收益；权重网格上比较夏普、CVaR 与偏度。 */
+(function(root,factory){const api=factory(typeof module==='object'?require('./lab-stats'):root.LabStats);if(typeof module==='object')module.exports=api;else root.PortfolioAdvMath=api;})(this,S=>{
+'use strict';
+const defaults=Object.freeze({months:240,seed:20261114,rf:.002,alpha:.95,step:.05,
+  mu1:.008,mu2:.006,mu3:.004,sd1:.05,sd2:.04,sd3:.02,rho12:.35,rho13:.1,rho23:-.05});
+function check(p){
+  if(!Number.isInteger(p.months)||p.months<120||p.months>600)throw Error('月份数须为 120–600 的整数。');
+  if(!(p.alpha>.9&&p.alpha<.999))throw Error('置信水平须在 0.90 与 0.999 之间。');
+  if(!(p.step>=.01&&p.step<=.2))throw Error('网格步长须在 0.01 与 0.2 之间。');
+  if(!(p.sd1>0&&p.sd2>0&&p.sd3>0))throw Error('波动率必须为正。');
+  if([p.rho12,p.rho13,p.rho23].some(v=>v<=-1||v>=1))throw Error('相关系数须在 (−1,1) 内。');
+  return true;
+}
+function covMatrix(p){
+  const s=[p.sd1,p.sd2,p.sd3],R=[[1,p.rho12,p.rho13],[p.rho12,1,p.rho23],[p.rho13,p.rho23,1]];
+  return R.map((row,i)=>row.map((v,j)=>v*s[i]*s[j]));
+}
+function chol(A){
+  const n=A.length,L=Array.from({length:n},()=>Array(n).fill(0));
+  for(let i=0;i<n;i++)for(let j=0;j<=i;j++){
+    let s=A[i][j];for(let k=0;k<j;k++)s-=L[i][k]*L[j][k];
+    if(i===j)L[i][j]=Math.sqrt(Math.max(0,s));else L[i][j]=L[i][j]||s/Math.max(1e-12,L[j][j]);
+  }
+  return L;
+}
+function simulate(p){
+  check(p);
+  const L=chol(covMatrix(p)),mu=[p.mu1,p.mu2,p.mu3],rng=S.prng(p.seed),rets=[];
+  for(let t=0;t<p.months;t++){
+    const z=[rng.normal(),rng.normal(),rng.normal()];
+    rets.push(mu.map((m,i)=>m+L[i][0]*z[0]+L[i][1]*z[1]+L[i][2]*z[2]));
+  }
+  return{rets,mu,cov:covMatrix(p),names:['A','B','C']};
+}
+function inv3(A){
+  const [a,b,c]=A[0],[d,e,f]=A[1],[g,h,i2]=A[2];
+  const det=a*(e*i2-f*h)-b*(d*i2-f*g)+c*(d*h-e*g);
+  if(Math.abs(det)<1e-14)throw Error('协方差矩阵奇异，请检查相关系数。');
+  return[[(e*i2-f*h)/det,(c*h-b*i2)/det,(b*f-c*e)/det],
+    [(f*g-d*i2)/det,(a*i2-c*g)/det,(c*d-a*f)/det],
+    [(d*h-e*g)/det,(b*g-a*h)/det,(a*e-b*d)/det]];
+}
+const dot=(u,v)=>u.reduce((s,x,i)=>s+x*v[i],0);
+const mul=(A,v)=>A.map(row=>dot(row,v));
+function portfolioStats(rets,w){
+  const series=rets.map(r=>dot(r,w));
+  const mean=S.mean(series),sd=S.sd(series);
+  const sorted=S.sorted(series),q=S.quantile(series,1-.95);
+  const tail=series.filter(v=>v<=S.quantile(series,.05));
+  return{mean,sd,sharpe:(mean-.002)/sd*Math.sqrt(12),skew:S.skew(series),kurt:S.kurtosis(series),
+    var95:-q,es95:-(tail.length?S.mean(tail):q),series};
+}
+function analyse(p){
+  const d=simulate(p),{rets,mu}=d;
+  /* 切点权重用样本协方差（与 R 的 cov() 一致），而不是模拟所用的真实协方差。 */
+  const cols=rets[0].map((_,j)=>rets.map(r=>r[j]));
+  const sampleCov=Array.from({length:3},(_,i)=>Array.from({length:3},(_,j)=>S.sum(cols[i].map((v,t)=>(v-S.mean(cols[i]))*(cols[j][t]-S.mean(cols[j]))))/(rets.length-1)));
+  const sampleMu=cols.map(c=>S.mean(c));
+  const inv=inv3(sampleCov),excess=sampleMu.map(m=>m-p.rf);
+  const raw=mul(inv,excess),total=S.sum(raw),wTan=raw.map(v=>v/total);
+  const tan=portfolioStats(rets,wTan);
+  /* 权重网格（步长 step，三资产和为 1，不许卖空） */
+  const grid=[];const n=Math.round(1/p.step);
+  for(let a=0;a<=n;a++)for(let b=0;b<=n-a;b++){
+    const w=[a/n,b/n,(n-a-b)/n];
+    const st=portfolioStats(rets,w);
+    grid.push({w,...st,es95:st.es95});
+  }
+  /* 有效前沿：按 σ 分箱取最大 μ */
+  const bins=new Map();
+  for(const g of grid){const k=Math.round(g.sd*1000);const cur=bins.get(k);if(!cur||g.mean>cur.mean)bins.set(k,g);}
+  const frontier=[...bins.values()].sort((x,y)=>x.sd-y.sd);
+  /* 均值-CVaR：在 μ 不低于目标的组合里取 CVaR 最小 */
+  const target=Math.max(...grid.map(g=>g.mean))*0.98;
+  const cvarSet=grid.filter(g=>g.mean>=target);
+  const minCVaR=cvarSet.reduce((best,g)=>!best||g.es95<best.es95?g:best,null);
+  const maxSkew=grid.reduce((best,g)=>!best||g.skew>best.skew?g:best,null);
+  const maxSharpe=grid.reduce((best,g)=>!best||g.sharpe>best.sharpe?g:best,null);
+  return{...d,inv,wTan,tan,grid,frontier,target,minCVaR,maxSkew,maxSharpe,sampleMu,
+    cov:sampleCov,trueCov:d.cov,vols:[p.sd1,p.sd2,p.sd3],rf:p.rf,alpha:p.alpha};
+}
+function build(p,q,lang='zh'){
+  const T=(zh,en)=>lang==='en'?en:zh;
+  const blocks=[];const add=(key,title,code,explain,formula='')=>blocks.push({key,title,lines:Array.isArray(code)?code:String(code).split('\n'),explain,formula});
+  const num=v=>{const s=String(Number(v));return /e/i.test(s)?Number(v).toPrecision(15).replace(/0+e/,'e'):s;};
+  const vec=a=>{const parts=a.map(v=>num(Number(v.toFixed(10)))),lines=[];for(let i=0;i<parts.length;i+=10)lines.push('  '+parts.slice(i,i+10).join(', '));return 'c(\n'+lines.join(',\n')+'\n)';};
+  add('data',T('三资产月度收益','Three-asset monthly returns'),
+    ['# Experiment 08.2 | tangency, mean-CVaR and higher moments | base R only',
+     T('# 固定种子生成的合成月度收益；非真实行情','# Synthetic monthly returns from a fixed seed; not market quotes'),
+     `A <- ${vec(q.rets.map(r=>r[0]))}`,`B <- ${vec(q.rets.map(r=>r[1]))}`,`C <- ${vec(q.rets.map(r=>r[2]))}`,
+     `rf <- ${num(p.rf)}; alpha <- ${num(p.alpha)}`,
+     'X <- cbind(A, B, C); mu <- colMeans(X); Sigma <- cov(X)',
+     'stopifnot(nrow(X) > 100, all(is.finite(mu)))'],
+    T('三资产足够画出二维前沿；权重网格用于比较夏普、CVaR 与偏度，不是求解器。','Three assets are enough to draw a two-dimensional frontier; the weight grid compares Sharpe, CVaR and skewness rather than solving an optimiser.'));
+  add('tangency',T('切点组合（最大夏普）','Tangency portfolio (maximum Sharpe)'),
+    [T('# 无风险资产存在时，切点权重与 Σ⁻¹(μ−rf) 成比例','# With a risk-free asset the tangency weights are proportional to Sigma^{-1}(mu - rf)'),
+     'w_raw <- solve(Sigma, mu - rf)','w_tan <- w_raw / sum(w_raw)','print(w_tan)',
+     'port <- as.vector(X %*% w_tan)',
+     'cat("mean", mean(port), "sd", sd(port), "annualised Sharpe", mean(port - rf)/sd(port)*sqrt(12), "\\n")'],
+    T('切点组合依赖均值与协方差的估计；样本均值的不确定性会让权重剧烈变化。','The tangency portfolio depends on estimated means and covariances; uncertainty in the sample mean makes the weights swing.'),
+    String.raw`w_T=\frac{\Sigma^{-1}(\mu-r_f\mathbf 1)}{\mathbf 1'\Sigma^{-1}(\mu-r_f\mathbf 1)}`);
+  add('cvar',T('均值-CVaR 与高阶矩','Mean-CVaR and higher moments'),
+    [T('# 在均值不低于目标的组合里，找 CVaR 最小的权重','# Among portfolios with mean at least the target, find the smallest CVaR'),
+     'grid <- expand.grid(a = seq(0, 1, by = 0.05), b = seq(0, 1, by = 0.05))',
+     'grid <- subset(grid, a + b <= 1)','grid$c <- 1 - grid$a - grid$b',
+     'stats <- t(apply(grid, 1, function(g) {',
+     '  w <- c(g[1], g[2], g[3]); p <- as.vector(X %*% w)',
+     '  q <- quantile(p, 1 - alpha, type = 7)',
+     '  c(mean = mean(p), sd = sd(p), skew = mean((p - mean(p))^3)/sd(p)^3,',
+     '    cvar = -mean(p[p <= q]))',
+     '}))',
+     'grid <- cbind(grid, stats)',
+     `target <- ${num(q.target)}`,
+     'best <- subset(grid, mean >= target)',
+     'best <- best[which.min(best$cvar), ]',
+     'print(best)','print(grid[which.max(grid$skew), ])'],
+    T('CVaR 关注尾部平均损失，偏度关注分布不对称；最大夏普组合通常既不是最小 CVaR 也不是最大偏度。','CVaR looks at the average tail loss and skewness at asymmetry; the maximum-Sharpe portfolio is usually neither the minimum-CVaR nor the maximum-skew one.'),
+    String.raw`CVaR_\alpha=\mathbb E[-r\mid r\le q_{1-\alpha}]`);
+  return{blocks,code:'# FinModel Lab | Experiment 08.2 | tangency and CVaR\n\n'+blocks.map(b=>b.lines.join('\n')).join('\n\n')+'\n'};
+}
+return{defaults,check,simulate,analyse,build,portfolioStats};
+});
+
+;
+
+/* Source: portfolio-adv-ui.js */
+/* Experiment08 拓展面板：切点组合、均值-CVaR 与高阶矩。挂在双资产/多资产模式旁边。 */
+(()=>{'use strict';
+const K=window.LabKit,M=()=>window.PortfolioAdvMath,$=s=>document.querySelector(s),t=(zh,en)=>K.t(zh,en);
+const state={p:{...window.PortfolioAdvMath.defaults},built:null,q:null};
+function mount(){
+  if(document.getElementById('advWorkspace'))return;
+  const nav=$('.portfolio-modes');if(!nav)return;
+  const btn=document.createElement('button');btn.id='advMode';btn.type='button';btn.textContent=t('切点与 CVaR','Tangency & CVaR');
+  nav.insertBefore(btn,nav.querySelector('span')||null);
+  const panel=document.createElement('section');panel.id='advWorkspace';panel.className='workspace adv-workspace';panel.hidden=true;
+  panel.innerHTML=`<article class="panel code-panel"><div class="panel-head"><h2 id="advCodeTitle">${K.esc(t('R 代码','R code'))}</h2><button type="button" id="advCopy">${K.esc(t('复制完整 R 代码','Copy full R code'))}</button></div><div class="code-regions" style="--code-fr:100fr;--explain-fr:0fr"><div id="advCode"></div></div></article>
+    <article class="panel model-panel"><div class="panel-head"><h2 id="advViewTitle">${K.esc(t('组合视图','Portfolio view'))}</h2><span id="advKind">${K.esc(t('三资产 · 网格','Three assets · grid'))}</span></div>
+      <div id="advMetrics" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 16px;padding:2px 16px 12px"></div>
+      <div class="chart-host single-chart" style="flex:1;min-height:320px;margin:0 14px"><div class="chart-frame" style="display:flex;flex-direction:column;min-height:0"><h3 id="advChartTitle"></h3><div class="svg-host" id="advChart" style="flex:1;min-height:280px"></div></div></div>
+      <div id="advLegend" class="legend"></div>
+      <div id="advDetails" class="model-details"></div></article>
+    <section class="panel parameters"><div class="panel-head"><h2 id="advParamTitle">${K.esc(t('参数','Parameters'))}</h2><button type="button" id="advReset">${K.esc(t('恢复默认','Reset'))}</button></div>
+      <div class="parameters-scroll"><div id="advControls"></div><p id="advValidation" role="status"></p>
+      <div id="advTasks"></div></div></section>`;
+  const anchor=document.getElementById('multiWorkspace')||document.getElementById('workspace');
+  anchor.after(panel);
+  const dual=document.getElementById('dualMode'),multi=document.getElementById('multiMode');
+  const hide=()=>{panel.hidden=true;btn.setAttribute('aria-pressed','false');};
+  for(const b of [dual,multi])if(b){const old=b.onclick;b.onclick=e=>{hide();if(old)old.call(b,e);};}
+  btn.onclick=()=>{
+    panel.hidden=false;
+    document.getElementById('workspace').hidden=true;
+    const m=document.getElementById('multiWorkspace');if(m)m.hidden=true;
+    btn.setAttribute('aria-pressed','true');
+    for(const b of [dual,multi])if(b)b.setAttribute('aria-pressed','false');
+    renderControls();compute();
+  };
+  panel.addEventListener('input',()=>{if(read())compute();});
+  panel.addEventListener('change',()=>{if(read())compute();});
+  document.getElementById('advReset').onclick=()=>{state.p={...M().defaults};renderControls();compute();};
+  document.getElementById('advCopy').onclick=async()=>{const code=state.built?state.built.code:'';try{await navigator.clipboard.writeText(code);document.getElementById('advCopy').textContent=t('已复制','Copied');}catch{const a=document.createElement('a'),u=URL.createObjectURL(new Blob([code],{type:'text/plain;charset=utf-8'}));a.href=u;a.download='experiment08-tangency-cvar.R';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}};
+  const refresh=()=>{
+    btn.textContent=t('切点与 CVaR','Tangency & CVaR');
+    const set=(id,txt)=>{const el=document.getElementById(id);if(el)el.textContent=txt;};
+    set('advCodeTitle',t('R 代码','R code'));set('advViewTitle',t('组合视图','Portfolio view'));set('advParamTitle',t('参数','Parameters'));
+    set('advCopy',t('复制完整 R 代码','Copy full R code'));set('advReset',t('恢复默认','Reset'));
+    const kind=document.getElementById('advKind');if(kind)kind.textContent=t('三资产 · 网格','Three assets · grid');
+    const tasks=document.getElementById('advTasks');
+    if(tasks)tasks.innerHTML=K.tasks([['先预测：最大夏普组合是否也是最小 CVaR 组合？','Predict first: is the maximum-Sharpe portfolio also the minimum-CVaR one?'],
+      ['把置信水平从 95% 调到 99%，观察 CVaR 与最优权重如何变化。','Move the confidence level from 95% to 99% and watch CVaR and the optimal weights change.'],
+      ['改变相关系数，说明为什么切点权重对估计误差非常敏感。','Change the correlations and explain why tangency weights are so sensitive to estimation error.']]);
+  };
+  refresh();
+  K.onLang(()=>{refresh();if(!panel.hidden){renderControls();compute();}});
+  renderControls();
+}
+function renderControls(){
+  const p=state.p;
+  document.getElementById('advControls').innerHTML=
+    K.field({id:'alpha',zh:'CVaR 置信水平',en:'CVaR confidence',value:p.alpha,min:.9,max:.999,step:.005})+
+    K.field({id:'rf',zh:'无风险月利率',en:'Risk-free (monthly)',value:p.rf,min:-.01,max:.02,step:.0005})+
+    K.field({id:'months',zh:'样本月数',en:'Months',value:p.months,min:120,max:600,step:12})+
+    K.field({id:'step',zh:'权重网格步长',en:'Weight grid step',value:p.step,min:.01,max:.2,step:.01})+
+    K.field({id:'rho12',zh:'ρ(A,B)',en:'ρ(A,B)',value:p.rho12,min:-.95,max:.95,step:.05})+
+    K.field({id:'rho13',zh:'ρ(A,C)',en:'ρ(A,C)',value:p.rho13,min:-.95,max:.95,step:.05})+
+    K.field({id:'rho23',zh:'ρ(B,C)',en:'ρ(B,C)',value:p.rho23,min:-.95,max:.95,step:.05})+
+    K.field({id:'seed',zh:'随机种子',en:'Random seed',value:p.seed,min:1,max:99999999,step:1});
+}
+function read(){
+  const next={...state.p};
+  for(const el of document.querySelectorAll('#advControls input')){
+    const id=el.id.replace(/^lab-/,''),v=Number(el.value);
+    if(el.value.trim()===''||!Number.isFinite(v)){document.getElementById('advValidation').textContent=t('请输入有效数值。','Enter a valid number.');return null;}
+    next[id]=v;
+  }
+  try{M().check(next);}catch(e){document.getElementById('advValidation').textContent=e.message;return null;}
+  state.p=next;document.getElementById('advValidation').textContent='';return next;
+}
+function compute(){
+  const p=state.p;
+  try{
+    const q=M().analyse(p);state.q=q;
+    state.built=M().build(p,q,K.lang());
+    const grid=q.grid;
+    document.getElementById('advChartTitle').textContent=t('均值—标准差网格、有效前沿与三类最优组合','Mean–volatility grid, efficient frontier and three optima');
+    K.chart(document.getElementById('advChart'),{xLabel:['日/月波动率 σ','Volatility σ'],yLabel:['期望收益 μ','Expected return'],
+      xTickFormat:v=>K.pct(v,1),yTickFormat:v=>K.pct(v,2),
+      series:[{type:'scatter',points:grid.map(g=>[g.sd,g.mean]),color:'#cfd8de',radius:1.8,opacity:.7},
+        {type:'line',points:q.frontier.map(g=>[g.sd,g.mean]),color:'#659b8a',width:2.2},
+        {type:'scatter',points:[[q.tan.sd,q.tan.mean]],color:'#6689a8',radius:7,tip:()=>[`切点组合：μ ${K.pct(q.tan.mean,2)}，σ ${K.pct(q.tan.sd,2)}`,`Tangency: μ ${K.pct(q.tan.mean,2)}, σ ${K.pct(q.tan.sd,2)}`]},
+        {type:'scatter',points:[[q.minCVaR.sd,q.minCVaR.mean]],color:'#b5816f',radius:6,tip:()=>[`最小 CVaR：${K.pct(q.minCVaR.es95,2)}`,'Minimum CVaR: '+K.pct(q.minCVaR.es95,2)]},
+        {type:'scatter',points:[[q.maxSkew.sd,q.maxSkew.mean]],color:'#9b88ac',radius:6,tip:()=>[`最大偏度：${q.maxSkew.skew.toFixed(3)}`,'Maximum skew: '+q.maxSkew.skew.toFixed(3)]}],
+      aria:['组合网格与最优','Portfolio grid and optima']});
+    const wf=w=>w.map(v=>K.pct(v,0)).join(' / ');
+    document.getElementById('advMetrics').innerHTML=[
+      [t('切点权重 A/B/C','Tangency weights'),wf(q.wTan)],
+      [t('切点夏普','Tangency Sharpe'),q.tan.sharpe.toFixed(3)],
+      [t('最小 CVaR','Minimum CVaR'),K.pct(q.minCVaR.es95,2)]]
+      .map(([z,v])=>`<div style="min-width:0"><span style="display:block;font-size:11px;color:var(--muted)">${K.esc(z)}</span><b style="font:20px/1.5 var(--font-number);font-weight:500;overflow-wrap:anywhere">${K.esc(v)}</b></div>`).join('');
+    document.getElementById('advLegend').innerHTML=[['全部可行组合','All feasible','#cfd8de',false],['有效前沿','Efficient frontier','#659b8a',false],['切点组合','Tangency','#6689a8',false],['最小 CVaR','Min CVaR','#b5816f',false],['最大偏度','Max skew','#9b88ac',false]]
+      .map(([z,e,c,d])=>`<span><i style="--legend-color:${c};--legend-style:${d?'dashed':'solid'}"></i>${K.esc(t(z,e))}</span>`).join('');
+    document.getElementById('advDetails').innerHTML=K.table([['组合','Portfolio'],['权重 A/B/C','Weights'],['μ','μ'],['σ','σ'],['夏普','Sharpe'],['CVaR','CVaR'],['偏度','Skew']],[
+      [t('切点（解析）','Tangency'),wf(q.wTan),K.pct(q.tan.mean,2),K.pct(q.tan.sd,2),q.tan.sharpe.toFixed(3),K.pct(q.tan.es95,2),q.tan.skew.toFixed(2)],
+      [t('网格最大夏普','Grid max Sharpe'),wf(q.maxSharpe.w),K.pct(q.maxSharpe.mean,2),K.pct(q.maxSharpe.sd,2),q.maxSharpe.sharpe.toFixed(3),K.pct(q.maxSharpe.es95,2),q.maxSharpe.skew.toFixed(2)],
+      [t('最小 CVaR','Min CVaR'),wf(q.minCVaR.w),K.pct(q.minCVaR.mean,2),K.pct(q.minCVaR.sd,2),q.minCVaR.sharpe.toFixed(3),K.pct(q.minCVaR.es95,2),q.minCVaR.skew.toFixed(2)],
+      [t('最大偏度','Max skew'),wf(q.maxSkew.w),K.pct(q.maxSkew.mean,2),K.pct(q.maxSkew.sd,2),q.maxSkew.sharpe.toFixed(3),K.pct(q.maxSkew.es95,2),q.maxSkew.skew.toFixed(2)]])+
+      `<p class="chart-note">${K.esc(t('切点权重来自样本均值与样本协方差 Σ⁻¹(μ−rf)；网格上的"最大夏普"只是离散步长下的近似，两者可能相差几个百分点。最大夏普、最小 CVaR 与最大偏度通常不是同一个组合。','Tangency weights use the sample mean and covariance, Σ⁻¹(μ−rf); the grid maximum-Sharpe value is only a discrete approximation and can differ by a few points. Maximum Sharpe, minimum CVaR and maximum skewness are usually different portfolios.'))}</p>`;
+    renderCode();
+  }catch(e){document.getElementById('advValidation').textContent=e.message;}
+}
+function colorize(line){
+  if(window.WorkbenchUI&&typeof WorkbenchUI.colorCode==='function')return WorkbenchUI.colorCode(line);
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  return esc(line).replace(/(#.*$)/,'<span class="syntax-comment">$1</span>');
+}
+function renderCode(){
+  const b=state.built;if(!b)return;
+  let n=0;
+  document.getElementById('advCode').innerHTML=b.blocks.map(bl=>`<section class="logic-block">${bl.lines.map(l=>`<div class="code-line" style="cursor:default;min-width:100%;width:max-content"><span class="num">${++n}</span><code>${colorize(l)}</code></div>`).join('')}</section>`).join('');
+  document.getElementById('advCode').style.cssText='overflow:auto;height:100%;padding:8px 0';
+}
+window.PortfolioAdvView={mount,state};
+const boot=()=>{try{mount();}catch(e){console.error(e);}};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+/* 多资产面板可能在加载后再创建模式导航，这里轮询等待，最多 8 秒。 */
+let tries=0;const wait=()=>{if(document.getElementById('advMode'))return;boot();if(++tries<40)setTimeout(wait,200);};
+setTimeout(wait,200);
 })();
 
 ;

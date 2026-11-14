@@ -33,19 +33,24 @@ FinModel Lab尝试通过统一的交互式工作台连接这三个环节：
 
 ## 02. Core Experiments
 
-当前构建包含七个核心金融建模实验，对应课程中的不同教学主题。
+当前构建包含全部十二个课程实验，对应教学大纲的完整知识链：基础编程与数据、统计建模与预测、波动率与风险、组合与资产定价、衍生品与绩效。
 
 | 实验 | 主题 | 主要功能 |
 |---|---|---|
+| 01 | R Fundamentals | 工作环境、数据结构、索引与缺失、函数与循环、基础绘图、程序包、AI 辅助编程审查 |
+| 02 | Data Preparation | CSV 导入与列诊断、日期与频率对齐、缺失策略、异常值围栏、宽长表、清洗日志与 AI 清洗对比 |
+| 03 | Asset Returns | 简单/对数/含股息总收益、债券净价/全价/久期/持有期收益、分布四阶矩、直方图与 QQ |
 | 04 | Multiple Regression | OLS、逐步回归、Ridge、Lasso与样本外比较 |
 | 05 | Financial Time Series | ADF、KPSS、ARMA、VAR、Granger 与 LSTM 样本外比较 |
 | 06 | Volatility Modeling | ARCH-LM、GARCH、GJR-GARCH、GARCH-M、CCC-GARCH |
 | 07 | Financial Risk Measurement | VaR、ES、RiskMetrics、EVT与风险回测 |
 | 08 | Portfolio Optimization | 均值-方差模型、全局最小方差组合、有效前沿 |
 | 09 | CAPM | SML、CML、Alpha/Beta估计与实证分析 |
+| 10 | Factor Models & APT | FF3 回归、横截面 APT、因子 IC/Rank IC、五等分回测 |
 | 11 | Black-Scholes | 欧式期权定价、Greeks、隐含波动率与Delta对冲 |
+| 12 | Fund Performance | Sharpe/Treynor/Jensen/IR/最大回撤、TM 与 HM 择时、Treynor-Black、收益归因 |
 
-其他课程实验尚未上线，不属于当前版本的完成范围。
+实验 05 另含正交化 IRF/方差分解与 base R 端 LSTM 训练；实验 07 另含随机森林与 LSTM 的 AI 风险预测（统一目标、时点与样本外检验）。十二个实验均有完整 base R 脚本，英文模式下界面无中文残留。
 
 ### Experiment 04 · Regression & Regularization
 

@@ -1,0 +1,76 @@
+/* Shared presentation layer for experiments 01/02/03/10/12.
+   Reuses the workbench tokens in style.css and experiments.css; adds only the
+   pieces those five labs need (view tabs, pipeline, audit log, AI badges). */
+.lab-tabs{display:flex;flex-wrap:wrap;gap:5px;padding:0 14px 8px;flex:none}
+.lab-tabs button{font:500 12px/1.4 var(--font-ui);padding:5px 9px;border-radius:7px;background:#ffffffa8}
+.lab-tabs button[aria-pressed=true]{background:#e9e8f1;border-color:#c4bed2;color:#4b4166}
+.lab-question{margin:0 14px 6px;font:12px/1.6 var(--font-ui);color:#687d8a}
+.lab-view-controls{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 8px}
+.lab-view-controls button{font:500 12px/1.4 var(--font-ui);padding:4px 8px}
+.lab-view-controls button[aria-pressed=true]{background:#e9e8f1;border-color:#c4bed2}
+.lab-view-controls label{font:12px/1.4 var(--font-ui);color:#5d7280;display:inline-flex;align-items:center;gap:5px}
+
+.lab-prose{margin:0 0 10px;font:12px/1.75 var(--font-ui);color:#647b8b}
+.lab-note{margin:6px 0 10px;font:12px/1.7 var(--font-ui);color:#7a8b96}
+.lab-code-note{margin:0 0 8px;font:11px/1.7 var(--font-code);color:#7a8b96;overflow-wrap:anywhere}
+.lab-badge{display:inline-block;padding:1px 6px;margin-left:5px;border-radius:4px;font:10px/1.7 var(--font-ui);letter-spacing:.2px;vertical-align:1px}
+.lab-badge-ai{background:#eee9f4;color:#6b5c86;border:1px solid #ded5ea}
+.lab-badge-warn{background:#f8efe9;color:#8d6146;border:1px solid #ecd9cc}
+.lab-badge-ok{background:#e9f1ed;color:#4d7666;border:1px solid #d3e3da}
+.lab-block{margin:0 0 14px}
+.lab-block h3{font:600 12px/1.5 var(--font-ui);margin:0 0 6px;color:#4f6675;letter-spacing:.2px}
+.lab-unit{font:10px/1 var(--font-ui);color:#8a9ca6;font-weight:400}
+.lab-check{display:flex!important;grid-template-columns:none!important;align-items:center;gap:7px;font:12px/1.6 var(--font-ui);margin:8px 0}
+.lab-check input{width:15px;height:15px}
+.lab-tasks{margin:10px 0 0;font:12px/1.8 var(--font-ui)}
+.lab-tasks ol{margin:6px 0 0;padding-left:18px;color:#5e7481}
+.lab-tasks li{margin:0 0 5px}
+.lab-scroll{max-height:190px;overflow:auto;overscroll-behavior:contain;border:1px solid var(--border);border-radius:8px;background:#fbfcfd}
+.lab-scroll table{margin:0}
+.lab-log{width:100%;border-collapse:collapse;font:11px/1.6 var(--font-ui);table-layout:fixed}
+.lab-log th,.lab-log td{padding:5px 7px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.lab-log th{width:32%;font-weight:500;color:#576d7b}
+.lab-log tr:last-child td,.lab-log tr:last-child th{border-bottom:0}
+.lab-kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font:11px/1.7 var(--font-ui);margin:6px 0 0}
+.lab-kv dt{color:#7a8b96}
+.lab-kv dd{margin:0;font-family:var(--font-number)}
+.lab-flag-ok{color:#4d7666}.lab-flag-warn{color:#8d6146}.lab-flag-bad{color:#a35f50}
+.lab-chip{display:inline-block;padding:0 5px;margin:0 3px 3px 0;border-radius:4px;background:#eef2f5;font:10px/1.7 var(--font-code);color:#5d7280}
+.lab-grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;margin:6px 0 0}
+.lab-grid2>div{font:11px/1.6 var(--font-ui);color:#5e7481;min-width:0}
+.lab-grid2 b{display:block;font:14px/1.5 var(--font-number);color:var(--ink);overflow-wrap:anywhere}
+.lab-source{margin:0 0 8px;font:11px/1.7 var(--font-ui);color:#7a8b96;overflow-wrap:anywhere}
+.lab-file{font:11px/1.6 var(--font-ui)}
+.lab-file input{width:100%;margin-top:4px}
+.lab-textarea{width:100%;min-height:96px;border:1px solid var(--control-border);border-radius:8px;background:#fbfcfd;padding:8px;font:11px/1.6 var(--font-code);resize:vertical}
+#labTip{position:absolute}
+#labTip strong{display:block;padding-right:16px}
+#labTip p{margin:4px 0 0}
+#labTipClose{position:absolute;right:5px;top:5px;padding:0 5px;border:0;background:none;font-size:17px;line-height:1.4}
+.chart-host .lab-line{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart-host .lab-bar{cursor:pointer}
+.chart-host .lab-point,.chart-host .lab-hit{cursor:pointer;outline:none}
+.chart-host .lab-point:focus,.chart-host .lab-hit:focus{stroke:var(--interaction);stroke-width:2.5}
+.chart-host text{font-family:var(--font-number);fill:#617681;font-size:11.5px}
+.chart-host .axis-caption{font-family:var(--font-ui);font-size:12px;fill:#566d7c}
+.chart-grid{stroke:#e2e8ec;fill:none}
+.model-details caption{caption-side:top;text-align:left;font:11px/1.6 var(--font-ui);color:#7a8b96;padding-bottom:4px}
+.model-details table.lab-wide th:first-child{width:38%}
+#assumptionSummary{flex-wrap:wrap}
+.lab-inline{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
+.lab-inline input[type=number]{width:84px}
+.lab-strong{font-weight:600;color:#3f5a6b}
+.lab-muted{color:#7a8b96}
+.lab-rule{border:0;border-top:1px solid var(--border);margin:10px 0}
+@media(max-width:980px){.lab-tabs{padding-inline:10px}.lab-question{margin-inline:10px}}
+
+/* Experiment11 · binomial-tree panel (mounted beside the BS workbench). */
+.bstree-only{display:none}
+body.bstree-active .bstree-only{display:block}
+body.bstree-active .model-panel>*:not(.bstree-only),body.bstree-active .parameters>*:not(.bstree-only),body.bstree-active .code-panel>*:not(.bstree-only){display:none!important}
+body.bstree-active #bstParams{overflow:auto;padding:0 16px 16px}
+body.bstree-active #bstParams h2{font:600 16px/1.4 var(--font-brand);margin:14px 0 10px}
+body.bstree-active #bstModel{display:flex;flex-direction:column;min-height:0;flex:1}
+body.bstree-active #bstCodePane{overflow:auto;height:100%}
+body.bstree-active #bstCodePane .panel-head{display:flex;justify-content:space-between;align-items:center}
+body.bstree-active #bstBack{margin-top:12px}

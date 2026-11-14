@@ -1,0 +1,162 @@
+/* Experiment02 · R script builder. The messy sample is embedded verbatim, so
+   the script reproduces the page's audit trail in a fresh R session. */
+(function(root,factory){const api=factory(typeof module==='object'?require('./dataprep-math'):root.DataPrepMath);if(typeof module==='object')module.exports=api;else root.DataPrepCode=api;})(this,M=>{
+'use strict';
+function csvLines(text){return text.split('\n').map(l=>'"'+l.replace(/\\/g,'\\\\').replace(/"/g,'\\"')+'"');}
+function build(p,view='import',mode='full',lang='zh'){
+  const T=(zh,en)=>lang==='en'?en:zh;
+  const blocks=[];const add=(key,title,lines,explain,formula='')=>blocks.push({key,title,lines,explain,formula});
+  const q=M.buildView(view,p);
+  const raw=csvLines(p.csv);
+  add('read',T('原样读入与列诊断','Read the raw file and profile every column'),
+    ['# Experiment 02 | financial data preparation | base R only',
+     T('# 第 1 步：原样读入，不做任何替换；缺失值先转成真正的 NA','# Step 1: read the file as-is; missing tokens become real NA'),
+     `raw <- read.csv(text = paste(c(`,
+     ...raw.map((l,i)=>'  '+l+(i===raw.length-1?'':',')),
+     '), collapse = "\\n"), fileEncoding = "UTF-8",',
+     '  na.strings = c("", "NA", "N/A", "null", "-", "--"), check.names = FALSE)',
+     T('# 列类型：日期列为字符，其余按数值解析；空列与文本列单独记录','# Column types: the date column stays character, the rest are parsed as numeric; empty and text columns are recorded'),
+     'str(raw); names(raw); dim(raw)',
+     'candidate <- names(raw)[-1]',
+     'text_cols <- candidate[vapply(candidate, function(nm) all(is.na(suppressWarnings(as.numeric(raw[[nm]])))), logical(1))]',
+     'value_cols <- setdiff(candidate, text_cols)',
+     'text_cols; value_cols'],
+    T('先看清结构与类型，再决定清洗规则；任何一步替换都要写进日志。','Look at structure and types before choosing any cleaning rule, and log every replacement.'));
+  add('dates',T('日期规范化、去重与排序','Normalise dates, drop duplicates, sort'),
+    [T('# 第 2 步：三种日期写法统一为 ISO；解析失败立即停止','# Step 2: unify three date spellings to ISO; stop on any parse failure'),
+     'parse_date <- function(x) {',
+     '  out <- as.Date(x, format = "%Y-%m-%d")',
+     '  miss <- is.na(out); out[miss] <- as.Date(x[miss], format = "%Y/%m/%d")',
+     '  miss <- is.na(out); out[miss] <- as.Date(x[miss], format = "%Y%m%d")',
+     '  if (anyNA(out)) stop("unparseable date: ", x[which(is.na(out))[1]])',
+     '  out',
+     '}',
+     'raw$date <- parse_date(raw$date)',
+     T('# 重复日期整行保留第一条，并记录条数','# Keep the first row of each duplicated date and record how many were dropped'),
+     'dup <- duplicated(raw$date)',
+     'cat("dropped duplicates:", sum(dup), "\\n")',
+     'd0 <- raw[!dup, ]',
+     'd0 <- d0[order(d0$date), ]',
+     T('# 日期间隔：检查是否缺月（本样本 2025-01 缺失）','# Calendar gaps: check for missing months (2025-01 is missing here)'),
+     'gap <- as.integer(diff(d0$date) / 30.4)',
+     'cat("gaps above 1 month:", sum(gap > 1), "\\n")',
+     'd0$date'],
+    T('日期是主键：先统一写法、再去重、最后排序，否则配对会错位。','The date is the key: normalise, deduplicate, then sort, otherwise pairs go out of step.'));
+  add('missing',T('缺失值策略与其代价','The missing-value policy and its cost'),
+    [T('# 第 3 步：按所选策略处理缺失；三种策略的后果不同','# Step 3: apply the chosen policy; the three policies have different consequences'),
+     `policy <- "${p.missing}"`,
+     'num <- d0',
+     'for (nm in value_cols) num[[nm]] <- suppressWarnings(as.numeric(num[[nm]]))',
+     'before <- sum(is.na(num[value_cols]))',
+     'cat("missing cells before:", before, "\\n")',
+     'if (policy == "reject") stopifnot(before == 0)',
+     'if (policy == "drop") num <- num[complete.cases(num[value_cols]), ]',
+     'if (policy == "ffill") for (nm in value_cols) {',
+     '  for (i in seq.int(2L, nrow(num))) if (is.na(num[[nm]][i])) num[[nm]][i] <- num[[nm]][i - 1L]',
+     '}',
+     'if (policy == "zero") for (nm in value_cols) num[[nm]][is.na(num[[nm]])] <- 0',
+     'cat("rows kept:", nrow(num), "\\n")',
+     T('# 删除与填补都会改变样本量与方差，必须写进元数据','# Deletion and filling both change sample size and variance; record them in the metadata'),
+     'c(rows = nrow(num), missing_before = before, missing_after = sum(is.na(num[value_cols])))'],
+    T('删除保留"真实观测"，填补保留样本量但引入人为结构；两者都要报告。','Deletion keeps real observations; filling keeps the sample size but injects artificial structure. Report either choice.'));
+  add('outlier',T('异常值识别与处理','Identify and treat outliers'),
+    [T('# 第 4 步：用所选规则标记异常；缩尾只改变被标记的单元格','# Step 4: flag outliers with the chosen rule; winsorising only changes the flagged cells'),
+     `method <- "${p.outlier}"; k <- ${p.k}; action <- "${p.outlierAction}"`,
+     'flags <- list()',
+     'for (nm in value_cols) {',
+     '  v <- num[[nm]]; ok <- !is.na(v)',
+     '  if (sum(ok) < 8L) next',
+     '  q <- quantile(v[ok], c(.25, .5, .75), names = FALSE)',
+     '  iqr <- q[3] - q[1]',
+     '  mad <- mad(v[ok], constant = 1.4826)',
+     '  m <- mean(v[ok]); s <- sd(v[ok])',
+     '  score <- switch(method,',
+     '    z = abs(v - m) / s,',
+     '    iqr = pmax((v - q[3]) / (k * iqr), (q[1] - v) / (k * iqr)),',
+     '    mad = abs(v - q[2]) / (k * mad))',
+     '  hit <- which(!is.na(score) & score > 1)',
+     '  if (length(hit)) flags[[nm]] <- data.frame(date = num$date[hit], column = nm, value = v[hit], score = score[hit])',
+     '}',
+     'flag_table <- if (length(flags)) do.call(rbind, flags) else data.frame()',
+     'print(flag_table)',
+     'if (action == "winsorize") for (nm in value_cols) {',
+     '  v <- num[[nm]]; lo <- quantile(v, .05, na.rm = TRUE); hi <- quantile(v, .95, na.rm = TRUE)',
+     '  num[[nm]] <- pmin(hi, pmax(lo, v))',
+     '}',
+     'if (action == "drop" && nrow(flag_table)) num <- num[!(num$date %in% flag_table$date), ]'],
+    T('异常值是"需要回源核对的可疑值"，不是可以静默替换的错误；缩尾会压缩方差。','An outlier is a suspect value to check at source, not an error to overwrite silently; winsorising compresses variance.'));
+  if(mode==='full'){
+    add('shape',T('宽表与长表','Wide and long layout'),
+      [T('# 第 5 步：宽表一列一个资产，长表一行一个观测；两者是同一数据','# Step 5: wide has one column per asset, long one row per observation; they are the same data'),
+       'long <- data.frame(',
+       '  date = rep(num$date, times = length(value_cols)),',
+       '  asset = rep(value_cols, each = nrow(num)),',
+       '  value = unlist(num[value_cols], use.names = FALSE)',
+       ')',
+       'long <- long[order(long$date, long$asset), ]',
+       'head(long); nrow(long)',
+       T('# 还原宽表：reshape 的 id 必须唯一，否则会静默丢行','# Back to wide: the reshape id must be unique, otherwise rows are dropped silently'),
+       'wide <- reshape(long, idvar = "date", timevar = "asset", direction = "wide")',
+       'stopifnot(nrow(wide) == nrow(num))'],
+      T('宽长转换失败通常来自重复日期或缺失的时间键；转换前后都要核对行数。','Wide/long conversion usually fails on duplicated dates or a missing time key; check row counts before and after.'));
+    add('audit',T('清洗日志与元数据','Audit log and metadata'),
+      [T('# 第 6 步：把每一步的行数变化写成可追溯的日志','# Step 6: record the row count after every step so the trail is reproducible'),
+       'log <- data.frame(',
+       '  step = c("read", "dedupe", "missing", "outlier"),',
+       '  rows_in = c(nrow(raw), nrow(raw), nrow(d0), nrow(d0)),',
+       '  rows_out = c(nrow(raw), nrow(d0), nrow(num), nrow(num)),',
+       '  note = c("raw file", "duplicates dropped", policy, action)',
+       ')',
+       'print(log)',
+       'print(head(num, 3)); print(tail(num, 3))',
+       'meta <- list(source = "synthetic teaching sample", license = "CC0-1.0",',
+       `  retrieved = "${M.SAMPLE_META.retrieved}", columns = ncol(raw), assets = length(value_cols))`,
+       'str(meta)',
+       'write.csv(num, "clean.csv", row.names = FALSE)'],
+      T('清洗日志是实验的一部分：没有日志的清洗结果无法复核。','The cleaning log is part of the experiment: a result without a log cannot be re-checked.'));
+  }
+  if(view==='db'){
+    add('db',T('取数规格与元数据','Extraction request and metadata'),
+      ['# 来源、频率、复权与取数日期写进脚本，而不是留在脑子里',
+       `meta <- list(source = "${p.source}", frequency = "${p.frequency}", adjust = "${p.adjust}",`,
+       `  retrieved = "${String(p.retrieved||'').replace(/"/g,'')}", table = "${String(p.dbTable||'').replace(/"/g,'')}")`,
+       'print(meta)',
+       T('# 凭证只从环境变量读取；脚本里不出现账号与密码','# Credentials come from environment variables only; no accounts or passwords in the script'),
+       '# con <- DBI::dbConnect(odbc::odbc(), dsn = Sys.getenv("FML_DSN"))',
+       '# raw <- DBI::dbGetQuery(con, "select * from prices")',
+       '# DBI::dbDisconnect(con)'],
+      T('取数规格是实验的一部分：没有来源、频率与复权口径，任何收益率都不可比。','The extraction request is part of the experiment: without source, frequency and adjustment, no return is comparable.'));
+    add('snapshot',T('原始快照与指纹','Raw snapshot and fingerprint'),
+      ['# 先存原始快照，再从快照派生清洗结果；指纹用于核对"是不是同一份数据"',
+       'dir.create("data", showWarnings = FALSE)',
+       '# write.csv(raw, "data/raw-snapshot.csv", row.names = FALSE)',
+       '# tools::md5sum("data/raw-snapshot.csv")',
+       T('# 本页已算出的指纹（对清理后表格的确定性哈希）','# Fingerprint already computed on this page (deterministic hash of the cleaned table)'),
+       `fingerprint <- "${q.fingerprint}"`, 'print(fingerprint)'],
+      T('指纹不能证明数据正确，只能证明"两次用的是同一份文件"。','A fingerprint does not prove the data are correct; it only proves two runs used the same file.'));
+    add('plot',T('清洗后的序列与快照对照','Cleaned series next to the snapshot'),
+      [T('# 用基础绘图确认标准化后的量纲与频率','# Use base graphics to confirm the standardised units and frequency'),
+       `plot(d0$date[seq_len(nrow(num))], num[[value_cols[1]]], type = "l",`,
+       '  xlab = "date", ylab = "level", main = "standardised series")',
+       'abline(v = as.Date(meta$retrieved), lty = 3)',
+       T('# 竖线是取数日期；它必须在数据区间之外或之内都能解释清楚','# The vertical line is the retrieval date; it must be interpretable inside or outside the sample')],
+      T('绘图是最后的量纲检查：频率错了、复权错了，曲线形状会立刻暴露。','Plotting is the final unit check: a wrong frequency or adjustment shows up immediately in the shape.'));
+  }
+  if(view==='ai'){
+    add('ai',T('AI 建议的审查记录','Review record for the AI suggestions'),
+      [T('# 每条 AI 建议都必须显式接受或拒绝，并写明理由','# Every AI suggestion must be accepted or rejected explicitly, with a reason'),
+       'ai_review <- data.frame(',
+       '  key = c('+M.AI_SUGGESTIONS.map(s=>'"'+s.key+'"').join(', ')+'),',
+       '  decision = c('+M.AI_SUGGESTIONS.map(s=>'"'+(p.ai[s.key].decision)+'"').join(', ')+'),',
+       `  effect = c(${q.changed}L)`,
+       ')',
+       'print(ai_review)',
+       T('# 被接受的建议数','# Number of accepted suggestions'),
+       `cat("accepted:", ${q.accepted}, "rejected:", ${q.rejected}, "pending:", ${q.pending}, "\\n")`],
+      T('AI 建议只是候选操作；接受或拒绝都要给出理由，并记录它对数据的影响。','An AI suggestion is only a candidate action; accept or reject it with a reason and record its effect on the data.'));
+  }
+  const chosen=mode==='basic'?blocks.slice(0,3):blocks;
+  return{blocks:chosen,code:'# FinModel Lab | Experiment 02 | financial data preparation\n\n'+chosen.map(b=>b.lines.join('\n')).join('\n\n')+'\n'};
+}
+return{build};
+});
